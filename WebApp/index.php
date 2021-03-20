@@ -23,7 +23,8 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#"><span class=" glyphicon glyphicon-eye-open"aria-hidden="true"></span> Home</a></li>
+                    <li class="active"><a href="#"><span class=" glyphicon glyphicon-eye-open"
+                                                         aria-hidden="true"></span> Home</a></li>
 
                 </ul>
 
@@ -44,43 +45,66 @@
 
 <div class="container">
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="./Asets/img/1.jpg" alt="Foto 1" style="width:100%;">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+                <div class="item active">
+                    <img src="Asets/img/1.jpg" alt="Los Angeles" style="width:100%;">
+                    <div class="carousel-caption">
+                        <h3>Andi Dika</h3>
+                        <p>Mitrovicali</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="Asets/img/2.jpg" alt="Chicago" style="width:100%;">
+                    <div class="carousel-caption">
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi aut delectus,
+                            distinctio dolores eligendi est et illum laudantium natus neque nihil perferendis possimus
+                            quia quod repudiandae sunt temporibus voluptatum.</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aspernatur aut
+                            consequuntur cupiditate, debitis dolor dolore dolorem eius eligendi expedita laudantium,
+                            neque quam quas, qui recusandae sed sit temporibus tenetur.</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="Asets/img/3.jpg" alt="New York" style="width:100%;">
+                    <div class="carousel-caption">
+                        <h3>Adnit gashi</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ducimus eligendi error
+                            ipsum necessitatibus quas quos repellendus! A amet animi autem beatae culpa dolorem eius
+                            eligendi est hic impedit incidunt inventore, itaque libero magnam nihil odio, officiis
+                            perferendis quae quasi qui recusandae reiciendis, rerum sit temporibus totam ut vel
+                            voluptates.</p>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="item">
-                <img src="./Asets/img/2.jpg" alt="Foto 2" style="width:100%;">
-            </div>
-
-            <div class="item">
-                <img src="./Asets/img/3.jpg" alt="Foto 3" style="width:100%;">
-            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
-</div>
 
 
-<div style="height: 400px"></div>
+    <div style="height: 400px"></div>
 </body>
 </html>
 
