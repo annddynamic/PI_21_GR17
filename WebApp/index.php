@@ -1,6 +1,6 @@
 
 <?php
-include 'HTML/Homepage.html';
+    include './HTML/Homepage.html';
 
 
 ?>
