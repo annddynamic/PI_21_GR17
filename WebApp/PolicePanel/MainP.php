@@ -12,13 +12,12 @@
 <body>
 <nav class="navbar navnar-expand-md navbar-light sticky-top">
 <div class="container-fluid">
-<a class="navbar-brand" href="#"> <img src="1,2,3.jpg" alt=""> </a>
+<a class="navbar-brand" href="#"> <img src="../PolicePanel/skrt.jfif" > </a>
 </div>
 </nav>
 
 
-<img src="1,2,3.jpg" >
-
+<img src=".skrt.jfif" >
 
 
 
