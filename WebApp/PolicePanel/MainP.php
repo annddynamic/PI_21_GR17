@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
     <title>Admin Panel</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
-
-
 </head>
 <body>
+<nav class="navbar navnar-expand-md navbar-light sticky-top">
+<div class="container-fluid">
+<a class="navbar-brand" href="#"> <img src="1,2,3.jpg" alt=""> </a>
+</div>
+</nav>
 
 
-
-
+<img src="1,2,3.jpg" >
 
 
 
