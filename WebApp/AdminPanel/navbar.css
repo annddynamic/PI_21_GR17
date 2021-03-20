@@ -69,7 +69,11 @@ body{
     color: #b3cde0;
 }
 
-
+.main-color-bg{
+    background-color: #005b96  !important;
+    border-color: #03396c !important;
+    color:#ffffff;
+}
 
 @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
