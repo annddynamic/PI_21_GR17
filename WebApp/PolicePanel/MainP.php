@@ -18,6 +18,7 @@
 
 
 <img src=".skrt.jfif" >
+<img src=".skrt.jfif" ><img src=".skrt.jfif" >
 
 
 
