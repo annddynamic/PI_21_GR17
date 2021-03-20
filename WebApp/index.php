@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="Asets/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <title>Crime Reporting System</title>
     <style>
@@ -232,6 +233,8 @@
 </script>
 
 
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<script src="Asets/js/bootstrap.min.js"></script>
 
 
 </body>
