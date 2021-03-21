@@ -25,7 +25,7 @@ include "navbar.php";
     <div class="container">
         <div class="row">
             <div class="col-md-10">
-                <h1><span class ="glyphicon glyphicon-cog" aria-hidden=""true> </span>Users <small>Manage Users</small></h1>
+                <h1><span class ="glyphicon glyphicon-book" aria-hidden=""true> </span> Articles <small>Manage Articles</small></h1>
             </div>
             <div class="col-md-2">
                 <div class="dropdown create">
@@ -50,12 +50,12 @@ include "navbar.php";
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="adminPanel.php" class="list-group-item active main-color-bg" ><span class ="glyphicon glyphicon-cog" aria-hidden=""true> </span>
+                    <a href="adminPanel.php" class="list-group-item " ><span class ="glyphicon glyphicon-cog" aria-hidden=""true> </span>
                         Dashboard
                     </a>
-                    <a href="users.php" class="list-group-item"><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span>   Users<span class="badge">12</span></a>
+                    <a href="users.php" class="list-group-item "><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span>   Users<span class="badge">12</span></a>
                     <a href="reports.php" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span>   Reports<span class="badge">12</span></a>
-                    <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-book" aria-hidden=""true> </span>   Articles<span class="badge">12</span></a>
+                    <a href="feedback.php" class="list-group-item active main-color-bg"><span class ="glyphicon glyphicon-book" aria-hidden=""true> </span>   Articles<span class="badge">12</span></a>
                     <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span>   Feedback<span class="badge">12</span></a>
                 </div>
 
