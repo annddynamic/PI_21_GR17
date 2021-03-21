@@ -35,9 +35,9 @@ include "navbar.php";
                     <a href="adminPanel.php" class="list-group-item active main-color-bg" ><span class ="glyphicon glyphicon-cog" aria-hidden=""true> </span>
                         Dashboard
                     </a>
-                    <a href="users.php" class="list-group-item"><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span>Users<span class="badge">12</span></a>
-                    <a href="reports.php" class="list-group-item"><span class ="glyphicon glyphicon-cog" aria-hidden=""true> </span>Reports<span class="badge">12</span></a>
-                    <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span>Feedback<span class="badge">12</span></a>
+                    <a href="users.php" class="list-group-item"><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span>   Users<span class="badge">12</span></a>
+                    <a href="reports.php" class="list-group-item"><span class ="glyphicon glyphicon-cog" aria-hidden=""true> </span>   Reports<span class="badge">12</span></a>
+                    <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span>   Feedback<span class="badge">12</span></a>
                 </div>
 
                 <div class="well">
@@ -49,7 +49,7 @@ include "navbar.php";
                     </div>
                     <h4>lorem lorem</h4>
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40 %;">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
                             40%
                         </div>
                     </div>
