@@ -17,7 +17,7 @@ include "navbar.php";
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Add User</a></li>
+                        <li><a type = "button" data-toggle="modal" data-target="#addUser">Add User</a></li>
                         <li><a href="#">Review Request</a></li>
                         <li><a href="#">Add Article</a></li>
                     </ul>
@@ -144,7 +144,8 @@ include "navbar.php";
                                 <td>Andi Dika</td>
                                 <td>Andi Dika</td>
                                 <td>Andi Dika</td>
-                            </tr>                            <tr>
+                            </tr>
+                            <tr>
                                 <td>2</td>
                                 <td>Andi Dika</td>
                                 <td>Andi Dika</td>
@@ -177,3 +178,79 @@ include "navbar.php";
         </div>
     </div>
 </section>
+<footer id="footer">
+    <pr>Copyright Adminstrap, &copy; 2021</pr>
+</footer>
+
+<!--Modals-->
+<!--Add User-->
+<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add User</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="Last Nme">
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+
+                    <label for="Gender">Gender</label>
+                    <select class="form-control" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="others">Others</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="Date">Date</label>
+                    <input type="date" class="form-control" name="date">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control" placeholder="City">
+                </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" class="form-control" placeholder="Country">
+                </div>
+                <div class="form-group">
+                    <label>ZIP</label>
+                    <input type="number" class="form-control" placeholder="ZIP">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="Gender">Role</label>
+                    <select class="form-control" name="role">
+                        <option value="admin">Admin</option>
+                        <option value="police">Police</option>
+                        <option value="citizen">Citizen</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Add User</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--Review Request-->
+
+<!--Add Article-->
