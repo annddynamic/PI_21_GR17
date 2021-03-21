@@ -76,7 +76,7 @@ body{
 .main-color-bg{
     background-color: #005b96  !important;
     border-color: #03396c !important;
-    color:#ffffff;
+    color:#ffffff !important;
 }
 
 
@@ -112,27 +112,40 @@ body{
 /* list group */
 
 
-#main .list-group-item{
-    padding:18px;
-    width: 300px;
-}
+/*#main .list-group-item{*/
+/*    padding:18px;*/
+/*    width: 300px;*/
+/*}*/
 
 #main a {
     font-size:15px;
 }
 
-/* progress bars */
-#main .well {
-    width: 300px;
-}
+/*!* progress bars *!*/
+/*#main .well {*/
+/*    width: 300px;*/
+/*}*/
 
 .progress-bar{
     color:#ffffff;
 
 }
 
+/* Wells text*/
+
+.dash-box{
+    text-align: center;
+}
+
+/* TABLE*/
+
+.tbl{
 
 
+}
 
-
+.tbl,th, td{
+    border:1px solid lightgray!important;
+    border-collapse: collapse!important;
+}
 

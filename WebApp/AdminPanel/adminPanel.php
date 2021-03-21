@@ -36,7 +36,7 @@ include "navbar.php";
                         Dashboard
                     </a>
                     <a href="users.php" class="list-group-item"><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span>   Users<span class="badge">12</span></a>
-                    <a href="reports.php" class="list-group-item"><span class ="glyphicon glyphicon-cog" aria-hidden=""true> </span>   Reports<span class="badge">12</span></a>
+                    <a href="reports.php" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span>   Reports<span class="badge">12</span></a>
                     <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span>   Feedback<span class="badge">12</span></a>
                 </div>
 
@@ -56,7 +56,123 @@ include "navbar.php";
                 </div>
             </div>
             <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading main-color-bg">
+                        <h3 class="panel-title">Website Overview</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-3">
+                            <div class="well dash-box">
+                                <h2><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span> 12</h2>
+                                <h4>Users</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="well dash-box">
+                                <h2><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span> 12</h2>
+                                <h4>Reports</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-3 dash-box">
+                            <div class="well">
+                                <h2><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span> 12</h2>
+                                <h4>Feedback</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-3 dash-box">
+                            <div class="well">
+                                <h2><span class ="glyphicon glyphicon-ok" aria-hidden=""true> </span> 12</h2>
+                                <h4>Solved</h4>
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Latest Users</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table  table-hover tbl">
+                            <tr>
+                                <th class="main-color-bg">ID</th>
+                                <th class="main-color-bg">Name</th>
+                                <th class="main-color-bg">Surname</th>
+                                <th class="main-color-bg">Sex</th>
+                                <th class="main-color-bg">Dob</th>
+                                <th class="main-color-bg">Address</th>
+                                <th class="main-color-bg">City</th>
+                                <th class="main-color-bg">Country</th>
+                                <th class="main-color-bg">ZIP</th>
+                                <th class="main-color-bg">Email</th>
+                                <th class="main-color-bg">Role</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                            </tr>                            <tr>
+                                <td>1</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                            </tr>                            <tr>
+                                <td>2</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                            </tr>
+                            <tr>
+                                <td>3 </td>
+                                <td>Adnit King kobra </td>
+                                <td>Adnit King kobra </td>
+                                <td>Adnit King kobra </td>
+                                <td>Adnit King kobra </td>
+                                <td>Adnit King kobra </td>
+                                <td>Adnit King kobra </td>
+                                <td>Adnit King kobra </td>
+                                <td>Adnit King kobra </td>
+                                <td>Adnit King kobra </td>
+                                <td>Adnit King kobra </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
