@@ -108,3 +108,26 @@ body{
         background-color: #03396c;
     }
 }
+
+/* list group */
+
+#main .list-group-item{
+    padding:18px;
+}
+
+#main a {
+    font-size:15px;
+}
+
+/* progress bars */
+
+.progress-bar{
+    background:#011f4b;
+    color:#ffffff;
+}
+
+
+
+
+
+
