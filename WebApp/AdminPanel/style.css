@@ -111,8 +111,10 @@ body{
 
 /* list group */
 
+
 #main .list-group-item{
     padding:18px;
+    width: 300px;
 }
 
 #main a {
@@ -120,9 +122,13 @@ body{
 }
 
 /* progress bars */
+#main .well {
+    width: 300px;
+}
 
 .progress-bar{
     color:#ffffff;
+
 }
 
 
