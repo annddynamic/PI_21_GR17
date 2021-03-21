@@ -2,9 +2,10 @@ body{
 
     background:#f4f4f4;
 }
-
+/*   NAVBAR */
 .navbar{
     border-radius: 0;
+    margin-bottom: 0;
 }
 
 .navbar-nav >li {
@@ -69,10 +70,27 @@ body{
     color: #b3cde0;
 }
 
+/*COSTUM COLOR */
+
+
 .main-color-bg{
     background-color: #005b96  !important;
     border-color: #03396c !important;
     color:#ffffff;
+}
+
+
+/* HEader*/
+
+#header{
+    background:#011f4b;
+    color:#ffffff;
+    padding-bottom: 10px;
+    margin-bottom: 10px !important;
+}
+
+#header .create{
+    padding-top: 28px;
 }
 
 @media (max-width: 767px) {
