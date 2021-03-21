@@ -95,14 +95,14 @@ include "navbar.php";
                         </div>
                         <div class="col-md-3 dash-box">
                             <div class="well">
-                                <h2><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span> 12</h2>
-                                <h4>Feedback</h4>
+                                <h2><span class ="glyphicon glyphicon-book" aria-hidden=""true> </span> 12</h2>
+                                <h4>Articles</h4>
                             </div>
                         </div>
                         <div class="col-md-3 dash-box">
                             <div class="well">
-                                <h2><span class ="glyphicon glyphicon-ok" aria-hidden=""true> </span> 12</h2>
-                                <h4>Solved</h4>
+                                <h2><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span> 12</h2>
+                                <h4>Feedback</h4>
                             </div>
                         </div>
 

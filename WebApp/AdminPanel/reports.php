@@ -15,6 +15,7 @@
 
 
 </head>
+
 <?php
 include "navbar.php";
 ?>
@@ -98,9 +99,9 @@ include "navbar.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not taken care of</a></li>
+                                            <li><a href="#">Not Resolved</a></li>
                                             <li><a href="#">In process</a></li>
-                                            <li><a href="#">Taken care of</a></li>
+                                            <li><a href="#">Resolved</a></li>
                                         </ul>
                                 </td>
                                 <td>
@@ -120,9 +121,9 @@ include "navbar.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not taken care of</a></li>
+                                            <li><a href="#">Not Resolved</a></li>
                                             <li><a href="#">In process</a></li>
-                                            <li><a href="#">Taken care of</a></li>
+                                            <li><a href="#">Resolved</a></li>
                                         </ul>
                                 </td>
                                 <td>
@@ -142,9 +143,9 @@ include "navbar.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not taken care of</a></li>
+                                            <li><a href="#">Not Resolved</a></li>
                                             <li><a href="#">In process</a></li>
-                                            <li><a href="#">Taken care of</a></li>
+                                            <li><a href="#">Resolved</a></li>
                                         </ul>
                                 </td>
                                 <td>
@@ -165,9 +166,9 @@ include "navbar.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not taken care of</a></li>
+                                            <li><a href="#">Not Resolved</a></li>
                                             <li><a href="#">In process</a></li>
-                                            <li><a href="#">Taken care of</a></li>
+                                            <li><a href="#">Resolved</a></li>
                                         </ul>
                                 </td>
                                 <td>
@@ -187,9 +188,9 @@ include "navbar.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not taken care of</a></li>
+                                            <li><a href="#">Not Resolved</a></li>
                                             <li><a href="#">In process</a></li>
-                                            <li><a href="#">Taken care of</a></li>
+                                            <li><a href="#">Resolved</a></li>
                                         </ul>
                                 </td>
                                 <td>
@@ -227,9 +228,9 @@ include "navbar.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not taken care of</a></li>
+                                            <li><a href="#">Not Resolved</a></li>
                                             <li><a href="#">In process</a></li>
-                                            <li><a href="#">Taken care of</a></li>
+                                            <li><a href="#">Resolved</a></li>
                                         </ul>
                                 </td>
                                 <td>
@@ -249,9 +250,9 @@ include "navbar.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not taken care of</a></li>
+                                            <li><a href="#">Not Resolved</a></li>
                                             <li><a href="#">In process</a></li>
-                                            <li><a href="#">Taken care of</a></li>
+                                            <li><a href="#">Resolved</a></li>
                                         </ul>
                                 </td>
                                 <td>
@@ -271,9 +272,9 @@ include "navbar.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not taken care of</a></li>
+                                            <li><a href="#">Not Resolved</a></li>
                                             <li><a href="#">In process</a></li>
-                                            <li><a href="#">Taken care of</a></li>
+                                            <li><a href="#">Resolved</a></li>
                                         </ul>
                                 </td>
                                 <td>
@@ -294,9 +295,9 @@ include "navbar.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not taken care of</a></li>
+                                            <li><a href="#">Not Resolved</a></li>
                                             <li><a href="#">In process</a></li>
-                                            <li><a href="#">Taken care of</a></li>
+                                            <li><a href="#">Resolved</a></li>
                                         </ul>
                                 </td>
                                 <td>
@@ -316,9 +317,9 @@ include "navbar.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not taken care of</a></li>
+                                            <li><a href="#">Not Resolved</a></li>
                                             <li><a href="#">In process</a></li>
-                                            <li><a href="#">Taken care of</a></li>
+                                            <li><a href="#">Resolved</a></li>
                                         </ul>
                                 </td>
                                 <td>
