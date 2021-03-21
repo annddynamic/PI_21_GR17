@@ -1,19 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <title>Admin Panel</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-
-</head>
 
 <body>
 
@@ -33,6 +17,7 @@
                 <li class="active"><a href="adminPanel.php">Dashboard</a></li>
                 <li><a href="users.php">Users</a></li>
                 <li><a href="reports.php">Reports</a></li>
+                <li><a href="articles.php">Articles</a></li>
                 <li><a href="feedback.php">Feedback</a></li>
             </ul>
 

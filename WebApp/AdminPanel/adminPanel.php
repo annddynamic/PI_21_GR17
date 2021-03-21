@@ -1,3 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Admin Panel</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
 <?php
 
 include "navbar.php";
@@ -18,7 +36,8 @@ include "navbar.php";
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li><a type = "button" data-toggle="modal" data-target="#addUser">Add User</a></li>
-                        <li><a href="#">Review Request</a></li>
+                        <li><a href="#">Review Requests</a></li>
+                        <li><a href="#">Manage Reports</a></li>
                         <li><a href="#">Add Article</a></li>
                     </ul>
                 </div>
@@ -35,9 +54,10 @@ include "navbar.php";
                     <a href="adminPanel.php" class="list-group-item active main-color-bg" ><span class ="glyphicon glyphicon-cog" aria-hidden=""true> </span>
                         Dashboard
                     </a>
-                    <a href="users.php" class="list-group-item"><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span>   Users<span class="badge">12</span></a>
-                    <a href="reports.php" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span>   Reports<span class="badge">12</span></a>
-                    <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span>   Feedback<span class="badge">12</span></a>
+                    <a href="users.php" class="list-group-item"><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span>       Users<span class="badge">12</span></a>
+                    <a href="reports.php" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span>    Reports<span class="badge">12</span></a>
+                    <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-book" aria-hidden=""true> </span>    Articles<span class="badge">12</span></a>
+                    <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span>    Feedback<span class="badge">12</span></a>
                 </div>
 
                 <div class="well">
@@ -95,7 +115,6 @@ include "navbar.php";
                     <div class="panel-body">
                         <table class="table  table-hover tbl">
                             <tr>
-                                <th class="main-color-bg">ID</th>
                                 <th class="main-color-bg">Name</th>
                                 <th class="main-color-bg">Surname</th>
                                 <th class="main-color-bg">Sex</th>
@@ -108,7 +127,6 @@ include "navbar.php";
                                 <th class="main-color-bg">Role</th>
                             </tr>
                             <tr>
-                                <td>1</td>
                                 <td>Jill Smith</td>
                                 <td>Jill Smith</td>
                                 <td>Jill Smith</td>
@@ -120,7 +138,6 @@ include "navbar.php";
                                 <td>Jill Smith</td>
                                 <td>Jill Smith</td>
                             </tr>                            <tr>
-                                <td>1</td>
                                 <td>Jill Smith</td>
                                 <td>Jill Smith</td>
                                 <td>Jill Smith</td>
@@ -133,7 +150,6 @@ include "navbar.php";
                                 <td>Jill Smith</td>
                             </tr>
                             <tr>
-                                <td>2</td>
                                 <td>Andi Dika</td>
                                 <td>Andi Dika</td>
                                 <td>Andi Dika</td>
@@ -146,7 +162,6 @@ include "navbar.php";
                                 <td>Andi Dika</td>
                             </tr>
                             <tr>
-                                <td>2</td>
                                 <td>Andi Dika</td>
                                 <td>Andi Dika</td>
                                 <td>Andi Dika</td>
@@ -159,7 +174,6 @@ include "navbar.php";
                                 <td>Andi Dika</td>
                             </tr>
                             <tr>
-                                <td>3 </td>
                                 <td>Adnit King kobra </td>
                                 <td>Adnit King kobra </td>
                                 <td>Adnit King kobra </td>
