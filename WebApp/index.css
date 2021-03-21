@@ -107,38 +107,3 @@ body {
     font-size: 130%;
 }
 
-.grid {
-    margin: 2rem 0;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 3rem;
-    align-items: center;
-    justify-content: center;
-
-}
-
-
-.grid h1 {
-    font-size: 4rem;
-    color: black;
-}
-
-.grid p {
-    margin: 1rem 0;
-}
-
-.dy {
-    margin: auto;
-
-}
-
-.par {
-    margin-left: 5em;
-}
-
-.par h1{
-    padding-left:2em ;
-}

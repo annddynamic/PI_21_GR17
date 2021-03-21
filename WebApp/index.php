@@ -6,11 +6,33 @@
     <link rel="stylesheet" href="dist/simple-lightbox.min.css"
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
-
-
     <meta charset="UTF-8">
     <title>Crime Reporting System</title>
 
+    <style>
+        .grid {
+            margin: 2rem 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 3rem;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .dy {
+            margin: auto;
+        }
+
+
+        .par {
+            margin-left: 15em;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -29,8 +51,8 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#"><span class=" glyphicon glyphicon-eye-open"
-                                                         aria-hidden="true"></span> Home</a></li>
+                    <li class="active"><a href="#">
+                            <span class=" glyphicon glyphicon-eye-open" aria-hidden="true"></span> Home</a></li>
 
                 </ul>
 
@@ -42,11 +64,15 @@
         </div>
     </nav>
 </header>
+
+
 <!--Qetu u kry navbari-->
 
 <div class="grid">
     <div class="par">
-        <h1>Mut</h1>
+        <h1>Mut
+
+        </h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
             consectetur adipisicing elit. Doloremque ex expedita itaque iure nemo odio pariatur provident quos tempora
             velit.
