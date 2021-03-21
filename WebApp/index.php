@@ -27,10 +27,29 @@
             margin: auto;
         }
 
-
         .par {
             margin-left: 15em;
         }
+
+
+        .sliderGrid {
+            display: grid;
+            grid-template-columns:repeat(2, 1fr);
+            grid-gap: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .foto {
+            height: 40em;
+            align-self: center;
+        }
+
+        .foto img {
+            width: 100%;
+            margin-top: 15%;
+        }
+
 
     </style>
 
@@ -108,34 +127,48 @@
             <div class="carousel-inner">
 
                 <div class="item active">
-                    <img src="Asets/img/2.jpg" alt="Los Angeles" style="width:100%;">
-                    <div class="carousel-caption">
-                        <h3>Andi Dika</h3>
-                        <p>Mitrovicali</p>
+                    <div class="sliderGrid">
+
+                        <div class="foto">
+                            <img src="Asets/img/3.jpg">
+                        </div>
+                        <div class="tekst">
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in minima
+                                quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
+                                provident, qui quod reiciendis sapiente sint tempore, veniam!</h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <div class="sliderGrid">
+
+                        <div class="foto">
+                            <img src="Asets/img/3.jpg">
+                        </div>
+                        <div class="tekst">
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in minima
+                                quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
+                                provident, qui quod reiciendis sapiente sint tempore, veniam!</h3>
+                        </div>
+
                     </div>
                 </div>
 
                 <div class="item">
-                    <img src="Asets/img/2.jpg" alt="Chicago" style="width:100%;">
-                    <div class="carousel-caption">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi aut delectus,
-                            distinctio dolores eligendi est et illum laudantium natus neque nihil perferendis possimus
-                            quia quod repudiandae sunt temporibus voluptatum.</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aspernatur aut
-                            consequuntur cupiditate, debitis dolor dolore dolorem eius eligendi expedita laudantium,
-                            neque quam quas, qui recusandae sed sit temporibus tenetur.</p>
-                    </div>
-                </div>
+                    <div class="sliderGrid">
 
-                <div class="item">
-                    <img src="Asets/img/3.jpg" alt="New York" style="width:100%;">
-                    <div class="carousel-caption">
-                        <h3>Adnit gashi</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ducimus eligendi error
-                            ipsum necessitatibus quas quos repellendus! A amet animi autem beatae culpa dolorem eius
-                            eligendi est hic impedit incidunt inventore, itaque libero magnam nihil odio, officiis
-                            perferendis quae quasi qui recusandae reiciendis, rerum sit temporibus totam ut vel
-                            voluptates.</p>
+                        <div class="foto">
+                            <img src="Asets/img/2.jpg">
+                        </div>
+                        <div class="tekst">
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in minima
+                                quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
+                                provident, qui quod reiciendis sapiente sint tempore, veniam!</h3>
+                        </div>
+
                     </div>
                 </div>
 
