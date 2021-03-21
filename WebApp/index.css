@@ -1,73 +1,87 @@
-body{
+body {
 
-    background:#f4f4f4;
+    background: #f4f4f4;
 }
 
-.navbar{
+.navbar {
     border-radius: 0;
 }
 
-.navbar-nav >li {
-    padding-left:20px;
+.navbar-nav > li {
+    padding-left: 20px;
 }
 
-.navbar-right >li {
-    padding-left:20px;
+.navbar-right > li {
+    padding-left: 20px;
 }
 
 .navbar-default {
     background-color: #005b96;
     border-color: #03396c;
 }
+
 .navbar-default .navbar-brand {
     color: #ecf0f1;
 }
+
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
     color: #b3cde0;
 }
+
 .navbar-default .navbar-text {
     color: #ecf0f1;
 }
+
 .navbar-default .navbar-nav > li > a {
     color: #ecf0f1;
 }
+
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: #b3cde0;
 }
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     color: #b3cde0;
     background-color: #03396c;
 }
+
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
     color: #b3cde0;
     background-color: #03396c;
 }
+
 .navbar-default .navbar-toggle {
     border-color: #03396c;
 }
+
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
     background-color: #03396c;
 }
+
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #ecf0f1;
 }
+
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
     border-color: #ecf0f1;
 }
+
 .navbar-default .navbar-link {
     color: #ecf0f1;
 }
+
 .navbar-default .navbar-link:hover {
     color: #b3cde0;
 }
+
 
 
 
@@ -75,10 +89,12 @@ body{
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
         color: #ecf0f1;
     }
+
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
         color: #b3cde0;
     }
+
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
@@ -89,4 +105,40 @@ body{
 
 .glyphicon {
     font-size: 130%;
+}
+
+.grid {
+    margin: 2rem 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.grid h1 {
+    font-size: 4rem;
+    color: black;
+}
+
+.grid p {
+    margin: 1rem 0;
+}
+
+.dy {
+    margin: auto;
+
+}
+
+.par {
+    margin-left: 5em;
+}
+
+.par h1{
+    padding-left:2em ;
 }

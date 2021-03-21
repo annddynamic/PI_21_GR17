@@ -3,9 +3,15 @@
 <head>
     <link rel="stylesheet" href="Asets/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="dist/simple-lightbox.min.css"
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
+
 
     <meta charset="UTF-8">
     <title>Crime Reporting System</title>
+
+
 </head>
 <body>
 <header>
@@ -36,6 +42,24 @@
         </div>
     </nav>
 </header>
+<!--Qetu u kry navbari-->
+
+<div class="grid">
+    <div class="par">
+        <h1>Mut</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Doloremque ex expedita itaque iure nemo odio pariatur provident quos tempora
+            velit.
+        </p>
+        <a href="#" class="btn">Emergjencaaa</a>
+    </div>
+    <div class="dy">
+        <img src="Asets/img/testi.png">
+    </div>
+</div>
+
+
+<div style="height: 100px"></div>
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
@@ -58,7 +82,7 @@
             <div class="carousel-inner">
 
                 <div class="item active">
-                    <img src="Asets/img/1.jpg" alt="Los Angeles" style="width:100%;">
+                    <img src="Asets/img/2.jpg" alt="Los Angeles" style="width:100%;">
                     <div class="carousel-caption">
                         <h3>Andi Dika</h3>
                         <p>Mitrovicali</p>
@@ -103,7 +127,11 @@
         </div>
     </div>
 
-
+    <script src="dist/simple-lightbox.min.js"></script>
+    <script>
+        $(function () {
+            const $gallery = $('.gallery a').simpleLightbox();
+        });</script>
     <div style="height: 400px"></div>
 </body>
 </html>
