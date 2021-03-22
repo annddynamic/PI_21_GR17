@@ -57,7 +57,7 @@
             <a href="AdminPanel/adminPanel.php" class="btn">Emergjencaaa</a>
         </div>
         <div class="hyrje2">
-            <img src="Asets/img/png.png">
+            <img src="Asets/img/test2.png">
         </div>
     </div>
 
