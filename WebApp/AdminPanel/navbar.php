@@ -15,7 +15,13 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="adminPanel.php">Dashboard</a></li>
-                <li><a href="users.php">Users</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Users<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="police.php">Police Officials</a></li>
+                        <li><a href="citizen.php">Citizens</a></li>
+                    </ul>
+                </li>
                 <li><a href="reports.php">Reports</a></li>
                 <li><a href="articles.php">Articles</a></li>
                 <li><a href="feedback.php">Feedback</a></li>

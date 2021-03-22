@@ -176,8 +176,16 @@ body{
 
 .important li{
     padding: 13px;
-    font-size: medium;
-}
-.special >th, td {
     font-size: 16px;
 }
+
+#costum th{
+    position: sticky;
+    background: white;
+    z-index: 5;
+    top: 0;
+}
+
+
+
+

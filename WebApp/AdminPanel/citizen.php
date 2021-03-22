@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>Users</title>
+    <title>Citizens</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
@@ -21,27 +21,27 @@ include "navbar.php";
 ?>
 
 <header id ="header">
-<div class="container">
-    <div class="row">
-        <div class="col-md-10">
-            <h1><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span> Users <small>Manage Users</small></h1>
-        </div>
-        <div class="col-md-2">
-            <div class="dropdown create">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Manage
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a type = "button" data-toggle="modal" data-target="#addUser">Add User</a></li>
-                    <li><a href="#">Review Requests</a></li>
-                    <li><a href="#">Manage Reports</a></li>
-                    <li><a href="#">Add Article</a></li>
-                </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h1><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span> Users <small>Manage Citizens</small></h1>
+            </div>
+            <div class="col-md-2">
+                <div class="dropdown create">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Manage
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a type = "button" data-toggle="modal" data-target="#addUser">Add User</a></li>
+                        <li><a href="#">Review Requests</a></li>
+                        <li><a href="#">Manage Reports</a></li>
+                        <li><a href="#">Add Article</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </header>
 
 <section id="main">
@@ -52,10 +52,21 @@ include "navbar.php";
                     <a href="adminPanel.php" class="list-group-item  " ><span class ="glyphicon glyphicon-cog" aria-hidden=""true> </span>
                         Dashboard
                     </a>
-                    <a href="users.php" class="list-group-item main-color-bg active"><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span>   Users<span class="badge">12</span></a>
+                    <a href="police.php" class="list-group-item main-color-bg active"><span class ="glyphicon glyphicon-user" aria-hidden="" true> </span>   Users<span class="badge">12</span></a>
                     <a href="reports.php" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span>   Reports<span class="badge">12</span></a>
                     <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-book" aria-hidden=""true> </span>   Articles<span class="badge">12</span></a>
                     <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span>   Feedback<span class="badge">12</span></a>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><b>Edit Users</b></h3>
+                    </div>
+                    <div class="panel-body">
+                        <button class="btn btn-default  main-color-bg" >Edit</button>
+                        <button class="btn btn-default  main-color-bg"style="margin-left: 0.6em" >Submit</button>
+
+
+                    </div>
                 </div>
 
             </div>
@@ -63,7 +74,7 @@ include "navbar.php";
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><b>Police Officials</b></h3>
+                        <h3 class="panel-title"><b>Citizen Accounts</b></h3>
                     </div>
                     <div class="panel-body myPanel">
                         <table class="table  table-hover tbl" >
@@ -72,7 +83,7 @@ include "navbar.php";
                                 <th class="main-color-bg">Last Name</th>
                                 <th class="main-color-bg">Address</th>
                                 <th class="main-color-bg">Telephone</th>
-                                <th class="main-color-bg">Delete</th>
+                                <th class="main-color-bg"></th>
                             </tr>
                             <tr>
                                 <td>Jill Smith</td>
@@ -144,7 +155,7 @@ include "navbar.php";
                     </div>
                 </div>
                 <div class="col-md-6 myPanel">
-                    <table class="table  table-hover tbl special">
+                    <table class="table  table-hover tbl" id="costum">
                         <tr>
                             <th class="main-color-bg">On Duty</th>
                             <th class="main-color-bg">Available</th>
@@ -156,6 +167,14 @@ include "navbar.php";
                         <tr>
                             <td>Jill Smith</td>
                             <td>Jill Smith</td>
+                        </tr>
+                        <tr>
+                            <td>Jill Smith</td>
+                            <td>Andi Dika</td>
+                        </tr>
+                        <tr>
+                            <td>Jill Smith</td>
+                            <td>Andi Dika</td>
                         </tr>
                         <tr>
                             <td>Jill Smith</td>
