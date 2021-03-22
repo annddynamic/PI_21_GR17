@@ -19,23 +19,24 @@
 
         }
 
+
         .fa:hover {
             opacity: 0.7;
         }
 
         .fa-facebook {
-            background: #3B5998;
-            color: white;
+            background: white;
+            color: #03396c;
         }
 
         .fa-twitter {
-            background: #55ACEE;
-            color: white;
+            background: white;
+            color: #03396c;
         }
 
-        .fa-yahoo {
-            background: #430297;
-            color: white;
+        .fa-instagram {
+            background: white;
+            color: #03396c;
         }
 
         .ikona{
@@ -48,11 +49,14 @@
         a:link{
             color: #555555 ;
         }
+        a:hover{
+            text-decoration: none;
+        }
 
 
 
         .section-footer {
-            background: #6497b1;
+            background:#03396c;
             color: white;
             padding: 4rem 0;
         }
@@ -130,9 +134,7 @@
         .email-section{
             margin-right: 1em;
         }
-        .contactUs-section{
 
-        }
     </style>
 
 
@@ -144,7 +146,7 @@
             <h2>You can find us: </h2>
             <a href="http://twitter.com" class="fa fa-twitter"></a>
             <a href="http://facebook.com" class="fa fa-facebook"></a>
-            <a href="http://yahoo.com" class="fa fa-yahoo"></a>
+            <a href="http://instagram.com" class="fa fa-instagram"></a>
         </div>
         <div class="contactUs-section">
             <h3>Lorem</h3>
