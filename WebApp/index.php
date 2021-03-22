@@ -23,6 +23,8 @@
         }
 
         .hyrje {
+            font-family: 'Catamaran', serif;
+            font-size: 16px;
             margin-left: 15em;
         }
 
@@ -47,6 +49,11 @@
         .foto img {
             width: 100%;
             margin-top: 15%;
+        }
+
+        .tekst p{
+            font-family: 'Catamaran', serif;
+            font-size: 2em;
         }
 
 
@@ -85,13 +92,14 @@
 
 
 <!--Qetu u kry navbari-->
-<div class="container">
+<div class="container"> <!-- Ky osht per me i qit sendet n mes-->
+
+
     <div class="grid">
         <div class="hyrje">
-            <h1>Mut
-
-            </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
+            <h1>Mut</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
                 consectetur adipisicing elit. Doloremque ex expedita itaque iure nemo odio pariatur provident quos
                 tempora
                 velit.
@@ -99,12 +107,12 @@
             <a href="#" class="btn">Emergjencaaa</a>
         </div>
         <div class="hyrje2">
-            <img src="Asets/img/testi.png">
+            <img src="Asets/img/png.png">
         </div>
     </div>
 
 
-    <div style="height: 100px"></div>
+<!--    <div style="height: 100px"></div>-->
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
             integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
@@ -112,9 +120,9 @@
     <script src="Asets/js/bootstrap.min.js"></script>
 
 
-    <div class="container">
+    <div class="container" >
 
-        <div class="container">
+        <div class="container" >
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -130,13 +138,13 @@
                         <div class="sliderGrid">
 
                             <div class="foto">
-                                <img src="Asets/img/3.jpg">
+                                <img src="Asets/img/3.jpg" alt="Diqka">
                             </div>
                             <div class="tekst">
-                                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
                                     minima
                                     quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                                    provident, qui quod reiciendis sapiente sint tempore, veniam!</h3>
+                                    provident, qui quod reiciendis sapiente sint tempore, veniam!</p>
                             </div>
 
                         </div>
@@ -147,13 +155,13 @@
                         <div class="sliderGrid">
 
                             <div class="foto">
-                                <img src="Asets/img/3.jpg">
+                                <img src="Asets/img/3.jpg" alt="diqka">
                             </div>
                             <div class="tekst">
-                                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
                                     minima
                                     quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                                    provident, qui quod reiciendis sapiente sint tempore, veniam!</h3>
+                                    provident, qui quod reiciendis sapiente sint tempore, veniam!</p>
                             </div>
 
                         </div>
@@ -163,14 +171,14 @@
                         <div class="sliderGrid">
 
                             <div class="foto">
-                                <img src="Asets/img/2.jpg">
+                                <img src="Asets/img/2.jpg" alt="Diqka">
                             </div>
                             <div class="tekst">
-                                <h3>
+                                <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
                                     minima quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam
                                     modi provident, qui quod reiciendis sapiente sint tempore, veniam!
-                                </h3>
+                                </p>
                             </div>
 
                         </div>
