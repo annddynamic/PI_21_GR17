@@ -107,3 +107,114 @@ body {
     font-size: 130%;
 }
 
+.grid {
+    margin: 2rem 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.hyrje {
+    font-family: 'Catamaran', serif;
+    font-size: 16px;
+    margin-left: 15em;
+}
+
+.hyrje2 {
+    margin: auto;
+}
+
+
+.sliderGrid {
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto {
+    height: 40em;
+    align-self: center;
+}
+
+.foto img {
+    width: 100%;
+    margin-top: 15%;
+}
+
+.tekst p{
+    font-family: 'Catamaran', serif;
+    font-size: 2em;
+}
+
+.grid {
+    margin: 2rem 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.hyrje {
+    font-family: 'Catamaran', serif;
+    font-size: 16px;
+    margin-left: 1em
+
+}
+.hyrje h1{
+    font-size: 54px;
+    color: #005b96;
+    margin-bottom: 0.5em;
+}
+
+.hyrje p{
+    color: grey;
+
+}
+
+.hyrje2 {
+    margin: auto;
+}
+
+
+.sliderGrid {
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto {
+    height: 40em;
+    align-self: center;
+}
+
+.foto img {
+    width: 100%;
+    margin-top: 15%;
+}
+
+.tekst p {
+    font-family: 'Catamaran', serif;
+    font-size: 2em;
+}
+
+.fotoElem{
+    width: 100%;
+}
+
+
+
