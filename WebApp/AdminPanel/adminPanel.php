@@ -21,6 +21,8 @@
 include "navbar.php";
 
 ?>
+<body>
+
 
 <header id ="header">
     <div class="container">
@@ -56,18 +58,18 @@ include "navbar.php";
                     </a>
                     <a href="police.php" class="list-group-item"><span class ="glyphicon glyphicon-user" aria-hidden="" true> </span>       Users<span class="badge">12</span></a>
                     <a href="reports.php" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span>    Reports<span class="badge">12</span></a>
-                    <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-book" aria-hidden=""true> </span>    Articles<span class="badge">12</span></a>
+                    <a href="articles.php" class="list-group-item"><span class ="glyphicon glyphicon-book" aria-hidden=""true> </span>    Articles<span class="badge">12</span></a>
                     <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span>    Feedback<span class="badge">12</span></a>
                 </div>
 
                 <div class="well">
-                    <h4>Number of reports resolved</h4>
+                    <h4>Reports resolved</h4>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
                             60%
                         </div>
                     </div>
-                    <h4>lorem lorem</h4>
+                    <h4>Reports this week</h4>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
                             40%
@@ -116,20 +118,14 @@ include "navbar.php";
                         <table class="table  table-hover tbl">
                             <tr>
                                 <th class="main-color-bg">Name</th>
-                                <th class="main-color-bg">Surname</th>
-                                <th class="main-color-bg">Sex</th>
+                                <th class="main-color-bg">Last Name</th>
+                                <th class="main-color-bg">Gender</th>
                                 <th class="main-color-bg">Dob</th>
                                 <th class="main-color-bg">Address</th>
-                                <th class="main-color-bg">City</th>
-                                <th class="main-color-bg">Country</th>
-                                <th class="main-color-bg">ZIP</th>
                                 <th class="main-color-bg">Email</th>
                                 <th class="main-color-bg">Role</th>
                             </tr>
                             <tr>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
                                 <td>Jill Smith</td>
                                 <td>Jill Smith</td>
                                 <td>Jill Smith</td>
@@ -145,9 +141,6 @@ include "navbar.php";
                                 <td>Jill Smith</td>
                                 <td>Jill Smith</td>
                                 <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
                             </tr>
                             <tr>
                                 <td>Andi Dika</td>
@@ -157,9 +150,6 @@ include "navbar.php";
                                 <td>Andi Dika</td>
                                 <td>Andi Dika</td>
                                 <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
                             </tr>
                             <tr>
                                 <td>Andi Dika</td>
@@ -169,14 +159,8 @@ include "navbar.php";
                                 <td>Andi Dika</td>
                                 <td>Andi Dika</td>
                                 <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
                             </tr>
                             <tr>
-                                <td>Adnit King kobra </td>
-                                <td>Adnit King kobra </td>
-                                <td>Adnit King kobra </td>
                                 <td>Adnit King kobra </td>
                                 <td>Adnit King kobra </td>
                                 <td>Adnit King kobra </td>
@@ -264,7 +248,7 @@ include "navbar.php";
     </div>
 </div>
 
-
+</body>
 <!--Review Request-->
 
 <!--Add Article-->
