@@ -12,7 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -61,34 +61,171 @@ include "navbar.php";
             </div>
             <div class="col-md-9">
 
-                <div class="col-md-12 list-group">
-                    <a href="#" class="list-group-item active">
-                        Cras justo odio
-                    </a>
-                    <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item">Morbi leo risus</a>
-                    <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item">Vestibulum at eros</a>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><b>Police Officials</b></h3>
+                    </div>
+                    <div class="panel-body myPanel">
+                        <table class="table  table-hover tbl" >
+                            <tr>
+                                <th class="main-color-bg">Name</th>
+                                <th class="main-color-bg">Last Name</th>
+                                <th class="main-color-bg">Address</th>
+                                <th class="main-color-bg">Telephone</th>
+                                <th class="main-color-bg">Delete</th>
+                            </tr>
+                            <tr>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td><button class="btn btn-danger">DELETE</button></td>
+                            </tr>
+                            <tr>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith</td>
+                                <td>Jill Smith
+                                </td>
+                                <td>Jill Smith</td>
+                                <td><button class="btn btn-danger">DELETE</button></td>
+                            </tr>
+                            <tr>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>Jill Smith</td>
+                                <td>Andi Dika</td>
+                                <td><button class="btn btn-danger">DELETE</button></td>
+                            </tr>
+                            <tr>
+                                <td>Andi Dika</td>
+                                <td>Andi Dika</td>
+                                <td>
+                                    Jill Smith
+                                </td>
+                                <td>
+                                    Andi Dika
+                                </td>
+                                <td><button class="btn btn-danger">DELETE</button></td>
+                            </tr>
+                            <tr>
+                                <td>Adnit King kobra </td>
+                                <td>Adnit King kobra </td>
+                                <td>
+                                    Jill Smith
+                                </td>
+                                <td>
+                                    Adnit King kobra
+                                </td>
+                                <td><button class="btn btn-danger">DELETE</button></td>
+                            </tr>
+                            <tr>
+                                <td>Adnit King kobra </td>
+                                <td>Adnit King kobra </td>
+                                <td>
+                                    Jill Smith
+                                </td>
+                                <td>
+                                    Adnit King kobra
+                                </td>
+                                <td><button class="btn btn-danger">DELETE</button></td>
+                            </tr>
+                            <tr>
+                                <td>Adnit King kobra </td>
+                                <td>Adnit King kobra </td>
+                                <td>
+                                    Jill Smith
+                                </td>
+                                <td>
+                                    Adnit King kobra
+                                </td>
+                                <td><button class="btn btn-danger">DELETE</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6 myPanel">
+                    <table class="table  table-hover tbl special">
+                        <tr>
+                            <th class="main-color-bg">On Duty</th>
+                            <th class="main-color-bg">Available</th>
+                        </tr>
+                        <tr>
+                            <td>Jill Smith</td>
+                            <td>Jill Smith</td>
+                        </tr>
+                        <tr>
+                            <td>Jill Smith</td>
+                            <td>Jill Smith</td>
+                        </tr>
+                        <tr>
+                            <td>Jill Smith</td>
+                            <td>Andi Dika</td>
+                        </tr>
+                        <tr>
+                            <td>Andi Dika</td>
+                            <td>Andi Dika</td>
+                        </tr>
+                        <tr>
+                            <td>Andi Dika</td>
+                            <td>Andi Dika</td>
+                        </tr>
+                        <tr>
+                            <td>Andi Dika</td>
+                            <td>Andi Dika</td>
+                        </tr>
+                    </table>
                 </div>
 
-                <div class="col-md-6 list-group">
-                    <a href="#" class="list-group-item active">
-                        Cras justo odio
-                    </a>
-                    <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item">Morbi leo risus</a>
-                    <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item">Vestibulum at eros</a>
-                </div>
-                <div class="col-md-6 list-group">
-                    <a href="#" class="list-group-item active">
-                        Cras justo odio
-                    </a>
-                    <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item">Morbi leo risus</a>
-                    <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item">Vestibulum at eros</a>
-                </div>
+                <ul class="col-md-6 list-group myPanel important">
+                    <li  class="sticky list-group-item active main-color-bg">
+                        Pending Approval
+                    </li>
+                    <li class="list-group-item">
+                        Dapibus ac facilisis in
+                        <button type="button" class="pull-right btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <button type="button" style="margin-left:115px;" class=" btn btn-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </li>
+                    <li class="list-group-item">
+                        Dapibus ac facilisis in
+                        <button type="button" class="pull-right btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <button type="button" style="margin-left:115px;" class=" btn btn-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </li>
+                    <li class="list-group-item">
+                        Dapibus ac facilisis in
+                        <button type="button" class="pull-right btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <button type="button" style="margin-left:115px;" class=" btn btn-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </li>
+                    <li class="list-group-item">
+                        Dapibus ac facilisis in
+                        <button type="button" class="pull-right btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <button type="button" style="margin-left:115px;" class=" btn btn-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </li>
+                    <li class="list-group-item">
+                        Dapibus ac facilisis in
+                        <button type="button" class="pull-right btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <button type="button" style="margin-left:115px;" class=" btn btn-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -163,4 +300,5 @@ include "navbar.php";
             </form>
         </div>
     </div>
+
 </div>

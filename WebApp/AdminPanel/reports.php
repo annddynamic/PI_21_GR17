@@ -79,7 +79,7 @@ include "navbar.php";
                     <div class="panel-heading">
                         <h3 class="panel-title"><b>EMERGENCY REPORTS</b></h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body myPanel">
                         <table class="table  table-hover tbl" id="emergency">
                             <tr>
                                 <th class="main-color-bg">Name</th>
@@ -103,6 +103,7 @@ include "navbar.php";
                                             <li><a href="#">In process</a></li>
                                             <li><a href="#">Resolved</a></li>
                                         </ul>
+                                    </div>
                                 </td>
                                 <td>
                                     Jill Smith
@@ -125,6 +126,7 @@ include "navbar.php";
                                             <li><a href="#">In process</a></li>
                                             <li><a href="#">Resolved</a></li>
                                         </ul>
+                                    </div>
                                 </td>
                                 <td>
                                     Jill Smith
@@ -147,6 +149,7 @@ include "navbar.php";
                                             <li><a href="#">In process</a></li>
                                             <li><a href="#">Resolved</a></li>
                                         </ul>
+                                    </div>
                                 </td>
                                 <td>
                                     Andi Dika
@@ -170,6 +173,7 @@ include "navbar.php";
                                             <li><a href="#">In process</a></li>
                                             <li><a href="#">Resolved</a></li>
                                         </ul>
+                                    </div>
                                 </td>
                                 <td>
                                     Andi Dika
@@ -192,6 +196,7 @@ include "navbar.php";
                                             <li><a href="#">In process</a></li>
                                             <li><a href="#">Resolved</a></li>
                                         </ul>
+                                    </div>
                                 </td>
                                 <td>
                                     Adnit King kobra
@@ -208,7 +213,7 @@ include "navbar.php";
                     <div class="panel-heading">
                         <h3 class="panel-title"><b>RANDOM REPORTS</b></h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body myPanel">
                         <table class="table  table-hover tbl" id="random">
                             <tr>
                                 <th class="main-color-bg">Name</th>
@@ -232,6 +237,7 @@ include "navbar.php";
                                             <li><a href="#">In process</a></li>
                                             <li><a href="#">Resolved</a></li>
                                         </ul>
+                                    </div>
                                 </td>
                                 <td>
                                     Jill Smith
@@ -254,6 +260,7 @@ include "navbar.php";
                                             <li><a href="#">In process</a></li>
                                             <li><a href="#">Resolved</a></li>
                                         </ul>
+                                    </div>
                                 </td>
                                 <td>
                                     Jill Smith
@@ -276,6 +283,7 @@ include "navbar.php";
                                             <li><a href="#">In process</a></li>
                                             <li><a href="#">Resolved</a></li>
                                         </ul>
+                                    </div>
                                 </td>
                                 <td>
                                     Andi Dika
@@ -299,6 +307,7 @@ include "navbar.php";
                                             <li><a href="#">In process</a></li>
                                             <li><a href="#">Resolved</a></li>
                                         </ul>
+                                    </div>
                                 </td>
                                 <td>
                                     Andi Dika
@@ -321,6 +330,7 @@ include "navbar.php";
                                             <li><a href="#">In process</a></li>
                                             <li><a href="#">Resolved</a></li>
                                         </ul>
+                                    </div>
                                 </td>
                                 <td>
                                     Adnit King kobra

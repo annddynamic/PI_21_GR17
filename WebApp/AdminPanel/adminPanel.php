@@ -112,7 +112,7 @@ include "navbar.php";
                     <div class="panel-heading">
                         <h3 class="panel-title">Latest Users</h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body myPanel">
                         <table class="table  table-hover tbl">
                             <tr>
                                 <th class="main-color-bg">Name</th>

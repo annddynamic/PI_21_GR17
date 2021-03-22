@@ -140,15 +140,20 @@ body{
 /* TABLE*/
 
 
+
 .tbl,th, td{
     border:1px solid lightgray!important;
     border-collapse: collapse!important;
+    background: white;
 }
+
 
 .tbl{
     border-radius: 15px !important;
 
 }
+
+
 
 #footer{
     background:#011f4b;
@@ -158,3 +163,21 @@ body{
     margin-top: 30px;
 }
 
+.myPanel{
+    overflow-y: scroll;
+    height: 310px;
+}
+
+.sticky{
+    position: sticky;
+    background: white;
+    top: 0;
+}
+
+.important li{
+    padding: 13px;
+    font-size: medium;
+}
+.special >th, td {
+    font-size: 16px;
+}
