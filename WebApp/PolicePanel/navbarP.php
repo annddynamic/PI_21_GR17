@@ -10,7 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="StylesP.css">
 
 
 </head>
@@ -26,19 +26,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">AdminsPanel</a>
+            <a class="navbar-brand" href="#">PolicePanel</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="adminPanel.php">Dashboard</a></li>
+                <li class="active"><a href="#">Dashboard</a></li>
                 
-                <li><a href="ReportsP.php">Reports</a></li>
+                <li><a href="#">Reports</a></li>
                 
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Welcome</a></li>
-                <li><a href="login.php">Logout</a></li>
+                <li><a href="#">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
