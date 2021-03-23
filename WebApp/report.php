@@ -62,7 +62,7 @@
                     </div>
                     <img style="margin-left: 2em;" height="400" src="Asets/img/vioence.png" alt="">
                 </div>
-                <div class="col-md-6 col-md-offset-1">
+                <div class="col-md-6 col-md-offset-1 push">
                     <form>
                         <div class="form-group">
                             <label>Name</label>
@@ -82,13 +82,28 @@
                                 <option value="robbery">Robbery</option>
                                 <option value="robbery">Arson</option>
                                 <option value="breakIn">Break In</option>
+                                <option value="corruption">Corruption</option>
+                                <option value="other">Other</option>
                             </select>
 
+
                         </div>
+                        <div class="form-group">
+                            <textarea id="textarea"   placeholder="Add Message"> </textarea>
+                            <div class="pull-right">
+                                <label for="myfile">Select a file:</label>
+                                <input  type="file" id="myfile" name="myfile">
+                            </div>
+                        </div>
+
+
+
+
                         <div class="form-group">
                             <label for="Date">Date</label>
                             <input type="date" class="form-control" name="date">
                         </div>
+
                         <div class="form-group">
                             <label>City</label>
                             <input type="text" class="form-control" placeholder="City">
@@ -97,10 +112,11 @@
                             <label>Country</label>
                             <input type="text" class="form-control" placeholder="Country">
                         </div>
-                        <div class="form-group">
-                            <label>ZIP</label>
-                            <input type="number" class="form-control" placeholder="ZIP">
-                        </div>
+
+
+
+                        <input type="submit" class="btn btn-default main-color-bg " value="Submit">
+
 
                     </form>
                 </div>
