@@ -26,12 +26,12 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-
+                    <li class=""><a href="report.php">Report</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Sign in</a></li>
-                    <li><a href="#">Sign up</a></li>
+                    <li><a href="signIn.php">Sign in</a></li>
+                    <li><a href="signUp.php">Sign up</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
