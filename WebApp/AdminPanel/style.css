@@ -186,11 +186,15 @@ body{
     top: 0;
 }
 
-#navbar li {
-
-
+.specialh4{
+    font-size: 22px;
+    padding-bottom: 10px;
 }
 
+#textarea {
+    width: 330px !important;
+    height: 150px !important;
+}
 
 
 

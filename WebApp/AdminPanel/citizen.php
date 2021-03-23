@@ -164,7 +164,49 @@ include "navbar.php";
                             </div>
                             <div class="panel-body">
                                 <div class="col-md-6">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto consectetur dicta eaque, ex magnam odit pariatur? Animi consequatur explicabo fuga inventore maxime molestias non quas recusandae rerum tempore. Nesciunt.
+                                    <form>
+                                        <h4 style="padding-bottom:10px;">
+                                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                            Send a message to
+                                            <select name="person">
+                                                <option value="admin">Adnit (alfa)</option>
+                                                <option value="police">Arben Dedaj</option>
+                                                <option value="citizen">Andi </option>
+                                            </select>
+                                        </h4>
+                                            <div class="form-group">
+                                                <textarea id="textarea"  class="form-control" placeholder="Add Message"> </textarea>
+                                            </div>
+                                        <button type="submit" class="btn btn-primary main-color-bg">Send</button>
+                                    </form>
+                                </div>
+                                    <ul class="col-md-6 list-group myPanel ">
+                                        <h4 class="specialh4">Sent messaages</h4>
+                                        <li class="list-group-item">
+                                            Dapibus ac facilisis in
+                                            <button type="button" class="btn btn-danger" style="margin-left: 11em">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </button>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Dapibus ac facilisis in
+                                            <button type="button" class="btn btn-danger" style="margin-left: 11em">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </button>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Dapibus ac facilisis in
+                                            <button type="button" class="btn btn-danger" style="margin-left: 11em">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </button>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Dapibus ac facilisis in
+                                            <button type="button" class="btn btn-danger" style="margin-left: 11em">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </button>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
