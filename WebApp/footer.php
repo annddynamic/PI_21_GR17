@@ -26,17 +26,18 @@
 
         .fa-facebook {
             background: white;
-            color: #03396c;
+            color: #005b96;
+
         }
 
         .fa-twitter {
             background: white;
-            color: #03396c  ;
+            color: #005b96 !important;
         }
 
         .fa-instagram {
             background: white;
-            color: #03396c;
+            color: #005b96 !important;
         }
 
         .ikona{
@@ -90,7 +91,7 @@
         .email-form{
             width: 100%;
             display: inline-block;
-            background-color: #b3cde0;
+            background-color: white;
             position: relative;
             border-radius:20px;
             line-height: 0;
@@ -119,7 +120,7 @@
             right: 0;
             width: 45px;
             height: 45px;
-            background-color: dimgrey;
+            background-color: darkgray;
             font-size: 1rem;
             text-align: center;
             margin: 0;
@@ -140,7 +141,7 @@
 
 </head>
 <body>
-<footer class="section-footer">
+<footer class="section-footer main-color-bg">
     <div class="grid">
         <div class="ikona">
             <h2>You can find us: </h2>

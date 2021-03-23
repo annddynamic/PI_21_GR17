@@ -53,18 +53,21 @@
                 tempora
                 velit.
             </p>
-            <a href="AdminPanel/adminPanel.php" class="btn">Emergjencaaa</a>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Doloremque ex expedita itaque iure nemo odio pariatur provident quos
+                tempora
+                velit.
+            </p>
+            <p class="report">Lorem ipsum dolor sit amet, consectetur adipisicing? <a type = "button" data-toggle="modal" data-target="#report">Report now!</a>
         </div>
+
         <div class="hyrje2">
-            <img src="Asets/img/test2.png">
+            <img style="height:33em" src="Asets/img/test2.png">
         </div>
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
-            integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-            crossorigin="anonymous"></script>
-    <script src="Asets/js/bootstrap.min.js"></script>
 
 
 
@@ -85,46 +88,47 @@
                         <div class="sliderGrid">
 
                             <div class="foto">
-                                <img src="Asets/img/3.jpg" alt="Diqka">
+                                <img style="height:30em" src="Asets/img/report.png" alt="Diqka">
                             </div>
                             <div class="tekst">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
-                                    minima
-                                    quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                                    provident, qui quod reiciendis sapiente sint tempore, veniam!</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="item">
-                        <div class="sliderGrid">
-
-                            <div class="foto">
-                                <img src="Asets/img/3.jpg" alt="diqka">
-                            </div>
-                            <div class="tekst">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
-                                    minima
-                                    quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                                    provident, qui quod reiciendis sapiente sint tempore, veniam!</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="sliderGrid">
-
-                            <div class="foto">
-                                <img src="Asets/img/2.jpg" alt="Diqka">
-                            </div>
-                            <div class="tekst">
+                                <h2> lorem</h2>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
-                                    minima quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam
-                                    modi provident, qui quod reiciendis sapiente sint tempore, veniam!
+                                    minima
+                                    quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
+                                    provident, qui quod  veniam!
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
+                                    minima
+                                    quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
+                                    provident, qui quod  veniam!
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="item">
+                        <div class="sliderGrid">
+
+                            <div class="foto">
+                                <img style="height:30em" src="Asets/img/robbery.png" alt="diqka">
+                            </div>
+                            <div class="tekst">
+                                <h2> lorem</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
+                                    minima
+                                    quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
+                                    provident, qui quod  veniam!
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
+                                    minima
+                                    quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
+                                    provident, qui quod  veniam!
                                 </p>
                             </div>
 
@@ -135,13 +139,47 @@
                         <div class="sliderGrid">
 
                             <div class="foto">
-                                <img src="Asets/img/3.jpg" alt="diqka">
+                                <img style="height:30em" src="Asets/img/vioence.png" alt="Diqka">
                             </div>
                             <div class="tekst">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
+                                <h2> lorem</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
                                     minima
                                     quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                                    provident, qui quod reiciendis sapiente sint tempore, veniam!</p>
+                                    provident, qui quod  veniam!
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
+                                    minima
+                                    quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
+                                    provident, qui quod  veniam!
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="sliderGrid">
+
+                            <div class="foto">
+                                <img style="height:30em" src="Asets/img/corruption.png" alt="diqka">
+                            </div>
+                            <div class="tekst">
+                                <h2> lorem</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
+                                    minima
+                                    quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
+                                    provident, qui quod  veniam!
+                                </p>
+                                <p >
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
+                                    minima
+                                    quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
+                                    provident, qui quod  veniam!
+                                </p>
                             </div>
 
                         </div>
@@ -202,6 +240,84 @@
 <!-- Footeri -->
 
     <?php include_once "footer.php"?>
+
+<!--modali per report-->
+<div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add User</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" placeholder="Last Nme">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+
+                        <label for="Gender">Gender</label>
+                        <select class="form-control" name="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Date">Date</label>
+                        <input type="date" class="form-control" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" class="form-control" placeholder="City">
+                    </div>
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" class="form-control" placeholder="Country">
+                    </div>
+                    <div class="form-group">
+                        <label>ZIP</label>
+                        <input type="number" class="form-control" placeholder="ZIP">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="Gender">Role</label>
+                        <select class="form-control" name="role">
+                            <option value="admin">Admin</option>
+                            <option value="police">Police</option>
+                            <option value="citizen">Citizen</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+            crossorigin="anonymous"></script>
+    <script src="Asets/js/bootstrap.min.js"></script>
+
+
+
+
 </body>
 </html>
 

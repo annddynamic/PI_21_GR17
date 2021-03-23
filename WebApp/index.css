@@ -131,18 +131,6 @@ body {
 }
 
 
-.sliderGrid {
-    display: grid;
-    grid-template-columns:repeat(2, 1fr);
-    grid-gap: 1rem;
-    align-items: center;
-    justify-content: center;
-}
-
-.foto {
-    height: 40em;
-    align-self: center;
-}
 
 
 .tekst p{
@@ -165,7 +153,6 @@ body {
 
 .hyrje {
     font-family: 'Catamaran', serif;
-    font-size: 16px;
     margin-left: 1em
 
 }
@@ -177,11 +164,13 @@ body {
 
 .hyrje p{
     color: grey;
+    font-size: 18px;
 
 }
 
-.hyrje2 {
-    margin: auto;
+.hyrje2, image{
+    padding-top: 110px;
+    padding-left:24px ;
 }
 
 
@@ -189,8 +178,8 @@ body {
     display: grid;
     grid-template-columns:repeat(2, 1fr);
     grid-gap: 1rem;
-    align-items: center;
-    justify-content: center;
+    /*align-items: center;*/
+    /*justify-content: center;*/
 }
 
 .foto {
@@ -199,19 +188,38 @@ body {
 }
 
 .foto img {
-    width: 100%;
-    margin-top: 15%;
+    width: 80%;
+    margin-top: 10%;
+
 
 }
 
+.tekst{
+    padding-top: 22px;
+}
 .tekst p {
     font-family: 'Catamaran', serif;
-    font-size: 2em;
+    font-size: 18px;
+    margin-left: 2em;
 }
 
 .fotoElem{
     width: 100%;
 }
 
+.main-color-bg{
+    background-color: #005b96  !important;
+    border-color: #03396c !important;
+    color:#ffffff !important;
+}
 
+.report{
+    padding-top: 10px !important;
+    font-size: 15px !important;
+}
 
+.tekst h2 {
+    color: #005b96;
+    padding-top: 5px;
+    padding-right:5px ;
+}
