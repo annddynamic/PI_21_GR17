@@ -41,7 +41,7 @@
 
 <!--Qetu u kry navbari-->
 
-<div class="container">
+<div class="container push2">
 
     <div class="grid">
         <div class="hyrje">

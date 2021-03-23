@@ -223,10 +223,13 @@ body {
 .push{
     margin-top: 5em;
 }
+.push2{
+    margin-top: -2em;
+}
 .emergenciesButton{
     cursor: pointer;
 }
 #textarea {
-    width: 250px !important;
-    height: 50px !important;
+    width: 270px !important;
+    height: 100px !important;
 }

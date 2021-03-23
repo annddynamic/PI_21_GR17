@@ -90,9 +90,9 @@
                         </div>
                         <div class="form-group">
                             <textarea id="textarea"   placeholder="Add Message"> </textarea>
-                            <div class="pull-right">
-                                <label for="myfile">Select a file:</label>
-                                <input  type="file" id="myfile" name="myfile">
+                            <div class="pull-right ">
+
+                                <input type="file" id="myfile" name="myfile">
                             </div>
                         </div>
 
@@ -115,7 +115,7 @@
 
 
 
-                        <input type="submit" class="btn btn-default main-color-bg " value="Submit">
+                        <input type="submit" class="btn btn-default main-color-bg btn-lg " value="Submit">
 
 
                     </form>
