@@ -25,8 +25,7 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">
-                            <span class=" glyphicon glyphicon-eye-open" aria-hidden="true"></span> Home</a></li>
+                    <li class="active"><a href="#">Home</a></li>
 
                 </ul>
 
@@ -164,7 +163,7 @@
 
         <div class="grid">
 
-            <div class="ementi1">
+            <div class="elementi1">
                 <img class="fotoElem" src="Asets/img/3.jpg" alt="Diqka">
                 <p>
                     I kerkuari par
@@ -172,7 +171,7 @@
                     reiciendis rem sed temporibus totam voluptates.
                 </p>
             </div>
-            <div class="ementi2">
+            <div class="elementi2">
                 <img class="fotoElem" src="Asets/img/3.jpg" alt="Diqka">
                 <p>
                     I kerkuari par
@@ -180,7 +179,7 @@
                     reiciendis rem sed temporibus totam voluptates.
                 </p>
             </div>
-            <div class="ementi3">
+            <div class="elementi3">
                 <img class="fotoElem" src="Asets/img/3.jpg" alt="Diqka">
                 <p>
                     I kerkuari par
@@ -188,7 +187,7 @@
                     reiciendis rem sed temporibus totam voluptates.
                 </p>
             </div>
-            <div class="ementi4">
+            <div class="elementi4">
                 <img class="fotoElem" src="Asets/img/3.jpg" alt="Diqka">
                 <p>
                     I kerkuari par
