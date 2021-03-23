@@ -31,7 +31,7 @@
 
         .fa-twitter {
             background: white;
-            color: #03396c;
+            color: #03396c  ;
         }
 
         .fa-instagram {

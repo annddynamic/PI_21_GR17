@@ -144,10 +144,6 @@ body {
     align-self: center;
 }
 
-.foto img {
-    width: 100%;
-    margin-top: 15%;
-}
 
 .tekst p{
     font-family: 'Catamaran', serif;
@@ -205,6 +201,7 @@ body {
 .foto img {
     width: 100%;
     margin-top: 15%;
+
 }
 
 .tekst p {
