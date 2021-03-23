@@ -65,47 +65,37 @@ include "navbar.php";
                     <div class="col-md-9">
                         <div class="panel panel-default">
                             <div class="panel-heading main-color-bg">
-                                <h3 class="panel-title">Users</h3>
+                                <h3 class="panel-title">Add/Remove articles</h3>
                             </div>
                             <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Filter Page...">
-                                    </div>
-                                </div>
-                                <br>
+
                                 <table class="table table-striped table-hover">
                                     <tr>
                                         <th>Titles</th>
-                                        <th>Published</th>
                                         <th>Created</th>
                                         <th></th>
                                     </tr>
 
                                     <tr>
                                         <td>Home</td>
-                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                         <td>Dec 12, 2016</td>
                                         <td><a class="btn btn-default" href="#">Edit</a><a class="btn btn-danger" href="#">Delete</a> </td>
                                     </tr>
 
                                     <tr>
                                         <td>About</td>
-                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                         <td>Dec 13, 2016</td>
                                         <td><a class="btn btn-default" href="#">Edit</a><a class="btn btn-danger" href="#">Delete</a> </td>
                                     </tr>
 
                                     <tr>
                                         <td>Service</td>
-                                        <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
                                         <td>Dec 14, 2016</td>
                                         <td><a class="btn btn-default" href="#">Edit</a><a class="btn btn-danger" href="#">Delete</a> </td>
                                     </tr>
 
                                     <tr>
                                         <td>Contact</td>
-                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                         <td>Dec 13, 2016</td>
                                         <td><a class="btn btn-default" href="#">Edit</a><a class="btn btn-danger" href="#">Delete</a> </td>
                                     </tr>
@@ -117,6 +107,8 @@ include "navbar.php";
                 </div>
             </div>
         </section>
+
+        <div style="height: 150px"></div>
         <footer id="footer">
             <pr>Copyright Adminstrap, &copy; 2021</pr>
         </footer>
