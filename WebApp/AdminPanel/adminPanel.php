@@ -39,7 +39,6 @@ include "navbar.php";
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li><a type = "button" data-toggle="modal" data-target="#addUser">Add User</a></li>
                         <li><a type = "button" data-toggle="modal" data-target="#reviewReq">Review Requests</a></li>
-                        <li><a href="#">Manage Reports</a></li>
                         <li><a href="#">Add Article</a></li>
                     </ul>
                 </div>

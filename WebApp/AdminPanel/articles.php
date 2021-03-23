@@ -36,8 +36,7 @@ include "navbar.php";
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a type = "button" data-toggle="modal" data-target="#addUser">Add User</a></li>
-                                <li><a href="#">Review Requests</a></li>
-                                <li><a href="#">Manage Reports</a></li>
+                                <li><a type = "button" data-toggle="modal" data-target="#reviewReq">Review Requests</a></li>
                                 <li><a href="#">Add Article</a></li>
                             </ul>
                         </div>
@@ -177,6 +176,76 @@ include "navbar.php";
                             <button type="submit" class="btn btn-primary">Add User</button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+
+        <!--    ReviewRequest MOdal-->
+
+        <div class="modal fade" id="reviewReq" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Add User</h4>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="list-group">
+                            <li  class="sticky list-group-item active main-color-bg">
+                                Pending Approval
+                            </li>
+                            <li class="list-group-item">
+                                Dapibus ac facilisis in
+                                <button type="button" class="pull-right btn btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                                <button type="button" style="margin-left:22em;" class=" btn btn-success">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                Dapibus ac facilisis in
+                                <button type="button" class="pull-right btn btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                                <button type="button" style="margin-left:22em;" class=" btn btn-success">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                Dapibus ac facilisis in
+                                <button type="button" class="pull-right btn btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                                <button type="button" style="margin-left:22em;" class=" btn btn-success">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                Dapibus ac facilisis in
+                                <button type="button" class="pull-right btn btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                                <button type="button" style="margin-left:22em;" class=" btn btn-success">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                Dapibus ac facilisis in
+                                <button type="button" class="pull-right btn btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                                <button type="button" style="margin-left:22em;" class=" btn btn-success">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add User</button>
+                    </div>
                 </div>
             </div>
         </div>
