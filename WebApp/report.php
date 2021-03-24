@@ -32,7 +32,7 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="signIn.php">Sign in</a></li>
-                            <li><a href="signUp.php">Sign up</a></li>
+                            <li><a type = "button" data-toggle="modal" data-target="#andi">Sign Up</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -124,6 +124,41 @@
 
         </div>
 
+
+        <div class="modal fade" id="andi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header main-color-bg">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Account Type</h4>
+                        </div>
+                        <div class="modal-body" style="background: #f4f4f4">
+
+                            <h2>What type of account do you want to create ?</h2>
+                            <hr>
+
+                            <div class="text-center">
+                                <a href="signUpPolice.php"class="btn btn-default btn-lg main-color-bg" role="button">Police</a>
+                                <a href="signUpCitizen.php"class="btn btn-default  btn-lg main-color-bg" role="button">Citizen</a>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <?php include_once "footer.php"?>
+
+
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+                integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+                crossorigin="anonymous"></script>
+        <script src="Asets/js/bootstrap.min.js"></script>
+
 
   </body>

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <title>Sign in</title>
+    <title>Sign Up</title>
 
     <style>
 
@@ -17,7 +17,7 @@
             height: 500px !important;
             width: 500px;
             margin: 65px auto;
-            padding: 100px 0px;
+            /*padding: 100px 0px;*/
         }
         .login-form form {
             margin-bottom: 15px;
@@ -62,8 +62,7 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="signIn.php">Sign in</a></li>
-                    <li><a type = "button" data-toggle="modal" data-target="#signUp" >Sign up</a></li>
+                    <li><a href="signIn.php">Sign in</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -74,7 +73,7 @@
 <body>
 <div class="login-form">
     <form action="" method="post">
-        <h2 class="text-center">Sign in</h2>
+        <h2 class="text-center">Sign Up <small>Police account</small></h2>
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Username" required="required">
         </div>
@@ -89,46 +88,7 @@
             <a href="#" class="pull-right">Forgot Password?</a>
         </div>
     </form>
-    <p class="text-center"><a href="signUpPolice.php">Create an Account</a></p>
 </div>
-
-
-
-
-
-<div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form>
-                <div class="modal-header main-color-bg">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Account Type</h4>
-                </div>
-                <div class="modal-body" style="background: #f4f4f4">
-
-                    <h2>What type of account do you want to create ?</h2>
-                    <hr>
-
-                    <div class="text-center">
-                        <a href="signUpPolice.php"class="btn btn-default btn-lg main-color-bg" role="button">Police</a>
-                        <a href="signUpCitizen.php"class="btn btn-default  btn-lg main-color-bg" role="button">Citizen</a>
-
-                    </div>
-
-                </div>
-
-            </form>
-        </div>
-    </div>
-</div>
-
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-        crossorigin="anonymous"></script>
-<script src="Asets/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
