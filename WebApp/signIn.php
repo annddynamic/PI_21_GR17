@@ -19,7 +19,7 @@
 
         .login-form {
             width: 500px;
-            margin: 30px auto;
+            margin: 1px auto;
             padding: 100px 0px;
         }
         .login-form form {
