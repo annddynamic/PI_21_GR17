@@ -32,15 +32,82 @@ include "navbar.php";
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a type = "button" data-toggle="modal" data-target="#addUser">Add User</a></li>
-                                <li><a type = "button" data-toggle="modal" data-target="#reviewReq">Review Requests</li>
-                                <li><a href="#">Add Article</a></li>
+                                <li><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#addUser">Add User</a></li>
+                                <li><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#reviewReq">Review Requests</a></li>
+                                <li><a class="emergenciesButton" href="#">Add Article</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+
+        <section id="main">
+            <div class ="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="list-group">
+                            <a href="adminPanel.php" class="list-group-item " ><span class ="glyphicon glyphicon-cog" aria-hidden=""true> </span>
+                                Dashboard
+                            </a>
+                            <a href="police.php" class="list-group-item "><span class ="glyphicon glyphicon-user" aria-hidden="" true> </span>   Users<span class="badge">12</span></a>
+                            <a href="reports.php" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span>   Reports<span class="badge">12</span></a>
+                            <a href="articles.php" class="list-group-item "><span class ="glyphicon glyphicon-book" aria-hidden=""true> </span>   Articles<span class="badge">12</span></a>
+                            <a href="feedback.php" class="list-group-item active main-color-bg"><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span>   Feedback<span class="badge">12</span></a>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-9">
+                        <div class="panel panel-default">
+                            <div class="panel-heading main-color-bg">
+                                <h3 class="panel-title">All feedback</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <table class="table table-striped table-hover">
+                                    <tr>
+                                        <th>Feedback</th>
+                                        <th>Created</th>
+                                        <th></th>
+                                    </tr>
+
+                                    <tr>
+                                        <td>lorem10Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, reprehenderit!</td>
+                                        <td>Dec 12, 2016</td>
+                                        <td><a class="btn btn-primary center-block" href="#">Delete</a> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, reprehenderit!</td>
+                                        <td>Dec 13, 2016</td>
+                                        <td><a class="btn btn-primary center-block" href="#">Delete</a> </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, reprehenderit!</td>
+
+                                        <td>Dec 14, 2016</td>
+                                        <td><a class="btn btn-primary center-block" href="#">Delete</a> </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, reprehenderit!</td>
+
+                                        <td>Dec 13, 2016</td>
+                                        <td><a class="btn btn-primary center-block" href="#">Delete</a> </td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
 

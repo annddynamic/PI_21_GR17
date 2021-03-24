@@ -13,10 +13,13 @@
 
     <style>
 
+        *{
+            overflow-y: hidden;
+        }
+
         .login-form {
-            height: 500px !important;
             width: 500px;
-            margin: 65px auto;
+            margin: 30px auto;
             padding: 100px 0px;
         }
         .login-form form {
@@ -63,7 +66,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="signIn.php">Sign in</a></li>
-                    <li><a type = "button" data-toggle="modal" data-target="#signUp" >Sign up</a></li>
+                    <li><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#signUp" >Sign up</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -89,7 +92,7 @@
             <a href="#" class="pull-right">Forgot Password?</a>
         </div>
     </form>
-    <p class="text-center"><a href="signUpPolice.php">Create an Account</a></p>
+    <p class="text-center"><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#signUp" > Create an Account</a></p>
 </div>
 
 

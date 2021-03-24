@@ -32,7 +32,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="signIn.php">Sign in</a></li>
-                    <li><a type = "button" data-toggle="modal" data-target="#signUp" >Sign up</a></li>
+                    <li><a class="emergenciesButton"  type = "button" data-toggle="modal" data-target="#signUp" >Sign up</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
