@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/jpg" href="Asets/img/fav.png"/>
     <title>Crime Reporting System</title>
 
 </head>
@@ -137,7 +138,7 @@
                 <div class="sliderGrid">
 
                     <div class="foto">
-                        <img style="height:30em" src="Asets/img/vioence.png" alt="Diqka">
+                        <img style="height:30em" src="Asets/img/fotoEre.png" alt="Diqka">
                     </div>
                     <div class="tekst">
                         <h2> lorem</h2>
