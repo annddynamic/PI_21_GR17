@@ -77,17 +77,43 @@
     <form action="" method="post">
         <h2 class="text-center">Sign Up <small>Citizen account</small></h2>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required="required">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="Name" required="required">
         </div>
         <div class="form-group">
+            <label>Surname</label>
+            <input type="text" class="form-control" placeholder="Surname" required="required">
+        </div>
+
+        <div class="form-group">
+            <label>Birthday</label>
+            <input type="date" class="form-control"  required="required">
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <select class="form-control" required="required">
+                <option value aria-disabled="true" >Select your gender..</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label>Password</label>
             <input type="password" class="form-control" placeholder="Password" required="required">
         </div>
+
+
+
+
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            <button type="submit" class="btn btn-primary btn-block">Sign up</button>
         </div>
+
         <div class="clearfix">
-            <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-            <a href="#" class="pull-right">Forgot Password?</a>
+            <label class="pull-left checkbox-inline"><input type="checkbox" required="required">I accept terms and agreement</label>
         </div>
     </form>
 </div>

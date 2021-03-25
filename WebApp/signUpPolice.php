@@ -79,13 +79,29 @@
     <form action="" method="post">
         <h2 class="text-center">Sign Up <small>Police account</small></h2>
         <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" placeholder="Name" required="required">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="First Name" required="required">
         </div>
         <div class="form-group">
-            <label>Surname</label>
-            <input type="text" class="form-control" placeholder="Surname" required="required">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" required="required">
         </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" required="required">
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" placeholder="Address">
+        </div>
+
+        <h5 style="font-weight: bold; text-align: center">Or</h5>
+
+        <button class="btn-block btn btn-default" onclick="getLocation()">Get your location automatically</button>
+
+        <p id="demo"></p>
+
 
         <div class="form-group">
             <label>Birthday</label>
@@ -100,11 +116,7 @@
                 <option value="Other">Other</option>
             </select>
         </div>
-        <div class="form-group">
-            <label>Police ID</label>
-            <input type="text" class="form-control" placeholder="Police ID" required="required" minlength="10"
-                   maxlength="10">
-        </div>
+
 
         <div class="form-group">
             <label>Password</label>
@@ -123,6 +135,24 @@
         </div>
     </form>
 </div>
+
+<script>
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+    }
+
+</script>
 </body>
 
 </html>
