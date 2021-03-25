@@ -5,6 +5,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="index.css">
+        <link rel="shortcut icon" type="image/jpg" href="Asets/img/fav.png"/>
+
         <meta charset="UTF-8">
         <title>Crime Reporting System</title>
 
