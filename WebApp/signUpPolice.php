@@ -21,26 +21,28 @@
             margin: 65px auto;
             /*padding: 100px 0px;*/
         }
+
         .login-form form {
             margin-bottom: 15px;
             background: #f7f7f7;
             box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
             padding: 60px;
         }
+
         .login-form h2 {
             margin: 0 0 15px;
         }
+
         .form-control, .btn {
             min-height: 38px;
             border-radius: 2px;
         }
+
         .btn {
             font-size: 15px;
             font-weight: bold;
         }
     </style>
-
-
 
 
 </head>
@@ -77,17 +79,47 @@
     <form action="" method="post">
         <h2 class="text-center">Sign Up <small>Police account</small></h2>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required="required">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="Name" required="required">
         </div>
         <div class="form-group">
+            <label>Surname</label>
+            <input type="text" class="form-control" placeholder="Surname" required="required">
+        </div>
+
+        <div class="form-group">
+            <label>Birthday</label>
+            <input type="date" class="form-control"  required="required">
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <select class="form-control" required="required">
+                <option value aria-disabled="true" >Select your gender..</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Police ID</label>
+            <input type="text" class="form-control" placeholder="Police ID" required="required" minlength="10"
+                   maxlength="10">
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
             <input type="password" class="form-control" placeholder="Password" required="required">
         </div>
+
+
+
+
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            <button type="submit" class="btn btn-primary btn-block">Sign up</button>
         </div>
+
         <div class="clearfix">
-            <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-            <a href="#" class="pull-right">Forgot Password?</a>
+            <label class="pull-left checkbox-inline"><input type="checkbox" required="required">I accept terms and agreement</label>
         </div>
     </form>
 </div>
