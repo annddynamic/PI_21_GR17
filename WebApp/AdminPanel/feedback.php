@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/jpg" href="/WebApp/Asets/img/fav.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
 
 
 
@@ -69,38 +69,44 @@ include "navbar.php";
 
                                 <table class="table table-striped table-hover">
                                     <tr>
-                                        <th>Feedback</th>
-                                        <th>Created</th>
+                                        <th>From</th>
+                                        <th>Title</th>
+                                        <th>Content</th>
+                                        <th>Received</th>
                                         <th></th>
                                     </tr>
 
                                     <tr>
+                                        <td>Andi</td>
+                                        <td>eeee</td>
                                         <td>lorem10Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, reprehenderit!</td>
                                         <td>Dec 12, 2016</td>
                                         <td><a class="btn btn-primary center-block" href="#">Delete</a> </td>
                                     </tr>
 
+
                                     <tr>
+                                        <td>Andi</td>
+                                        <td>Andi</td>
                                         <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, reprehenderit!</td>
                                         <td>Dec 13, 2016</td>
                                         <td><a class="btn btn-primary center-block" href="#">Delete</a> </td>
-
                                     </tr>
 
                                     <tr>
+                                        <td>Andi</td>
+                                        <td>Andi</td>
                                         <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, reprehenderit!</td>
-
                                         <td>Dec 14, 2016</td>
                                         <td><a class="btn btn-primary center-block" href="#">Delete</a> </td>
-
                                     </tr>
 
                                     <tr>
+                                        <td>Andi</td>
+                                        <td>Andi</td>
                                         <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, reprehenderit!</td>
-
                                         <td>Dec 13, 2016</td>
                                         <td><a class="btn btn-primary center-block" href="#">Delete</a> </td>
-
                                     </tr>
                                 </table>
                             </div>
@@ -112,6 +118,11 @@ include "navbar.php";
         </section>
 
 
+        <!-- FOOOTER-->
+
+        <footer id="footer">
+            <p>Copyright Adminstrap, &copy; 2021</p>
+        </footer>
 
 
 

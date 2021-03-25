@@ -199,4 +199,9 @@ body{
     cursor: pointer !important;
 }
 
+.textarea{
+    width: 380px !important;
+    height: 241px !important;
+}
+
 

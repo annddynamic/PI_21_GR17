@@ -11,7 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/jpg" href="/WebApp/Asets/img/fav.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
 
     <link rel="stylesheet" href="style.css">
 

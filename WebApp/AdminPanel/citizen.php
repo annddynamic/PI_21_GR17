@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/jpg" href="/WebApp/Asets/img/fav.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
 
 
 
@@ -216,7 +216,7 @@ include "navbar.php";
             </div>
         </section>
         <footer id="footer">
-            <pr>Copyright Adminstrap, &copy; 2021</pr>
+            <p>Copyright Adminstrap, &copy; 2021</p>
         </footer>
 
         <!--Modals-->

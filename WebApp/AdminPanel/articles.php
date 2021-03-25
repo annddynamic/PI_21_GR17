@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/jpg" href="/WebApp/Asets/img/fav.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
 
 
     <title>Articles</title>
@@ -51,67 +51,83 @@ include "navbar.php";
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-
                 <div class="list-group">
-                    <a href="adminPanel.php" class="list-group-item "><span class="glyphicon glyphicon-cog"
-                                                                            aria-hidden="" true> </span>
+                    <a href="adminPanel.php" class="list-group-item  " ><span class ="glyphicon glyphicon-cog" aria-hidden=""true> </span>
                         Dashboard
                     </a>
-                    <a href="police.php" class="list-group-item "><span class="glyphicon glyphicon-user" aria-hidden=""
-                                                                        true> </span> Users<span class="badge">12</span></a>
-                    <a href="reports.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                                                                        aria-hidden="" true> </span> Reports<span
-                                class="badge">12</span></a>
-                    <a href="feedback.php" class="list-group-item active main-color-bg"><span
-                                class="glyphicon glyphicon-book" aria-hidden="" true> </span> Articles<span
-                                class="badge">12</span></a>
-                    <a href="feedback.php" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                                                                         aria-hidden="" true> </span> Feedback<span
-                                class="badge">12</span></a>
-                    <br>
-                    <div class="panel panel-default">
-
-                        <div class="panel-heading main-color-bg">
-
-                            <h3 class="panel-title">Add/Remove articles</h3>
-                        </div>
-                        <div class="panel-body">
-
-                            <table class="table table-striped table-hover">
-                                <tr>
-                                    <th>Titles</th>
-                                    <th>Created</th>
-                                </tr>
-
-                                <tr>
-                                    <td>Home</td>
-                                    <td>Dec 12, 2016</td>
-                                </tr>
-
-                                <tr>
-                                    <td>About</td>
-                                    <td>Dec 13, 2016</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Service</td>
-                                    <td>Dec 14, 2016</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Contact</td>
-                                    <td>Dec 13, 2016</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-
+                    <a href="police.php" class="list-group-item main-color-bg active"><span class ="glyphicon glyphicon-user" aria-hidden="" true> </span>   Users<span class="badge">12</span></a>
+                    <a href="reports.php" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span>   Reports<span class="badge">12</span></a>
+                    <a href="articles.php" class="list-group-item"><span class ="glyphicon glyphicon-book" aria-hidden=""true> </span>   Articles<span class="badge">12</span></a>
+                    <a href="feedback.php" class="list-group-item"><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span>   Feedback<span class="badge">12</span></a>
                 </div>
-
+                <div class="myPanel">
+                        <table class="table  table-hover tbl" id="costum">
+                            <tr>
+                                <th class="main-color-bg">Title</th>
+                                <th class="main-color-bg">Published</th>
+                            </tr>
+                            <tr>
+                                <td>Jill Smith</td>
+                                <td>3/25/2021</td>
+                            </tr>
+                            <tr>
+                                <td>Jill Smith</td>
+                                <td>3/25/2021</td>
+                            </tr>
+                            <tr>
+                                <td>Jill Smith</td>
+                                <td>3/25/2021</td>
+                            </tr>
+                            <tr>
+                                <td>Jill Smith</td>
+                                <td>3/25/2021</td>
+                            </tr>
+                            <tr>
+                                <td>Jill Smith</td>
+                                <td>3/25/2021</td>
+                            </tr>
+                        </table>
+                </div>
 
             </div>
             <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="main-color-bg panel-heading">
+                        <h3 class="panel-title">Add content to your Page</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="picture">Select your image<small> image list</small></label>
 
+                                    <select size="5" id="characters" class="form-control">
+                                        <option class="fotot">Violence</option>
+                                        <option class="fotot">Corruption</option>
+                                        <option class="fotot">Robbery</option>
+                                        <option class="fotot">Report</option>
+                                    </select>
+                                </div>
+                                <div class="foto" style="border: 1px solid lightgray">
+                                    <img id="foto" height="200" src="../Asets/img/vioence.png" class="center-block" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6" >
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" class="form-control" placeholder="Add Title">
+                                </div>
+                                <div class="form-group">
+                                    <label>Content</label>
+                                    <textarea class="form-control textarea" placeholder="Add Message"> </textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <input style="margin-top:4em; margin-left: 1em;" type="submit" class="btn btn-lg main-color-bg" value="Add">
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -119,8 +135,45 @@ include "navbar.php";
 
 <div style="height: 150px"></div>
 <footer id="footer">
-    <pr>Copyright Adminstrap, &copy; 2021</pr>
+    <p>Copyright Adminstrap, &copy; 2021</p>
 </footer>
+
+<script>
+
+    var selectat =document.querySelectorAll(".fotot");
+    console.log(selectat);
+    let fotoja =document.getElementById("foto");
+
+    var imgSources=[];
+    for(let i=0; i<selectat.length; i++){
+        if(selectat[i].innerHTML=="Violence"){
+            imgSources.push("../Asets/img/vioence.png");
+        }else if(selectat[i].innerHTML=="Corruption"){
+            imgSources.push("../Asets/img/corruption.png");
+
+        }else if(selectat[i].innerHTML=="Robbery"){
+            imgSources.push("../Asets/img/robbery.png");
+
+        }else{
+            imgSources.push("../Asets/img/report.png");
+
+        }
+
+        console.log(imgSources)
+
+        for(let i=0; i<selectat.length; i++){
+
+            selectat[i].addEventListener('click', nderro);
+
+            function nderro(){
+                fotoja.src=imgSources[i];
+
+            }
+        }
+
+    }
+
+</script>
 
 <!--Modals-->
 <!--Add User-->
@@ -190,6 +243,7 @@ include "navbar.php";
         </div>
     </div>
 </div>
+
 
 <!--    ReviewRequest MOdal-->
 

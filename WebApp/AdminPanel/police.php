@@ -14,7 +14,7 @@
     <link rel="shortcut icon" type="image/jpg" href="/WebApp/Asets/img/fav.png"/>
     <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
 
 </head>
 
@@ -72,7 +72,6 @@ include "navbar.php";
                                 <button class="btn btn-default  main-color-bg" type="submit" style="margin-left: 0.6em" >Submit</button>
                             </div>
                         </div>
-
                     </div>
                     <div class="col-md-9">
 
