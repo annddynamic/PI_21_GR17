@@ -148,6 +148,7 @@ include "navbar.php";
 
         </script>
 
+    <?php include "modals.php" ?>
 
     </body>
 
