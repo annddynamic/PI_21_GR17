@@ -94,21 +94,30 @@ include "navbar.php";
                                         <td>Jill Smith</td>
                                         <td>Jill Smith</td>
                                         <td>Jill Smith</td>
-                                        <td><button class="btn btn-danger">DELETE</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Jill Smith</td>
                                         <td>Jill Smith</td>
                                         <td>Jill Smith</td>
                                         <td>Jill Smith</td>
-                                        <td><button class="btn btn-danger">DELETE</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Andi Dika</td>
                                         <td>Andi Dika</td>
                                         <td>Jill Smith</td>
                                         <td>Andi Dika</td>
-                                        <td><button class="btn btn-danger">DELETE</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Andi Dika</td>
@@ -119,7 +128,10 @@ include "navbar.php";
                                         <td>
                                             Andi Dika
                                         </td>
-                                        <td><button class="btn btn-danger">DELETE</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Adnit King kobra </td>
@@ -130,7 +142,10 @@ include "navbar.php";
                                         <td>
                                             Adnit King kobra
                                         </td>
-                                        <td><button class="btn btn-danger">DELETE</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Adnit King kobra </td>
@@ -141,7 +156,10 @@ include "navbar.php";
                                         <td>
                                             Adnit King kobra
                                         </td>
-                                        <td><button class="btn btn-danger">DELETE</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Adnit King kobra </td>
@@ -152,7 +170,10 @@ include "navbar.php";
                                         <td>
                                             Adnit King kobra
                                         </td>
-                                        <td><button class="btn btn-danger">DELETE</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
@@ -359,4 +380,79 @@ include "navbar.php";
             </div>
         </div>
 
+
+        <!--    editUser modal-->
+        <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Edit User</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" placeholder="Last Nme">
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" class="form-control" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+
+                                <label for="Gender">Gender</label>
+                                <select class="form-control" name="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" class="form-control" placeholder="City">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Add User</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--        deleteUser Modal-->
+
+        <div class="modal fade"  style="margin-top: 10em" id="deleteUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form>
+                        <div class="delete">
+                            <h3>
+                                Are you sure you want to delete this user?
+                                <br>
+                                Changes cannot be undone!
+                            </h3>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                            <button type="submit" class="btn btn-primary">Yes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
+
+
+</body>
+
+</html>
