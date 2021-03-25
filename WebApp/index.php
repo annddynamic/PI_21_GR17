@@ -61,7 +61,7 @@
                 velit.
             </p>
             <p class="report">Lorem ipsum dolor sit amet, consectetur adipisicing?
-                <a class="emergenciesButton" type="button" data-toggle="modal" data-target="#report">Report now!</a>
+                <a class="emergenciesButton" style="color: red; font-weight: bold" type="button" data-toggle="modal" data-target="#report">Report now!</a>
         </div>
 
         <div class="hyrje2">
@@ -253,58 +253,65 @@
                     <h4 class="modal-title" id="myModalLabel">Emergency Report</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Last Nme">
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name">
-                    </div>
-                    <div class="form-group">
+                    <form>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
 
-                        <label for="Gender">Gender</label>
-                        <select class="form-control" name="gender">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="others">Others</option>
-                        </select>
+                            <label for="Gender">What do you want to report?</label>
+                            <select class="form-control" name="gender">
+                                <option value="abuse">Abuse</option>
+                                <option value="suicide">Suicide</option>
+                                <option value="murder">Murder</option>
+                                <option value="robbery">Robbery</option>
+                                <option value="robbery">Arson</option>
+                                <option value="breakIn">Break In</option>
+                                <option value="corruption">Corruption</option>
+                                <option value="other">Other</option>
+                            </select>
 
-                    </div>
-                    <div class="form-group">
-                        <label for="Date">Date</label>
-                        <input type="date" class="form-control" name="date">
-                    </div>
-                    <div class="form-group">
-                        <label>City</label>
-                        <input type="text" class="form-control" placeholder="City">
-                    </div>
-                    <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" class="form-control" placeholder="Country">
-                    </div>
-                    <div class="form-group">
-                        <label>ZIP</label>
-                        <input type="number" class="form-control" placeholder="ZIP">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="Gender">Role</label>
-                        <select class="form-control" name="role">
-                            <option value="admin">Admin</option>
-                            <option value="police">Police</option>
-                            <option value="citizen">Citizen</option>
-                        </select>
-                    </div>
+
+                        </div>
+                        <div class="form-group">
+                            <textarea id="textarea"   placeholder="Add Message"> </textarea>
+                            <div class="pull-right ">
+
+                                <input type="file" id="myfile" name="myfile">
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <label for="Date">Date</label>
+                            <input type="date" class="form-control" name="date">
+                        </div>
+
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" class="form-control" placeholder="City">
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input type="text" class="form-control" placeholder="Country">
+                        </div>
+
+
+
+                        <input type="submit" class="btn btn-default main-color-bg btn-lg " value="Submit">
+
+
+                    </form>
 
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add User</button>
-                </div>
+
             </form>
         </div>
     </div>
