@@ -100,8 +100,7 @@ include "navbar.php";
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="picture">Select your image<small> image list</small></label>
-
-                                    <select size="5" id="characters" class="form-control">
+                                    <select onchange="changePic(event)" id="characters" class="form-control">
                                         <option class="fotot">Violence</option>
                                         <option class="fotot">Corruption</option>
                                         <option class="fotot">Robbery</option>
@@ -109,7 +108,7 @@ include "navbar.php";
                                     </select>
                                 </div>
                                 <div class="foto" style="border: 1px solid lightgray">
-                                    <img id="foto" height="200" src="../Asets/img/vioence.png" class="center-block" alt="">
+                                    <img id="foto" height="264" src="../Asets/img/vioence.png" class="center-block" alt="">
                                 </div>
                             </div>
                             <div class="col-md-6" >
@@ -133,44 +132,18 @@ include "navbar.php";
     </div>
 </section>
 
-<div style="height: 150px"></div>
+<div style="height: 250px"></div>
 <footer id="footer">
     <p>Copyright Adminstrap, &copy; 2021</p>
 </footer>
 
 <script>
-
-    var selectat =document.querySelectorAll(".fotot");
-    console.log(selectat);
     let fotoja =document.getElementById("foto");
+    main_path = "../Asets/img/"
+    fotot = ["vioence", "corruption", "robbery", "report"]
 
-    var imgSources=[];
-    for(let i=0; i<selectat.length; i++){
-        if(selectat[i].innerHTML=="Violence"){
-            imgSources.push("../Asets/img/vioence.png");
-        }else if(selectat[i].innerHTML=="Corruption"){
-            imgSources.push("../Asets/img/corruption.png");
-
-        }else if(selectat[i].innerHTML=="Robbery"){
-            imgSources.push("../Asets/img/robbery.png");
-
-        }else{
-            imgSources.push("../Asets/img/report.png");
-
-        }
-
-        console.log(imgSources)
-
-        for(let i=0; i<selectat.length; i++){
-
-            selectat[i].addEventListener('click', nderro);
-
-            function nderro(){
-                fotoja.src=imgSources[i];
-
-            }
-        }
-
+    function changePic(e) {
+        fotoja.src= main_path + fotot[e.target.options.selectedIndex] + ".png";
     }
 
 </script>
