@@ -17,7 +17,7 @@
 
         .login-form {
             height: 500px !important;
-            width: 500px;
+            width: 600px;
             margin: 65px auto;
             /*padding: 100px 0px;*/
         }
@@ -78,39 +78,50 @@
 <div class="login-form">
     <form action="" method="post">
         <h2 class="text-center">Sign Up <small>Police account</small></h2>
-        <div class="form-group">
+        <br>
+        <div class="form-group pull-left">
             <label>First Name</label>
-            <input type="text" class="form-control" placeholder="First Name" required="required">
+            <input type="text" class="form-control " placeholder="First Name" required="required">
         </div>
-        <div class="form-group">
+        <div class="form-group pull-right ">
             <label>Last Name</label>
             <input type="text" class="form-control" placeholder="Last Name" required="required">
         </div>
+        <div style="height: 80px"></div>
 
         <div class="form-group">
             <label>Email</label>
             <input type="email" class="form-control" placeholder="Email" required="required">
         </div>
+
+        <div class="form-group">
+            <label>Country</label>
+            <input type="text" class="form-control" placeholder="Country">
+        </div>
+
+        <div class="form-group pull-left">
+            <label>City</label>
+            <input type="text" class="form-control " placeholder="City" required="required">
+        </div>
+        <div class="form-group pull-right ">
+            <label>Zip Code</label>
+            <input type="text" class="form-control" placeholder="Zip Code" required="required">
+        </div>
+        <div style="height: 80px"></div>
+
         <div class="form-group">
             <label>Address</label>
             <input type="text" class="form-control" placeholder="Address">
         </div>
 
-        <h5 style="font-weight: bold; text-align: center">Or</h5>
-
-        <button class="btn-block btn btn-default" onclick="getLocation()">Get your location automatically</button>
-
-        <p id="demo"></p>
-
-
         <div class="form-group">
             <label>Birthday</label>
-            <input type="date" class="form-control"  required="required">
+            <input type="date" class="form-control" required="required">
         </div>
         <div class="form-group">
             <label>Gender</label>
             <select class="form-control" required="required">
-                <option value aria-disabled="true" >Select your gender..</option>
+                <option value aria-disabled="true">Select your gender..</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
@@ -120,10 +131,13 @@
 
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" placeholder="Password" required="required">
+            <input type="password" class="form-control" id="password" placeholder="Password" required="required">
         </div>
 
-
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" id="confirm_password" placeholder="Confirm password" required="required">
+        </div>
 
 
         <div class="form-group">
@@ -131,28 +145,28 @@
         </div>
 
         <div class="clearfix">
-            <label class="pull-left checkbox-inline"><input type="checkbox" required="required">I accept terms and agreement</label>
+            <label class="pull-left checkbox-inline"><input type="checkbox" required="required">I accept terms and
+                agreement</label>
         </div>
     </form>
 </div>
 
 <script>
-    var x = document.getElementById("demo");
+    var password = document.getElementById("password")
+        , confirm_password = document.getElementById("confirm_password");
 
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.watchPosition(showPosition);
+    function validatePassword(){
+        if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
         } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
+            confirm_password.setCustomValidity('');
         }
     }
 
-    function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-    }
-
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
 </script>
+
 </body>
 
 </html>

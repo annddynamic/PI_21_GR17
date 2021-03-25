@@ -17,7 +17,7 @@
 
         .login-form {
             height: 500px !important;
-            width: 500px;
+            width: 600px;
             margin: 65px auto;
             /*padding: 100px 0px;*/
         }
@@ -76,23 +76,32 @@
 <div class="login-form">
     <form action="" method="post">
         <h2 class="text-center">Sign Up <small>Citizen account</small></h2>
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" placeholder="Name" required="required">
+        <br>
+        <div class="form-group pull-left">
+            <label>First Name</label>
+            <input type="text" class="form-control " placeholder="First Name" required="required">
         </div>
-        <div class="form-group">
-            <label>Surname</label>
-            <input type="text" class="form-control" placeholder="Surname" required="required">
+        <div class="form-group pull-right ">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" required="required">
         </div>
+        <div style="height: 80px"></div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" required="required">
+        </div>
+
+
 
         <div class="form-group">
             <label>Birthday</label>
-            <input type="date" class="form-control"  required="required">
+            <input type="date" class="form-control" required="required">
         </div>
         <div class="form-group">
             <label>Gender</label>
             <select class="form-control" required="required">
-                <option value aria-disabled="true" >Select your gender..</option>
+                <option value aria-disabled="true">Select your gender..</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
@@ -102,10 +111,13 @@
 
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" placeholder="Password" required="required">
+            <input type="password" class="form-control" id="password" placeholder="Password" required="required">
         </div>
 
-
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" id="confirm_password" placeholder="Confirm password" required="required">
+        </div>
 
 
         <div class="form-group">
@@ -113,11 +125,27 @@
         </div>
 
         <div class="clearfix">
-            <label class="pull-left checkbox-inline"><input type="checkbox" required="required">I accept terms and agreement</label>
+            <label class="pull-left checkbox-inline"><input type="checkbox" required="required">I accept terms and
+                agreement</label>
         </div>
     </form>
 </div>
 
+<script>
+    var password = document.getElementById("password")
+        , confirm_password = document.getElementById("confirm_password");
+
+    function validatePassword(){
+        if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>
 
 
 </body>
