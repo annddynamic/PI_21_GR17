@@ -131,7 +131,7 @@
 
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password" required="required">
+            <input type="password" class="form-control" id="password" placeholder="Password" required="required" minlength="8">
         </div>
 
         <div class="form-group">
