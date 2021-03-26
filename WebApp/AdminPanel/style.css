@@ -82,6 +82,19 @@ body{
 
 /* HEader*/
 
+.sb{
+    position: absolute;
+    top: 60%;
+    left: 53%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.sb input {
+    height: 40px;
+    width: 160px;
+    border-radius: 40px;
+}
+
 #header{
     background:#011f4b;
     color:#ffffff;
