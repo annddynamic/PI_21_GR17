@@ -13,6 +13,43 @@
     <!-- Bootstrap core CSS -->
     <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+
+        .search-box {
+            position: absolute;
+            top: 1.5em;
+            left: -4em;
+            background: white;
+            height: 40px;
+            border-radius: 40px;
+            padding: 10px;
+        }
+
+        .search-btn {
+            font-size: 19px;
+            color: #011f4b;
+        }
+
+        .search-text {
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            padding: 0;
+            color: black;
+            font-size: 16px;
+            transition: 0.5s;
+            line-height: 20px;
+            width: 0px;
+        }
+
+        .search-box:hover > .search-text {
+            width: 200px;
+            padding: 0 6px;
+
+        }
+
+    </style>
 
 
 </head>
@@ -25,8 +62,24 @@ include "navbar.php";
             <div class="container">
                 <div class="row">
                     <div class="col-md-10">
-                        <h1><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span> Feedback <small>View Feedback</small></h1>
+                        <div class="col-md-4">
+                            <h1><span class ="glyphicon glyphicon-pencil" aria-hidden=""true> </span> Feedback </h1>
+
+                        </div>
+                        <div class="col-md-8 ">
+
+                            <div class="search-box">
+
+                                <input class="search-text" type="text" name="" placeholder="Type to search">
+                                <a class="search-btn" href="#">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
+
                     <div class="col-md-2">
                         <div class="dropdown create">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

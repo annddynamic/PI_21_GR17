@@ -9,16 +9,13 @@
     <title>Admin Panel</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/duotone.css"
-          integrity="sha384-R3QzTxyukP03CMqKFe0ssp5wUvBPEyy9ZspCB+Y01fEjhMwcXixTyeot+S40+AjZ" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css"
-          integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous"/>
+
     <style>
 
         .search-box {
             position: absolute;
             top: 1.5em;
-            left: -5em;
+            left: -4em;
             background: white;
             height: 40px;
             border-radius: 40px;

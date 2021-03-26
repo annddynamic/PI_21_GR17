@@ -15,19 +15,73 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <style>
+
+        .search-box {
+            position: absolute;
+            top: 1.5em;
+            left: -7em;
+            background: white;
+            height: 40px;
+            border-radius: 40px;
+            padding: 10px;
+        }
+
+        .search-btn {
+            font-size: 19px;
+            color: #011f4b;
+        }
+
+        .search-text {
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            padding: 0;
+            color: black;
+            font-size: 16px;
+            transition: 0.5s;
+            line-height: 20px;
+            width: 0px;
+        }
+
+        .search-box:hover > .search-text {
+            width: 200px;
+            padding: 0 6px;
+
+        }
+
+    </style>
 
 </head>
 
 <?php
 include "navbar.php";
 ?>
+
     <body>
         <header id ="header">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10">
-                        <h1><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span> Reports <small>Manage & Review</small></h1>
+                        <div class="col-md-4">
+                            <h1><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span> Reports </h1>
+
+                        </div>
+                        <div class="col-md-8 ">
+
+                            <div class="search-box">
+
+                                <input class="search-text" type="text" name="" placeholder="Type to search">
+                                <a class="search-btn" href="#">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
+
                     <div class="col-md-2">
                         <div class="dropdown create">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
