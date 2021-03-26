@@ -19,7 +19,7 @@
             position: absolute;
             top: 1.5em;
             left: -5em;
-            background: #b3cde0;
+            background: white;
             height: 40px;
             border-radius: 40px;
             padding: 10px;
@@ -27,7 +27,7 @@
 
         .search-btn {
             font-size: 19px;
-            color: white;
+            color: #011f4b;
         }
 
         .search-text {
@@ -36,7 +36,7 @@
             outline: none;
             float: left;
             padding: 0;
-            color: grey;
+            color: black;
             font-size: 16px;
             transition: 0.5s;
             line-height: 20px;
