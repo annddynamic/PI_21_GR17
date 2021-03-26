@@ -9,46 +9,49 @@
     <title>Admin Panel</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/duotone.css"
+          integrity="sha384-R3QzTxyukP03CMqKFe0ssp5wUvBPEyy9ZspCB+Y01fEjhMwcXixTyeot+S40+AjZ" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css"
+          integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous"/>
     <style>
-        .buscar-caja {
+
+        .search-box {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #2f3640;
+            top: 1.5em;
+            left: -5em;
+            background: #b3cde0;
             height: 40px;
             border-radius: 40px;
             padding: 10px;
         }
 
-        .buscar-btn {
-            color: #e84118;
-            float: right;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #2f3640;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: 0.4s;
+        .search-btn {
+            font-size: 19px;
             color: white;
-            cursor: pointer;
         }
 
-        .buscar-caja:hover > .buscar-txt {
-            width: 240px;
+        .search-text {
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            padding: 0;
+            color: grey;
+            font-size: 16px;
+            transition: 0.5s;
+            line-height: 20px;
+            width: 0px;
+        }
+
+        .search-box:hover > .search-text {
+            width: 200px;
             padding: 0 6px;
-        }
 
-        .buscar-caja:hover > .buscar-btn {
-            background: white;
-            color: black;
         }
 
     </style>
+    <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
@@ -65,17 +68,20 @@ include "navbar.php";
         <div class="row">
             <div class="col-md-10">
                 <div class="col-md-4">
-
                     <h1><span class="glyphicon glyphicon-cog" aria-hidden="" true> </span>Dashboard </h1>
                 </div>
-                <div class="col-md-8" >
-                  <div class="buscar-caja">
-                <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
-                <a class="buscar-btn">
-                    <i class="far fa-search"></i>
-                </a>
-            </div>
+                <div class="col-md-8 ">
+
+                    <div class="search-box">
+
+                        <input class="search-text" type="text" name="" placeholder="Type to search">
+                        <a class="search-btn" href="#">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+                        </a>
+                    </div>
                 </div>
+
             </div>
             <div class="col-md-2">
                 <div class="dropdown create">
