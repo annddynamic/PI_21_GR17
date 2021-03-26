@@ -203,7 +203,10 @@ body{
     width: 380px !important;
     height: 241px !important;
 }
-
+.textareaa {
+    width: 255px !important;
+    height: 241px !important;
+}
 .delete{
     padding: 20px;
 }

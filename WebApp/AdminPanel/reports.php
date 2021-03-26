@@ -37,7 +37,7 @@ include "navbar.php";
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#addUser">Add User</a></li>
                                 <li><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#reviewReq">Review Requests</a></li>
-                                <li><a class="emergenciesButton" href="#">Add Article</a></li>
+                                <li><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#addArticle">Add Article</a></li>
                             </ul>
                         </div>
                     </div>
@@ -96,101 +96,74 @@ include "navbar.php";
                                         <td>Jill Smith</td>
                                         <td>
                                             Jill Smith
-                                            <div class="dropdown create pull-right">
 
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">Not Resolved</a></li>
-                                                    <li><a href="#">In process</a></li>
-                                                    <li><a href="#">Resolved</a></li>
-                                                </ul>
-                                            </div>
                                         </td>
                                         <td>
                                             Jill Smith
 
                                         </td>
-                                        <td><button class="btn btn-danger">DELETE</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Jill Smith</td>
                                         <td>Jill Smith</td>
+                                        <td>Jill Smith</td>
+                                        <td>Jill Smith</td>
                                         <td>
-                                            Jill Smith
-                                            <div class="dropdown create pull-right">
-
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">Not Resolved</a></li>
-                                                    <li><a href="#">In process</a></li>
-                                                    <li><a href="#">Resolved</a></li>
-                                                </ul>
-                                            </div>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
                                         </td>
-                                        <td>
-                                            Jill Smith
-
-                                        </td>
-                                        <td><button class="btn btn-danger">DELETE</button></td>
                                     </tr>
                                     <tr>
                                         <td>Andi Dika</td>
                                         <td>Andi Dika</td>
                                         <td>
                                             Jill Smith
-                                            <div class="dropdown create pull-right">
 
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">Not Resolved</a></li>
-                                                    <li><a href="#">In process</a></li>
-                                                    <li><a href="#">Resolved</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            Andi Dika
-
-
-                                        </td>
-                                        <td><button class="btn btn-danger">DELETE</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Andi Dika</td>
-                                        <td>Andi Dika</td>
-                                        <td>
-                                            Jill Smith
-                                            <div class="dropdown create pull-right">
-
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">Not Resolved</a></li>
-                                                    <li><a href="#">In process</a></li>
-                                                    <li><a href="#">Resolved</a></li>
-                                                </ul>
-                                            </div>
                                         </td>
                                         <td>
                                             Andi Dika
 
                                         </td>
-                                        <td><button class="btn btn-danger">DELETE</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Andi Dika</td>
+                                        <td>Andi Dika</td>
+                                        <td>
+                                            Jill Smith
+
+                                        </td>
+                                        <td>
+                                            Andi Dika
+
+                                        </td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Adnit King kobra </td>
                                         <td>Adnit King kobra </td>
                                         <td>
                                             Jill Smith
-                                            <div class="dropdown create pull-right">
 
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">Not Resolved</a></li>
-                                                    <li><a href="#">In process</a></li>
-                                                    <li><a href="#">Resolved</a></li>
-                                                </ul>
-                                            </div>
                                         </td>
                                         <td>
                                             Adnit King kobra
 
                                         </td>
-                                        <td><button class="btn btn-danger">DELETE</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
@@ -215,101 +188,76 @@ include "navbar.php";
                                         <td>Jill Smith</td>
                                         <td>
                                             Jill Smith
-                                            <div class="dropdown create pull-right">
 
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">Not Resolved</a></li>
-                                                    <li><a href="#">In process</a></li>
-                                                    <li><a href="#">Resolved</a></li>
-                                                </ul>
-                                            </div>
                                         </td>
                                         <td>
                                             Jill Smith
 
                                         </td>
-                                        <td><button class="btn btn-danger">Delete</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Jill Smith</td>
                                         <td>Jill Smith</td>
                                         <td>
                                             Jill Smith
-                                            <div class="dropdown create pull-right">
-
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">Not Resolved</a></li>
-                                                    <li><a href="#">In process</a></li>
-                                                    <li><a href="#">Resolved</a></li>
-                                                </ul>
-                                            </div>
                                         </td>
                                         <td>
                                             Jill Smith
 
                                         </td>
-                                        <td><button class="btn btn-danger">Delete</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Andi Dika</td>
                                         <td>Andi Dika</td>
                                         <td>
                                             Jill Smith
-                                            <div class="dropdown create pull-right">
 
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">Not Resolved</a></li>
-                                                    <li><a href="#">In process</a></li>
-                                                    <li><a href="#">Resolved</a></li>
-                                                </ul>
-                                            </div>
                                         </td>
                                         <td>
                                             Andi Dika
-
-
                                         </td>
-                                        <td><button class="btn btn-danger">Delete</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Andi Dika</td>
                                         <td>Andi Dika</td>
                                         <td>
                                             Jill Smith
-                                            <div class="dropdown create pull-right">
-
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">Not Resolved</a></li>
-                                                    <li><a href="#">In process</a></li>
-                                                    <li><a href="#">Resolved</a></li>
-                                                </ul>
-                                            </div>
                                         </td>
                                         <td>
                                             Andi Dika
 
                                         </td>
-                                        <td><button class="btn btn-danger">Delete</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Adnit King kobra </td>
                                         <td>Adnit King kobra </td>
                                         <td>
                                             Jill Smith
-                                            <div class="dropdown create pull-right">
-
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">Not Resolved</a></li>
-                                                    <li><a href="#">In process</a></li>
-                                                    <li><a href="#">Resolved</a></li>
-                                                </ul>
-                                            </div>
                                         </td>
                                         <td>
                                             Adnit King kobra
 
                                         </td>
-                                        <td><button class="btn btn-danger">Delete</button></td>
+                                        <td>
+                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
@@ -326,3 +274,4 @@ include "navbar.php";
         ?>
 
     </body>
+</html>

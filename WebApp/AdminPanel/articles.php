@@ -39,7 +39,7 @@ include "navbar.php";
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#addUser">Add User</a></li>
                                 <li><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#reviewReq">Review Requests</a></li>
-                                <li><a class="emergenciesButton" href="#">Add Article</a></li>
+                                <li><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#addArticle">Add Article</a></li>
                             </ul>
                         </div>
                     </div>
@@ -137,16 +137,8 @@ include "navbar.php";
             <p>Copyright Adminstrap, &copy; 2021</p>
         </footer>
 
-        <script>
-            let fotoja =document.getElementById("foto");
-            main_path = "../Asets/img/"
-            fotot = ["vioence", "corruption", "robbery", "report"]
+        <script src="articles.js"></script>
 
-            function changePic(e) {
-                fotoja.src= main_path + fotot[e.target.options.selectedIndex] + ".png";
-            }
-
-        </script>
 
     <?php include "modals.php" ?>
 
