@@ -233,3 +233,73 @@ body {
     width: 270px !important;
     height: 100px !important;
 }
+
+.top-buffer {
+    margin-top: 50px;
+}
+
+
+.icons .fa {
+    padding: 10px;
+    font-size: 20px;
+    width: 35px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0px;
+}
+
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-whatsapp{
+    background: white;
+    color: #005b96 !important;
+}
+
+.fa-facebook {
+    background: white;
+    color: #005b96;
+
+}
+
+.fa-twitter {
+    background: white;
+    color: #005b96 !important;
+}
+
+.fa-instagram {
+    background: white;
+    color: #005b96 !important;
+}
+
+.content {
+    font-family: 'Catamaran', serif;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+}
+
+.content img {
+    max-width:100%;
+    max-height:100%;
+}
+
+.content h2 {
+    color:#005b96;
+}
+.content p {
+    margin-right: 0px !important;
+}
+
+.content2 {
+    padding:10px;
+}
+.read-more{
+    color:#03396c;
+    background: white;
+    border-color: #03396c !important;
+}
+
+.icons{
+    margin-top: 2em;
+}

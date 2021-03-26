@@ -198,45 +198,100 @@
         </a>
     </div>
 
-<h2 style="font-size: 3em">Articles</h2>
 
-    <div class="grid">
 
-        <div class="elementi1">
-            <img class="fotoElem" src="Asets/img/3.jpg" alt="Diqka">
-            <p>
-                I kerkuari par
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos itaque libero numquam porro quibusdam
-                reiciendis rem sed temporibus totam voluptates.
-            </p>
-        </div>
-        <div class="elementi2">
-            <img class="fotoElem" src="Asets/img/3.jpg" alt="Diqka">
-            <p>
-                I kerkuari par
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos itaque libero numquam porro quibusdam
-                reiciendis rem sed temporibus totam voluptates.
-            </p>
-        </div>
-        <div class="elementi3">
-            <img class="fotoElem" src="Asets/img/3.jpg" alt="Diqka">
-            <p>
-                I kerkuari par
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos itaque libero numquam porro quibusdam
-                reiciendis rem sed temporibus totam voluptates.
-            </p>
-        </div>
-        <div class="elementi4">
-            <img class="fotoElem" src="Asets/img/3.jpg" alt="Diqka">
-            <p>
-                I kerkuari par
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos itaque libero numquam porro quibusdam
-                reiciendis rem sed temporibus totam voluptates.
-            </p>
-        </div>
+</div>
 
+
+<section id="latest">
+    <div class="container">
+        <div class="row">
+            <h1>News Section</h1>
+            <div class="col-md-6">
+                <div class="content">
+                    <img src="Asets/img/policeguard.jpg" alt="">
+                    <div class="content2">
+                        <h2 class="text-left">lorem</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+                        <div class="icons">
+                            <a href="#"class="btn main-color-bg pull-left" role="button">Read more</a>
+                            <a href="http://facebook.com" class="fa fa-facebook"></a>
+                            <a href="http://instagram.com" class="fa fa-instagram"></a>
+                            <a href="http://twitter.com" class="fa fa-twitter"></a>
+                            <a href="http://twitter.com" class="fa fa-whatsapp"></a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="content">
+                    <img src="Asets/img/policeguard.jpg" alt="">
+                    <div class="content2">
+                        <h2 class="text-left">lorem</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+                        <div class="icons">
+                            <a href="#"class="btn main-color-bg pull-left" role="button">Read more</a>
+                            <a href="http://facebook.com" class="fa fa-facebook"></a>
+                            <a href="http://instagram.com" class="fa fa-instagram"></a>
+                            <a href="http://twitter.com" class="fa fa-twitter"></a>
+                            <a href="http://twitter.com" class="fa fa-whatsapp"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-md-offset-1">
+                <div class="content">
+                    <img src="Asets/img/policeguard.jpg" alt="">
+                    <div class="content2">
+                        <h2 class="text-left">lorem</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+                        <div class="icons">
+                            <a href="#"class="btn main-color-bg pull-left" role="button">Read more</a>
+                            <a href="http://facebook.com" class="fa fa-facebook"></a>
+                            <a href="http://instagram.com" class="fa fa-instagram"></a>
+                            <a href="http://twitter.com" class="fa fa-twitter"></a>
+                            <a href="http://twitter.com" class="fa fa-whatsapp"></a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="content">
+                    <img src="Asets/img/policeguard.jpg" alt="">
+                    <div class="content2">
+                        <h2 class="text-left">lorem</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+                        <div class="icons">
+                            <a href="#"class="btn main-color-bg pull-left" role="button">Read more</a>
+                            <a href="http://facebook.com" class="fa fa-facebook"></a>
+                            <a href="http://instagram.com" class="fa fa-instagram"></a>
+                            <a href="http://twitter.com" class="fa fa-twitter"></a>
+                            <a href="http://twitter.com" class="fa fa-whatsapp"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div style="height: 400px"></div>
+</section>
+
+
+
+
+
+<div style="height: 100px;">
+
 </div>
 <!-- Footeri -->
 
