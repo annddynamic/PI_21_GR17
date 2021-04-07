@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>Reports</title>
+    <title>Police Panel</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
@@ -17,21 +15,77 @@
 
 </head>
 
-<?php
-include "navbarP.php";
-?>
+<style>
 
-<header id ="header">
+        .search-box {
+            position: absolute;
+            top: 1.5em;
+            left: -4em;
+            background: white;
+            height: 40px;
+            border-radius: 40px;
+            padding: 10px;
+        }
+
+        .search-btn {
+            font-size: 19px;
+            color: #011f4b;
+        }
+
+        .search-text {
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            padding: 0;
+            color: black;
+            font-size: 16px;
+            transition: 0.5s;
+            line-height: 20px;
+            width: 0px;
+        }
+
+        .search-box:hover > .search-text {
+            width: 200px;
+            padding: 0 6px;
+
+        }
+
+    </style>
+
+
+<?php
+
+include "navbarP.php";
+
+?>
+<header id="header">
     <div class="container">
         <div class="row">
             <div class="col-md-10">
-                <h1><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span> Reports </h1>
+                <div class="col-md-4">
+                    <h1><span class="glyphicon glyphicon-cog" aria-hidden="" true> </span>Dashboard </h1>
+                </div>
+                <div class="col-md-8 ">
+
+                    <div class="search-box">
+
+                        <input class="search-text" type="text" name="" placeholder="Type to search">
+                        <a class="search-btn" href="#">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+                        </a>
+                    </div>
+                </div>
+
             </div>
-            
+           
         </div>
     </div>
 </header>
 
+<body>
+    
 <section id="main">
     <div class ="container">
         <div class="row">
@@ -40,9 +94,9 @@ include "navbarP.php";
                     <a href="../PolicePanel/MainP.php" class="list-group-item  " ><span class ="glyphicon glyphicon-cog" aria-hidden=""true> </span>
                         Dashboard
                     </a>
-                    <a href="#" class="list-group-item main-color-bg active"><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span>  
-                      Reports<span class="badge">12</span></a>
-                    <a href="../PolicePanel/myReports.php" class="list-group-item "><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span> 
+                    <a href="../PolicePanel/ReportsP.php" class="list-group-item  "><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span>   
+                     Reports<span class="badge">12</span></a>
+                    <a href="../PolicePanel/myReports.php" class="list-group-item main-color-bg "><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span> 
                      My Reports<span class="badge">12</span></a>
                 </div>
 
@@ -66,11 +120,11 @@ include "navbarP.php";
                    
                 </div>
             </div>
-            <div class="col-md-9">
 
-                <div class="panel panel-default">
+            <div class="col-md-9">
+              <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><b>EMERGENCY REPORTS</b></h3>
+                        <h3 class="panel-title"><b>ACTIVE CASES</b></h3>
                     </div>
                     <div class="panel-body myPanel">
                         <table class="table  table-hover tbl" id="emergency">
@@ -204,28 +258,28 @@ include "navbarP.php";
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><b>RANDOM REPORTS</b></h3>
+                        <h3 class="panel-title"><b>ALL REPORTS</b></h3>
                     </div>
                     <div class="panel-body myPanel">
-                        <table class="table  table-hover tbl" id="random">
+                        <table class="table  table-hover tbl" id="emergency">
                             <tr>
                                 <th class="main-color-bg">Name</th>
                                 <th class="main-color-bg">Date</th>
                                 <th class="main-color-bg">Status</th>
                                 <th class="main-color-bg">In Charge</th>
-                                <th class="main-color-bg ">Request Delete</th>
+                                <th class="main-color-bg">Delete</th>
                             </tr>
                             <tr>
                                 <td>Jill Smith</td>
                                 <td>Jill Smith</td>
                                 <td>
-                                    Jill Smith
+                                    Not Resolved
                                     <div class="dropdown create pull-right">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             Manage
                                             <span class="caret"></span>
                                         </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
                                             <li><a href="#">Not Resolved</a></li>
                                             <li><a href="#">In process</a></li>
                                             <li><a href="#">Resolved</a></li>
@@ -233,10 +287,10 @@ include "navbarP.php";
                                     </div>
                                 </td>
                                 <td>
-                                    Jill Smith
+                                    Jill Smith 
                                     <button class="btn btn-info pull-right">  Edit</button>
                                 </td>
-                                <td><button class="btn btn-danger "><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#deleteUser" style="float: right;">  Request Delete</a></button></td>
+                                <td><button class="btn btn-danger "><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#deleteUser" style="float: right;"  >  Request Delete</a></button></td>
                             </tr>
                             <tr>
                                 <td>Jill Smith</td>
@@ -333,105 +387,19 @@ include "navbarP.php";
                             </tr>
                         </table>
                     </div>
+
+                </div>
+            
+
             </div>
+            
         </div>
     </div>
-</section>
-<footer id="footer">
+  </div>
+
+
+
+  <footer id="footer">
     <pr>Copyright Adminstrap, &copy; 2021</pr>
-</footer>
-
-<!--Modals-->
-<!--Add User-->
-<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form>
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Add User</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Last Nme">
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name">
-                    </div>
-                    <div class="form-group">
-
-                        <label for="Gender">Gender</label>
-                        <select class="form-control" name="gender">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="others">Others</option>
-                        </select>
-
-                    </div>
-                    <div class="form-group">
-                        <label for="Date">Date</label>
-                        <input type="date" class="form-control" name="date">
-                    </div>
-                    <div class="form-group">
-                        <label>City</label>
-                        <input type="text" class="form-control" placeholder="City">
-                    </div>
-                    <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" class="form-control" placeholder="Country">
-                    </div>
-                    <div class="form-group">
-                        <label>ZIP</label>
-                        <input type="number" class="form-control" placeholder="ZIP">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="Gender">Role</label>
-                        <select class="form-control" name="role">
-                            <option value="admin">Admin</option>
-                            <option value="police">Police</option>
-                            <option value="citizen">Citizen</option>
-                        </select>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add User</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="deleteUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form>
-                <div class="modal-header main-color-bg">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Account Type</h4>
-                </div>
-                <div class="modal-body" style="background: #f4f4f4">
-
-                    <h2  >Are you sure?</h2>
-                    <hr>
-
-                    <div class="text-center">
-                        <a href="signUpPolice.php"class="btn btn-default btn-lg main-color-bg" role="button">NO</a>
-                        <a href="signUpCitizen.php"class="btn btn-default  btn-lg main-color-bg" role="button">YES</a>
-
-                    </div>
-
-                </div>
-
-            </form>
-        </div>
-    </div>
-</div>
-
+  </footer>
+</body>

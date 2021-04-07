@@ -1,19 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <title>Admin Panel</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="StylesP.css">
-
-
-</head>
 
 <body>
 
@@ -30,19 +14,21 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Dashboard</a></li>
+                <li class=""><a href="../PolicePanel/MainP.php">Dashboard</a></li>
+               
                 
-                <li><a href="#">Reports</a></li>
+                <li><a href="../AdminPanel/articles.php">Articles</a></li>
                 
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Welcome</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="../index.php">Welcome</a></li>
+                <li><a href="../index.php">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
+
 
 
 
@@ -52,6 +38,8 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
 <script src="../Asets/js/bootstrap.min.js"></script>
+
+
 
 </body>
 </html>
