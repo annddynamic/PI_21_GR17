@@ -28,3 +28,23 @@ Route::set('reports', function(){
 Route::set('police', function(){
     Police::CreateView('police');
 });
+
+Route::set('report', function(){
+    Report::CreateView('report');
+});
+
+Route::set('signIn', function(){
+    SignIn::CreateView('signIn');
+});
+
+Route::set('signUpCitizen', function(){
+    SignUpCitizen::CreateView('signUpCitizen');
+});
+
+Route::set('signUpPolice', function(){
+    SignUpPolice::CreateView('signUpPolice');
+});
+
+
+
+

@@ -5,12 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../Asets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Asets/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/jpg" href="../../Asets/img/fav.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
 
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../Asets/css/index.css">
     <title>Sign Up</title>
 
     <style>
@@ -62,11 +62,11 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Home</a></li>
-                    <li class=""><a href="report.php">Report</a></li>
+                    <li class=""><a href="report">Report</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="signIn.php">Sign in</a></li>
+                    <li><a href="signIn">Sign in</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

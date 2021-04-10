@@ -110,15 +110,15 @@ include "navbar.php";
                                 class="glyphicon glyphicon-cog" aria-hidden="" true> </span>
                         Dashboard
                     </a>
-                    <a href="police.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden=""
+                    <a href="police" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden=""
                                                                        true> </span> Users<span class="badge">12</span></a>
-                    <a href="reports.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
+                    <a href="reports" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
                                                                         aria-hidden="" true> </span> Reports<span
                                 class="badge">12</span></a>
-                    <a href="articles.php" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden=""
+                    <a href="articles" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden=""
                                                                          true> </span> Articles<span
                                 class="badge">12</span></a>
-                    <a href="feedback.php" class="list-group-item"><span class="glyphicon glyphicon-pencil"
+                    <a href="feedback" class="list-group-item"><span class="glyphicon glyphicon-pencil"
                                                                          aria-hidden="" true> </span> Feedback<span
                                 class="badge">12</span></a>
                 </div>

@@ -7,7 +7,12 @@ class Controller {
             require_once "./Views/AdminPanel/$viewName.php";
         }else if(file_exists("./Views/$viewName.php")) {
             require_once "./Views/$viewName.php";
+        }else if(file_exists("./Views/PolicePanel/$viewName.php")) {
+            require_once "./Views/PolicePanel/$viewName.php";
+        }else {
+            require_once "./Views/Citizens/$viewName.php";
         }
+
     }
 
 }

@@ -1,11 +1,11 @@
     <!DOCTYPE html>
     <html lang="en">
     <head>
-        <link rel="stylesheet" href="../../Asets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../Asets/css/bootstrap.min.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="index.css">
-        <link rel="shortcut icon" type="image/jpg" href="../../Asets/img/fav.png"/>
+        <link rel="stylesheet" href="../Asets/css/index.css">
+        <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
 
         <meta charset="UTF-8">
         <title>Crime Reporting System</title>
@@ -29,11 +29,11 @@
                     <div id="navbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class=""><a href="index.php">Home</a></li>
-                            <li class="active"><a href="report.php">Report</a></li>
+                            <li class="active"><a href="report">Report</a></li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="signIn.php">Sign in</a></li>
+                            <li><a href="signIn">Sign in</a></li>
                             <li><a  class="emergenciesButton" type = "button" data-toggle="modal" data-target="#andi">Sign Up</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
@@ -62,7 +62,7 @@
 
                         <h3>Your report is anonymous, we provide 100% confidentiality!</h3>
                     </div>
-                    <img style="margin-left: 2em;" height="400" src="../../Asets/img/vioence.png" alt="">
+                    <img style="margin-left: 2em;" height="400" src="../Asets/img/vioence.png" alt="">
                 </div>
                 <div class="col-md-6 col-md-offset-1 push">
                     <form>
@@ -142,8 +142,8 @@
                             <hr>
 
                             <div class="text-center">
-                                <a href="signUpPolice.php" class="btn btn-default btn-lg main-color-bg" role="button">Police</a>
-                                <a href="signUpCitizen.php" class="btn btn-default  btn-lg main-color-bg" role="button">Citizen</a>
+                                <a href="signUpPolice" class="btn btn-default btn-lg main-color-bg" role="button">Police</a>
+                                <a href="signUpCitizen" class="btn btn-default  btn-lg main-color-bg" role="button">Citizen</a>
 
                             </div>
 
@@ -160,7 +160,7 @@
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"
                 integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
                 crossorigin="anonymous"></script>
-        <script src="../../Asets/js/bootstrap.min.js"></script>
+        <script src="../Asets/js/bootstrap.min.js"></script>
 
 
   </body>
