@@ -138,7 +138,7 @@
                 <div class="sliderGrid">
 
                     <div class="foto">
-                        <img style="height:30em" src="../Asets/img/fotoEre.png" alt="Diqka">
+                        <img style="height:30em" src="../Asets/img/robbery.png" alt="Diqka">
                     </div>
                     <div class="tekst">
                         <h2> lorem</h2>

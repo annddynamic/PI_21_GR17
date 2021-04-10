@@ -11,9 +11,8 @@
     <title>Citizens</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet"
-    ="../Asets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Asets/css/style.css">">
+    <link rel="stylesheet" href="../Asets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Asets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 
@@ -104,7 +103,7 @@ include "navbar.php";
                 <div class="row">
                     <div class="col-md-3">
                         <div class="list-group">
-                            <a href="adminPanel" class="list-group-item  " ><span class ="glyphicon glyphicon-cog" aria-hidden="" true> </span>
+                            <a href="adminPanel" class="list-group-item" ><span class ="glyphicon glyphicon-cog" aria-hidden="" true> </span>
                                 Dashboard
                             </a>
                             <a href="police" class="list-group-item main-color-bg active"><span class ="glyphicon glyphicon-user" aria-hidden="" true> </span>   Users<span class="badge">12</span></a>
