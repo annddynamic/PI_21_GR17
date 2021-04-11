@@ -6,6 +6,8 @@ spl_autoload_register(function ($class_name) {
         include './classes/'.$class_name . '.php';
     }else if(file_exists('./Controllers/'.$class_name . '.php')){
         include './Controllers/'.$class_name . '.php';
+    }else{
+        include './Models/'.$class_name.'.php';
     }
 });
 

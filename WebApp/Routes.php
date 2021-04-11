@@ -34,7 +34,7 @@ Route::set('report', function(){
 });
 
 Route::set('signIn', function(){
-    SignIn::CreateView('signIn');
+    Login::CreateView('signIn');
 });
 
 Route::set('signUpCitizen', function(){
