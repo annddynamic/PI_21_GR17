@@ -106,7 +106,7 @@ include "navbar.php";
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="adminPanel.php" class="list-group-item active main-color-bg"><span
+                    <a href="adminPanel" class="list-group-item active main-color-bg"><span
                                 class="glyphicon glyphicon-cog" aria-hidden="" true> </span>
                         Dashboard
                     </a>
