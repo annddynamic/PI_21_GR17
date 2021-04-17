@@ -11,10 +11,10 @@
     <title>Users</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
-    <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../Asets/css/style.css">
-    <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="../Assets/img/fav.png"/>
+    <link href="../Assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="shortcut icon" type="image/jpg" href="../Assets/img/fav.png"/>
     <style>
 
         .search-box {
@@ -118,7 +118,7 @@ include "navbar.php";
                             </div>
                             <div class="panel-body">
                                 <div class="well dash-box">
-                                    <h2><img height="50"  src="../Asets/img/policeman.png">12</h2>
+                                    <h2><img height="50"  src="../Assets/img/policeman.png">12</h2>
                                     <h4>Police Officials</h4>
                                 </div>
                                 <br>

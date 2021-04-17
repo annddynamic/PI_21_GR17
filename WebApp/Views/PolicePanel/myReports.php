@@ -9,7 +9,7 @@
     <title>Police Panel</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../Asets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../Assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="StylesP.css">
 
 
@@ -396,10 +396,11 @@ include "navbarP.php";
         </div>
     </div>
   </div>
+</section>
 
 
 
   <footer id="footer">
     <pr>Copyright Adminstrap, &copy; 2021</pr>
-  </footer>
+  </footer>>
 </body>

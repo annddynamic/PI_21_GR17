@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="../Assets/img/fav.png"/>
 
 
     <title>Articles</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="../Asets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Asets/css/style.css">
+    <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Assets/css/style.css">
     <style>
 
         .search-box {
@@ -160,7 +160,7 @@ include "navbar.php";
                                             </select>
                                         </div>
                                         <div class="foto" style="border: 1px solid lightgray">
-                                            <img id="foto" height="264" src="../Asets/img/vioence.png" class="center-block" alt="">
+                                            <img id="foto" height="264" src="../Assets/img/vioence.png" class="center-block" alt="">
                                         </div>
                                     </div>
                                     <div class="col-md-6" >
@@ -189,7 +189,7 @@ include "navbar.php";
             <p>Copyright Adminstrap, &copy; 2021</p>
         </footer>
 
-        <script src="../Asets/js/articles.js"></script>
+        <script src="../Assets/js/articles.js"></script>
 
 
     <?php include "modals.php" ?>

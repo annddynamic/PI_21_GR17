@@ -1,11 +1,11 @@
     <!DOCTYPE html>
     <html lang="en">
     <head>
-        <link rel="stylesheet" href="../Asets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../Asets/css/index.css">
-        <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
+        <link rel="stylesheet" href="../Assets/css/index.css">
+        <link rel="shortcut icon" type="image/jpg" href="../Assets/img/fav.png"/>
 
         <meta charset="UTF-8">
         <title>Crime Reporting System</title>
@@ -62,7 +62,7 @@
 
                         <h3>Your report is anonymous, we provide 100% confidentiality!</h3>
                     </div>
-                    <img style="margin-left: 2em;" height="400" src="../Asets/img/vioence.png" alt="">
+                    <img style="margin-left: 2em;" height="400" src="../Assets/img/vioence.png" alt="">
                 </div>
                 <div class="col-md-6 col-md-offset-1 push">
                     <form>
@@ -160,7 +160,7 @@
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"
                 integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
                 crossorigin="anonymous"></script>
-        <script src="../Asets/js/bootstrap.min.js"></script>
+        <script src="../Assets/js/bootstrap.min.js"></script>
 
 
   </body>

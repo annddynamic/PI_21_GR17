@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../Asets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../Asets/css/index.css">
+    <link rel="stylesheet" href="../Assets/css/index.css">
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="../Assets/img/fav.png"/>
     <title>Crime Reporting System</title>
 
 </head>
@@ -65,7 +65,7 @@
         </div>
 
         <div class="hyrje2">
-            <img style="height:33em" src="../Asets/img/test2.png">
+            <img style="height:33em" src="../Assets/img/test2.png">
         </div>
     </div>
 
@@ -87,7 +87,7 @@
                 <div class="sliderGrid">
 
                     <div class="foto">
-                        <img style="height:30em" src="../Asets/img/report.png" alt="Diqka">
+                        <img style="height:30em" src="../Assets/img/report.png" alt="Diqka">
                     </div>
                     <div class="tekst">
                         <h2> lorem</h2>
@@ -113,7 +113,7 @@
                 <div class="sliderGrid">
 
                     <div class="foto">
-                        <img style="height:30em" src="../Asets/img/robbery.png" alt="diqka">
+                        <img style="height:30em" src="../Assets/img/robbery.png" alt="diqka">
                     </div>
                     <div class="tekst">
                         <h2> lorem</h2>
@@ -138,7 +138,7 @@
                 <div class="sliderGrid">
 
                     <div class="foto">
-                        <img style="height:30em" src="../Asets/img/robbery.png" alt="Diqka">
+                        <img style="height:30em" src="../Assets/img/robbery.png" alt="Diqka">
                     </div>
                     <div class="tekst">
                         <h2> lorem</h2>
@@ -163,7 +163,7 @@
                 <div class="sliderGrid">
 
                     <div class="foto">
-                        <img style="height:30em" src="../Asets/img/corruption.png" alt="diqka">
+                        <img style="height:30em" src="../Assets/img/corruption.png" alt="diqka">
                     </div>
                     <div class="tekst">
                         <h2> lorem</h2>
@@ -211,7 +211,7 @@
             <div class="col-md-6">
                 <div style="height: 7em"></div>
                 <div class="content">
-                    <img src="../Asets/img/policeguard.jpg" alt="">
+                    <img src="../Assets/img/policeguard.jpg" alt="">
                     <div class="content2">
                         <h2 class="text-left">lorem</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
@@ -230,7 +230,7 @@
                 </div>
                 <div style="height: 5em"></div>
                 <div class="content">
-                    <img src="../Asets/img/policeguard.jpg" alt="">
+                    <img src="../Assets/img/policeguard.jpg" alt="">
                     <div class="content2">
                         <h2 class="text-left">lorem</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
@@ -248,7 +248,7 @@
             </div>
             <div class="col-md-5 col-md-offset-1">
                 <div class="content">
-                    <img src="../Asets/img/policeguard.jpg" alt="">
+                    <img src="../Assets/img/policeguard.jpg" alt="">
                     <div class="content2">
                         <h2 class="text-left">lorem</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
@@ -264,7 +264,7 @@
                 </div>
                 <div style="height: 5em"></div>
                 <div class="content">
-                    <img src="../Asets/img/policeguard.jpg" alt="">
+                    <img src="../Assets/img/policeguard.jpg" alt="">
                     <div class="content2">
                         <h2 class="text-left">lorem</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
@@ -402,7 +402,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
         crossorigin="anonymous"></script>
-<script src="../Asets/js/bootstrap.min.js"></script>
+<script src="../Assets/js/bootstrap.min.js"></script>
 
 
 </body>

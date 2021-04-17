@@ -246,7 +246,7 @@
                                     </select>
                                 </div>
                                 <div class="foto" style="border: 1px solid lightgray">
-                                    <img id="foto" height="264" src="../Asets/img/vioence.png" class="center-block" alt="">
+                                    <img id="foto" height="264" src="../Assets/img/vioence.png" class="center-block" alt="">
                                 </div>
                             </div>
                             <div class="col-md-6" >
@@ -270,4 +270,4 @@
     </div>
 </div>
 
-<script src="../Asets/js/articles.js"></script>
+<script src="../Assets/js/articles.js"></script>

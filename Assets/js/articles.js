@@ -1,6 +1,6 @@
 
 let fotoja =document.getElementById("foto");
-main_path = "../Asets/img/"
+main_path = "../Assets/img/"
 fotot = ["vioence", "corruption", "robbery", "report"]
 
 function changePic(e) {

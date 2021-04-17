@@ -10,10 +10,10 @@
     <title>Reports</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../Asets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/jpg" href="../Asets/img/fav.png"/>
+    <link href="../Assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="../Assets/img/fav.png"/>
 
-    <link rel="stylesheet" href="../Asets/css/style.css">
+    <link rel="stylesheet" href="../Assets/css/style.css">
 
     <style>
 
