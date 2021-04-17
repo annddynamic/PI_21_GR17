@@ -31,10 +31,13 @@ Route::set('police', function(){
 
 Route::set('report', function(){
     Report::CreateView('report');
+
+    $reportObj=new Report();
+    $reportObj->showUsers();
 });
 
 Route::set('signIn', function(){
-    Login::CreateView('signIn');
+    SignIn::CreateView('signIn');
 });
 
 Route::set('signUpCitizen', function(){

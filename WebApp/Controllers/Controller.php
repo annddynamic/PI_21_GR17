@@ -15,4 +15,10 @@ class Controller extends Database {
 
     }
 
+    public function model($model){
+        require_once './Models/'.$model.'.php';
+
+        return new $model;
+    }
+
 }
