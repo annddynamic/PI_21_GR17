@@ -22,7 +22,7 @@ class UserModel
         $this->db->bind(':birthday', $data['birthday']);
         $this->db->bind(':gender', $data['gender']);
         $this->db->bind(':password', $data['password']);
-        $this->db->bind(':roleID', $data['roleID']);
+        $this->db->bind(':roleID', $data['role_ID']);
 
 
         //Exetute function
@@ -44,7 +44,7 @@ class UserModel
 
         //Check if email is already registered
 
-        if ($this->db->rowCount > 0) {
+        if ($this->db->rowCount() > 0) {
             return true;
         } else {
             return false;

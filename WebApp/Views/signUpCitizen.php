@@ -79,7 +79,7 @@
         <br>
         <div class="form-group pull-left">
             <label>First Name</label>
-            <input type="text" class="form-control " placeholder="First Name" name="Name" ">
+            <input type="text" class="form-control " placeholder="First Name" name="name" ">
             <span class="invalidFeedback"></span>
             <?php echo isset($data['nameError']) ? $data['nameError'] : null;?>
         </div>
@@ -102,7 +102,7 @@
 
         <div class="form-group">
             <label>Birthday</label>
-            <input type="date" class="form-control" >
+            <input type="date" name="birthday" class="form-control" >
             <span class="invalidFeedback"></span>
             <?php echo $data['birthdayError'];?>
         </div>

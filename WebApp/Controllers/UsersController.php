@@ -26,28 +26,31 @@ class UsersController extends Controller
             'genderError' => '',
             'passwordError' => '',
             'confirmPasswordError' => '',
-            'roleID'=>'3'
+            'role_ID'=>''
         ];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
+            echo '<pre>';
+            var_dump($_POST['name']);
+            echo '</pre>';
             $data = [
-                'name' => trim($_POST('name')),
-                'lastName' => trim($_POST('lastName')),
-                'email' => trim($_POST('email')),
-                'birthday' => trim($_POST('birthday')),
-                'gender' => trim($_POST('gender')),
-                'password' => trim($_POST('password')),
-                'confirmPassword' => trim($_POST('confirmPassword')),
+                'name' => trim($_POST['name']),
+                'lastName' => trim($_POST['lastName']),
+                'email' => trim($_POST['email']),
+                'birthday' => trim($_POST['birthday']),
+                'gender' => trim($_POST['gender']),
+                'password' => trim($_POST['password']),
+                'confirmPassword' => trim($_POST['confirmPassword']),
                 'nameError' => '',
                 'lastNameError' => '',
                 'emailError' => '',
                 'birthdayError' => '',
                 'genderError' => '',
                 'passwordError' => '',
-                'confirmPasswordError' => ''
+                'confirmPasswordError' => '',
+                'role_ID'=>'3'
             ];
 
             //Validimi i username
@@ -102,7 +105,7 @@ class UsersController extends Controller
             //Validate password on length and numeric value
             $passwordValidation = "/^(.{0,7}|{^a-z]*|{^\d}*)$/i";
 
-            if (empty($data('password'))) {
+            if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter password';
             } elseif (strlen($data['password'] < 6)) {
                 $data['passwordError'] = 'Password must be at least 8 characters';
@@ -111,7 +114,7 @@ class UsersController extends Controller
             }
 
             //Validate password on length and numeric value
-            if (empty($data('confirmPassword'))) {
+            if (empty($data['confirmPassword'])) {
                 $data['confirmPasswordError'] = 'Please enter password';
             } else {
                 if ($data['password'] != $data['confirmPassword']) {
@@ -146,7 +149,7 @@ class UsersController extends Controller
 
         }
 
-        return $data;
+            return $data;
     }
 
     public function login()
