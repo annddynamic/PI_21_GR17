@@ -5,8 +5,6 @@ class UsersController extends Controller
 {
 
 
-
-
     public function __construct()
     {
         $this->userModel = $this->Model('UserModel');
@@ -29,7 +27,7 @@ class UsersController extends Controller
             'genderError' => '',
             'passwordError' => '',
             'confirmPasswordError' => '',
-            'role_ID'=>''
+            'role_ID' => ''
         ];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -51,7 +49,7 @@ class UsersController extends Controller
                 'genderError' => '',
                 'passwordError' => '',
                 'confirmPasswordError' => '',
-                'role_ID'=>'3'
+                'role_ID' => '3'
             ];
 
             //Validimi i username
@@ -134,48 +132,87 @@ class UsersController extends Controller
 
                 //Hash password, qe mos me mujt me e bo copy paswordin
 
-                $data['password'] = password_hash($data['password'],PASSWORD_DEFAULT );
+                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
                 //Register user from modal function
 
-                if($this->userModel->register($data)){
+                if ($this->userModel->register($data)) {
 
                     // Redirect to the login page
 
                     header('location:index.php');
-                }else{
+                } else {
                     die('Something went wrong. ');
                 }
-
 
 
             }
 
         }
 
-            return $data;
+        return $data;
     }
 
     public function login()
     {
         $data = [
-            'usernameError' => '',
+            'email' => '',
+            'password' => '',
+            'emailError' => '',
             'passwordError' => ''
         ];
         //Check for post
-        if ($_SERVER['REQUEST_METHOD']=='POST'){
-            $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-            $data =[
-                'username'=>trim($_POST['username']),
+            $data = [
+                'email' => trim($_POST['email']),
+                'password' => trim($_POST['password']),
+                'emailError' => '',
+                'passwordError' => ''
+
             ];
+
+            if (empty($data['email'])) {
+
+                $data['emailError'] = 'Pleas enter your email';
+
+            }
+            if (empty($data['password'])) {
+
+                $data['passwordError'] = 'Pleas enter your Password';
+
+            }
+            if (empty($data['email']) && empty($data['password'])) {
+                $loggedInUser = $this->userModel->login($data ['email'], $data['password']);
+                if ($loggedInUser) {
+                    $this->createUserSession($loggedInUser);
+                } else {
+                    $data = [
+                        'email' => '',
+                        'password' => '',
+                        'emailError' => '',
+                        'passwordError' => ''
+                    ];
+
+                    $data['passwordError'] = 'Password or email is incorrect. Pleas try again';
+                    return $data;
+                }
+            }
+
+
         }
 
-
-
         return $data;
-
     }
 
+    public function createUserSession($user)
+    {
+        session_start();
+        $_SESSION['user_id'] = $user->uID;
+        $_SESSION['email'] = $user->email;
+//      $_SESSION['email'] = $user->email;
 
+
+    }
 }

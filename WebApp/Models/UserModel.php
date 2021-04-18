@@ -33,6 +33,23 @@ class UserModel
             return false;
         }
     }
+    public function login($email, $password) {
+         $this->db->query('SELECT * FROM users WHERE email = :email');
+
+         //Binde Value
+
+        $this ->db->bind(':email',$email);
+//        $this->db->execute();
+        $row = $this->db->single();
+
+        $hashedPassword = $row->password;
+
+        if(password_verify($password, $hashedPassword)){
+            return $row;
+        }else{
+            return false;
+        }
+    }
 
     //Find user by email. Email is passed by the Controller
     public function findUserByEmail($email)
