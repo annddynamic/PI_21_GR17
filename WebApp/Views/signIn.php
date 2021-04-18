@@ -83,7 +83,7 @@
         <div class="form-group">
             <input type="text" class="form-control"  name="username" placeholder="Username" >
             <span class="invalidFeedback"></span>
-            <?php echo $data['usernameError'];?>
+            <?php echo isset($data['usernameError']) ? $data['usernameError'] : null;?>
         </div>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Password" name="password">

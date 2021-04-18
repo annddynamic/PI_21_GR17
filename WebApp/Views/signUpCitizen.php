@@ -81,7 +81,7 @@
             <label>First Name</label>
             <input type="text" class="form-control " placeholder="First Name" name="Name" ">
             <span class="invalidFeedback"></span>
-            <?php echo $data['nameError'];?>
+            <?php echo isset($data['nameError']) ? $data['nameError'] : null;?>
         </div>
         <div class="form-group pull-right ">
             <label>Last Name</label>
@@ -108,11 +108,11 @@
         </div>
         <div class="form-group">
             <label>Gender</label>
-            <select class="form-control" name="gender"  >
+            <select class="form-control" name="gender" >
                 <option value aria-disabled="true">Select your gender..</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
             </select>
             <span class="invalidFeedback"></span>
             <?php echo $data['genderError'];?>

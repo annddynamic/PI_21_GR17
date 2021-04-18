@@ -1,7 +1,7 @@
 <?php
 
 
-class SignIn extends Controller{
+class UsersController extends Controller{
 
     public function __construct()
     {
@@ -54,6 +54,8 @@ class SignIn extends Controller{
                 $data['nameError']='Please enter name.';
             }else if (!preg_match($nameValidation, $data['name'])){
                 $data['nameError']='Name can only contain letters and numbers.';
+            }else if (strlen($data['name'])>10 ||strlen($data['name']) <=0){
+                $data['nameError']='Name cannot be empty or null';
             }
 
             // validimi i lastname
@@ -61,14 +63,16 @@ class SignIn extends Controller{
             if(empty ($data['lastName'])){
                 $data['lastNameError']='Please enter last name.';
             }else if (!preg_match($nameValidation, $data['lastName'])){
-                $data['lastName']='lastName can only contain letters and numbers.';
+                $data['lastName']='Last name can only contain letters and numbers.';
+            }else if (strlen($data['lastName'])>10 || strlen($data['lastName']) <=0){
+                $data['lastNameError']='Last name cannot be empty or null';
             }
 
             //Validimi i emailit
             if(empty ($data['name'])) {
-                $data['nameError'] = 'Pleas enter email.';
+                $data['nameError'] = 'Please enter email.';
             }else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
-                $data['emailError']='Pleasr enter the correct format';
+                $data['emailError']='Please enter the correct format';
             }else{
                 //Check if the email exists.
                 if($this->userModel->findUserByEmail($data['email'])){
@@ -76,11 +80,26 @@ class SignIn extends Controller{
                 }
             }
 
+            // birthday format  validation
+            $dateValidation="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/";
 
+            if (preg_match($dateValidation,$data['birthday'])) {
+                $data['birthdayError']="";
+            } else {
+                $data['birthdayError']="Your birthday is not in valid format";
+            }
+
+
+            // Validimi i gender
+            if (empty($data["gender"])) {
+                $data['genderError'] = "Gender is required";
+            } else {
+                $data['genderError'] = "";
+            }
 
         }
 
-            return $data;
+        return $data;
     }
 
     public function login(){
