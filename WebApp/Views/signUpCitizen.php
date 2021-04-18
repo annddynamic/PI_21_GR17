@@ -89,7 +89,7 @@
             <span class="invalidFeedback"></span>
             <?php echo $data['lastNameError'];?>
         </div>
-        <div style="height: 80px"></div>
+        <div style="height: 100px"></div>
 
         <div class="form-group">
             <label>Email</label>

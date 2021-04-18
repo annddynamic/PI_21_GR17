@@ -32,9 +32,7 @@ class UsersController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            echo '<pre>';
-            var_dump($_POST['name']);
-            echo '</pre>';
+
             $data = [
                 'name' => trim($_POST['name']),
                 'lastName' => trim($_POST['lastName']),
@@ -54,6 +52,7 @@ class UsersController extends Controller
             ];
 
             //Validimi i username
+
             $nameValidation = "/^[a-zA-Z0-9]*$/";
             if (empty ($data['name'])) {
                 $data['nameError'] = 'Please enter name.';
@@ -103,7 +102,7 @@ class UsersController extends Controller
             }
 
             //Validate password on length and numeric value
-            $passwordValidation = "/^(.{0,7}|{^a-z]*|{^\d}*)$/i";
+            $passwordValidation = "/^(.{0,15}|{^a-z]*|{^\d}*)$/i";
 
             if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter password';
@@ -158,6 +157,8 @@ class UsersController extends Controller
             'usernameError' => '',
             'passwordError' => ''
         ];
+
+
 
         return $data;
 
