@@ -33,14 +33,18 @@ class UserModel
             return false;
         }
     }
+
     public function login($email, $password) {
          $this->db->query('SELECT * FROM users WHERE email = :email');
 
          //Binde Value
 
-        $this ->db->bind(':email',$email);
-//        $this->db->execute();
+
+
+        $this->db->bind(':email',$email);
+
         $row = $this->db->single();
+
 
         $hashedPassword = $row->password;
 

@@ -153,8 +153,7 @@ class UsersController extends Controller
         return $data;
     }
 
-    public function login()
-    {
+    public function login() {
         $data = [
             'email' => '',
             'password' => '',
@@ -173,46 +172,50 @@ class UsersController extends Controller
 
             ];
 
+//
             if (empty($data['email'])) {
 
-                $data['emailError'] = 'Pleas enter your email';
+                $data['emailError'] = 'Please enter your email';
 
             }
+
             if (empty($data['password'])) {
 
-                $data['passwordError'] = 'Pleas enter your Password';
+                $data['passwordError'] = 'Please enter your Password';
 
             }
+//
             if (empty($data['email']) && empty($data['password'])) {
-                $loggedInUser = $this->userModel->login($data ['email'], $data['password']);
+                $loggedInUser = $this->userModel->login($data['email'], $data['password']);
+
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
                 } else {
-                    $data = [
-                        'email' => '',
-                        'password' => '',
-                        'emailError' => '',
-                        'passwordError' => ''
-                    ];
 
                     $data['passwordError'] = 'Password or email is incorrect. Pleas try again';
-                    return $data;
+//                    return $data;
                 }
             }
 
 
+        }else{
+            $data = [
+                'email' => '',
+                'password' => '',
+                'emailError' => '',
+                'passwordError' => ''
+            ];
         }
 
         return $data;
     }
+
 
     public function createUserSession($user)
     {
         session_start();
         $_SESSION['user_id'] = $user->uID;
         $_SESSION['email'] = $user->email;
-//      $_SESSION['email'] = $user->email;
-
 
     }
 }

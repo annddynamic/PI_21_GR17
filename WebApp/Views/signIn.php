@@ -81,8 +81,8 @@
     <form action="signIn" method="POST">
         <h2 class="text-center">Sign in</h2>
         <div class="form-group">
-            <input type="text" class="form-control" name="username" placeholder="Username" >
-            <span class="invalidFeedback"> <?php echo isset($data['usernameError']) ? $data['usernameError'] : null;?></span>
+            <input type="text" class="form-control" name="email" placeholder="Username" >
+            <span class="invalidFeedback"> <?php echo isset($data['emailError']) ? $data['emailError'] : null;?></span>
         </div>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Password" name="password">

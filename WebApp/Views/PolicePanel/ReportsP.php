@@ -12,7 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../../../Assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="StylesP.css">
+    <link rel="stylesheet" href="../../../Assets/css/StylesP.css">
 
 
 </head>

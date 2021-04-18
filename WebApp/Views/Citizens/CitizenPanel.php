@@ -9,8 +9,8 @@
     <title>Citizen Panel</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../Assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../PolicePanel/StylesP.css">
+    <link href="../Assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Assets/css/StylesP.css">
     
 
 
@@ -507,5 +507,5 @@
 
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-<script src="../../../Assets/js/bootstrap.min.js"></script>
+<script src="../Assets/js/bootstrap.min.js"></script>
 </body>

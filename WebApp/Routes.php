@@ -52,6 +52,10 @@ Route::set('signUpPolice', function(){
     Controller::CreateView('signUpPolice');
 });
 
+Route::set('citizenPanel', function(){
+    Controller::CreateView('CitizenPanel');
+});
+
 
 
 
