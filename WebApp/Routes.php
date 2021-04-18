@@ -37,11 +37,15 @@ Route::set('report', function(){
 });
 
 Route::set('signIn', function(){
-    SignIn::CreateView('signIn');
+    $obj = new SignIn();
+    $data=$obj->login();
+    SignIn::CreateView('signIn', $data);
 });
 
 Route::set('signUpCitizen', function(){
-    SignUpCitizen::CreateView('signUpCitizen');
+    $obj= new SignIn();
+    $data=$obj->register();
+    SignUpCitizen::CreateView('signUpCitizen', $data);
 });
 
 Route::set('signUpPolice', function(){

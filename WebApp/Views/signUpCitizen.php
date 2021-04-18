@@ -74,54 +74,68 @@
 
 <body>
 <div class="login-form">
-    <form action="" method="post">
+    <form action="signUpCitizen" method="post">
         <h2 class="text-center">Sign Up <small>Citizen account</small></h2>
         <br>
         <div class="form-group pull-left">
             <label>First Name</label>
-            <input type="text" class="form-control " placeholder="First Name" required="required">
+            <input type="text" class="form-control " placeholder="First Name" name="Name" ">
+            <span class="invalidFeedback"></span>
+            <?php echo $data['nameError'];?>
         </div>
         <div class="form-group pull-right ">
             <label>Last Name</label>
-            <input type="text" class="form-control" placeholder="Last Name" required="required">
+            <input type="text" class="form-control" placeholder="Last Name" name="lastName">
+            <span class="invalidFeedback"></span>
+            <?php echo $data['lastNameError'];?>
         </div>
         <div style="height: 80px"></div>
 
         <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" placeholder="Email" required="required">
+            <input type="email" name="email" class="form-control" placeholder="Email">
+            <span class="invalidFeedback"></span>
+            <?php echo $data['emailError'];?>
         </div>
 
 
 
         <div class="form-group">
             <label>Birthday</label>
-            <input type="date" class="form-control" required="required">
+            <input type="date" class="form-control" >
+            <span class="invalidFeedback"></span>
+            <?php echo $data['birthdayError'];?>
         </div>
         <div class="form-group">
             <label>Gender</label>
-            <select class="form-control" required="required">
+            <select class="form-control" name="gender"  >
                 <option value aria-disabled="true">Select your gender..</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
             </select>
+            <span class="invalidFeedback"></span>
+            <?php echo $data['genderError'];?>
         </div>
 
 
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password" required="required" minlength="8">
+            <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+            <span class="invalidFeedback"></span>
+            <?php echo $data['passwordError'];?>
         </div>
 
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" id="confirm_password" placeholder="Confirm password" required="required" >
+            <input name="confirmPassword" type="password" class="form-control" id="confirm_password" placeholder="Confirm password" >
+            <span class="invalidFeedback"></span>
+            <?php echo $data['confirmPasswordError'];?>
         </div>
 
 
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+            <button value="submit" type="submit" class="btn btn-primary btn-block">Sign up</button>
         </div>
 
         <div class="clearfix">
@@ -132,20 +146,20 @@
 </div>
 
 <script>
-    var password = document.getElementById("password")
-        , confirm_password = document.getElementById("confirm_password");
-
-    function validatePassword(){
-        if(password.value != confirm_password.value) {
-            confirm_password.setCustomValidity("Passwords Don't Match");
-        } else {
-            confirm_password.setCustomValidity('');
-        }
-    }
-
-    password.onchange = validatePassword;
-    confirm_password.onkeyup = validatePassword;
-</script>
+//    var password = document.getElementById("password")
+//        , confirm_password = document.getElementById("confirm_password");
+//
+//    function validatePassword(){
+//        if(password.value != confirm_password.value) {
+//            confirm_password.setCustomValidity("Passwords Don't Match");
+//        } else {
+//            confirm_password.setCustomValidity('');
+//        }
+//    }
+//
+//    password.onchange = validatePassword;
+//    confirm_password.onkeyup = validatePassword;
+//</script>
 
 
 </body>
