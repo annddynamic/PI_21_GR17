@@ -4,12 +4,15 @@
 class UsersController extends Controller
 {
 
+
+
+
     public function __construct()
     {
         $this->userModel = $this->Model('UserModel');
     }
 
-    public function register()
+    public function registerCitizen()
     {
         $data = [
             'name' => '',
@@ -53,6 +56,7 @@ class UsersController extends Controller
 
             //Validimi i username
 
+
             $nameValidation = "/^[a-zA-Z0-9]*$/";
             if (empty ($data['name'])) {
                 $data['nameError'] = 'Please enter name.';
@@ -73,10 +77,11 @@ class UsersController extends Controller
             }
 
             //Validimi i emailit
-            if (empty ($data['name'])) {
+
+            if (empty ($data['email'])) {
                 $data['nameError'] = 'Please enter email.';
             } else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-                $data['emailError'] = 'Please enter the correct format';
+                $data['emailError'] = 'Please enter the correct format.';
             } else {
                 //Check if the email exists.
                 if ($this->userModel->findUserByEmail($data['email'])) {
@@ -109,7 +114,7 @@ class UsersController extends Controller
             } elseif (strlen($data['password'] < 6)) {
                 $data['passwordError'] = 'Password must be at least 8 characters';
             } else if (!preg_match($passwordValidation, $data['password'])) {
-                $data['passwordError'] = 'Password must have at least one numeric value';
+                $data['passwordError'] = 'Password must have at least one numeric value ';
             }
 
             //Validate password on length and numeric value
@@ -157,6 +162,14 @@ class UsersController extends Controller
             'usernameError' => '',
             'passwordError' => ''
         ];
+        //Check for post
+        if ($_SERVER['REQUEST_METHOD']=='POST'){
+            $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+
+            $data =[
+                'username'=>trim($_POST['username']),
+            ];
+        }
 
 
 

@@ -303,3 +303,6 @@ body {
 .icons{
     margin-top: 2em !important;
 }
+.invalidFeedback{
+    color: red !important;
+}

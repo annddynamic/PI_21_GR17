@@ -81,14 +81,12 @@
     <form action="signIn" method="POST">
         <h2 class="text-center">Sign in</h2>
         <div class="form-group">
-            <input type="text" class="form-control"  name="username" placeholder="Username" >
-            <span class="invalidFeedback"></span>
-            <?php echo isset($data['usernameError']) ? $data['usernameError'] : null;?>
+            <input type="text" class="form-control" name="username" placeholder="Username" >
+            <span class="invalidFeedback"> <?php echo isset($data['usernameError']) ? $data['usernameError'] : null;?></span>
         </div>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Password" name="password">
-            <span class="invalidFeedback"></span>
-            <?php echo $data['passwordError'];?>
+            <span class="invalidFeedback"><?php echo $data['passwordError'];?></span>
         </div>
         <div class="form-group">
             <button value="submit" id="submit" type="submit" class="btn btn-primary btn-block">Log in</button>

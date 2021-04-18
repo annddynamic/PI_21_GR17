@@ -6,11 +6,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Assets/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/jpg" href="../Assets/img/fav.png"/>
-
     <link rel="stylesheet" href="../Assets/css/index.css">
+
     <title>Sign Up</title>
 
     <style>
@@ -42,6 +43,7 @@
             font-size: 15px;
             font-weight: bold;
         }
+
     </style>
 
 
@@ -115,6 +117,12 @@
         </div>
 
         <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" class="form-control" placeholder="Phone Number">
+        </div>
+
+
+        <div class="form-group">
             <label>Birthday</label>
             <input type="date" class="form-control" required="required">
         </div>
@@ -144,28 +152,9 @@
             <button type="submit" class="btn btn-primary btn-block">Sign up</button>
         </div>
 
-        <div class="clearfix">
-            <label class="pull-left checkbox-inline"><input type="checkbox" required="required">I accept terms and
-                agreement</label>
-        </div>
+
     </form>
 </div>
-
-<script>
-    var password = document.getElementById("password")
-        , confirm_password = document.getElementById("confirm_password");
-
-    function validatePassword(){
-        if(password.value != confirm_password.value) {
-            confirm_password.setCustomValidity("Passwords Don't Match");
-        } else {
-            confirm_password.setCustomValidity('');
-        }
-    }
-
-    password.onchange = validatePassword;
-    confirm_password.onkeyup = validatePassword;
-</script>
 
 </body>
 

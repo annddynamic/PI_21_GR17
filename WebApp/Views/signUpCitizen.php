@@ -6,11 +6,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Assets/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/jpg" href="../Assets/img/fav.png"/>
-
     <link rel="stylesheet" href="../Assets/css/index.css">
+
     <title>Sign Up</title>
 
     <style>
@@ -37,6 +38,9 @@
         .btn {
             font-size: 15px;
             font-weight: bold;
+        }
+        .invalidFeedback{
+            color: red;
         }
     </style>
 
@@ -80,22 +84,21 @@
         <div class="form-group pull-left">
             <label>First Name</label>
             <input type="text" class="form-control " placeholder="First Name" name="name" ">
-            <span class="invalidFeedback"></span>
-            <?php echo isset($data['nameError']) ? $data['nameError'] : null;?>
-        </div>
+            <span class="invalidFeedback">
+                <?php echo isset($data['nameError']) ? $data['nameError'] : null;?>
+            </span>
+            </div>
         <div class="form-group pull-right ">
             <label>Last Name</label>
             <input type="text" class="form-control" placeholder="Last Name" name="lastName">
-            <span class="invalidFeedback"></span>
-            <?php echo $data['lastNameError'];?>
+            <span class="invalidFeedback"> <?php echo $data['lastNameError'];?></span>
         </div>
         <div style="height: 100px"></div>
 
         <div class="form-group">
             <label>Email</label>
             <input type="email" name="email" class="form-control" placeholder="Email">
-            <span class="invalidFeedback"></span>
-            <?php echo $data['emailError'];?>
+            <span class="invalidFeedback"><?php echo $data['emailError'];?></span>
         </div>
 
 
@@ -103,8 +106,7 @@
         <div class="form-group">
             <label>Birthday</label>
             <input type="date" name="birthday" class="form-control" >
-            <span class="invalidFeedback"></span>
-            <?php echo $data['birthdayError'];?>
+            <span class="invalidFeedback"><?php echo $data['birthdayError'];?></span>
         </div>
         <div class="form-group">
             <label>Gender</label>
@@ -114,25 +116,21 @@
                 <option value="female">Female</option>
                 <option value="other">Other</option>
             </select>
-            <span class="invalidFeedback"></span>
-            <?php echo $data['genderError'];?>
+            <span class="invalidFeedback"><?php echo $data['genderError'];?></span>
         </div>
 
 
         <div class="form-group">
             <label>Password</label>
             <input name="password" type="password" class="form-control" id="password" placeholder="Password">
-            <span class="invalidFeedback"></span>
-            <?php echo $data['passwordError'];?>
+            <span class="invalidFeedback"><?php echo $data['passwordError'];?></span>
         </div>
 
         <div class="form-group">
             <label>Password</label>
             <input name="confirmPassword" type="password" class="form-control" id="confirm_password" placeholder="Confirm password" >
-            <span class="invalidFeedback"></span>
-            <?php echo $data['confirmPasswordError'];?>
+            <span class="invalidFeedback"><?php echo $data['confirmPasswordError'];?></span>
         </div>
-
 
         <div class="form-group">
             <button value="submit" type="submit" class="btn btn-primary btn-block">Sign up</button>
@@ -142,21 +140,6 @@
     </form>
 </div>
 
-<script>
-//    var password = document.getElementById("password")
-//        , confirm_password = document.getElementById("confirm_password");
-//
-//    function validatePassword(){
-//        if(password.value != confirm_password.value) {
-//            confirm_password.setCustomValidity("Passwords Don't Match");
-//        } else {
-//            confirm_password.setCustomValidity('');
-//        }
-//    }
-//
-//    password.onchange = validatePassword;
-//    confirm_password.onkeyup = validatePassword;
-//</script>
 
 
 </body>

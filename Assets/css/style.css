@@ -223,4 +223,7 @@ body{
 .delete{
     padding: 20px;
 }
+.invalidFeedback{
+color: red;
+}
 

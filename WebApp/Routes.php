@@ -44,7 +44,7 @@ Route::set('signIn', function(){
 
 Route::set('signUpCitizen', function(){
     $obj= new UsersController();
-    $data=$obj->register();
+    $data=$obj->registerCitizen();
     Controller::CreateView('signUpCitizen', $data);
 });
 
