@@ -138,10 +138,7 @@
             <button value="submit" type="submit" class="btn btn-primary btn-block">Sign up</button>
         </div>
 
-        <div class="clearfix">
-            <label class="pull-left checkbox-inline"><input type="checkbox" required="required">I accept terms and
-                agreement</label>
-        </div>
+
     </form>
 </div>
 
