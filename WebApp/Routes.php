@@ -49,6 +49,12 @@ Route::set('signUpCitizen', function(){
 });
 
 Route::set('signUpPolice', function(){
+    $obj= new UsersController();
+    $data=$obj->registerPolice();
+    Controller::CreateView('signUpPolice', $data);
+});
+
+Route::set('signUpPolice', function(){
     Controller::CreateView('signUpPolice');
 });
 

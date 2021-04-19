@@ -78,73 +78,96 @@
 
 <body>
 <div class="login-form">
-    <form action="" method="post">
+    <form action="signUpPolice" method="post">
         <h2 class="text-center">Sign Up <small>Police account</small></h2>
         <br>
         <div class="form-group pull-left">
             <label>First Name</label>
-            <input type="text" class="form-control " placeholder="First Name" required="required">
+            <input type="text" class="form-control " placeholder="First Name" name="name">
+            <span class="invalidFeedback"><?php echo isset($data['nameError']) ? $data['nameError'] : null; ?></span>
+
         </div>
         <div class="form-group pull-right ">
             <label>Last Name</label>
-            <input type="text" class="form-control" placeholder="Last Name" required="required">
+            <input type="text" class="form-control" placeholder="Last Name" name="lastName">
+            <span class="invalidFeedback"> <?php echo $data['lastNameError']; ?></span>
+
         </div>
         <div style="height: 80px"></div>
 
         <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" placeholder="Email" required="required">
+            <input type="email" class="form-control" placeholder="Email" name="email">
+            <span class="invalidFeedback"><?php echo $data['emailError']; ?></span>
+
         </div>
 
         <div class="form-group">
             <label>Country</label>
-            <input type="text" class="form-control" placeholder="Country">
+            <input type="text" class="form-control" placeholder="Country" name="country">
+            <span class="invalidFeedback"> <?php echo $data['countryError']; ?></span>
+
         </div>
 
         <div class="form-group pull-left">
             <label>City</label>
-            <input type="text" class="form-control " placeholder="City" required="required">
+            <input type="text" class="form-control " placeholder="City" name="city">
+            <span class="invalidFeedback"> <?php echo $data['cityError']; ?></span>
+
         </div>
         <div class="form-group pull-right ">
             <label>Zip Code</label>
-            <input type="text" class="form-control" placeholder="Zip Code" required="required">
+            <input type="text" class="form-control" placeholder="Zip Code" name="zipCode">
+            <span class="invalidFeedback"> <?php echo $data['zipCodeError']; ?></span>
+
         </div>
         <div style="height: 80px"></div>
 
         <div class="form-group">
-            <label>Address</label>
-            <input type="text" class="form-control" placeholder="Address">
+            <label>Street</label>
+            <input type="text" class="form-control" placeholder="Street" name="street">
+            <span class="invalidFeedback"> <?php echo $data['streetError']; ?></span>
+
         </div>
 
         <div class="form-group">
             <label>Phone Number</label>
-            <input type="text" class="form-control" placeholder="Phone Number">
+            <input type="text" class="form-control" placeholder="Phone Number" name="phoneNumber">
+            <span class="invalidFeedback"> <?php echo $data['phoneNumberError']; ?></span>
         </div>
-
 
         <div class="form-group">
             <label>Birthday</label>
-            <input type="date" class="form-control" required="required">
+            <input type="date" class="form-control" name="birthday">
+            <span class="invalidFeedback"><?php echo $data['birthdayError']; ?></span>
         </div>
+
         <div class="form-group">
             <label>Gender</label>
-            <select class="form-control" required="required">
+            <select class="form-control" name="gender">
                 <option value aria-disabled="true">Select your gender..</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
             </select>
+            <span class="invalidFeedback"><?php echo $data['genderError']; ?></span>
+
         </div>
 
 
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password" required="required" minlength="8">
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+            <span class="invalidFeedback"><?php echo $data['passwordError']; ?></span>
+
         </div>
 
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" id="confirm_password" placeholder="Confirm password" required="required">
+            <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password"
+                   name="confirmPassword">
+            <span class="invalidFeedback"><?php echo $data['confirmPasswordError']; ?></span>
+
         </div>
 
 

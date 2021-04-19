@@ -22,29 +22,32 @@
             margin: 65px auto;
             /*padding: 100px 0px;*/
         }
+
         .login-form form {
             margin-bottom: 15px;
             background: #f7f7f7;
             box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
             padding: 60px;
         }
+
         .login-form h2 {
             margin: 0 0 15px;
         }
+
         .form-control, .btn {
             min-height: 38px;
             border-radius: 2px;
         }
+
         .btn {
             font-size: 15px;
             font-weight: bold;
         }
-        .invalidFeedback{
+
+        .invalidFeedback {
             color: red;
         }
     </style>
-
-
 
 
 </head>
@@ -84,52 +87,50 @@
         <div class="form-group pull-left">
             <label>First Name</label>
             <input type="text" class="form-control " placeholder="First Name" name="name" ">
-            <span class="invalidFeedback">
-                <?php echo isset($data['nameError']) ? $data['nameError'] : null;?>
-            </span>
-            </div>
+            <span class="invalidFeedback"><?php echo isset($data['nameError']) ? $data['nameError'] : null; ?></span>
+        </div>
         <div class="form-group pull-right ">
             <label>Last Name</label>
             <input type="text" class="form-control" placeholder="Last Name" name="lastName">
-            <span class="invalidFeedback"> <?php echo $data['lastNameError'];?></span>
+            <span class="invalidFeedback"> <?php echo $data['lastNameError']; ?></span>
         </div>
         <div style="height: 100px"></div>
 
         <div class="form-group">
             <label>Email</label>
             <input type="email" name="email" class="form-control" placeholder="Email">
-            <span class="invalidFeedback"><?php echo $data['emailError'];?></span>
+            <span class="invalidFeedback"><?php echo $data['emailError']; ?></span>
         </div>
-
-
 
         <div class="form-group">
             <label>Birthday</label>
-            <input type="date" name="birthday" class="form-control" >
-            <span class="invalidFeedback"><?php echo $data['birthdayError'];?></span>
+            <input type="date" name="birthday" class="form-control">
+            <span class="invalidFeedback"><?php echo $data['birthdayError']; ?></span>
         </div>
+
         <div class="form-group">
             <label>Gender</label>
-            <select class="form-control" name="gender" >
+            <select class="form-control" name="gender">
                 <option value aria-disabled="true">Select your gender..</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
             </select>
-            <span class="invalidFeedback"><?php echo $data['genderError'];?></span>
+            <span class="invalidFeedback"><?php echo $data['genderError']; ?></span>
         </div>
 
 
         <div class="form-group">
             <label>Password</label>
             <input name="password" type="password" class="form-control" id="password" placeholder="Password">
-            <span class="invalidFeedback"><?php echo $data['passwordError'];?></span>
+            <span class="invalidFeedback"><?php echo $data['passwordError']; ?></span>
         </div>
 
         <div class="form-group">
-            <label>Password</label>
-            <input name="confirmPassword" type="password" class="form-control" id="confirm_password" placeholder="Confirm password" >
-            <span class="invalidFeedback"><?php echo $data['confirmPasswordError'];?></span>
+            <label>Confirm Password</label>
+            <input name="confirmPassword" type="password" class="form-control" id="confirm_password"
+                   placeholder="Confirm password">
+            <span class="invalidFeedback"><?php echo $data['confirmPasswordError']; ?></span>
         </div>
 
         <div class="form-group">
@@ -139,7 +140,6 @@
 
     </form>
 </div>
-
 
 
 </body>
