@@ -39,7 +39,7 @@ class UserModel
     {
         $this->db->query('INSERT INTO pending_users (name,surname,gender,data_lindjes,rruga,qyteti,shteti, ZIP,nr_telefonit,email,password,role_ID) 
                                                 VALUES (:name,:lastName,:gender,:birthday,:street,:city,:country,:zipCode,:phoneNumber,:email,:password,:roleID )');
-        //Binde values
+        //Bind values
 
         $this->db->bind(':name', $data['name']);
         $this->db->bind(':lastName', $data['lastName']);
@@ -84,10 +84,30 @@ class UserModel
     }
 
     //Find user by email. Email is passed by the Controller
-    public function findUserByEmail($email)
+    public function findUserByEmailUsers($email)
      {
         //Prepared statement
         $this->db->query('SELECT * FROM users WHERE email = :email');
+
+        //Email param will be binded with the email variable
+
+        $this->db->bind(':email', $email);
+        $this->db->execute();
+
+        //Check if email is already registered
+
+        if ($this->db->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public function findUserByEmailPending($email)
+    {
+        //Prepared statement
+        $this->db->query('SELECT * FROM pending_users WHERE email = :email');
 
         //Email param will be binded with the email variable
 

@@ -77,12 +77,12 @@ class UsersController extends Controller
             //Validimi i emailit
 
             if (empty ($data['email'])) {
-                $data['nameError'] = 'Please enter email.';
+                $data['emailError'] = 'Please enter email.';
             } else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
                 $data['emailError'] = 'Please enter the correct format.';
             } else {
                 //Check if the email exists.
-                if ($this->userModel->findUserByEmail($data['email'])) {
+                if ($this->userModel->findUserByEmailUsers($data['email']) || $this->userModel->findUserByEmailPending($data['email']) ) {
                     $data['emailError'] = 'Email is already taken.';
                 }
             }
@@ -238,7 +238,7 @@ class UsersController extends Controller
                 $data['emailError'] = 'Please enter the correct format.';
             } else {
                 //Check if the email exists.
-                if ($this->userModel->findUserByEmail($data['email'])) {
+                if ($this->userModel->findUserByEmailUsers($data['email']) || $this->userModel->findUserByEmailPending($data['email']) ) {
                     $data['emailError'] = 'Email is already taken.';
                 }
             }
@@ -336,14 +336,14 @@ class UsersController extends Controller
                 $data['passwordError'] = 'Please enter your Password';
             }
 //
-            if (empty($data['email']) && empty($data['password'])) {
+            if (empty($data['emailError']) && empty($data['passwordError'])) {
                 $loggedInUser = $this->userModel->login($data['email'], $data['password']);
 
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
                 } else {
                     $data['passwordError'] = 'Password or email is incorrect. Pleas try again';
-//                    return $data;
+                    return $data;
                 }
             }
 
@@ -361,6 +361,7 @@ class UsersController extends Controller
     public function createUserSession($user)
     {
         session_start();
+        echo session_id();
         $_SESSION['user_id'] = $user->uID;
         $_SESSION['email'] = $user->email;
 

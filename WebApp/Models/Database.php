@@ -63,7 +63,7 @@ class Database {
 
     public function single(){
        $this->execute();
-       return $this->statement->fetch(PDO::FETCH_ASSOC);
+       return $this->statement->fetch(PDO::FETCH_OBJ);
     }
 
     // Row count

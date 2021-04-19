@@ -83,13 +83,13 @@
         <br>
         <div class="form-group pull-left">
             <label>First Name</label>
-            <input type="text" class="form-control " placeholder="First Name" name="name">
+            <input type="text" class="form-control" value="<?php echo isset($data['name']) ? $data['name'] : null; ?>" placeholder="First Name" name="name">
             <span class="invalidFeedback"><?php echo isset($data['nameError']) ? $data['nameError'] : null; ?></span>
 
         </div>
         <div class="form-group pull-right ">
             <label>Last Name</label>
-            <input type="text" class="form-control" placeholder="Last Name" name="lastName">
+            <input type="text" class="form-control" value="<?php echo $data['lastName']; ?>" placeholder="Last Name" name="lastName">
             <span class="invalidFeedback"> <?php echo $data['lastNameError']; ?></span>
 
         </div>
@@ -97,27 +97,27 @@
 
         <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" placeholder="Email" name="email">
+            <input type="email" class="form-control" value="<?php echo $data['email']; ?>" placeholder="Email" name="email">
             <span class="invalidFeedback"><?php echo $data['emailError']; ?></span>
 
         </div>
 
         <div class="form-group">
             <label>Country</label>
-            <input type="text" class="form-control" placeholder="Country" name="country">
+            <input type="text" class="form-control" value="<?php echo $data['country']; ?>" placeholder="Country" name="country">
             <span class="invalidFeedback"> <?php echo $data['countryError']; ?></span>
 
         </div>
 
         <div class="form-group pull-left">
             <label>City</label>
-            <input type="text" class="form-control " placeholder="City" name="city">
+            <input type="text" class="form-control" value="<?php echo $data['city']; ?>" placeholder="City" name="city">
             <span class="invalidFeedback"> <?php echo $data['cityError']; ?></span>
 
         </div>
         <div class="form-group pull-right ">
             <label>Zip Code</label>
-            <input type="text" class="form-control" placeholder="Zip Code" name="zipCode">
+            <input type="text" class="form-control" value="<?php echo $data['zipCode']; ?>" placeholder="Zip Code" name="zipCode">
             <span class="invalidFeedback"> <?php echo $data['zipCodeError']; ?></span>
 
         </div>
@@ -125,20 +125,20 @@
 
         <div class="form-group">
             <label>Street</label>
-            <input type="text" class="form-control" placeholder="Street" name="street">
+            <input type="text" class="form-control" value="<?php echo $data['street']; ?>" placeholder="Street" name="street">
             <span class="invalidFeedback"> <?php echo $data['streetError']; ?></span>
 
         </div>
 
         <div class="form-group">
             <label>Phone Number</label>
-            <input type="text" class="form-control" placeholder="Phone Number" name="phoneNumber">
+            <input type="text" class="form-control" value="<?php echo $data['phoneNumber']; ?>" placeholder="Phone Number" name="phoneNumber">
             <span class="invalidFeedback"> <?php echo $data['phoneNumberError']; ?></span>
         </div>
 
         <div class="form-group">
             <label>Birthday</label>
-            <input type="date" class="form-control" name="birthday">
+            <input type="date" class="form-control" value="<?php echo $data['birthday']; ?>" name="birthday">
             <span class="invalidFeedback"><?php echo $data['birthdayError']; ?></span>
         </div>
 
@@ -146,12 +146,11 @@
             <label>Gender</label>
             <select class="form-control" name="gender">
                 <option value aria-disabled="true">Select your gender..</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
+                <option value="male" <?php echo (isset($_POST['gender']) && $_POST['gender'] === 'male') ? 'selected' : ''; ?>>Male</option>
+                <option value="female" <?php echo (isset($_POST['gender']) && $_POST['gender'] === 'female') ? 'selected' : ''; ?>>Female</option>
+                <option value="other" <?php echo (isset($_POST['gender']) && $_POST['gender'] === 'other') ? 'selected' : ''; ?>>Other</option>
             </select>
             <span class="invalidFeedback"><?php echo $data['genderError']; ?></span>
-
         </div>
 
 
