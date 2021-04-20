@@ -111,15 +111,15 @@ include "navbar.php";
                         Dashboard
                     </a>
                     <a href="police" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden=""
-                                                                       true> </span> Users<span class="badge">12</span></a>
+                                                                   true> </span> Users<span class="badge">12</span></a>
                     <a href="reports" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                                                                        aria-hidden="" true> </span> Reports<span
+                                                                    aria-hidden="" true> </span> Reports<span
                                 class="badge">12</span></a>
                     <a href="articles" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden=""
-                                                                         true> </span> Articles<span
+                                                                     true> </span> Articles<span
                                 class="badge">12</span></a>
                     <a href="feedback" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                                                                         aria-hidden="" true> </span> Feedback<span
+                                                                     aria-hidden="" true> </span> Feedback<span
                                 class="badge">12</span></a>
                 </div>
 
@@ -180,59 +180,29 @@ include "navbar.php";
                     <div class="panel-body myPanel">
                         <table class="table  table-hover tbl">
                             <tr>
-                                <th class="main-color-bg">Name</th>
-                                <th class="main-color-bg">Last Name</th>
-                                <th class="main-color-bg">Gender</th>
-                                <th class="main-color-bg">Dob</th>
-                                <th class="main-color-bg">Address</th>
-                                <th class="main-color-bg">Email</th>
-                                <th class="main-color-bg">Role</th>
+                                <th class="main-color-bg" scope="col">Name</th>
+                                <th class="main-color-bg" scope="col">Last Name</th>
+                                <th class="main-color-bg" scope="col">Gender</th>
+                                <th class="main-color-bg" scope="col">Dob</th>
+                                <th class="main-color-bg" scope="col">Address</th>
+                                <th class="main-color-bg" scope="col">Email</th>
+                                <th class="main-color-bg" scope="col">Role</th>
                             </tr>
-                            <tr>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                            </tr>
-                            <tr>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                            </tr>
-                            <tr>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                            </tr>
-                            <tr>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                            </tr>
-                            <tr>
-                                <td>Adnit King kobra</td>
-                                <td>Adnit King kobra</td>
-                                <td>Adnit King kobra</td>
-                                <td>Adnit King kobra</td>
-                                <td>Adnit King kobra</td>
-                                <td>Adnit King kobra</td>
-                                <td>Adnit King kobra</td>
-                            </tr>
+                            <tbody>
+                            <?php if (isset($data)) {
+                                foreach ($data as $i =>$data): ?>
+                                <tr>
+                                    <td><?php echo $data['name']?></td>
+                                    <td><?php echo $data['surname']?></td>
+                                    <td><?php echo $data['gender']?></td>
+                                    <td><?php echo $data['data_lindjes']?></td>
+                                    <td><?php echo $data['rruga']?></td>
+                                    <td><?php echo $data['email']?></td>
+                                    <td><?php echo $data['role_name']?></td>
+                                </tr>
+                                <?php endforeach;
+                            } ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>

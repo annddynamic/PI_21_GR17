@@ -64,8 +64,6 @@ class UserModel
         }
     }
 
-
-
     public function login($email, $password) {
          $this->db->query('SELECT * FROM users WHERE email = :email');
 
@@ -123,5 +121,8 @@ class UserModel
         }
 
     }
+
+
+
 
 }

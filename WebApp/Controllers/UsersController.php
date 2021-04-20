@@ -10,6 +10,8 @@ class UsersController extends Controller
         $this->userModel = $this->Model('UserModel');
     }
 
+
+
     public function registerCitizen()
     {
         $data = [
