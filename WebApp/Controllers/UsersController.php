@@ -82,7 +82,7 @@ class UsersController extends Controller
                 $data['emailError'] = 'Please enter the correct format.';
             } else {
                 //Check if the email exists.
-                if ($this->userModel->findUserByEmailUsers($data['email']) || $this->userModel->findUserByEmailPending($data['email']) ) {
+                if ($this->userModel->findUserByEmailUsers($data['email']) || $this->userModel->findUserByEmailPending($data['email'])) {
                     $data['emailError'] = 'Email is already taken.';
                 }
             }
@@ -215,17 +215,17 @@ class UsersController extends Controller
             //Validimi i name
 
             $nameValidation = "/^[a-zA-Z0-9]*$/";
-            $text = "Please enter your name";
+            $text = "Please enter your name.";
             $words = preg_split($nameValidation, $text);
 
             if (empty ($data['name'])) {
-                foreach($words as $word){
-                    $data['nameError'] =$data['nameError'].$word;
+                foreach ($words as $word) {
+                    $data['nameError'] = $data['nameError'] . $word;
                 }
             } else if (!preg_match($nameValidation, $data['name'])) {
                 $data['nameError'] = 'Name can only contain letters and numbers.';
             } else if (strlen($data['name']) > 10) {
-                $data['nameError'] = 'Name cannot be longer than 10 characters';
+                $data['nameError'] = 'Name cannot be longer than 10 characters.';
             }
 
             // validimi i lastname
@@ -234,7 +234,7 @@ class UsersController extends Controller
             } else if (!preg_match($nameValidation, $data['lastName'])) {
                 $data['lastName'] = 'Last name can only contain letters and numbers.';
             } else if (strlen($data['lastName']) > 10) {
-                $data['lastNameError'] = 'Surname cannot be longer than 10 characters';
+                $data['lastNameError'] = 'Surname cannot be longer than 10 characters.';
             }
 
             //Validimi i emailit
@@ -243,8 +243,9 @@ class UsersController extends Controller
             } else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
                 $data['emailError'] = 'Please enter the correct format.';
             } else {
+
                 //Check if the email exists.
-                if ($this->userModel->findUserByEmailUsers($data['email']) || $this->userModel->findUserByEmailPending($data['email']) ) {
+                if ($this->userModel->findUserByEmailUsers($data['email']) || $this->userModel->findUserByEmailPending($data['email'])) {
                     $data['emailError'] = 'Email is already taken.';
                 }
             }
@@ -255,71 +256,86 @@ class UsersController extends Controller
             if (preg_match($dateValidation, $data['birthday'])) {
                 $data['birthdayError'] = "";
             } else {
-                $data['birthdayError'] = "Your birthday is not in valid format";
+                $data['birthdayError'] = "Your birthday is not in valid format.";
             }
 
 
             // Validimi i gender
             if (empty($data["gender"])) {
-                $data['genderError'] = "Gender is required";
+                $data['genderError'] = "Gender is required.";
             } else {
                 $data['genderError'] = "";
             }
 
 
-
             // validimi i Country
 
-           $countriesString = "Albania, Afghanistan, Algeria, Andorra, Austria, Australia, Bahamas, Bulgaria, Belgium, Brazil, Beliza, Croatia, Canada, Chile, Denmark, Egypt, Macedonia, Ecuador, Finland, Ghana, Germany, Honduras, Israel, India, Jordan, Kosova, Kenya, Laos, Lebanon, Mexico, Norway, Oman, Pakistan, Poland, Portugal, Russia, Slovenia, Spain, Turkey, UK, USA, America";
+            $countriesString = "Albania, Afghanistan, Algeria, Andorra, Austria, Australia, Bahamas, Bulgaria, Belgium, Brazil, Beliza, Croatia, Canada, Chile, Denmark, Egypt, Macedonia, Ecuador, Finland, Ghana, Germany, Honduras, Israel, India, Jordan, Kosova, Kenya, Laos, Lebanon, Mexico, Norway, Oman, Pakistan, Poland, Portugal, Russia, Slovenia, Spain, Turkey, UK, USA, America";
 
-            $countriesArr= explode(", ", $countriesString);
+            $countriesArr = explode(", ", $countriesString);
 
-            if(empty($data['country'])) {
-                $data['countryError'] = "Please enter country";
-            }else if($data['country']=='Kosovo'){
+            if (empty($data['country'])) {
+                $data['countryError'] = "Please enter country.";
+            } else if ($data['country'] == 'Kosovo') {
                 $data['country'];
                 $pattern = '/Kosovo/i';
                 preg_replace($pattern, 'Kosova', $data['country']);
-            }else {
+            } else {
                 if (!in_array($data['country'], $countriesArr)) {
-                    $data['countryError'] = "Your country was not in our list, try again";
+                    $data['countryError'] = "Your country was not in our list, try again.";
                 }
             }
 
+            // Validimi i city
+            if (empty ($data['city'])) {
+                $data['cityError'] = 'Please enter your city.';
+            }
 
             // Validate phone number
-
-
             if ($this->validate_phone_number($data['phoneNumber']) == true) {
-                $data['phoneNumberError']="";
+                $data['phoneNumberError'] = "";
             } else {
-                $data['phoneNumberError']="Your phone number is invalid, try again";
+                $data['phoneNumberError'] = "Your phone number is invalid, try again.";
             }
 
 
             // validimi i zip
+            if ($this->numbers_only($data['zipCode']) == true) {
+                $data['zipCodeError'] = '';
+            } elseif (empty($data['zipCode'])) {
+                $data['zipCodeError'] = 'Please enter zip code.';
+            } else {
+                $data['zipCodeError'] = 'Zip code is invalid, try again.';
+            }
 
+            //Validimi i streets
+
+            if (empty ($data['street'])) {
+                $data['streetError'] = 'Please enter street.';
+            }
 
 
             //Validate password on length and numeric value
             $passwordValidation = "/^(.{0,15}|{^a-z]*|{^\d}*)$/i";
 
             if (empty($data['password'])) {
-                $data['passwordError'] = 'Please enter password';
+                $data['passwordError'] = 'Please enter password.';
             } elseif (strlen($data['password'] < 6)) {
-                $data['passwordError'] = 'Password must be at least 8 characters';
+                $data['passwordError'] = 'Password must be at least 8 characters.';
             } else if (!preg_match($passwordValidation, $data['password'])) {
-                $data['passwordError'] = 'Password must have at least one numeric value ';
+                $data['passwordError'] = 'Password must have at least one numeric value.';
             }
 
             //Validate password on length and numeric value
             if (empty($data['confirmPassword'])) {
-                $data['confirmPasswordError'] = 'Please enter password';
+                $data['confirmPasswordError'] = 'Please enter password.';
             } else {
                 if ($data['password'] != $data['confirmPassword']) {
                     $data['confirmPasswordError'] = 'Password do not match, pleas try again.';
                 }
             }
+
+
             //Make sure that errors are empty
             if (
                 empty($data['nameError']) && empty($data['lastNameError']) &&
@@ -400,7 +416,6 @@ class UsersController extends Controller
     }
 
 
-
     public function createUserSession($user)
     {
         session_start();
@@ -429,5 +444,11 @@ class UsersController extends Controller
         }
     }
 
-
+    private function numbers_only($zipCode)
+    {
+        if (empty($zipCode)) {
+            return false;
+        }
+        return preg_match('/^([0-9]*)$/', $zipCode);
+    }
 }

@@ -93,7 +93,7 @@
             <span class="invalidFeedback"> <?php echo $data['lastNameError']; ?></span>
 
         </div>
-        <div style="height: 80px"></div>
+        <div style="height: 100px"></div>
 
         <div class="form-group">
             <label>Email</label>
@@ -121,7 +121,7 @@
             <span class="invalidFeedback"> <?php echo $data['zipCodeError']; ?></span>
 
         </div>
-        <div style="height: 80px"></div>
+        <div style="height: 100px"></div>
 
         <div class="form-group">
             <label>Street</label>
