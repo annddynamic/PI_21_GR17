@@ -232,7 +232,7 @@ class UsersController extends Controller
             if (empty ($data['lastName'])) {
                 $data['lastNameError'] = 'Please enter last name.';
             } else if (!preg_match($nameValidation, $data['lastName'])) {
-                $data['lastName'] = 'Last name can only contain letters and numbers.';
+                $data['lastNameError'] = 'Last name can only contain letters and numbers.';
             } else if (strlen($data['lastName']) > 10) {
                 $data['lastNameError'] = 'Surname cannot be longer than 10 characters.';
             }
@@ -270,7 +270,7 @@ class UsersController extends Controller
 
             // validimi i Country
 
-            $countriesString = "Albania, Afghanistan, Algeria, Andorra, Austria, Australia, Bahamas, Bulgaria, Belgium, Brazil, Beliza, Croatia, Canada, Chile, Denmark, Egypt, Macedonia, Ecuador, Finland, Ghana, Germany, Honduras, Israel, India, Jordan, Kosova, Kenya, Laos, Lebanon, Mexico, Norway, Oman, Pakistan, Poland, Portugal, Russia, Slovenia, Spain, Turkey, UK, USA, America";
+            $countriesString = "Albania, Afghanistan, Algeria, Andorra, Austria, Australia, Bahamas, Bulgaria, Belgium, Brazil, Beliza, Croatia, Canada, Chile, China, Japan, Azebaijan, Taiwan, Switzerland, Norway, Romania, Denmark, Egypt, Macedonia, Ecuador, Finland, Ghana, Germany, Honduras, Israel, India, Jordan, Kosova, Kenya, Laos, Lebanon, Mexico, Norway, Oman, Pakistan, Poland, Portugal, Russia, Slovenia, Spain, Turkey, UK, USA, America";
 
             $countriesArr = explode(", ", $countriesString);
 

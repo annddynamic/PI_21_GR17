@@ -1,4 +1,11 @@
-    <!DOCTYPE html>
+<?php
+
+if (isset($data)) {
+    $errors = $data->getErrors();
+}
+?>
+
+<!DOCTYPE html>
     <html lang="en">
     <head>
         <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
@@ -65,19 +72,21 @@
                     <img style="margin-left: 2em;" height="400" src="../Assets/img/vioence.png" alt="">
                 </div>
                 <div class="col-md-6 col-md-offset-1 push">
-                    <form>
+                    <form action="report" method="POST">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" class="form-control" placeholder="Name" name="name">
+                            <span class="invalidFeedback"><?php echo isset($errors['nameError']) ? $errors['nameError'] : null; ?></span>
                         </div>
                         <div class="form-group">
                             <label>Last Name</label>
-                            <input type="text" class="form-control" placeholder="Last Name">
+                            <input type="text" class="form-control" name="lastName" placeholder="Last Name">
+                            <span class="invalidFeedback"> <?php echo $errors['lastNameError']; ?></span>
                         </div>
                         <div class="form-group">
-
-                            <label for="Gender">What do you want to report?</label>
-                            <select class="form-control" name="gender">
+                            <label for="Reports" >What do you want to report?</label>
+                            <select class="form-control" name="report">
+                                <option value aria-disabled="true">Select report type..</option>
                                 <option value="abuse">Abuse</option>
                                 <option value="suicide">Suicide</option>
                                 <option value="murder">Murder</option>
@@ -87,32 +96,33 @@
                                 <option value="corruption">Corruption</option>
                                 <option value="other">Other</option>
                             </select>
-
-
+                            <span class="invalidFeedback"> <?php echo $errors['reportError']; ?></span>
                         </div>
                         <div class="form-group">
-                            <textarea id="textarea"   placeholder="Add Message"> </textarea>
+                            <textarea id="textarea" name="textfield"  placeholder="Add Message"> </textarea>
+                            <span class="invalidFeedback"> <?php echo $errors['textfieldError']; ?></span>
                             <div class="pull-right ">
-
-                                <input type="file" id="myfile" name="myfile">
+                                <input type="file" id="myfile" name="file">
+                                <span class="invalidFeedback"> <?php echo $errors['fileError']; ?></span>
                             </div>
                         </div>
 
 
-
-
                         <div class="form-group">
                             <label for="Date">Date</label>
-                            <input type="date" class="form-control" name="date">
+                            <input type="date" name="date" class="form-control" name="date">
+                            <span class="invalidFeedback"> <?php echo $errors['dateError']; ?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" name="address" class="form-control" placeholder="Address">
+                            <span class="invalidFeedback"> <?php echo $errors['addressError']; ?></span>
                         </div>
 
                         <div class="form-group">
                             <label>City</label>
-                            <input type="text" class="form-control" placeholder="City">
-                        </div>
-                        <div class="form-group">
-                            <label>Country</label>
-                            <input type="text" class="form-control" placeholder="Country">
+                            <input type="text" name="city" class="form-control" placeholder="City">
+                            <span class="invalidFeedback"> <?php echo $errors['cityError']; ?></span>
                         </div>
 
 

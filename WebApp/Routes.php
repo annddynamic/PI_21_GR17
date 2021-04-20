@@ -30,10 +30,9 @@ Route::set('police', function(){
 });
 
 Route::set('report', function(){
-    Report::CreateView('report');
-
-    $reportObj=new Report();
-    $reportObj->showUsers();
+    $data = new ReportsController();
+    $data->createReport();
+    Controller::CreateView('report',$data);
 });
 
 Route::set('signIn', function(){
@@ -54,9 +53,6 @@ Route::set('signUpPolice', function(){
     Controller::CreateView('signUpPolice', $data);
 });
 
-Route::set('signUpPolice', function(){
-    Controller::CreateView('signUpPolice');
-});
 
 Route::set('citizenPanel', function(){
     Controller::CreateView('CitizenPanel');
