@@ -6,7 +6,10 @@ Route::set('index.php', function(){
 });
 
 Route::set('adminPanel', function(){
-    AdminPanel::CreateView('adminPanel');
+    $obj=new AdminController();
+    $data=$obj->index();
+    AdminPanel::CreateView('adminPanel',$data);
+
 });
 
 Route::set('articles', function(){
