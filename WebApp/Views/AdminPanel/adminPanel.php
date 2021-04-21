@@ -57,11 +57,7 @@
 include "navbar.php";
 
 if (isset($data)) {
-$users = $data->getUsers();
-$count = $data->countUsers();
 }
-
-
 ?>
 <body>
 
@@ -196,17 +192,18 @@ $count = $data->countUsers();
                                 <th class="main-color-bg" scope="col">Role</th>
                             </tr>
                             <tbody>
-                                <?php foreach ($users as $i => $user):?>
-                                    <tr>
-                                        <td><?php echo $user['name'] ?></td>
-                                        <td><?php echo $user['surname'] ?></td>
-                                        <td><?php echo $user['gender'] ?></td>
-                                        <td><?php echo $user['data_lindjes'] ?></td>
-                                        <td><?php echo $user['rruga'] ?></td>
-                                        <td><?php echo $user['email'] ?></td>
-                                        <td><?php echo $user['role_name'] ?></td>
-                                    </tr>
-                                <?php endforeach;  ?>
+
+                            <?php foreach ($data['users'] as $i => $user):?>
+                                <tr>
+                                    <td><?php echo $user['name'] ?></td>
+                                    <td><?php echo $user['surname'] ?></td>
+                                    <td><?php echo $user['gender'] ?></td>
+                                    <td><?php echo $user['data_lindjes'] ?></td>
+                                    <td><?php echo $user['rruga'] ?></td>
+                                    <td><?php echo $user['email'] ?></td>
+                                    <td><?php echo $user['role_name'] ?></td>
+                                </tr>
+                            <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
