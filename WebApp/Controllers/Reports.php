@@ -12,7 +12,7 @@ class Reports extends Controller {
     private $city;
     private $address;
     private $sID=1;
-    private $categoryID=1;
+    private $categoryID;
     private $errors=[];
 
 
@@ -85,7 +85,7 @@ class Reports extends Controller {
         $this->city = $city;
     }
 
-    public function setCategoryID(int $categoryID): void
+    public function setCategoryID(int $categoryID)
     {
         $this->categoryID = $categoryID;
     }

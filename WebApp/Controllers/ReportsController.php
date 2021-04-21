@@ -3,7 +3,6 @@
 
 class ReportsController extends Reports
 {
-    private $obj;
     public function __construct()
     {
         $this->reportModel = $this->Model('ReportModel');
@@ -86,8 +85,6 @@ class ReportsController extends Reports
 
             if (empty ($this->getAddress())) {
                 $errors['addressError'] = 'Please enter address';
-            } else if (!preg_match($nameValidation, $this->getAddress())) {
-                $errors['addressError'] = 'Address can only contain letters and numbers.';
             } else if (strlen($this->getAddress()) > 30) {
                 $errors['addressError'] = 'Address cannot be longer than 30 characters';
             }
@@ -99,6 +96,25 @@ class ReportsController extends Reports
             }
 
             $this->setErrors($errors);
+
+            if($this->getReport()=='abuse'){
+                $this->setCategoryID(1);
+            }else if($this->getReport()=='suicide'){
+                $this->setCategoryID(2);
+            }else if($this->getReport()=='murder') {
+                $this->setCategoryID(3);
+            }else if($this->getReport()=='robbery'){
+                    $this->setCategoryID(4);
+            }else if($this->getReport()=='arson'){
+                $this->setCategoryID(5);
+            }else if($this->getReport()=='breakIn'){
+                $this->setCategoryID(6);
+            }else if($this->getReport()=='corruption'){
+                $this->setCategoryID(7);
+            }else {
+                $this->setCategoryID(8);
+            }
+
 
             if (
                 empty($errors['nameError']) && empty($errors['lastNameError']) &&
@@ -136,7 +152,7 @@ class ReportsController extends Reports
             'address'=>$this->getAddress(),
             'city'=>$this->getCity(),
             'sID'=>$this->getsID(),
-            'cID'=>$this->getCategoryID()
+            'cID'=>$this->getCategoryID(),
 
         ];
 
