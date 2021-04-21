@@ -11,19 +11,12 @@ class Reports extends Controller {
     private $date;
     private $city;
     private $address;
-    private $sID;
-    private $categoryID;
+    private $sID=1;
+    private $categoryID=1;
     private $errors=[];
 
 
-    public function __construct()
-    {
-        $this->sID=1;
-        $this->categoryID=1;
-    }
-
-
-    public function getSID()
+    public function getsID()
     {
         return $this->sID;
     }
@@ -92,6 +85,15 @@ class Reports extends Controller {
         $this->city = $city;
     }
 
+    public function setCategoryID(int $categoryID): void
+    {
+        $this->categoryID = $categoryID;
+    }
+
+    function setSID($sID): void
+    {
+        $this->sID = $sID;
+    }
 
     public function getName()
     {

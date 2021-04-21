@@ -14,18 +14,18 @@ class ReportModel
     public function addReport($data)
     {
         $this->db->query('INSERT INTO report(emri,mbiemri,dt_raportimit,description,foto,city,address, sID,categoryID) 
-                              VALUES (:emri,:lastName,:gender,:birthday,:street,:city,:country,:zipCode,:phoneNumber)');
+                              VALUES (:name,:lastName,:file,:date,:textField,:city,:address,:sID,:cID)');
         //Bind values
 
-        $this->db->bind(':emri', $data['name']);
+        $this->db->bind(':name', $data['name']);
         $this->db->bind(':lastName', $data['lastName']);
-        $this->db->bind(':gender', $data['file']);
-        $this->db->bind(':birthday', $data['date']);
-        $this->db->bind(':country', $data['address']);
+        $this->db->bind(':file', $data['file']);
+        $this->db->bind(':date', $data['date']);
+        $this->db->bind(':address', $data['address']);
         $this->db->bind(':city', $data['city']);
-        $this->db->bind(':zipCode', $data['sID']);
-        $this->db->bind(':phoneNumber', $data['cID']);
-        $this->db->bind(':street', $data['textField']);
+        $this->db->bind(':sID', $data['sID']);
+        $this->db->bind(':cID', $data['cID']);
+        $this->db->bind(':textField', $data['textField']);
 
 
         //Exetute function

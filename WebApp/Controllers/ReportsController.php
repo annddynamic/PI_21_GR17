@@ -3,7 +3,7 @@
 
 class ReportsController extends Reports
 {
-
+    private $obj;
     public function __construct()
     {
         $this->reportModel = $this->Model('ReportModel');
@@ -82,7 +82,6 @@ class ReportsController extends Reports
                 $errors['reportError'] = "";
             }
 
-
             // Address validation
 
             if (empty ($this->getAddress())) {
@@ -92,7 +91,6 @@ class ReportsController extends Reports
             } else if (strlen($this->getAddress()) > 30) {
                 $errors['addressError'] = 'Address cannot be longer than 30 characters';
             }
-
 
             // City validation
 
@@ -111,20 +109,7 @@ class ReportsController extends Reports
 
                 // Adding class properties to array
 
-                $data =[
-                  'address'=>$this->getAddress(),
-                  'city'=>$this->getCity(),
-                  'name'=>$this->getName(),
-                  'lastName'=>$this->getLastName(),
-                  'textField'=>$this->getTextfield(),
-                  'date'=>$this->getDate(),
-                  'file'=>$this->getFile(),
-                  'report'=>$this->getReport(),
-                  'sID'=>$this->getSID(),
-                  'cID'=>$this->getCategoryID()
-
-                ];
-
+                $data=$this->getData();
 
                 if ($this->reportModel->addReport($data)) {
 
@@ -139,6 +124,23 @@ class ReportsController extends Reports
 
 
         }
+    }
+
+    public function getData(){
+        $data =[
+            'name'=>$this->getName(),
+            'lastName'=>$this->getLastName(),
+            'textField'=>$this->getTextfield(),
+            'file'=>$this->getFile(),
+            'date'=>$this->getDate(),
+            'address'=>$this->getAddress(),
+            'city'=>$this->getCity(),
+            'sID'=>$this->getsID(),
+            'cID'=>$this->getCategoryID()
+
+        ];
+
+        return $data;
     }
 
 }
