@@ -7,9 +7,8 @@ Route::set('index.php', function(){
 
 Route::set('adminPanel', function(){
     $obj=new AdminController();
-    $data=$obj->index();
+    $data=$obj->getData();
     AdminPanel::CreateView('adminPanel',$data);
-
 });
 
 Route::set('articles', function(){

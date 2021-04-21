@@ -17,7 +17,14 @@ class AdminModel
         $result = $this->db->resultSet();
 
         return $result;
+    }
 
+    public function countUsers(){
+        $this->db->query('SELECT COUNT(name) FROM users');
+
+        $result = $this->db->resultSet();
+
+        return $result;
     }
 
 

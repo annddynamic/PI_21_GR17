@@ -110,17 +110,18 @@ include "navbar.php";
                                 class="glyphicon glyphicon-cog" aria-hidden="" true> </span>
                         Dashboard
                     </a>
-                    <a href="police" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden=""
-                                                                   true> </span> Users<span class="badge">12</span></a>
-                    <a href="reports" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                                                                    aria-hidden="" true> </span> Reports<span
-                                class="badge">12</span></a>
-                    <a href="articles" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden=""
-                                                                     true> </span> Articles<span
-                                class="badge">12</span></a>
-                    <a href="feedback" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                                                                     aria-hidden="" true> </span> Feedback<span
-                                class="badge">12</span></a>
+                    <a href="police" class="list-group-item">
+                    <span class="glyphicon glyphicon-user" aria-hidden=""true></span> Users<span class="badge">12</span></a>
+
+                    <a href="reports" class="list-group-item">
+                    <span class="glyphicon glyphicon-list-alt" aria-hidden="" true></span> Reports<span class="badge">12</span></a>
+
+                    <a href="articles" class="list-group-item">
+                    <span class="glyphicon glyphicon-book" aria-hidden=""true> </span> Articles<span class="badge">12</span></a>
+
+                    <a href="feedback" class="list-group-item">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> Feedback<span class="badge">12</span></a>
+
                 </div>
 
                 <div class="well">
@@ -189,17 +190,25 @@ include "navbar.php";
                                 <th class="main-color-bg" scope="col">Role</th>
                             </tr>
                             <tbody>
+
+                            <?php
+
+                            echo '<pre>';
+                            var_dump($data);
+                            echo '</pre>';?>
+
                             <?php if (isset($data)) {
-                                foreach ($data as $i =>$data): ?>
-                                <tr>
-                                    <td><?php echo $data['name']?></td>
-                                    <td><?php echo $data['surname']?></td>
-                                    <td><?php echo $data['gender']?></td>
-                                    <td><?php echo $data['data_lindjes']?></td>
-                                    <td><?php echo $data['rruga']?></td>
-                                    <td><?php echo $data['email']?></td>
-                                    <td><?php echo $data['role_name']?></td>
-                                </tr>
+                                foreach ($data as $i => $data): ?>
+                                    <tr>
+                                        <td><?php echo $data[0]['name'] ?></td>
+                                        <td><?php echo $data[0]['surname'] ?></td>
+                                        <td><?php echo $data[0]['gender'] ?></td>
+                                        <td><?php echo $data[0]['data_lindjes'] ?></td>
+                                        <td><?php echo $data[0]['rruga'] ?></td>
+                                        <td><?php echo $data[0]['email'] ?></td>
+                                        <td><?php echo $data[0]['role_name'] ?></td>
+                                    </tr>
+
                                 <?php endforeach;
                             } ?>
                             </tbody>

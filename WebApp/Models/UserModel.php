@@ -99,7 +99,6 @@ class UserModel
         } else {
             return false;
         }
-
     }
 
     public function findUserByEmailPending($email)

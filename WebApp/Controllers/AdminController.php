@@ -1,4 +1,5 @@
 <?php
+
 class AdminController extends Controller
 {
     public function __construct()
@@ -6,15 +7,26 @@ class AdminController extends Controller
         $this->adminModel = $this->Model('AdminModel');
     }
 
-    public function index(){
+    public function getUsers()
+    {
         $users = $this->adminModel->getUsers();
-
-//            $data = [
-//                'users' => $users
-//            ];
-
-            return $users;
-
+        return $users;
     }
+
+    public function countUsers()
+    {
+        $users = $this->adminModel->countUsers();
+        return $users;
+    }
+
+    public function getData()
+    {
+        $data = [
+            'users'=>$this->getUsers(),
+            'count'=>$this->countUsers()
+        ];
+        return $data;
+    }
+
 
 }
