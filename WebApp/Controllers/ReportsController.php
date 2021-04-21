@@ -1,119 +1,13 @@
 <?php
 
 
-class ReportsController extends Controller {
-
-    private $name;
-    private $lastName;
-    private $report;
-    private $textfield;
-    private $file;
-    private $date;
-    private $city;
-    private $address;
-    private $errors=[];
-
+class ReportsController extends Reports
+{
 
     public function __construct()
     {
-        $this->reportModel=$this->model('ReportModel');
+        $this->reportModel = $this->Model('ReportModel');
     }
-
-
-    public function setErrors(array $errors)
-    {
-        $this->errors = $errors;
-    }
-
-    public function getErrors()
-    {
-        return $this->errors;
-    }
-
-
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    public function setLastName($lastName)
-    {
-        $this->lastName = $lastName;
-    }
-
-
-    public function setAddress($address): void
-    {
-        $this->address = $address;
-    }
-
-
-    public function getAddress()
-    {
-        return $this->address;
-    }
-
-    public function setReport($report)
-    {
-        $this->report = $report;
-    }
-
-    public function setTextfield($textfield)
-    {
-        $this->textfield = $textfield;
-    }
-
-    public function setFile($file)
-    {
-        $this->file = $file;
-    }
-
-    public function setDate($date)
-    {
-        $this->date = $date;
-    }
-
-    public function setCity($city)
-    {
-        $this->city = $city;
-    }
-
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-
-    public function getReport()
-    {
-        return $this->report;
-    }
-
-    public function getTextfield()
-    {
-        return $this->textfield;
-    }
-
-    public function getFile()
-    {
-        return $this->file;
-    }
-
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    public function getCity()
-    {
-        return $this->city;
-    }
-
 
     public function createReport()
     {
@@ -144,8 +38,6 @@ class ReportsController extends Controller {
             $this->setAddress(trim($_POST['address']));
 
 
-
-
             //Validimi i name
 
             $nameValidation = "/^[a-zA-Z0-9]*$/";
@@ -153,30 +45,30 @@ class ReportsController extends Controller {
             $words = preg_split($nameValidation, $text);
 
 
-            if (empty($this->name)) {
+            if (empty($this->getName())) {
                 foreach($words as $word){
                     $errors['nameError'] =$errors['nameError'].$word;
                 }
-            } else if (!preg_match($nameValidation, $this->name)) {
+            } else if (!preg_match($nameValidation, $this->getName())) {
                 $errors['nameError'] = 'Name can only contain letters and numbers.';
-            } else if (strlen($this->name) > 10) {
+            } else if (strlen($this->getName()) > 10) {
                 $errors['nameError'] = 'Name cannot be longer than 10 characters';
             }
 
 
             // validimi i lastname
-            if (empty ($this->lastName)) {
+            if (empty ($this->getLastName())) {
                 $errors['lastNameError'] = 'Please enter last name.';
-            } else if (!preg_match($nameValidation, $this->lastName)) {
+            } else if (!preg_match($nameValidation, $this->getLastName())) {
                 $errors['lastNameError'] = 'Last name can only contain letters and numbers.';
-            } else if (strlen($this->lastName) > 10) {
+            } else if (strlen($this->getLastName()) > 10) {
                 $errors['lastNameError'] = 'Surname cannot be longer than 10 characters';
             }
 
             // birthday format  validation
             $dateValidation = "/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/";
 
-            if (preg_match($dateValidation, $this->date)) {
+            if (preg_match($dateValidation, $this->getDate())) {
                 $errors['dateError'] = "";
             } else {
                 $errors['dateError'] = "Your birthday is not in valid format.";
@@ -184,7 +76,7 @@ class ReportsController extends Controller {
 
 
             // Validimi i Report type
-            if (empty($this->report)) {
+            if (empty($this->getReport())) {
                 $errors['reportError'] = "Report type is required";
             } else {
                 $errors['reportError'] = "";
@@ -193,26 +85,60 @@ class ReportsController extends Controller {
 
             // Address validation
 
-            if (empty ($this->address)) {
+            if (empty ($this->getAddress())) {
                 $errors['addressError'] = 'Please enter address';
-            } else if (!preg_match($nameValidation, $this->address)) {
+            } else if (!preg_match($nameValidation, $this->getAddress())) {
                 $errors['addressError'] = 'Address can only contain letters and numbers.';
-            } else if (strlen($this->address) > 30) {
+            } else if (strlen($this->getAddress()) > 30) {
                 $errors['addressError'] = 'Address cannot be longer than 30 characters';
             }
 
 
+            // City validation
 
+            if (empty ($this->getCity())) {
+                $errors['cityError'] = 'Please enter city';
+            }
 
             $this->setErrors($errors);
 
+            if (
+                empty($errors['nameError']) && empty($errors['lastNameError']) &&
+                empty($errors['reportError']) && empty($errors['addressError']) &&
+                empty($errors['cityError']) && empty($errors['textfieldError']) &&
+                empty($errors['dateError']) && empty($errors['fileError'])) {
+
+
+                // Adding class properties to array
+
+                $data =[
+                  'address'=>$this->getAddress(),
+                  'city'=>$this->getCity(),
+                  'name'=>$this->getName(),
+                  'lastName'=>$this->getLastName(),
+                  'textField'=>$this->getTextfield(),
+                  'date'=>$this->getDate(),
+                  'file'=>$this->getFile(),
+                  'report'=>$this->getReport(),
+                  'sID'=>$this->getSID(),
+                  'cID'=>$this->getCategoryID()
+
+                ];
+
+
+                if ($this->reportModel->addReport($data)) {
+
+                    // Redirect to the login page
+
+                    header('location:index.php');
+                } else {
+                    die('Something went wrong. ');
+                }
+            }
 
 
 
         }
     }
 
-
 }
-
-

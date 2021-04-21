@@ -22,7 +22,7 @@ Route::set('feedback', function(){
 });
 
 Route::set('reports', function(){
-    Reports::CreateView('reports');
+    ReportsController::CreateView('reports');
 });
 
 Route::set('police', function(){
