@@ -56,6 +56,12 @@
 
 include "navbar.php";
 
+if (isset($data)) {
+$users = $data->getUsers();
+$count = $data->countUsers();
+}
+
+
 ?>
 <body>
 
@@ -190,27 +196,17 @@ include "navbar.php";
                                 <th class="main-color-bg" scope="col">Role</th>
                             </tr>
                             <tbody>
-
-                            <?php
-
-                            echo '<pre>';
-                            var_dump($data);
-                            echo '</pre>';?>
-
-                            <?php if (isset($data)) {
-                                foreach ($data as $i => $data): ?>
+                                <?php foreach ($users as $i => $user):?>
                                     <tr>
-                                        <td><?php echo $data[0]['name'] ?></td>
-                                        <td><?php echo $data[0]['surname'] ?></td>
-                                        <td><?php echo $data[0]['gender'] ?></td>
-                                        <td><?php echo $data[0]['data_lindjes'] ?></td>
-                                        <td><?php echo $data[0]['rruga'] ?></td>
-                                        <td><?php echo $data[0]['email'] ?></td>
-                                        <td><?php echo $data[0]['role_name'] ?></td>
+                                        <td><?php echo $user['name'] ?></td>
+                                        <td><?php echo $user['surname'] ?></td>
+                                        <td><?php echo $user['gender'] ?></td>
+                                        <td><?php echo $user['data_lindjes'] ?></td>
+                                        <td><?php echo $user['rruga'] ?></td>
+                                        <td><?php echo $user['email'] ?></td>
+                                        <td><?php echo $user['role_name'] ?></td>
                                     </tr>
-
-                                <?php endforeach;
-                            } ?>
+                                <?php endforeach;  ?>
                             </tbody>
                         </table>
                     </div>

@@ -2,10 +2,12 @@
 
 class AdminController extends Controller
 {
+
     public function __construct()
     {
         $this->adminModel = $this->Model('AdminModel');
     }
+
 
     public function getUsers()
     {
@@ -15,18 +17,11 @@ class AdminController extends Controller
 
     public function countUsers()
     {
-        $users = $this->adminModel->countUsers();
-        return $users;
+        $count = $this->adminModel->countUsers();
+        return $count;
     }
 
-    public function getData()
-    {
-        $data = [
-            'users'=>$this->getUsers(),
-            'count'=>$this->countUsers()
-        ];
-        return $data;
-    }
+
 
 
 }
