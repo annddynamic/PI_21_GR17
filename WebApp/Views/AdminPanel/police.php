@@ -57,6 +57,9 @@
 
 <?php
 include "navbar.php";
+
+if (isset($data)) {
+}
 ?>
     <body>
 
@@ -288,8 +291,12 @@ include "navbar.php";
                             <li  class="sticky list-group-item active main-color-bg">
                                 Pending Approval
                             </li>
+
+                            <?php foreach ($data['pendingApproval'] as $i => $approve): ?>
+
                             <li class="list-group-item">
-                                Dapibus ac facilisis in
+
+                                <?php echo $approve['name'].' '.$approve['surname'] ?>
 
                                 <button type="button" class="pull-right btn btn-danger" data-toggle="modal" data-target="#approveUser">
                                     <span class="glyphicon glyphicon-remove"></span>
@@ -298,42 +305,8 @@ include "navbar.php";
                                     <span class="glyphicon glyphicon-ok"></span>
                                 </button>
                             </li>
-                            <li class="list-group-item">
-                                Dapibus ac facilisis in
-                                <button type="button" class="pull-right btn btn-danger" data-toggle="modal" data-target="#approveUser">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </button>
-                                <button type="button" style="margin-left:115px;" class=" btn btn-success">
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                </button>
-                            </li>
-                            <li class="list-group-item">
-                                Dapibus ac facilisis in
-                                <button type="button" class="pull-right btn btn-danger" data-toggle="modal" data-target="#approveUser">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </button>
-                                <button type="button" style="margin-left:115px;" class=" btn btn-success">
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                </button>
-                            </li>
-                            <li class="list-group-item">
-                                Dapibus ac facilisis in
-                                <button type="button" class="pull-right btn btn-danger" data-toggle="modal" data-target="#approveUser">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </button>
-                                <button type="button" style="margin-left:115px;" class=" btn btn-success">
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                </button>
-                            </li>
-                            <li class="list-group-item">
-                                Dapibus ac facilisis in
-                                <button type="button" class="pull-right btn btn-danger" data-toggle="modal" data-target="#approveUser">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </button>
-                                <button type="button" style="margin-left:115px;" class=" btn btn-success">
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                </button>
-                            </li>
+                            <?php endforeach; ?>
+
                         </ul>
                     </div>
                 </div>

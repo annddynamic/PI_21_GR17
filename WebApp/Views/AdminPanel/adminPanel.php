@@ -103,6 +103,7 @@ if (isset($data)) {
     </div>
 </header>
 
+
 <section id="main">
     <div class="container">
         <div class="row">
@@ -113,16 +114,19 @@ if (isset($data)) {
                         Dashboard
                     </a>
                     <a href="police" class="list-group-item">
-                    <span class="glyphicon glyphicon-user" aria-hidden=""true></span> Users<span class="badge">12</span></a>
+                        <span class="glyphicon glyphicon-user" aria-hidden="" true></span> Users<span
+                                class="badge"><?php echo $data['count'][0]['COUNT(name)'] ?></span></a>
 
                     <a href="reports" class="list-group-item">
-                    <span class="glyphicon glyphicon-list-alt" aria-hidden="" true></span> Reports<span class="badge">12</span></a>
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="" true></span> Reports<span
+                                class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
 
                     <a href="articles" class="list-group-item">
-                    <span class="glyphicon glyphicon-book" aria-hidden=""true> </span> Articles<span class="badge">12</span></a>
+                        <span class="glyphicon glyphicon-book" aria-hidden="" true> </span> Articles<span class="badge">12</span></a>
 
                     <a href="feedback" class="list-group-item">
-                    <span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> Feedback<span class="badge">12</span></a>
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> Feedback<span
+                                class="badge">12</span></a>
 
                 </div>
 
@@ -151,13 +155,15 @@ if (isset($data)) {
                     <div class="panel-body">
                         <div class="col-md-3">
                             <div class="well dash-box">
-                                <h2><span class="glyphicon glyphicon-user" aria-hidden="" true> </span> 12</h2>
+                                <h2><span class="glyphicon glyphicon-user" aria-hidden=""
+                                          true> </span><?php echo $data['count'][0]['COUNT(name)'] ?></h2>
                                 <h4>Users</h4>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="well dash-box">
-                                <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="" true> </span> 12</h2>
+                                <h2><span class="glyphicon glyphicon-list-alt" aria-hidden=""
+                                          true> </span><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></h2>
                                 <h4>Reports</h4>
                             </div>
                         </div>
@@ -193,7 +199,7 @@ if (isset($data)) {
                             </tr>
                             <tbody>
 
-                            <?php foreach ($data['users'] as $i => $user):?>
+                            <?php foreach ($data['users'] as $i => $user): ?>
                                 <tr>
                                     <td><?php echo $user['name'] ?></td>
                                     <td><?php echo $user['surname'] ?></td>
