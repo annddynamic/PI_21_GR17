@@ -36,6 +36,7 @@ Route::set('reports', function(){
 Route::set('police', function(){
     $obj=new AdminController();
     $data=$obj->getData();
+    $obj->managePolice();
     Controller::CreateView('police',$data);
 });
 

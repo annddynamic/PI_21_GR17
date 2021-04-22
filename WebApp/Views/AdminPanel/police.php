@@ -101,9 +101,7 @@ if (isset($data)) {
             </div>
         </div>
         </header>
-        <?php echo '<pre>';
-        var_dump($data['pendingApproval']);
-        echo '</pre>'; ?>
+
         <section id="main">
             <div class ="container">
                 <div class="row">
@@ -300,14 +298,15 @@ if (isset($data)) {
 
                                 <?php echo $approve['name'].' '.$approve['surname'] ?>
                                     <form method="post" action="police" style="display: inline-block" >
-                                        <input type="hidden" name="id" value="#">
-                                        <button type="submit"  class="pull-right btn btn-danger" >
-                                            <span class="glyphicon glyphicon-remove"><?php  ?></span>
+                                        <input type="hidden" name="remove" value="<?php  echo $data['pendingApproval'][$i]['uID'] ?>">
+                                        <button type="submit" name="delete"  value=""  class="pull-right btn btn-danger" >
+                                            <span class="glyphicon glyphicon-remove"></span>
                                         </button>
+                                        <input type="hidden" name="insert" value="<?php  echo $data['pendingApproval'][$i]['uID'] ?>">
+                                                <button  type="submit" name="add" value=""style="margin-left:115px;" class=" btn btn-success">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                </button>
                                     </form>
-                                <button type="button" style="margin-left:115px;" class=" btn btn-success">
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                </button>
                             </li>
                             <?php endforeach; ?>
 

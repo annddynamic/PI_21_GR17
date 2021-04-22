@@ -55,6 +55,45 @@ class AdminModel
         return $result;
     }
 
+    public function deletePolice($data){
+
+
+        $this->db->query('DELETE FROM pending_users WHERE uID=:id');
+        //Bind values
+
+        $this->db->bind(':id', $data['uID']);
+
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public function addPolice($data){
+
+
+        $this->db->query('INSERT INTO users(name, surname, gender, data_lindjes, rruga, qyteti, shteti, ZIP, nr_telefonit, email, password, inDuty, role_ID) 
+                                        SELECT name, surname, gender, data_lindjes, rruga, qyteti, shteti, ZIP, nr_telefonit, email, password, inDuty, role_ID 
+                                        FROM pending_users  
+                                        WHERE uID=:id');
+        //Bind values
+
+        $this->db->bind(':id', $data['uID']);
+
+
+
+        if ($this->db->execute()) {
+            $this->deletePolice($data);
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
 
 
 

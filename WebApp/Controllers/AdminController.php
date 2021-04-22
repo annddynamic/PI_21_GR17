@@ -46,14 +46,13 @@ class AdminController extends Controller
             'count' => $this->countUsers(),
             'reportCount' => $this->countReport(),
             'pendingApproval' => $this->pendingApproval(),
-            'countPoliceUsers' => $this->countPoliceUsers(),
-            'deleteData'=>$this->deleteData(),
+            'countPoliceUsers' => $this->countPoliceUsers()
         ];
         return $data;
     }
 
 
-    public function deleteData()
+    public function managePolice()
     {
         $data = [
             'uID' => '',
@@ -62,12 +61,39 @@ class AdminController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            $data=[
-                'uID'=>$_POST['uID'],
-            ];
+
+
+            if(isset($_POST['delete'])){
+                $data=[
+                    'uID'=>$_POST['remove'],
+                ];
+
+                if ($this->adminModel->deletePolice($data)) {
+
+                    header('location:police');
+                } else {
+                    die('Something went wrong. ');
+                }
+
+            }else {
+                $data=[
+                    'uID'=>$_POST['insert'],
+                ];
+
+                if ($this->adminModel->addPolice($data)) {
+
+                    header('location:police');
+                } else {
+                    die('Something went wrong. ');
+                }
+
+            }
+
         }
         return $data;
     }
+
+
 
 
 }
