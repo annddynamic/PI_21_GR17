@@ -56,6 +56,8 @@
 
 <?php
 include "navbar.php";
+if (isset($data)) {
+}
 ?>
     <body>
 
@@ -107,8 +109,8 @@ include "navbar.php";
                             <a href="adminPanel" class="list-group-item  " ><span class ="glyphicon glyphicon-cog" aria-hidden="" true> </span>
                                 Dashboard
                             </a>
-                            <a href="police" class="list-group-item"><span class ="glyphicon glyphicon-user" aria-hidden="" true> </span>   Users<span class="badge">12</span></a>
-                            <a href="reports" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>   Reports<span class="badge">12</span></a>
+                            <a href="police" class="list-group-item"><span class ="glyphicon glyphicon-user" aria-hidden="" true> </span>   Users<span class="badge"><?php echo $data['count'][0]['COUNT(name)'] ?></span></a>
+                            <a href="reports" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>   Reports<span class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
                             <a href="articles" class="list-group-item main-color-bg active"><span class ="glyphicon glyphicon-book" aria-hidden="" true> </span>   Articles<span class="badge">12</span></a>
                             <a href="feedback" class="list-group-item"><span class ="glyphicon glyphicon-pencil" aria-hidden="" true> </span>   Feedback<span class="badge">12</span></a>
                         </div>

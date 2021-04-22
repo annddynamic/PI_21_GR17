@@ -12,7 +12,9 @@ Route::set('adminPanel', function(){
 });
 
 Route::set('articles', function(){
-    Articles::CreateView('articles');
+    $obj=new AdminController();
+    $data=$obj->getData();
+    Articles::CreateView('articles',$data);
 });
 
 Route::set('citizen', function(){
@@ -20,11 +22,15 @@ Route::set('citizen', function(){
 });
 
 Route::set('feedback', function(){
-    Feedback::CreateView('feedback');
+    $obj=new AdminController();
+    $data=$obj->getData();
+    Feedback::CreateView('feedback',$data);
 });
 
 Route::set('reports', function(){
-    ReportsController::CreateView('reports');
+    $obj=new AdminController();
+    $data=$obj->getData();
+    ReportsController::CreateView('reports',$data);
 });
 
 Route::set('police', function(){

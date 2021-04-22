@@ -28,6 +28,14 @@ class AdminModel
 
         return $result;
     }
+    public function countPoliceUsers()
+    {
+        $this->db->query('SELECT COUNT(name) FROM users WHERE role_ID=2');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
 
     public function countReport()
     {
@@ -46,6 +54,8 @@ class AdminModel
 
         return $result;
     }
+
+
 
 
 }
