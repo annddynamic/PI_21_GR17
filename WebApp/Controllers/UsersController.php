@@ -421,10 +421,15 @@ class UsersController extends Controller
     public function createUserSession($user)
     {
         session_start();
-        echo session_id();
         $_SESSION['user_id'] = $user->uID;
-        $_SESSION['email'] = $user->email;
+        $_SESSION['name'] = $user->name;
+        $_SESSION['role'] = $user->role_ID;
 
+        if($_SESSION['role']==2) {
+            header('location:policePanel');
+        }   else  if($_SESSION['role']==3){
+            header('location:citizenPanel');
+        }
     }
 
 

@@ -69,6 +69,10 @@ Route::set('citizenPanel', function(){
     Controller::CreateView('CitizenPanel');
 });
 
+Route::set('policePanel', function(){
+    Controller::CreateView('MainP');
+});
+
 
 
 

@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -89,7 +94,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../index.php">Welcome</a></li>
+                <li><a href="../index.php">Welcome <?php echo $_SESSION['name'];?></a></li>
                 <li><a href="../index.php">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
