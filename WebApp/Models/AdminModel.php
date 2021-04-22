@@ -28,6 +28,7 @@ class AdminModel
 
         return $result;
     }
+
     public function countPoliceUsers()
     {
         $this->db->query('SELECT COUNT(name) FROM users WHERE role_ID=2');
@@ -72,7 +73,8 @@ class AdminModel
 
     }
 
-    public function addPolice($data){
+    public function addPolice($data)
+    {
 
 
         $this->db->query('INSERT INTO users(name, surname, gender, data_lindjes, rruga, qyteti, shteti, ZIP, nr_telefonit, email, password, inDuty, role_ID) 
@@ -84,7 +86,6 @@ class AdminModel
         $this->db->bind(':id', $data['uID']);
 
 
-
         if ($this->db->execute()) {
             $this->deletePolice($data);
             return true;
@@ -94,7 +95,14 @@ class AdminModel
 
     }
 
+    public function policeOfficials()
+    {
+        $this->db->query('SELECT name,surname,rruga,nr_telefonit FROM users WHERE role_ID=2');
 
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
 
 
 }

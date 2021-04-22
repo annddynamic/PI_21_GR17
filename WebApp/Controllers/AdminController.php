@@ -39,6 +39,11 @@ class AdminController extends Controller
 
     }
 
+    public function policeOfficials(){
+        $users = $this->adminModel->policeOfficials();
+        return $users;
+    }
+
     public function getData()
     {
         $data = [
@@ -46,7 +51,9 @@ class AdminController extends Controller
             'count' => $this->countUsers(),
             'reportCount' => $this->countReport(),
             'pendingApproval' => $this->pendingApproval(),
-            'countPoliceUsers' => $this->countPoliceUsers()
+            'countPoliceUsers' => $this->countPoliceUsers(),
+            'policeOfficials'=>$this->policeOfficials(),
+
         ];
         return $data;
     }
