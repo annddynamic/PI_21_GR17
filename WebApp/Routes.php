@@ -70,7 +70,13 @@ Route::set('citizenPanel', function(){
 });
 
 Route::set('policePanel', function(){
-    Controller::CreateView('MainP');
+    $obje = new policePanelController();
+    $data=$obje->getAssoc();
+    Controller::CreateView('MainP', $data);
+});
+
+Route::set('myReports', function(){
+    Controller::CreateView('myReports');
 });
 
 
