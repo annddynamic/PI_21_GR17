@@ -74,7 +74,7 @@ if (isset($data)) {
                     <img style="margin-left: 2em;" height="400" src="../Assets/img/vioence.png" alt="">
                 </div>
                 <div class="col-md-6 col-md-offset-1 push">
-                    <form action="report" method="POST">
+                    <form action="report" enctype="multipart/form-data" method="POST">
                         <div class="form-group">
                             <label>Name</label>
                             <input type="text" value="<?php echo isset($data['name']) ? $data['name'] : null; ?>" class="form-control" placeholder="Name" name="name">
@@ -127,11 +127,7 @@ if (isset($data)) {
                             <span class="invalidFeedback"> <?php echo $errors['cityError']; ?></span>
                         </div>
 
-
-
                         <input type="submit" class="btn btn-default main-color-bg btn-lg " value="Submit">
-
-
                     </form>
                 </div>
             </div>
@@ -142,7 +138,7 @@ if (isset($data)) {
         <div class="modal fade" id="andi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form>
+                    <form action="report" enctype="multipart/form-data" method="POST">
                         <div class="modal-header main-color-bg">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>

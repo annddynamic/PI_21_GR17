@@ -30,7 +30,7 @@ class ReportsController extends Reports
             $this->setName(trim($_POST['name']));
             $this->setLastName(trim($_POST['lastName']));
             $this->setReport(trim($_POST['report']));
-            $this->setFile(trim($_POST['file']));
+            $this->setFile($_FILES['file']);
             $this->setTextfield(trim($_POST['textfield']));
             $this->setDate(trim($_POST['date']));
             $this->setCity(trim($_POST['city']));
@@ -95,6 +95,27 @@ class ReportsController extends Reports
                 $errors['cityError'] = 'Please enter city';
             }
 
+            if(!is_dir('../Assets/DB-IMGS')){
+                mkdir('../Assets/DB-IMGS');
+            }
+
+
+            $image = $this->getFile();
+            if($image && $image['tmp_name']){
+
+                $this->setImgPath('../Assets/DB-IMGS/'.$this->randomString(9).'/'.$image['name']);
+
+                $imgPath = $this->getImgPath();
+
+                mkdir(dirname($imgPath));
+
+                move_uploaded_file($image['tmp_name'],$imgPath);
+            }
+
+
+
+
+
             $this->setErrors($errors);
 
             if($this->getReport()=='abuse'){
@@ -114,6 +135,9 @@ class ReportsController extends Reports
             }else {
                 $this->setCategoryID(8);
             }
+
+            // Photo
+
 
 
             if (
@@ -147,7 +171,7 @@ class ReportsController extends Reports
             'name'=>$this->getName(),
             'lastName'=>$this->getLastName(),
             'textField'=>$this->getTextfield(),
-            'file'=>$this->getFile(),
+            'file'=>$this->getImgPath(),
             'date'=>$this->getDate(),
             'address'=>$this->getAddress(),
             'city'=>$this->getCity(),
@@ -157,6 +181,16 @@ class ReportsController extends Reports
         ];
 
         return $data;
+    }
+
+    public  function randomString($n) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $str = '';
+        for ($i = 0; $i < $n; $i++) {
+            $index = rand(0,strlen($characters)-1);
+            $str .= $characters[$index];
+        }
+        return $str;
     }
 
 }

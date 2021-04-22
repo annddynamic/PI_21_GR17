@@ -13,18 +13,18 @@ class Reports extends Controller {
     private $address;
     private $sID=1;
     private $categoryID;
+    private $imgPath;
     private $errors=[];
-
-
-    public function getsID()
-    {
-        return $this->sID;
-    }
-
 
     public function getCategoryID()
     {
         return $this->categoryID;
+    }
+
+
+    public function getSID(): int
+    {
+        return $this->sID;
     }
 
     public function setErrors(array $errors)
@@ -37,7 +37,6 @@ class Reports extends Controller {
         return $this->errors;
     }
 
-
     public function setName($name)
     {
         $this->name = $name;
@@ -49,9 +48,21 @@ class Reports extends Controller {
     }
 
 
+    public function getImgPath()
+    {
+        return $this->imgPath;
+    }
+
+
     public function setAddress($address): void
     {
         $this->address = $address;
+    }
+
+
+    public function setImgPath($imgPath)
+    {
+        $this->imgPath = $imgPath;
     }
 
 

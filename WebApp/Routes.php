@@ -2,13 +2,13 @@
 
 
 Route::set('index.php', function(){
-    Index::CreateView('index');
+        Controller::CreateView('index');
 });
 
 Route::set('adminPanel', function(){
     $obj=new AdminController();
     $data=$obj->getData();
-    Reports::CreateView('adminPanel',$data);
+    Controller::CreateView('adminPanel',$data);
 });
 
 Route::set('articles', function(){
