@@ -13,8 +13,8 @@ class ReportModel
 
     public function addReport($data)
     {
-        $this->db->query('INSERT INTO report(emri,mbiemri,dt_raportimit,description,foto,city,address, sID,categoryID) 
-                              VALUES (:name,:lastName,:date,:textField,:file,:city,:address,:sID,:cID)');
+        $this->db->query('INSERT INTO report(emri,mbiemri,dt_raportimit,description,foto,city,address, sID,categoryID, Emergency) 
+                              VALUES (:name,:lastName,:date,:textField,:file,:city,:address,:sID,:cID, :Emergency)');
         //Bind values
 
         $this->db->bind(':name', $data['name']);
@@ -25,6 +25,7 @@ class ReportModel
         $this->db->bind(':city', $data['city']);
         $this->db->bind(':sID', $data['sID']);
         $this->db->bind(':cID', $data['cID']);
+        $this->db->bind(':Emergency', $data['emergency']);
         $this->db->bind(':textField', $data['textField']);
 
 

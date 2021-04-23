@@ -350,12 +350,6 @@ if (isset($data)) {
                             </div>
                         </div>
 
-
-                        <div class="form-group">
-                            <label for="Date">Date</label>
-                            <input type="date" name="date" value="<?php echo $data['date']; ?>" class="form-control" name="date">
-                            <span class="invalidFeedback"> <?php echo $errors['dateError']; ?></span>
-                        </div>
                         <div class="form-group">
                             <label>Address</label>
                             <input type="text" name="address" value="<?php echo $data['address']; ?> " class="form-control" placeholder="Address">

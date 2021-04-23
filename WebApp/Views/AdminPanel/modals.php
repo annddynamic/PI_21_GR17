@@ -151,7 +151,7 @@ if (isset($data)) {
                             aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Edit Users</h4>
             </div>
-            <form action="police"  method="POST">
+            <form action="police" id="search_form" method="POST">
                    <div class="modal-body">
                     <input type="hidden" name="idUpdata" id="idUpdata">
 
@@ -175,7 +175,7 @@ if (isset($data)) {
                         <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Telephone">
                     </div>
                     <div class="modal-footer">
-                        <input type="submit" class="btn btn-default main-color-bg" value="Submit">
+                        <button onclick="form_submit()" class="btn btn-default main-color-bg"">Submit</button>
                     </div>
             </form>
         </div>
@@ -183,56 +183,7 @@ if (isset($data)) {
 </div>
 
 
-<!--editUser modal-->
-<!--<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
-<!--    <div class="modal-dialog" role="document">-->
-<!--        <div class="modal-content">-->
-<!---->
-<!---->
-<!--                <div class="modal-header">-->
-<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-<!--                    <h4 class="modal-title" id="myModalLabel">Edit User</h4>-->
-<!--                </div>-->
-<!---->
-<!--            <form action="police" method="POST">-->
-<!---->
-<!--                <div class="modal-body">-->
-<!---->
-<!--                    <input type="hidden" name="idUpdata" id="idUpdata">-->
-<!---->
-<!--                    <div class="form-group">-->
-<!--                        <label>Name</label>-->
-<!--                        <input type="text" name="name" id="name" class="form-control" placeholder="First Name">-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-group">-->
-<!--                        <label>Last Name</label>-->
-<!--                        <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name">-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-group">-->
-<!--                        <label>Address</label>-->
-<!--                        <input type="text" name="address" id="address" class="form-control" placeholder="Address">-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-group">-->
-<!--                        <label>Telephone</label>-->
-<!--                        <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Telephone">-->
-<!--                    </div>-->
-<!---->
-<!--                </div>-->
-<!---->
-<!--                <div class="modal-footer">-->
-<!--                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-<!--                    <button type="submit" name="insertdata" class="btn btn-default main-color-bg">Submit</button>-->
-<!--                </div>-->
-<!--            </form>-->
-<!---->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 
-<!--deleteUser Modal-->
 
 <div class="modal fade"  style="margin-top: 10em" id="deleteUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -326,7 +277,6 @@ if (isset($data)) {
 </div>
 
 <script src="../Assets/js/articles.js"></script>
-<script src="../Assets/js/editUsers.js"></script>
 
 
 

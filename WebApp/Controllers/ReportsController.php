@@ -17,7 +17,6 @@ class ReportsController extends Reports
             'addressError' => '',
             'cityError' => '',
             'textfieldError' => '',
-            'dateError' => '',
             'fileError' => ''
         ];
 
@@ -32,7 +31,6 @@ class ReportsController extends Reports
             $this->setReport(trim($_POST['report']));
             $this->setFile($_FILES['file']);
             $this->setTextfield(trim($_POST['textfield']));
-            $this->setDate(trim($_POST['date']));
             $this->setCity(trim($_POST['city']));
             $this->setAddress(trim($_POST['address']));
 
@@ -65,14 +63,9 @@ class ReportsController extends Reports
                 $errors['lastNameError'] = 'Surname cannot be longer than 10 characters';
             }
 
-            // birthday format  validation
-            $dateValidation = "/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/";
+            // setDate
 
-            if (preg_match($dateValidation, $this->getDate())) {
-                $errors['dateError'] = "";
-            } else {
-                $errors['dateError'] = "Your birthday is not in valid format.";
-            }
+            $this->setDate(date('Y-m-d H:i:s'));
 
 
             // Validimi i Report type
@@ -141,7 +134,7 @@ class ReportsController extends Reports
                 empty($errors['nameError']) && empty($errors['lastNameError']) &&
                 empty($errors['reportError']) && empty($errors['addressError']) &&
                 empty($errors['cityError']) && empty($errors['textfieldError']) &&
-                empty($errors['dateError']) && empty($errors['fileError'])) {
+                empty($errors['fileError'])) {
 
 
                 // Adding class properties to array
@@ -174,6 +167,7 @@ class ReportsController extends Reports
             'city' => $this->getCity(),
             'sID' => $this->getsID(),
             'cID' => $this->getCategoryID(),
+            'emergency' => $this->getEmergency(),
 
         ];
 

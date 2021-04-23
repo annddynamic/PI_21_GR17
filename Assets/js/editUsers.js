@@ -1,5 +1,10 @@
 
 $(document).ready(function() {
+
+        function form_submit() {
+                document.getElementById("search_form").submit();
+        }
+
         $('.editbtn').on('click', function(){
                 $('#editmodal').modal('show');
 
@@ -19,4 +24,7 @@ $(document).ready(function() {
 
 
         });
+
+
+
 });

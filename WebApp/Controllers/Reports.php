@@ -12,6 +12,7 @@ class Reports extends Controller {
     private $city;
     private $address;
     private $sID=1;
+    private $emergency=1;
     private $categoryID;
     private $imgPath;
     private $errors=[];
@@ -21,6 +22,11 @@ class Reports extends Controller {
         return $this->categoryID;
     }
 
+
+    public function getEmergency()
+    {
+        return $this->emergency;
+    }
 
     public function getSID(): int
     {
