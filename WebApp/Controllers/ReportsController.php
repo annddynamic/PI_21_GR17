@@ -39,6 +39,7 @@ class ReportsController extends Reports
 
             //Validimi i name
 
+
             $nameValidation = "/^[a-zA-Z0-9]*$/";
             $text = "Please enter your name";
             $words = preg_split($nameValidation, $text);

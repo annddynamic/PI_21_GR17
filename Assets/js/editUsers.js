@@ -1,19 +1,22 @@
-$(document).ready(function () {
-        $
 
-        $tr = (this).closest('tr');
+$(document).ready(function() {
+        $('.editbtn').on('click', function(){
+                $('#editmodal').modal('show');
 
-        var data = $tr.children("td").map(function () {
-            return $(this).text()
-        }).get();
+                $tr = $(this).closest('tr');
 
-        console.log(data);
+                var data = $tr.children("td").map(function () {
+                        return $(this).text();
+                }).get();
 
-        $('#idUpdata').val(data[0]);
-        $('#name').val(data[1]);
-        $('#lastName').val(data[2]);
-        $('#address').val(data[3]);
-        $('#telephone').val(data[4]);
+                console.log(data);
 
-    }
-)
+                $('#idUpdata').val(data[0]);
+                $('#name').val(data[1]);
+                $('#lastName').val(data[2]);
+                $('#address').val(data[3]);
+                $('#telephone').val(data[4]);
+
+
+        });
+});

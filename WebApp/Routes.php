@@ -40,6 +40,7 @@ Route::set('police', function(){
     $data=$obj->getData();
     $obj->managePolice();
     $obj->deletePoliceUser();
+    $obj->editPoliceUser();
     Controller::CreateView('police',$data);
 });
 

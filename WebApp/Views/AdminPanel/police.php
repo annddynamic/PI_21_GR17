@@ -111,11 +111,9 @@ if (isset($data)) {
                 <div class="list-group">
                     <a href="adminPanel" class="list-group-item  ">
                         <span class="glyphicon glyphicon-cog" aria-hidden=""true></span>Dashboard</a>
-                    <a href="police" class="list-group-item main-color-bg active"><span class="glyphicon glyphicon-user"
-                                                                                        aria-hidden="" true> </span>
+                    <a href="police" class="list-group-item main-color-bg active"><span class="glyphicon glyphicon-user" aria-hidden="" true> </span>
                         Users<span class="badge"><?php echo $data['count'][0]['COUNT(name)'] ?></span></a>
-                    <a href="reports" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden=""
-                                                                    true> </span> Reports<span
+                    <a href="reports" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="" true> </span> Reports<span
                                 class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
                     <a href="articles" class="list-group-item">
                         <span class="glyphicon glyphicon-book" aria-hidden="" true> </span> Articles<span class="badge">12</span></a>
@@ -163,20 +161,10 @@ if (isset($data)) {
                                     <td><?php echo $police['rruga']?></td>
                                     <td><?php echo $police['nr_telefonit']?></td>
                                     <td>
+                                        <button class="btn main-color-bg editbtn" type="button">Edit</button>
                                         <form method="post" action="police" style="display:inline">
-
-                                        <input type="hidden" name="remove"
-                                               value="<?php echo $data['policeOfficials'][$i]['uID'] ?>">
-                                        <button type="submit" name="delete" value="" style="margin-left: 10px"
-                                                    class="pull-right btn btn-danger">Delete</button>
-
-                                            <button class="btn main-color-bg" type="button" data-toggle="modal"
-                                                    data-target="#editUser">Edit</button>
-
-<!--                                        <a href="#? id=--><?php //echo$data['policeOfficials'][$i]['uID'] ?><!--"-->
-<!--                                                    class="btn main-color-bg">Edit</a>-->
-
-
+                                            <input type="hidden" name="remove"  value="<?php echo $data['policeOfficials'][$i]['uID'] ?>">
+                                            <button type="submit" name="delete" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
                                         </form>
 
                                     </td>
@@ -267,6 +255,9 @@ if (isset($data)) {
 <?php
 include "modals.php";
 ?>
+
+
+
 
 </body>
 </html>

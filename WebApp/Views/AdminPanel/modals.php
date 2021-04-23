@@ -142,21 +142,17 @@ if (isset($data)) {
     </div>
 </div>
 
-<!--editUser modal-->
-<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-
-
-            <form action="#" method="post">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Edit User</h4>
-                </div>
-
-
-                <div class="modal-body">
-
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edit Users</h4>
+            </div>
+            <form action="police"  method="POST">
+                   <div class="modal-body">
                     <input type="hidden" name="idUpdata" id="idUpdata">
 
                     <div class="form-group">
@@ -176,20 +172,65 @@ if (isset($data)) {
 
                     <div class="form-group">
                         <label>Telephone</label>
-                        <input type="email" name="telephone" id="telephone" class="form-control" placeholder="Telephone">
+                        <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Telephone">
                     </div>
-
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <input type="submit" name="updateData" id="updateData" class="btn btn-primary"></input>
-                </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-default main-color-bg" value="Submit">
+                    </div>
             </form>
-
         </div>
     </div>
 </div>
+
+
+<!--editUser modal-->
+<!--<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
+<!--    <div class="modal-dialog" role="document">-->
+<!--        <div class="modal-content">-->
+<!---->
+<!---->
+<!--                <div class="modal-header">-->
+<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+<!--                    <h4 class="modal-title" id="myModalLabel">Edit User</h4>-->
+<!--                </div>-->
+<!---->
+<!--            <form action="police" method="POST">-->
+<!---->
+<!--                <div class="modal-body">-->
+<!---->
+<!--                    <input type="hidden" name="idUpdata" id="idUpdata">-->
+<!---->
+<!--                    <div class="form-group">-->
+<!--                        <label>Name</label>-->
+<!--                        <input type="text" name="name" id="name" class="form-control" placeholder="First Name">-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="form-group">-->
+<!--                        <label>Last Name</label>-->
+<!--                        <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name">-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="form-group">-->
+<!--                        <label>Address</label>-->
+<!--                        <input type="text" name="address" id="address" class="form-control" placeholder="Address">-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="form-group">-->
+<!--                        <label>Telephone</label>-->
+<!--                        <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Telephone">-->
+<!--                    </div>-->
+<!---->
+<!--                </div>-->
+<!---->
+<!--                <div class="modal-footer">-->
+<!--                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+<!--                    <button type="submit" name="insertdata" class="btn btn-default main-color-bg">Submit</button>-->
+<!--                </div>-->
+<!--            </form>-->
+<!---->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <!--deleteUser Modal-->
 
@@ -286,3 +327,12 @@ if (isset($data)) {
 
 <script src="../Assets/js/articles.js"></script>
 <script src="../Assets/js/editUsers.js"></script>
+
+
+
+<script>
+
+
+
+
+</script>
