@@ -103,9 +103,7 @@ if (isset($data)) {
         </div>
     </div>
 </header>
-<?php //echo '<pre>';
-//var_dump($data['policeOfficials'][2]['uID']);
-//echo '</pre>'; ?>
+
 <section id="main">
     <div class="container">
         <div class="row">
@@ -149,6 +147,7 @@ if (isset($data)) {
                     <div class="panel-body myPanel">
                         <table class="table  table-hover tbl">
                             <tr>
+                                <th class="main-color-bg" scope="col">ID</th>
                                 <th class="main-color-bg" scope="col">Name</th>
                                 <th class="main-color-bg" scope="col">Last Name</th>
                                 <th class="main-color-bg" scope="col">Address</th>
@@ -158,6 +157,7 @@ if (isset($data)) {
                             <?php foreach ($data['policeOfficials'] as $i => $police): ?>
 
                                 <tr>
+                                    <td><?php echo $police['uID']?></td>
                                     <td><?php echo $police['name']?></td>
                                     <td><?php echo $police['surname']?></td>
                                     <td><?php echo $police['rruga']?></td>
@@ -168,13 +168,14 @@ if (isset($data)) {
                                         <input type="hidden" name="remove"
                                                value="<?php echo $data['policeOfficials'][$i]['uID'] ?>">
                                         <button type="submit" name="delete" value="" style="margin-left: 10px"
-                                                    class="pull-right btn btn-danger">Delete
-                                        </button>
-
+                                                    class="pull-right btn btn-danger">Delete</button>
 
                                             <button class="btn main-color-bg" type="button" data-toggle="modal"
-                                                data-target="#editUser">Edit
-                                        </button>
+                                                    data-target="#editUser">Edit</button>
+
+<!--                                        <a href="#? id=--><?php //echo$data['policeOfficials'][$i]['uID'] ?><!--"-->
+<!--                                                    class="btn main-color-bg">Edit</a>-->
+
 
                                         </form>
 
@@ -266,7 +267,6 @@ if (isset($data)) {
 <?php
 include "modals.php";
 ?>
-
 
 </body>
 </html>

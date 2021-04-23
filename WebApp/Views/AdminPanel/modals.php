@@ -1,3 +1,8 @@
+<?php
+if (isset($data)) {
+}?>
+
+
 <!--Modals-->
 
 <!--Add User-->
@@ -67,7 +72,7 @@
     </div>
 </div>
 
-<!--        ReviewRequestModal-->
+<!--ReviewRequestModal-->
 
 <div class="modal fade" id="reviewReq" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -137,47 +142,56 @@
     </div>
 </div>
 
-<!--    editUser modal-->
+<!--editUser modal-->
 <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form>
+
+
+            <form action="#" method="post">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Edit User</h4>
                 </div>
+
+
                 <div class="modal-body">
+
+                    <input type="hidden" name="idUpdata" id="idUpdata">
+
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Last Nme">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="First Name">
                     </div>
+
                     <div class="form-group">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name">
-                    </div>
-
-
-                    <div class="form-group">
-                        <label>City</label>
-                        <input type="text" class="form-control" placeholder="City">
+                        <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name">
                     </div>
 
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Email">
+                        <label>Address</label>
+                        <input type="text" name="address" id="address" class="form-control" placeholder="Address">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telephone</label>
+                        <input type="email" name="telephone" id="telephone" class="form-control" placeholder="Telephone">
                     </div>
 
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <input type="submit" name="updateData" id="updateData" class="btn btn-primary"></input>
                 </div>
             </form>
+
         </div>
     </div>
 </div>
 
-<!--        deleteUser Modal-->
+<!--deleteUser Modal-->
 
 <div class="modal fade"  style="margin-top: 10em" id="deleteUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -200,7 +214,7 @@
 </div>
 
 
-<!-- approveUser Modal -->
+<!--approveUser Modal -->
 
 <div class="modal fade"   id="approveUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -271,3 +285,4 @@
 </div>
 
 <script src="../Assets/js/articles.js"></script>
+<script src="../Assets/js/editUsers.js"></script>
