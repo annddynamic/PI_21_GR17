@@ -10,7 +10,7 @@ class Controller extends Database {
         }else if(file_exists("./Views/PolicePanel/$viewName.php")) {
             require_once "./Views/PolicePanel/$viewName.php";
         }else if(file_exists("./Views/Citizens/$viewName.php")){
-            require_once "./Views/PolicePanel/$viewName.php";
+            require_once "./Views/Citizens/$viewName.php";
         }else if(file_exists("./Views/PolicePanel/$viewName.php")){
             require_once "./Views/PolicePanel/$viewName.php";
         }

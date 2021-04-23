@@ -10,7 +10,7 @@ class ReportsController extends Reports
 
     public function createReport()
     {
-        $errors=[
+        $errors = [
             'nameError' => '',
             'lastNameError' => '',
             'reportError' => '',
@@ -18,7 +18,7 @@ class ReportsController extends Reports
             'cityError' => '',
             'textfieldError' => '',
             'dateError' => '',
-            'fileError'=>''
+            'fileError' => ''
         ];
 
         $this->setErrors($errors);
@@ -45,8 +45,8 @@ class ReportsController extends Reports
 
 
             if (empty($this->getName())) {
-                foreach($words as $word){
-                    $errors['nameError'] =$errors['nameError'].$word;
+                foreach ($words as $word) {
+                    $errors['nameError'] = $errors['nameError'] . $word;
                 }
             } else if (!preg_match($nameValidation, $this->getName())) {
                 $errors['nameError'] = 'Name can only contain letters and numbers.';
@@ -95,49 +95,45 @@ class ReportsController extends Reports
                 $errors['cityError'] = 'Please enter city';
             }
 
-            if(!is_dir('../Assets/DB-IMGS')){
+            if (!is_dir('../Assets/DB-IMGS')) {
                 mkdir('../Assets/DB-IMGS');
             }
 
 
             $image = $this->getFile();
-            if($image && $image['tmp_name']){
+            if ($image && $image['tmp_name']) {
 
-                $this->setImgPath('../Assets/DB-IMGS/'.$this->randomString(9).'/'.$image['name']);
+                $this->setImgPath('../Assets/DB-IMGS/' . $this->randomString(9) . '/' . $image['name']);
 
                 $imgPath = $this->getImgPath();
 
                 mkdir(dirname($imgPath));
 
-                move_uploaded_file($image['tmp_name'],$imgPath);
+                move_uploaded_file($image['tmp_name'], $imgPath);
             }
-
-
-
 
 
             $this->setErrors($errors);
 
-            if($this->getReport()=='abuse'){
+            if ($this->getReport() == 'abuse') {
                 $this->setCategoryID(1);
-            }else if($this->getReport()=='suicide'){
+            } else if ($this->getReport() == 'suicide') {
                 $this->setCategoryID(2);
-            }else if($this->getReport()=='murder') {
+            } else if ($this->getReport() == 'murder') {
                 $this->setCategoryID(3);
-            }else if($this->getReport()=='robbery'){
-                    $this->setCategoryID(4);
-            }else if($this->getReport()=='arson'){
+            } else if ($this->getReport() == 'robbery') {
+                $this->setCategoryID(4);
+            } else if ($this->getReport() == 'arson') {
                 $this->setCategoryID(5);
-            }else if($this->getReport()=='breakIn'){
+            } else if ($this->getReport() == 'breakIn') {
                 $this->setCategoryID(6);
-            }else if($this->getReport()=='corruption'){
+            } else if ($this->getReport() == 'corruption') {
                 $this->setCategoryID(7);
-            }else {
+            } else {
                 $this->setCategoryID(8);
             }
 
             // Photo
-
 
 
             if (
@@ -149,7 +145,7 @@ class ReportsController extends Reports
 
                 // Adding class properties to array
 
-                $data=$this->getData();
+                $data = $this->getData();
 
                 if ($this->reportModel->addReport($data)) {
 
@@ -162,32 +158,33 @@ class ReportsController extends Reports
             }
 
 
-
         }
     }
 
-    public function getData(){
-        $data =[
-            'name'=>$this->getName(),
-            'lastName'=>$this->getLastName(),
-            'textField'=>$this->getTextfield(),
-            'file'=>$this->getImgPath(),
-            'date'=>$this->getDate(),
-            'address'=>$this->getAddress(),
-            'city'=>$this->getCity(),
-            'sID'=>$this->getsID(),
-            'cID'=>$this->getCategoryID(),
+    public function getData()
+    {
+        $data = [
+            'name' => $this->getName(),
+            'lastName' => $this->getLastName(),
+            'textField' => $this->getTextfield(),
+            'file' => $this->getImgPath(),
+            'date' => $this->getDate(),
+            'address' => $this->getAddress(),
+            'city' => $this->getCity(),
+            'sID' => $this->getsID(),
+            'cID' => $this->getCategoryID(),
 
         ];
 
         return $data;
     }
 
-    public  function randomString($n) {
+    public function randomString($n)
+    {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $str = '';
         for ($i = 0; $i < $n; $i++) {
-            $index = rand(0,strlen($characters)-1);
+            $index = rand(0, strlen($characters) - 1);
             $str .= $characters[$index];
         }
         return $str;

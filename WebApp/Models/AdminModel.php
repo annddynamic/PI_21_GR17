@@ -73,6 +73,23 @@ class AdminModel
 
     }
 
+    public function deletePoliceUser($data){
+
+
+        $this->db->query('DELETE FROM users WHERE uID=:id');
+        //Bind values
+
+        $this->db->bind(':id', $data['uID']);
+
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
     public function addPolice($data)
     {
 
@@ -97,12 +114,14 @@ class AdminModel
 
     public function policeOfficials()
     {
-        $this->db->query('SELECT name,surname,rruga,nr_telefonit FROM users WHERE role_ID=2');
+        $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit FROM users WHERE role_ID=2');
 
         $result = $this->db->resultSet();
 
         return $result;
     }
+
+
 
 
 }

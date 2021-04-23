@@ -103,26 +103,26 @@ if (isset($data)) {
         </div>
     </div>
 </header>
-
+<?php //echo '<pre>';
+//var_dump($data['policeOfficials'][2]['uID']);
+//echo '</pre>'; ?>
 <section id="main">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="adminPanel" class="list-group-item  "><span class="glyphicon glyphicon-cog" aria-hidden=""
-                                                                         true> </span>
-                        Dashboard
-                    </a>
+                    <a href="adminPanel" class="list-group-item  ">
+                        <span class="glyphicon glyphicon-cog" aria-hidden=""true></span>Dashboard</a>
                     <a href="police" class="list-group-item main-color-bg active"><span class="glyphicon glyphicon-user"
                                                                                         aria-hidden="" true> </span>
                         Users<span class="badge"><?php echo $data['count'][0]['COUNT(name)'] ?></span></a>
                     <a href="reports" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden=""
                                                                     true> </span> Reports<span
                                 class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
-                    <a href="articles" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden=""
-                                                                     true> </span> Articles<span class="badge">12</span></a>
-                    <a href="feedback" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden=""
-                                                                     true> </span> Feedback<span class="badge">12</span></a>
+                    <a href="articles" class="list-group-item">
+                        <span class="glyphicon glyphicon-book" aria-hidden="" true> </span> Articles<span class="badge">12</span></a>
+                    <a href="feedback" class="list-group-item">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> Feedback<span class="badge">12</span></a>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -163,12 +163,21 @@ if (isset($data)) {
                                     <td><?php echo $police['rruga']?></td>
                                     <td><?php echo $police['nr_telefonit']?></td>
                                     <td>
-                                        <button class="btn main-color-bg" type="button" data-toggle="modal"
+                                        <form method="post" action="police" style="display:inline">
+
+                                        <input type="hidden" name="remove"
+                                               value="<?php echo $data['policeOfficials'][$i]['uID'] ?>">
+                                        <button type="submit" name="delete" value="" style="margin-left: 10px"
+                                                    class="pull-right btn btn-danger">Delete
+                                        </button>
+
+
+                                            <button class="btn main-color-bg" type="button" data-toggle="modal"
                                                 data-target="#editUser">Edit
                                         </button>
-                                        <button class="btn btn-danger" type="button" data-toggle="modal"
-                                                data-target="#deleteUser">Delete
-                                        </button>
+
+                                        </form>
+
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -228,16 +237,17 @@ if (isset($data)) {
 
                             <?php echo $approve['name'] . ' ' . $approve['surname'] ?>
                             <form method="post" action="police" style="display:inline">
+
                                 <input type="hidden" name="remove"
                                        value="<?php echo $data['pendingApproval'][$i]['uID'] ?>">
-                                <button type="submit" name="delete" value="" style="margin-left: 10px"
-                                        class="pull-right btn btn-danger">
+                                <button type="submit" name="delete" value="" style="margin-left: 10px" class="pull-right btn btn-danger">
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
 
                                 <input type="hidden" name="insert"
                                        value="<?php echo $data['pendingApproval'][$i]['uID'] ?>">
-                                <button type="submit" name="add" value="" class="pull-right btn btn-success">
+                                <button type="submit" name="add" value=""
+                                        class="pull-right btn btn-success">
                                     <span class="glyphicon glyphicon-ok"></span>
                                 </button>
                             </form>

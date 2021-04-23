@@ -52,12 +52,11 @@ class AdminController extends Controller
             'reportCount' => $this->countReport(),
             'pendingApproval' => $this->pendingApproval(),
             'countPoliceUsers' => $this->countPoliceUsers(),
-            'policeOfficials'=>$this->policeOfficials(),
+            'policeOfficials' => $this->policeOfficials(),
 
         ];
         return $data;
     }
-
 
     public function managePolice()
     {
@@ -70,9 +69,9 @@ class AdminController extends Controller
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
 
-            if(isset($_POST['delete'])){
-                $data=[
-                    'uID'=>$_POST['remove'],
+            if (isset($_POST['delete'])) {
+                $data = [
+                    'uID' => $_POST['remove'],
                 ];
 
                 if ($this->adminModel->deletePolice($data)) {
@@ -82,9 +81,9 @@ class AdminController extends Controller
                     die('Something went wrong. ');
                 }
 
-            }else {
-                $data=[
-                    'uID'=>$_POST['insert'],
+            } else {
+                $data = [
+                    'uID' => $_POST['insert'],
                 ];
 
                 if ($this->adminModel->addPolice($data)) {
@@ -100,7 +99,39 @@ class AdminController extends Controller
         return $data;
     }
 
+    public function deletePoliceUser()
+    {
 
 
+        $data = [
+            'uID' => '',
+        ];
 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+
+            if (isset($_POST['delete'])) {
+                $data = [
+                    'uID' => $_POST['remove'],
+                ];
+
+                if ($this->adminModel->deletePoliceUser($data)) {
+
+                    header('location:police');
+                } else {
+                    die('Something went wrong. ');
+                }
+
+            }
+
+
+        }
+        return $data;
+
+        echo '<pre>';
+        var_dump($_POST);
+        echo '</pre>';
+    }
 }

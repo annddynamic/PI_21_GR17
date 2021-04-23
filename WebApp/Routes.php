@@ -37,6 +37,7 @@ Route::set('police', function(){
     $obj=new AdminController();
     $data=$obj->getData();
     $obj->managePolice();
+    $obj->deletePoliceUser();
     Controller::CreateView('police',$data);
 });
 
