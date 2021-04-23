@@ -91,10 +91,7 @@
         <div class="form-group">
             <button value="submit" id="submit" type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>
-        <div class="clearfix">
-            <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-            <a href="#" class="pull-right">Forgot Password?</a>
-        </div>
+
     </form>
     <p class="text-center"><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#signUp" > Create an Account</a></p>
 </div>

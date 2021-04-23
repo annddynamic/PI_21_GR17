@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Footer</title>
+    <title>Footer</title>
     <style>
 
         .fa {
@@ -40,24 +40,25 @@
             color: #005b96 !important;
         }
 
-        .ikona{
+        .ikona {
             margin-left: 9rem;
         }
 
         h2 {
             margin-left: 4rem;
         }
-        a:link{
-            color: #555555 ;
+
+        a:link {
+            color: #555555;
         }
-        a:hover{
+
+        a:hover {
             text-decoration: none;
         }
 
 
-
         .section-footer {
-            background:#03396c;
+            background: #03396c;
             color: white;
             padding: 4rem 0;
         }
@@ -88,16 +89,17 @@
             color: #cccccc;
         }
 
-        .email-form{
+        .email-form {
             width: 100%;
             display: inline-block;
             background-color: white;
             position: relative;
-            border-radius:20px;
+            border-radius: 20px;
             line-height: 0;
             margin-top: 1rem;
         }
-        .email-form .form-control{
+
+        .email-form .form-control {
             display: inline-block;
             border: 0;
             outline: 0;
@@ -132,7 +134,7 @@
             border-radius: 0 20px 20px 0;
         }
 
-        .email-section{
+        .email-section {
             margin-right: 1em;
         }
 
@@ -157,21 +159,22 @@
         </div>
 
         <div class="email-section">
-            <h3>Subscribe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, minima.</p>
-            <form name="emai-form" method="post" data-netlify="true">
-                <div class="email-form">
-
-                 <span class="form-controle-wrap">
+            <h3>Give Feedback</h3>
+            <p>You can type your fucking opinion here</p>
+            <form>
+                <div class="form-control">
+                    <input type="text" placeholder="">
+                </div>
+                <span class="form-controle-wrap">
                      <input type="email" name="email" id="email " size="48" class="form-control" placeholder="Email">
                  </span>
-                    <button type="submit" class="form-control submit">
-                        <i class="fas fa-cheveron-right"></i>
-                    </button>
-                </div>
-
-            </form>
+                <button type="submit" class="form-control submit">
+                    <i class="fas fa-cheveron-right"></i>
+                </button>
         </div>
+
+        </form>
+    </div>
     </div>
 </footer>
 </body>

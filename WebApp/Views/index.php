@@ -232,7 +232,6 @@ if (isset($data)) {
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
 
                         <div class="icons">
-                            <a href="#"class="btn main-color-bg pull-left" role="button">Read more</a>
                             <a href="http://twitter.com" class="fa fa-twitter"></a>
                             <a href="http://facebook.com" class="fa fa-facebook"></a>
                             <a href="http://instagram.com" class="fa fa-instagram"></a>
@@ -249,7 +248,6 @@ if (isset($data)) {
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
 
                         <div class="icons">
-                            <a href="#"class="btn main-color-bg pull-left" role="button">Read more</a>
                             <a href="http://twitter.com" class="fa fa-twitter"></a>
                             <a href="http://facebook.com" class="fa fa-facebook"></a>
                             <a href="http://instagram.com" class="fa fa-instagram"></a>
@@ -284,7 +282,6 @@ if (isset($data)) {
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
 
                         <div class="icons">
-                            <a href="#"class="btn main-color-bg pull-left" role="button">Read more</a>
                             <a href="http://twitter.com" class="fa fa-twitter"></a>
                             <a href="http://facebook.com" class="fa fa-facebook"></a>
                             <a href="http://instagram.com" class="fa fa-instagram"></a>
