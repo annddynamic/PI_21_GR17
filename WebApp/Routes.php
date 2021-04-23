@@ -2,7 +2,9 @@
 
 
 Route::set('index.php', function(){
-        Controller::CreateView('index');
+    $data = new ReportsController();
+    $data->createReport();
+    Controller::CreateView('index', $data);
 });
 
 Route::set('adminPanel', function(){

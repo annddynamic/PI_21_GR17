@@ -1,3 +1,11 @@
+<?php
+if (isset($data)) {
+    $errors = $data->getErrors();
+
+    $data=$data->getData();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -304,70 +312,67 @@
 <div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form>
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Emergency Report</h4>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="index.php" enctype="multipart/form-data" method="POST">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" value="<?php echo isset($data['name']) ? $data['name'] : null; ?>" class="form-control" placeholder="Name" name="name">
+                            <span class="invalidFeedback"><?php echo isset($errors['nameError']) ? $errors['nameError'] : null; ?></span>
                         </div>
                         <div class="form-group">
                             <label>Last Name</label>
-                            <input type="text" class="form-control" placeholder="Last Name">
+                            <input type="text" value="<?php echo $data['lastName']; ?>" class="form-control" name="lastName" placeholder="Last Name">
+                            <span class="invalidFeedback"> <?php echo $errors['lastNameError']; ?></span>
                         </div>
                         <div class="form-group">
-
-                            <label for="Gender">What do you want to report?</label>
-                            <select class="form-control" name="gender">
-                                <option value="abuse">Abuse</option>
-                                <option value="suicide">Suicide</option>
-                                <option value="murder">Murder</option>
-                                <option value="robbery">Robbery</option>
-                                <option value="robbery">Arson</option>
-                                <option value="breakIn">Break In</option>
-                                <option value="corruption">Corruption</option>
-                                <option value="other">Other</option>
+                            <label for="Reports" >What do you want to report?</label>
+                            <select class="form-control" name="report">
+                                <option value aria-disabled="true">Select report type..</option>
+                                <option value="abuse" <?php echo (isset($_POST['report']) && $_POST['report'] === 'abuse') ? 'selected' : ''; ?>>Abuse</option>
+                                <option value="suicide"<?php echo (isset($_POST['report']) && $_POST['report'] === 'suicide') ? 'selected' : ''; ?>>Suicide</option>
+                                <option value="murder"<?php echo (isset($_POST['report']) && $_POST['report'] === 'murder') ? 'selected' : ''; ?>>Murder</option>
+                                <option value="robbery"<?php echo (isset($_POST['report']) && $_POST['report'] === 'robbery') ? 'selected' : ''; ?>>Robbery</option>
+                                <option value="arson"<?php echo (isset($_POST['report']) && $_POST['report'] === 'arson') ? 'selected' : ''; ?>>Arson</option>
+                                <option value="breakIn"<?php echo (isset($_POST['report']) && $_POST['report'] === 'breakIn') ? 'selected' : ''; ?>>Break In</option>
+                                <option value="corruption"<?php echo (isset($_POST['report']) && $_POST['report'] === 'corruption') ? 'selected' : ''; ?>>Corruption</option>
+                                <option value="other"<?php echo (isset($_POST['report']) && $_POST['report'] === 'other') ? 'selected' : ''; ?>>Other</option>
                             </select>
-
-
+                            <span class="invalidFeedback"> <?php echo $errors['reportError']; ?></span>
                         </div>
                         <div class="form-group">
-                            <textarea id="textarea"   placeholder="Add Message"> </textarea>
+                            <textarea id="textarea" name="textfield"placeholder="Add Message" value=""><?php if(isset($_POST['textfield'])) { echo $_POST['textfield']; } ?>  </textarea>
+                            <span class="invalidFeedback"> <?php echo $errors['textfieldError']; ?></span>
                             <div class="pull-right ">
-
-                                <input type="file" id="myfile" name="myfile">
+                                <input type="file" value="<?php echo $data['file']; ?>" id="myfile" name="file">
+                                <span class="invalidFeedback"> <?php echo $errors['fileError']; ?></span>
                             </div>
                         </div>
 
 
-
-
                         <div class="form-group">
                             <label for="Date">Date</label>
-                            <input type="date" class="form-control" name="date">
+                            <input type="date" name="date" value="<?php echo $data['date']; ?>" class="form-control" name="date">
+                            <span class="invalidFeedback"> <?php echo $errors['dateError']; ?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" name="address" value="<?php echo $data['address']; ?> " class="form-control" placeholder="Address">
+                            <span class="invalidFeedback"> <?php echo $errors['addressError']; ?></span>
                         </div>
 
                         <div class="form-group">
                             <label>City</label>
-                            <input type="text" class="form-control" placeholder="City">
+                            <input type="text" name="city" value="<?php echo $data['city']; ?>"class="form-control" placeholder="City">
+                            <span class="invalidFeedback"> <?php echo $errors['cityError']; ?></span>
                         </div>
-                        <div class="form-group">
-                            <label>Country</label>
-                            <input type="text" class="form-control" placeholder="Country">
-                        </div>
-
-
 
                         <input type="submit" class="btn btn-default main-color-bg btn-lg " value="Submit">
-
-
                     </form>
-
                 </div>
 
             </form>
