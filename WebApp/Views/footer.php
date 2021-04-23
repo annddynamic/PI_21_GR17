@@ -162,15 +162,15 @@
             <h3>Give Feedback</h3>
             <p>You can type your fucking opinion here</p>
             <form>
-                <div class="form-control">
-                    <input type="text" placeholder="">
+                <div class="form-group">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Title">
                 </div>
-                <span class="form-controle-wrap">
-                     <input type="email" name="email" id="email " size="48" class="form-control" placeholder="Email">
-                 </span>
-                <button type="submit" class="form-control submit">
-                    <i class="fas fa-cheveron-right"></i>
-                </button>
+                <label>Your Feedback</label>
+                <div class="form-group" >
+                    <textarea style="width:25em"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
         </div>
 
         </form>
