@@ -171,7 +171,6 @@ class AdminController extends Controller
     public function addNews()
     {
         $data = [
-            'foto' => '',
             'title' => '',
             'published' => '',
             'description' => '',
@@ -200,15 +199,20 @@ class AdminController extends Controller
             }
 
             $image=$_FILES['foto'];
+            echo '<pre>';
+            var_dump($image);
+            echo '</pre>';
+
+
             if ($image && $image['tmp_name']) {
                $imgPath =  '../Assets/DB-IMGS/' . $this->obj->randomString(9) . '/' . $image['name'];
                 mkdir(dirname($imgPath));
                 move_uploaded_file($image['tmp_name'], $imgPath);
             }
 
-//            $data[
-//                'foto'=> $imgPath
-//            ];
+            $data['foto']=$imgPath;
+
+
 
             if ($this->adminModel->addNews($data)) {
                 header('location:articles');
