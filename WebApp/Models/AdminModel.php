@@ -123,8 +123,8 @@ class AdminModel
 
     public function addNews($data)
     {
-        $this->db->query('INSERT INTO news (foto,titile,published,description) 
-                                        VALUES (:foto,:titile,:published,:description )');
+        $this->db->query('INSERT INTO news (foto,title,published,description) 
+                                        VALUES (:foto,:title,:published,:description )');
         //Binde values
 
         $this->db->bind(':foto', $data['foto']);
