@@ -151,7 +151,7 @@ class AdminModel
     }
 
     public function getNews(){
-        $this->db->query('SELECT title, published FROM news');
+        $this->db->query('SELECT foto,title,published,description FROM news');
 
         $result = $this->db->resultSet();
 

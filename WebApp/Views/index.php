@@ -223,14 +223,15 @@ if (isset($data)) {
 
             <div class="col-md-6">
                 <div style="height: 7em"></div>
+
                 <div class="content">
-                    <img src="../Assets/img/policeguard.jpg" alt="">
+<!--                    <img src="../Assets/img/policeguard.jpg" alt="">-->
                     <div class="content2">
                         <h2 class="text-left">lorem</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.-->
+<!--                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.-->
+<!--                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.-->
+<!--                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>-->
 
                         <div class="icons">
                             <a href="http://twitter.com" class="fa fa-twitter"></a>
@@ -242,11 +243,11 @@ if (isset($data)) {
                 </div>
                 <div style="height: 5em"></div>
                 <div class="content">
-                    <img src="../Assets/img/policeguard.jpg" alt="">
+<!--                    <img src="../Assets/img/policeguard.jpg" alt="">-->
                     <div class="content2">
                         <h2 class="text-left">lorem</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.-->
+<!--                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>-->
 
                         <div class="icons">
                             <a href="http://twitter.com" class="fa fa-twitter"></a>
@@ -259,11 +260,11 @@ if (isset($data)) {
             </div>
             <div class="col-md-5 col-md-offset-1">
                 <div class="content">
-                    <img src="../Assets/img/policeguard.jpg" alt="">
+<!--                    <img src="../Assets/img/policeguard.jpg" alt="">-->
                     <div class="content2">
                         <h2 class="text-left">lorem</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.-->
+<!--                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>-->
 
                         <div class="icons">
                             <a href="http://twitter.com" class="fa fa-twitter"></a>
@@ -275,12 +276,12 @@ if (isset($data)) {
                 </div>
                 <div style="height: 5em"></div>
                 <div class="content">
-                    <img src="../Assets/img/policeguard.jpg" alt="">
+<!--                    <img src="../Assets/img/policeguard.jpg" alt="">-->
                     <div class="content2">
                         <h2 class="text-left">lorem</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.-->
+<!--                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.-->
+<!--                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>-->
 
                         <div class="icons">
                             <a href="http://twitter.com" class="fa fa-twitter"></a>
