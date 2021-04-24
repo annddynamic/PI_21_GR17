@@ -141,6 +141,24 @@ class AdminModel
         }
     }
 
+    public function getOnDuty(){
+        $this->db->query('SELECT name, surname FROM users u WHERE inDuty=1');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+
+    }
+
+
+    public function getAvailable(){
+        $this->db->query('SELECT name, surname FROM users u WHERE inDuty=0');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+
+    }
 
 
 

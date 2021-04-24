@@ -11,43 +11,6 @@ class AdminController extends Controller
 
     }
 
-//    public function getUsers()
-//    {
-//        $users = $this->adminModel->getUsers();
-//        return $users;
-//    }
-//
-//    public function countUsers()
-//    {
-//        $users = $this->adminModel->countUsers();
-//        return $users;
-//    }
-//
-//    public function countPoliceUsers()
-//    {
-//        $users = $this->adminModel->countPoliceUsers();
-//        return $users;
-//    }
-//
-//    public function countReport()
-//    {
-//        $users = $this->adminModel->countReport();
-//        return $users;
-//    }
-//
-//    public function pendingApproval()
-//    {
-//        $users = $this->adminModel->pendingApproval();
-//        return $users;
-//
-//
-//    }
-//
-//    public function policeOfficials(){
-//        $users = $this->adminModel->policeOfficials();
-//        return $users;
-//    }
-
     public function getData()
     {
         $data = [
@@ -57,6 +20,8 @@ class AdminController extends Controller
             'pendingApproval' => $this->adminModel->pendingApproval(),
             'countPoliceUsers' => $this->adminModel->countPoliceUsers(),
             'policeOfficials' => $this->adminModel->policeOfficials(),
+            'onDuty'=>$this->adminModel->getOnDuty(),
+            'available'=>$this->adminModel->getAvailable()
 
         ];
         return $data;
@@ -199,9 +164,7 @@ class AdminController extends Controller
             }
 
             $image=$_FILES['foto'];
-            echo '<pre>';
-            var_dump($image);
-            echo '</pre>';
+
 
 
             if ($image && $image['tmp_name']) {

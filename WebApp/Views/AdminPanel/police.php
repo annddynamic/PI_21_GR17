@@ -57,6 +57,7 @@
 include "navbar.php";
 
 if (isset($data)) {
+
 }
 ?>
 <body>
@@ -83,6 +84,23 @@ if (isset($data)) {
 
             </div>
 
+            <div class="col-md-2">
+                <div class="dropdown create">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Manage
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a class="emergenciesButton" type="button" data-toggle="modal" data-target="#addUser">Add
+                                User</a></li>
+                        <li><a class="emergenciesButton" type="button" data-toggle="modal" data-target="#reviewReq">Review
+                                Requests</a></li>
+                        <li><a class="emergenciesButton" type="button" data-toggle="modal" data-target="#addArticle">Add
+                                Article</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </header>
@@ -94,9 +112,11 @@ if (isset($data)) {
                 <div class="list-group">
                     <a href="adminPanel" class="list-group-item  ">
                         <span class="glyphicon glyphicon-cog" aria-hidden=""true></span>Dashboard</a>
-                    <a href="police" class="list-group-item main-color-bg active"><span class="glyphicon glyphicon-user" aria-hidden="" true> </span>
+                    <a href="police" class="list-group-item main-color-bg active"><span class="glyphicon glyphicon-user"
+                                                                                        aria-hidden="" true> </span>
                         Users<span class="badge"><?php echo $data['count'][0]['COUNT(name)'] ?></span></a>
-                    <a href="reports" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="" true> </span> Reports<span
+                    <a href="reports" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden=""
+                                                                    true> </span> Reports<span
                                 class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
                     <a href="articles" class="list-group-item">
                         <span class="glyphicon glyphicon-book" aria-hidden="" true> </span> Articles<span class="badge">12</span></a>
@@ -144,10 +164,11 @@ if (isset($data)) {
                                     <td><?php echo $police['rruga']?></td>
                                     <td><?php echo $police['nr_telefonit']?></td>
                                     <td>
-                                        <button class="btn main-color-bg editbtn" type="button">Edit</button>
+                                        <button class="btn main-color-bg" type="button" data-toggle="modal" data-target="#editUser">Edit</button>
                                         <form method="post" action="police" style="display:inline">
                                             <input type="hidden" name="remove"  value="<?php echo $data['policeOfficials'][$i]['uID'] ?>">
                                             <button type="submit" name="delete" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
+
                                         </form>
 
                                     </td>
@@ -158,45 +179,29 @@ if (isset($data)) {
                     </div>
                 </div>
                 <div class="col-md-6 myPanel">
-                    <table class="table  table-hover tbl" id="costum">
-                        <tr>
-                            <th class="main-color-bg">On Duty</th>
-                            <th class="main-color-bg">Available</th>
-                        </tr>
-                        <tr>
-                            <td>Jill Smith</td>
-                            <td>Jill Smith</td>
-                        </tr>
-                        <tr>
-                            <td>Jill Smith</td>
-                            <td>Jill Smith</td>
-                        </tr>
-                        <tr>
-                            <td>Jill Smith</td>
-                            <td>Andi Dika</td>
-                        </tr>
-                        <tr>
-                            <td>Jill Smith</td>
-                            <td>Andi Dika</td>
-                        </tr>
-                        <tr>
-                            <td>Jill Smith</td>
-                            <td>Andi Dika</td>
-                        </tr>
-                        <tr>
-                            <td>Andi Dika</td>
-                            <td>Andi Dika</td>
-                        </tr>
-                        <tr>
-                            <td>Andi Dika</td>
-                            <td>Andi Dika</td>
-                        </tr>
-                        <tr>
-                            <td>Andi Dika</td>
-                            <td>Andi Dika</td>
-                        </tr>
-                    </table>
+                        <table class="table  table-hover tbl" id="costum">
+                            <tr>
+                                <th class="main-color-bg">Available</th>
+                            </tr>
+                            <?php foreach ($data['available'] as $i => $free): ?>
+                                <tr>
+                                    <td><?php echo $data['available'][$i]['name'].' '.$data['available'][$i]['surname']  ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+
+                        <table class="table  table-hover tbl" id="costum">
+                            <tr>
+                                <th class="main-color-bg">On Duty</th>
+                            </tr>
+                            <?php foreach ($data['onDuty'] as $i => $duty): ?>
+                                <tr>
+                                    <td><?php echo $data['onDuty'][$i]['name'].' '.$data['onDuty'][$i]['surname']  ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
                 </div>
+
 
                 <ul class="col-md-6 list-group myPanel important">
                     <li class="sticky list-group-item active main-color-bg">
@@ -238,9 +243,6 @@ if (isset($data)) {
 <?php
 include "modals.php";
 ?>
-
-
-
 
 </body>
 </html>
