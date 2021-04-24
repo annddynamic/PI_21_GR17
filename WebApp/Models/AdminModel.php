@@ -121,6 +121,27 @@ class AdminModel
         return $result;
     }
 
+    public function addNews($data)
+    {
+        $this->db->query('INSERT INTO news (foto,titile,published,description) 
+                                        VALUES (:foto,:titile,:published,:description )');
+        //Binde values
+
+        $this->db->bind(':foto', $data['foto']);
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':published', $data['published']);
+        $this->db->bind(':description', $data['description']);
+
+        //Exetute function
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 
 
 

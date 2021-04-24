@@ -144,41 +144,39 @@ if (isset($data)) {
                         </div>
 
                     </div>
+
+
                     <div class="col-md-9">
                         <div class="panel panel-default">
                             <div class="main-color-bg panel-heading">
                                 <h3 class="panel-title">Add content to your Page</h3>
                             </div>
                             <div class="panel-body">
-                                <form>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="picture">Select your image<small> image list</small></label>
-                                            <select onchange="changePic(event)" id="characters" class="form-control">
-                                                <option class="fotot">Violence</option>
-                                                <option class="fotot">Corruption</option>
-                                                <option class="fotot">Robbery</option>
-                                                <option class="fotot">Report</option>
-                                            </select>
-                                        </div>
-                                        <div class="foto" style="border: 1px solid lightgray">
-                                            <img id="foto" height="264" src="../Assets/img/vioence.png" class="center-block" alt="">
-                                        </div>
-                                    </div>
+
+                                <form action="articles" method="post" enctype="multipart/form-data">
                                     <div class="col-md-6" >
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input type="text" class="form-control" placeholder="Add Title">
+                                            <input type="text" class="form-control" name="title"  placeholder="Add Title">
                                         </div>
                                         <div class="form-group">
                                             <label>Content</label>
-                                            <textarea class="form-control textarea" placeholder="Add Message"> </textarea>
+                                            <textarea class="form-control textarea" name="description"  placeholder="Add Message"> </textarea>
                                         </div>
                                     </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Insert Photo</label>
+                                            <input name="foto" type="file">
+
+                                        </div>
                                     <div>
                                         <input style="margin-top:2em; margin-left: 1em;" type="submit" class="btn btn-lg main-color-bg" value="Add">
                                     </div>
                                 </form>
+
+
                             </div>
                         </div>
                     </div>

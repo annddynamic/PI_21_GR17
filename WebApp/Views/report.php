@@ -103,6 +103,7 @@ if (isset($data)) {
                         <div class="form-group">
                             <textarea id="textarea" name="textfield"placeholder="Add Message" value=""><?php if(isset($_POST['textfield'])) { echo $_POST['textfield']; } ?>  </textarea>
                             <span class="invalidFeedback"> <?php echo $errors['textfieldError']; ?></span>
+
                             <div class="pull-right ">
                                 <input type="file" value="<?php echo $data['file']; ?>" id="myfile" name="file">
                                 <span class="invalidFeedback"> <?php echo $errors['fileError']; ?></span>

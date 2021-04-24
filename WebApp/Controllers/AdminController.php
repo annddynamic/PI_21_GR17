@@ -2,9 +2,13 @@
 
 class AdminController extends Controller
 {
+    private $obj;
+
     public function __construct()
     {
         $this->adminModel = $this->Model('AdminModel');
+        $this->obj = new ReportsController();
+
     }
 
 //    public function getUsers()
@@ -131,21 +135,19 @@ class AdminController extends Controller
         return $data;
     }
 
-    public function editPoliceUser(){
+    public function editPoliceUser()
+    {
 
         $data = [
             'uID' => '',
-            'lastName'=>'',
-            'address'=>'',
+            'lastName' => '',
+            'address' => '',
             'telephone'
         ];
 
 
-
-
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
 
 
             $data = [
@@ -160,16 +162,63 @@ class AdminController extends Controller
             echo '</pre>';
 
 
-
-
         }
 
         return $data;
 
     }
 
+    public function addNews()
+    {
+        $data = [
+            'foto' => '',
+            'title' => '',
+            'published' => '',
+            'description' => '',
+        ];
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'title' => trim($_POST['title']),
+                'published' => date('Y-m-d H:i:s'),
+                'description' => trim($_POST['description']),
+                'fotoError' => '',
+                'titleError' => '',
+                'publishedError' => '',
+                'descriptionError' => '',
 
 
+            ];
+
+//            Validimi i fotos
+
+            if (!is_dir('../Assets/DB-IMGS')) {
+                mkdir('../Assets/DB-IMGS');
+            }
+
+            $image=$_FILES['foto'];
+            if ($image && $image['tmp_name']) {
+               $imgPath =  '../Assets/DB-IMGS/' . $this->obj->randomString(9) . '/' . $image['name'];
+                mkdir(dirname($imgPath));
+                move_uploaded_file($image['tmp_name'], $imgPath);
+            }
+
+//            $data[
+//                'foto'=> $imgPath
+//            ];
+
+            if ($this->adminModel->addNews($data)) {
+                header('location:articles');
+            } else {
+                die('Something went wrong !!');
+            }
+        }
+        return $data;
+
+    }
 
 
 }
