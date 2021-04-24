@@ -6,7 +6,7 @@ if (isset($data)) {
     $datta=$data['rep']->getData();
 
     echo '<pre>';
-    var_dump($data['models']);
+    var_dump($data);
     echo '</pre>';
 }
 ?>
@@ -226,13 +226,13 @@ if (isset($data)) {
             <h1>News Section</h1>
 
 
-            <?php foreach ($data['models'] as $i => $model): ?>
+            <?php foreach ($data['models']["data"] as $i => $model): ?>
 
             <div class="col-md-6">
                 <div style="height: 7em"></div>
 
                 <div class="content">
-                    <img src="<?php echo $model['foto']; ?>" alt="">
+                    <img src="<?php echo $model['foto']; ?>" class="" alt="">
                     <div class="content2">
                         <h2 class="text-left"><?php echo $model['title'];?></h2>
 
@@ -254,25 +254,7 @@ if (isset($data)) {
 
             </div>
 
-            <div class="col-md-5 col-md-offset-1">
-                <div class="content">
-<!--                    <img src="../Assets/img/policeguard.jpg" alt="">-->
-                    <div class="content2">
-                        <h2 class="text-left">lorem</h2>
-<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.-->
-<!--                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum harum nobis non officiis repellendus sit vel vero. Ad debitis dolore doloribus illo libero minima, odio quas tempore ut voluptatum.</p>-->
 
-                        <div class="icons">
-                            <a href="http://twitter.com" class="fa fa-twitter"></a>
-                            <a href="http://facebook.com" class="fa fa-facebook"></a>
-                            <a href="http://instagram.com" class="fa fa-instagram"></a>
-                            <a href="http://twitter.com" class="fa fa-whatsapp"></a>
-                        </div>
-                    </div>
-                </div>
-
-                </div>
-            </div>
         <?php endforeach; ?>
     </div>
     </div>

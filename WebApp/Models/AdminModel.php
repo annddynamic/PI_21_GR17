@@ -130,6 +130,15 @@ class AdminModel
         return $result;
     }
 
+    public function getNews(){
+        $this->db->query('SELECT foto,title,published,description FROM news');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+
     public function addNews($data)
     {
         $this->db->query('INSERT INTO news (foto,title,published,description) 
