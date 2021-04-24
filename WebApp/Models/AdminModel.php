@@ -47,6 +47,15 @@ class AdminModel
         return $result;
     }
 
+    public function countNews()
+    {
+        $this->db->query('SELECT COUNT(nID) FROM news');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
     public function pendingApproval()
     {
         $this->db->query('SELECT uID,name,surname FROM pending_users WHERE role_ID=2');
@@ -150,7 +159,6 @@ class AdminModel
 
     }
 
-
     public function getAvailable(){
         $this->db->query('SELECT name, surname FROM users u WHERE inDuty=0');
 
@@ -160,16 +168,19 @@ class AdminModel
 
     }
 
+    public function getNews(){
+        $this->db->query('SELECT title, published FROM news');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
     public function getEmergencyReports(){
 
         $this->db->query('SELECT emri, dt_raportimit, foto, gjendja, uID FROM report r 
                               INNER JOIN status s on r.sID= s.sID
                               WHERE Emergency =0');
-
-//        SELECT name, dt_raportimit, foto, gjendja FROM status s
-//                              INNER JOIN report r on s.sID= r.sID
-//                              INNER JOIN users u on r.uID= u.uID
-//                              WHERE Emergency =1'
 
 
 

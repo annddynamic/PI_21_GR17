@@ -85,23 +85,7 @@ if (isset($data)) {
 
             </div>
 
-            <div class="col-md-2">
-                <div class="dropdown create">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Manage
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a class="emergenciesButton" type="button" data-toggle="modal" data-target="#addUser">Add
-                                User</a></li>
-                        <li><a class="emergenciesButton" type="button" data-toggle="modal" data-target="#reviewReq">Review
-                                Requests</a></li>
-                        <li><a class="emergenciesButton" type="button" data-toggle="modal" data-target="#addArticle">Add
-                                Article</a></li>
-                    </ul>
-                </div>
-            </div>
+
         </div>
     </div>
 </header>
@@ -120,7 +104,8 @@ if (isset($data)) {
                                                                     true> </span> Reports<span
                                 class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
                     <a href="articles" class="list-group-item">
-                        <span class="glyphicon glyphicon-book" aria-hidden="" true> </span> Articles<span class="badge">12</span></a>
+                        <span class="glyphicon glyphicon-book" aria-hidden="" true> </span> Articles<span
+                                class="badge"><?php echo $data['countNews'][0]['COUNT(nID)'] ?></span></a>
                     <a href="feedback" class="list-group-item">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> Feedback<span class="badge">12</span></a>
                 </div>

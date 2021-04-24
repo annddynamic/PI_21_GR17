@@ -17,13 +17,15 @@ class AdminController extends Controller
             'users' => $this->adminModel->getUsers(),
             'count' => $this->adminModel->countUsers(),
             'reportCount' => $this->adminModel->countReport(),
+            'countNews'=>$this->adminModel->countNews(),
             'pendingApproval' => $this->adminModel->pendingApproval(),
             'countPoliceUsers' => $this->adminModel->countPoliceUsers(),
             'policeOfficials' => $this->adminModel->policeOfficials(),
             'onDuty'=>$this->adminModel->getOnDuty(),
             'available'=>$this->adminModel->getAvailable(),
             'emergency'=>$this->adminModel->getEmergencyReports(),
-            'random'=>$this->adminModel->getReports()
+            'random'=>$this->adminModel->getReports(),
+            'getNews'=>$this->adminModel->getNews(),
 
         ];
         return $data;
