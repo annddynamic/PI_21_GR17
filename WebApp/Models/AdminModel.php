@@ -133,7 +133,7 @@ class AdminModel
     public function addNews($data)
     {
         $this->db->query('INSERT INTO news (foto,title,published,description) 
-                                        VALUES (:foto,:title,:published,:description )');
+                              VALUES (:foto,:title,:published,:description )');
         //Binde values
 
         $this->db->bind(':foto', $data['foto']);
@@ -148,6 +148,14 @@ class AdminModel
         } else {
             return false;
         }
+    }
+
+    public function getNews(){
+        $this->db->query('SELECT title, published FROM news');
+
+        $result = $this->db->resultSet();
+
+        return $result;
     }
 
     public function getOnDuty(){
@@ -166,14 +174,6 @@ class AdminModel
 
         return $result;
 
-    }
-
-    public function getNews(){
-        $this->db->query('SELECT title, published FROM news');
-
-        $result = $this->db->resultSet();
-
-        return $result;
     }
 
     public function getEmergencyReports(){
@@ -202,7 +202,31 @@ class AdminModel
 
     }
 
+    public function getFeedback(){
+
+        $this->db->query('SELECT title, Mesazhi, data, uID FROM feedback f 
+                              INNER JOIN users u ON f.uID=u.uID');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+    public function addFeedback($data){
+
+        $this->db->query('INSERT INTO feedback (name , subject,mesazhi, dt_feedback) 
+                              VALUES(:name,:subject,:mesazhi,NOW())');
+
+        $this->db->bind(':name', $data['name']);
+        $this->db->bind(':subject', $data['subject']);
+        $this->db->bind(':mesazhi', $data['mesazhi']);
 
 
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }

@@ -110,7 +110,7 @@ if (isset($data)) {
                             </a>
                             <a href="police" class="list-group-item "><span class ="glyphicon glyphicon-user" aria-hidden="" true> </span>   Users<span class="badge"><?php echo $data['count'][0]['COUNT(name)'] ?></span></a>
                             <a href="reports" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>   Reports<span class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
-                            <a href="articles" class="list-group-item "><span class ="glyphicon glyphicon-book" aria-hidden="" true> </span>   Articles<span class="badge">12</span></a>
+                            <a href="articles" class="list-group-item "><span class ="glyphicon glyphicon-book" aria-hidden="" true> </span>   Articles<span class="badge"><?php echo $data['countNews'][0]['COUNT(nID)'] ?></span></a>
                             <a href="feedback" class="list-group-item active main-color-bg"><span class ="glyphicon glyphicon-pencil" aria-hidden="" true> </span>   Feedback<span class="badge">12</span></a>
                         </div>
 
@@ -141,29 +141,6 @@ if (isset($data)) {
                                     </tr>
 
 
-                                    <tr>
-                                        <td>Andi</td>
-                                        <td>Andi</td>
-                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, reprehenderit!</td>
-                                        <td>Dec 13, 2016</td>
-                                        <td><a class="btn btn-primary center-block" href="#">Delete</a> </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Andi</td>
-                                        <td>Andi</td>
-                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, reprehenderit!</td>
-                                        <td>Dec 14, 2016</td>
-                                        <td><a class="btn btn-primary center-block" href="#">Delete</a> </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Andi</td>
-                                        <td>Andi</td>
-                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, reprehenderit!</td>
-                                        <td>Dec 13, 2016</td>
-                                        <td><a class="btn btn-primary center-block" href="#">Delete</a> </td>
-                                    </tr>
                                 </table>
                             </div>
                         </div>

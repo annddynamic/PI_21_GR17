@@ -206,6 +206,78 @@ class AdminController extends Controller
 
 
     }
+    public function addFeedack()
+    {
+        $data = [
+            'name' => '',
+            'subject' => '',
+            'mesazhi' => '',
+            'nameError' => '',
+            'subjectError' => '',
+            'mesazhiError' => '',
+        ];
 
+        if (isset($_POST['feedback'])) {
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'name' => trim($_POST['name']),
+                'subject' => trim($_POST['subject']),
+                'mesazhi' => trim($_POST['mesazhi']),
+                'titleError' => '',
+                'publishedError' => '',
+                'descriptionError' => '',
+
+
+            ];
+
+//            echo '<pre>';
+//            var_dump($data);
+//            echo '</pre>';
+
+            //Validimi i title
+//            $onlyLettersAndNumbers = "/^[a-zA-Z0-9]*$/";
+//
+//            if (empty ($data['title'])) {
+//                $data['titleError'] = 'Please enter title.';
+//            } else if (!preg_match($onlyLettersAndNumbers, $data['lastName'])) {
+//                $data['title'] = 'Title name can only contain letters and numbers.';
+//            } else if (strlen($data['title']) > 10 || strlen($data['title']) <= 0) {
+//                $data['titleError'] = 'Last name cannot be empty or null';
+//            }
+
+
+            //Validimi i fotos
+//
+//            if (!is_dir('../Assets/DB-IMGS')) {
+//                mkdir('../Assets/DB-IMGS');
+//            }
+//
+//            $image=$_FILES['foto'];
+//
+
+//
+//            if ($image && $image['tmp_name']) {
+//                $imgPath =  '../Assets/DB-IMGS/' . $this->obj->randomString(9) . '/' . $image['name'];
+//                mkdir(dirname($imgPath));
+//                move_uploaded_file($image['tmp_name'], $imgPath);
+//            }
+//
+//            $data['foto']=$imgPath;
+
+
+
+            if ($this->adminModel->addFeedback($data)) {
+                header('location:index.php');
+            } else {
+                die('Something went wrong !!');
+            }
+        }
+        return $data;
+
+
+
+    }
 
 }

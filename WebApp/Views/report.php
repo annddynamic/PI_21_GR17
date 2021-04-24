@@ -5,7 +5,6 @@ if (isset($data)) {
 
     $data=$data->getData();
 }
-
 ?>
 
 <!DOCTYPE html>

@@ -142,6 +142,17 @@
 
 
 </head>
+
+<?php
+
+if (isset($data)) {
+
+    $datta=$data['feed'];
+
+
+}
+?>
+
 <body>
 <footer class="section-footer main-color-bg">
     <div class="grid">
@@ -161,16 +172,21 @@
         <div class="email-section">
             <h3>Give Feedback</h3>
             <p>You can type your fucking opinion here</p>
-            <form>
+
+
+            <form action="index.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input type="email" placeholder="Email">
-                    <input type="text" placeholder="Title">
+                    <input style="color: black" type="text" name="name" placeholder="Name" value="">
+                    <span class="invalidFeedback"> <?php echo isset($datta['nameError']) ? $datta['nameError'] : null;?></span>
+                    <input style="color: black" type="text" name="subject" placeholder="Subject">
+                    <span class="invalidFeedback"> <?php echo $datta['subjectError'];?></span>
                 </div>
                 <label>Your Feedback</label>
                 <div class="form-group" >
-                    <textarea style="width:25em"></textarea>
+                    <textarea name="mesazhi" placeholder="Add Feedback" style="width:25em; color: black"></textarea>
+                    <span class="invalidFeedback"> <?php echo $datta['mesazhiError'];?></span>
                 </div>
-                <button type="submit" class="btn btn-primary">Send</button>
+                <button type="submit" name="feedback" class="btn btn-primary">Send</button>
         </div>
 
         </form>
