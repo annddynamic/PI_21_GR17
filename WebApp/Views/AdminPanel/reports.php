@@ -58,6 +58,7 @@
 <?php
 include "navbar.php";
 if (isset($data)) {
+
 }
 ?>
 
@@ -132,86 +133,31 @@ if (isset($data)) {
                                         <th class="main-color-bg">Date</th>
                                         <th class="main-color-bg">Status</th>
                                         <th class="main-color-bg">In Charge</th>
+                                        <th class="main-color-bg">Pictures</th>
                                         <th class="main-color-bg"></th>
                                     </tr>
-                                    <tr>
-                                        <td>Jill Smith</td>
-                                        <td>Jill Smith</td>
-                                        <td>
-                                            Jill Smith
+                                    <?php foreach ($data['emergency'] as $i => $emergency): ?>
 
-                                        </td>
-                                        <td>
-                                            Jill Smith
-
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jill Smith</td>
-                                        <td>Jill Smith</td>
-                                        <td>Jill Smith</td>
-                                        <td>Jill Smith</td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Andi Dika</td>
-                                        <td>Andi Dika</td>
-                                        <td>
-                                            Jill Smith
-
-                                        </td>
-                                        <td>
-                                            Andi Dika
-
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Andi Dika</td>
-                                        <td>Andi Dika</td>
-                                        <td>
-                                            Jill Smith
-
-                                        </td>
-                                        <td>
-                                            Andi Dika
-
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Adnit King kobra </td>
-                                        <td>Adnit King kobra </td>
-                                        <td>
-                                            Jill Smith
-
-                                        </td>
-                                        <td>
-                                            Adnit King kobra
-
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td><?php echo $emergency['emri']?></td>
+                                            <td><?php echo $emergency['dt_raportimit']?></td>
+                                            <td><?php echo $emergency['gjendja']?></td>
+                                            <td><?php echo $emergency['uID']?></td>
+                                            <td><?php echo $emergency['foto']?></td>
+                                            <td>
+                                                <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                                <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </table>
                             </div>
 
                         </div>
+
+
+
+
 
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -224,84 +170,23 @@ if (isset($data)) {
                                         <th class="main-color-bg">Date</th>
                                         <th class="main-color-bg">Status</th>
                                         <th class="main-color-bg">In Charge</th>
+                                        <th class="main-color-bg">Pictures</th>
                                         <th class="main-color-bg"></th>
                                     </tr>
-                                    <tr>
-                                        <td>Jill Smith</td>
-                                        <td>Jill Smith</td>
-                                        <td>
-                                            Jill Smith
+                                    <?php foreach ($data['random'] as $i => $random): ?>
 
-                                        </td>
-                                        <td>
-                                            Jill Smith
-
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jill Smith</td>
-                                        <td>Jill Smith</td>
-                                        <td>
-                                            Jill Smith
-                                        </td>
-                                        <td>
-                                            Jill Smith
-
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Andi Dika</td>
-                                        <td>Andi Dika</td>
-                                        <td>
-                                            Jill Smith
-
-                                        </td>
-                                        <td>
-                                            Andi Dika
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Andi Dika</td>
-                                        <td>Andi Dika</td>
-                                        <td>
-                                            Jill Smith
-                                        </td>
-                                        <td>
-                                            Andi Dika
-
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Adnit King kobra </td>
-                                        <td>Adnit King kobra </td>
-                                        <td>
-                                            Jill Smith
-                                        </td>
-                                        <td>
-                                            Adnit King kobra
-
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td><?php echo $random['emri']?></td>
+                                            <td><?php echo $random['dt_raportimit']?></td>
+                                            <td><?php echo $random['gjendja']?></td>
+                                            <td><?php echo $random['uID']?></td>
+                                            <td><?php echo $random['foto']?></td>
+                                            <td>
+                                                <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                                <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </table>
                             </div>
                     </div>

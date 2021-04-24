@@ -160,6 +160,37 @@ class AdminModel
 
     }
 
+    public function getEmergencyReports(){
+
+        $this->db->query('SELECT emri, dt_raportimit, foto, gjendja, uID FROM report r 
+                              INNER JOIN status s on r.sID= s.sID
+                              WHERE Emergency =0');
+
+//        SELECT name, dt_raportimit, foto, gjendja FROM status s
+//                              INNER JOIN report r on s.sID= r.sID
+//                              INNER JOIN users u on r.uID= u.uID
+//                              WHERE Emergency =1'
+
+
+
+        $result = $this->db->resultSet();
+
+        return $result;
+
+    }
+
+    public function getReports(){
+
+        $this->db->query('SELECT emri, dt_raportimit, foto, gjendja, uID FROM report r 
+                              INNER JOIN status s on r.sID= s.sID
+                              WHERE Emergency =0');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+
+    }
+
 
 
 

@@ -21,7 +21,9 @@ class AdminController extends Controller
             'countPoliceUsers' => $this->adminModel->countPoliceUsers(),
             'policeOfficials' => $this->adminModel->policeOfficials(),
             'onDuty'=>$this->adminModel->getOnDuty(),
-            'available'=>$this->adminModel->getAvailable()
+            'available'=>$this->adminModel->getAvailable(),
+            'emergency'=>$this->adminModel->getEmergencyReports(),
+            'random'=>$this->adminModel->getReports()
 
         ];
         return $data;
