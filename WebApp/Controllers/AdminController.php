@@ -143,6 +143,9 @@ class AdminController extends Controller
             'title' => '',
             'published' => '',
             'description' => '',
+            'titleError' => '',
+            'publishedError' => '',
+            'descriptionError' => '',
         ];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -153,7 +156,6 @@ class AdminController extends Controller
                 'title' => trim($_POST['title']),
                 'published' => date('Y-m-d H:i:s'),
                 'description' => trim($_POST['description']),
-                'fotoError' => '',
                 'titleError' => '',
                 'publishedError' => '',
                 'descriptionError' => '',
@@ -161,7 +163,19 @@ class AdminController extends Controller
 
             ];
 
-//            Validimi i fotos
+            //Validimi i title
+            $onlyLettersAndNumbers = "/^[a-zA-Z0-9]*$/";
+
+            if (empty ($data['title'])) {
+                $data['titleError'] = 'Please enter title.';
+            } else if (!preg_match($onlyLettersAndNumbers, $data['lastName'])) {
+                $data['title'] = 'Title name can only contain letters and numbers.';
+            } else if (strlen($data['title']) > 10 || strlen($data['title']) <= 0) {
+                $data['titleError'] = 'Last name cannot be empty or null';
+            }
+
+
+            //Validimi i fotos
 
             if (!is_dir('../Assets/DB-IMGS')) {
                 mkdir('../Assets/DB-IMGS');
@@ -188,6 +202,8 @@ class AdminController extends Controller
             }
         }
         return $data;
+
+
 
     }
 

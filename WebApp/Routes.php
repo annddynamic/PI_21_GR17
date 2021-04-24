@@ -17,7 +17,7 @@ Route::set('articles', function(){
     $obj=new AdminController();
     $data=$obj->getData();
     $obj->addNews();
-    Articles::CreateView('articles',$data);
+    Controller::CreateView('articles',$data);
 });
 
 Route::set('citizen', function(){

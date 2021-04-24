@@ -56,7 +56,10 @@
 <?php
 include "navbar.php";
 if (isset($data)) {
+
 }
+
+
 ?>
     <body>
 
@@ -123,7 +126,7 @@ if (isset($data)) {
                     <div class="col-md-9">
                         <div class="panel panel-default">
                             <div class="main-color-bg panel-heading">
-                                <h3 class="panel-title">Add content to your Page</h3>
+                                <h3 class="panel-title">Add content to Landing Page</h3>
                             </div>
                             <div class="panel-body">
 
@@ -131,7 +134,8 @@ if (isset($data)) {
                                     <div class="col-md-6" >
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input type="text" class="form-control" name="title"  placeholder="Add Title">
+                                            <input type="text" class="form-control" name="title" value=""  placeholder="Add Title">
+                                            <span class="invalidFeedback"></span>
                                         </div>
                                         <div class="form-group">
                                             <label>Content</label>
@@ -142,7 +146,7 @@ if (isset($data)) {
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Insert Photo</label>
-                                            <input name="foto" type="file">
+                                            <input name="foto" type="file" required>
 
                                         </div>
                                     <div>

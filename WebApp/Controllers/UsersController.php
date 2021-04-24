@@ -11,7 +11,6 @@ class UsersController extends Controller
     }
 
 
-
     public function registerCitizen()
     {
         $data = [
@@ -226,7 +225,7 @@ class UsersController extends Controller
                 }
             } else if (!preg_match($nameValidation, $data['name'])) {
                 $data['nameError'] = 'Name can only contain letters and numbers.';
-            } else if (strlen($data['name']) > 10) {
+            } else if (strlen($data['name']) > 15) {
                 $data['nameError'] = 'Name cannot be longer than 10 characters.';
             }
 
@@ -235,7 +234,7 @@ class UsersController extends Controller
                 $data['lastNameError'] = 'Please enter last name.';
             } else if (!preg_match($nameValidation, $data['lastName'])) {
                 $data['lastNameError'] = 'Last name can only contain letters and numbers.';
-            } else if (strlen($data['lastName']) > 10) {
+            } else if (strlen($data['lastName']) > 15) {
                 $data['lastNameError'] = 'Surname cannot be longer than 10 characters.';
             }
 
@@ -417,7 +416,6 @@ class UsersController extends Controller
         return $data;
     }
 
-
     public function createUserSession($user)
     {
         session_start();
@@ -425,13 +423,12 @@ class UsersController extends Controller
         $_SESSION['name'] = $user->name;
         $_SESSION['role'] = $user->role_ID;
 
-        if($_SESSION['role']==2) {
+        if ($_SESSION['role'] == 2) {
             header('location:policePanel');
-        }   else  if($_SESSION['role']==3){
+        } else if ($_SESSION['role'] == 3) {
             header('location:citizenPanel');
         }
     }
-
 
     // Validate phone number
 
