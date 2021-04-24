@@ -178,11 +178,15 @@ class AdminModel
 
     public function getEmergencyReports(){
 
-        $this->db->query('SELECT emri, dt_raportimit, foto, gjendja, uID FROM report r 
-                              INNER JOIN status s on r.sID= s.sID
-                              WHERE Emergency =0');
+        $this->db->query('SELECT emri, dt_raportimit, gjendja, name, foto
+                              FROM status s INNER JOIN report r on s.sID=r.sID
+                              INNER JOIN users u on r.uID=u.uID
+                              WHERE Emergency =1');
 
 
+//        SELECT emri, dt_raportimit, foto, gjendja, uID FROM report r
+//                              INNER JOIN status s on r.sID= s.sID
+//                              WHERE Emergency =0
 
         $result = $this->db->resultSet();
 
@@ -192,8 +196,9 @@ class AdminModel
 
     public function getReports(){
 
-        $this->db->query('SELECT emri, dt_raportimit, foto, gjendja, uID FROM report r 
-                              INNER JOIN status s on r.sID= s.sID
+        $this->db->query('SELECT emri, dt_raportimit, gjendja, name, foto
+                              FROM status s INNER JOIN report r on s.sID=r.sID
+                              INNER JOIN users u on r.uID=u.uID
                               WHERE Emergency =0');
 
         $result = $this->db->resultSet();

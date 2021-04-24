@@ -59,6 +59,9 @@
 include "navbar.php";
 if (isset($data)) {
 
+//    echo '<pre>';
+//    var_dump($data);
+//    echo '</pre>';
 }
 ?>
 
@@ -142,8 +145,8 @@ if (isset($data)) {
                                             <td><?php echo $emergency['emri']?></td>
                                             <td><?php echo $emergency['dt_raportimit']?></td>
                                             <td><?php echo $emergency['gjendja']?></td>
-                                            <td><?php echo $emergency['uID']?></td>
-                                            <td><?php echo $emergency['foto']?></td>
+                                            <td><?php echo $emergency['name']?></td>
+                                            <td><img width="120" src="<?php echo $emergency['foto']?>"</td>
                                             <td>
                                                 <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
                                                 <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
@@ -179,8 +182,8 @@ if (isset($data)) {
                                             <td><?php echo $random['emri']?></td>
                                             <td><?php echo $random['dt_raportimit']?></td>
                                             <td><?php echo $random['gjendja']?></td>
-                                            <td><?php echo $random['uID']?></td>
-                                            <td><?php echo $random['foto']?></td>
+                                            <td><?php echo $random['name']?></td>
+                                            <td><img width="120" src="<?php echo $random['foto']?>"</td>
                                             <td>
                                                 <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
                                                 <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
