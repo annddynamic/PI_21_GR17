@@ -150,13 +150,7 @@ class AdminModel
         }
     }
 
-    public function getNews(){
-        $this->db->query('SELECT foto,title,published,description FROM news');
 
-        $result = $this->db->resultSet();
-
-        return $result;
-    }
 
     public function getOnDuty(){
         $this->db->query('SELECT name, surname FROM users u WHERE inDuty=1');

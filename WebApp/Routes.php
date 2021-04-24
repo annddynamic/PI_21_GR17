@@ -4,11 +4,14 @@
 Route::set('index.php', function(){
     $rep = new ReportsController();
     $feed = new AdminController();
+    $index= new indexController();
     $rep->createReport();
     $feeed=$feed->addFeedack();
+
     $data=[
         'rep'=>$rep,
-        'feed'=>$feeed
+        'feed'=>$feeed,
+        'models'=>$index->getData()
         ];
     Controller::CreateView('index', $data);
 });
