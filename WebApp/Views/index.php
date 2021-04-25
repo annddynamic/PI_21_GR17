@@ -3,11 +3,10 @@ if (isset($data)) {
 
 
     $errors = $data['rep']->getErrors();
-    $datta=$data['rep']->getData();
+    $datta = $data['rep']->getData();
 
-    echo '<pre>';
-    var_dump($data);
-    echo '</pre>';
+    list($firstArray, $secondArray) = array_chunk($data['models']["data"], ceil(count($data['models']["data"]) / 2));
+
 }
 ?>
 
@@ -45,7 +44,8 @@ if (isset($data)) {
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="signIn">Sign in</a></li>
-                    <li><a class="emergenciesButton"  type = "button" data-toggle="modal" data-target="#signUp" >Sign up</a></li>
+                    <li><a class="emergenciesButton" type="button" data-toggle="modal" data-target="#signUp">Sign up</a>
+                    </li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -65,7 +65,7 @@ if (isset($data)) {
                 <?php
                 $number = 100;
                 $str = "Kosovo";
-                printf("There are %u criminal cases everyday in %s.",$number,$str);
+                printf("There are %u criminal cases everyday in %s.", $number, $str);
                 ?> adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
                 consectetur adipisicing elit. Doloremque ex expedita itaque iure nemo odio pariatur provident quos
                 tempora
@@ -78,7 +78,8 @@ if (isset($data)) {
                 velit.
             </p>
             <p class="report">Lorem ipsum dolor sit amet, consectetur adipisicing?
-                <a class="emergenciesButton" style="color: red; font-weight: bold" type="button" data-toggle="modal" data-target="#report">Report now!</a>
+                <a class="emergenciesButton" style="color: red; font-weight: bold" type="button" data-toggle="modal"
+                   data-target="#report">Report now!</a>
         </div>
 
         <div class="hyrje2">
@@ -216,7 +217,6 @@ if (isset($data)) {
     </div>
 
 
-
 </div>
 
 
@@ -224,44 +224,69 @@ if (isset($data)) {
     <div class="container">
         <div class="row">
             <h1>News Section</h1>
-
-
-            <?php foreach ($data['models']["data"] as $i => $model): ?>
-
             <div class="col-md-6">
-                <div style="height: 7em"></div>
 
-                <div class="content">
-                    <img src="<?php echo $model['foto']; ?>" class="" alt="">
-                    <div class="content2">
-                        <h2 class="text-left"><?php echo $model['title'];?></h2>
+                <?php foreach ($firstArray as $i => $content): ?>
 
-                        <p><?php echo $model['description'];?></p>
+                    <div style="height: 7em"></div>
 
-                        <article class="">
-                            <h3><?php echo $model['published'];?></h3>
-                            <p>CRP NEWS</p>
-                        </article>
+                    <div class="content">
+                        <img width="100%" src="<?php echo $content['foto']; ?>" class="" alt="">
+                        <div class="content2">
+                            <h2 class="text-left"><?php echo $content['title']; ?></h2>
 
-                        <div class="icons">
-                            <a href="http://twitter.com" class="fa fa-twitter"></a>
-                            <a href="http://facebook.com" class="fa fa-facebook"></a>
-                            <a href="http://instagram.com" class="fa fa-instagram"></a>
-                            <a href="http://twitter.com" class="fa fa-whatsapp"></a>
+                            <p><?php echo $content['description']; ?></p>
+
+                            <article class="">
+                                <h3><?php echo $content['published']; ?></h3>
+                                <p>CRP NEWS</p>
+                            </article>
+
+                            <div class="icons">
+                                <a href="http://twitter.com" class="fa fa-twitter"></a>
+                                <a href="http://facebook.com" class="fa fa-facebook"></a>
+                                <a href="http://instagram.com" class="fa fa-instagram"></a>
+                                <a href="http://twitter.com" class="fa fa-whatsapp"></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                <?php endforeach; ?>
+            </div>
+            <div class="col-md-6">
+
+                <?php foreach ($secondArray as $i => $model): ?>
+
+
+                    <div style="height: 7em"></div>
+
+                    <div class="content">
+                        <img width="100%" src="<?php echo $model['foto']; ?>" class="" alt="">
+                        <div class="content2">
+                            <h2 class="text-left"><?php echo $model['title']; ?></h2>
+
+                            <p><?php echo $model['description']; ?></p>
+
+                            <article class="">
+                                <h3><?php echo $model['published']; ?></h3>
+                                <p>CRP NEWS</p>
+                            </article>
+
+                            <div class="icons">
+                                <a href="http://twitter.com" class="fa fa-twitter"></a>
+                                <a href="http://facebook.com" class="fa fa-facebook"></a>
+                                <a href="http://instagram.com" class="fa fa-instagram"></a>
+                                <a href="http://twitter.com" class="fa fa-whatsapp"></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                <?php endforeach; ?>
             </div>
 
-
-        <?php endforeach; ?>
-    </div>
+        </div>
     </div>
 </section>
-
-
-
 
 
 <div style="height: 100px;">
@@ -275,62 +300,88 @@ if (isset($data)) {
 <div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Emergency Report</h4>
-                </div>
-                <div class="modal-body">
-                    <form action="index.php" enctype="multipart/form-data" method="POST">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" value="<?php echo isset($datta['name']) ? $datta['name'] : null; ?>" class="form-control" placeholder="Name" name="name">
-                            <span class="invalidFeedback"><?php echo isset($errors['nameError']) ? $errors['nameError'] : null; ?></span>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Emergency Report</h4>
+            </div>
+            <div class="modal-body">
+                <form action="index.php" enctype="multipart/form-data" method="POST">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" value="<?php echo isset($datta['name']) ? $datta['name'] : null; ?>"
+                               class="form-control" placeholder="Name" name="name">
+                        <span class="invalidFeedback"><?php echo isset($errors['nameError']) ? $errors['nameError'] : null; ?></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" value="<?php echo isset($datta['lastName']) ? $datta['lastName'] : null; ?>"
+                               class="form-control" name="lastName" placeholder="Last Name">
+                        <span class="invalidFeedback"> <?php echo $errors['lastNameError']; ?></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Reports">What do you want to report?</label>
+                        <select class="form-control" name="report">
+                            <option value aria-disabled="true">Select report type..</option>
+                            <option value="abuse" <?php echo (isset($_POST['report']) && $_POST['report'] === 'abuse') ? 'selected' : ''; ?>>
+                                Abuse
+                            </option>
+                            <option value="suicide"<?php echo (isset($_POST['report']) && $_POST['report'] === 'suicide') ? 'selected' : ''; ?>>
+                                Suicide
+                            </option>
+                            <option value="murder"<?php echo (isset($_POST['report']) && $_POST['report'] === 'murder') ? 'selected' : ''; ?>>
+                                Murder
+                            </option>
+                            <option value="robbery"<?php echo (isset($_POST['report']) && $_POST['report'] === 'robbery') ? 'selected' : ''; ?>>
+                                Robbery
+                            </option>
+                            <option value="arson"<?php echo (isset($_POST['report']) && $_POST['report'] === 'arson') ? 'selected' : ''; ?>>
+                                Arson
+                            </option>
+                            <option value="breakIn"<?php echo (isset($_POST['report']) && $_POST['report'] === 'breakIn') ? 'selected' : ''; ?>>
+                                Break In
+                            </option>
+                            <option value="corruption"<?php echo (isset($_POST['report']) && $_POST['report'] === 'corruption') ? 'selected' : ''; ?>>
+                                Corruption
+                            </option>
+                            <option value="other"<?php echo (isset($_POST['report']) && $_POST['report'] === 'other') ? 'selected' : ''; ?>>
+                                Other
+                            </option>
+                        </select>
+                        <span class="invalidFeedback"> <?php echo $errors['reportError']; ?></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="textarea" name="textfield" placeholder="Add Message"
+                                  value=""><?php if (isset($_POST['textfield'])) {
+                                echo $_POST['textfield'];
+                            } ?>  </textarea>
+                        <span class="invalidFeedback"> <?php echo $errors['textfieldError']; ?></span>
+                        <div class="pull-right ">
+                            <input type="file" value="<?php echo isset($datta['file']) ? $datta['file'] : null; ?>"
+                                   id="myfile" name="file">
+                            <span class="invalidFeedback"> <?php echo $errors['fileError']; ?></span>
                         </div>
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" value="<?php echo isset($datta['lastName']) ? $datta['lastName']: null; ?>" class="form-control" name="lastName" placeholder="Last Name">
-                            <span class="invalidFeedback"> <?php echo $errors['lastNameError']; ?></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="Reports" >What do you want to report?</label>
-                            <select class="form-control" name="report">
-                                <option value aria-disabled="true">Select report type..</option>
-                                <option value="abuse" <?php echo (isset($_POST['report']) && $_POST['report'] === 'abuse') ? 'selected' : ''; ?>>Abuse</option>
-                                <option value="suicide"<?php echo (isset($_POST['report']) && $_POST['report'] === 'suicide') ? 'selected' : ''; ?>>Suicide</option>
-                                <option value="murder"<?php echo (isset($_POST['report']) && $_POST['report'] === 'murder') ? 'selected' : ''; ?>>Murder</option>
-                                <option value="robbery"<?php echo (isset($_POST['report']) && $_POST['report'] === 'robbery') ? 'selected' : ''; ?>>Robbery</option>
-                                <option value="arson"<?php echo (isset($_POST['report']) && $_POST['report'] === 'arson') ? 'selected' : ''; ?>>Arson</option>
-                                <option value="breakIn"<?php echo (isset($_POST['report']) && $_POST['report'] === 'breakIn') ? 'selected' : ''; ?>>Break In</option>
-                                <option value="corruption"<?php echo (isset($_POST['report']) && $_POST['report'] === 'corruption') ? 'selected' : ''; ?>>Corruption</option>
-                                <option value="other"<?php echo (isset($_POST['report']) && $_POST['report'] === 'other') ? 'selected' : ''; ?>>Other</option>
-                            </select>
-                            <span class="invalidFeedback"> <?php echo $errors['reportError']; ?></span>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="textarea" name="textfield"placeholder="Add Message" value=""><?php if(isset($_POST['textfield'])) { echo $_POST['textfield']; } ?>  </textarea>
-                            <span class="invalidFeedback"> <?php echo $errors['textfieldError']; ?></span>
-                            <div class="pull-right ">
-                                <input type="file" value="<?php echo isset($datta['file']) ? $datta['file'] : null; ?>" id="myfile" name="file">
-                                <span class="invalidFeedback"> <?php echo $errors['fileError']; ?></span>
-                            </div>
-                        </div>
+                    </div>
 
-                        <div class="form-group">
-                            <label>Address</label>
-                            <input type="text" name="address" value="<?php echo isset($datta['address']) ? $datta['address'] : null; ?> " class="form-control" placeholder="Address">
-                            <span class="invalidFeedback"> <?php echo $errors['addressError']; ?></span>
-                        </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" name="address"
+                               value="<?php echo isset($datta['address']) ? $datta['address'] : null; ?> "
+                               class="form-control" placeholder="Address">
+                        <span class="invalidFeedback"> <?php echo $errors['addressError']; ?></span>
+                    </div>
 
-                        <div class="form-group">
-                            <label>City</label>
-                            <input type="text" name="city" value="<?php echo isset($datta['city']) ? $datta['city'] : null; ?>"class="form-control" placeholder="City">
-                            <span class="invalidFeedback"> <?php echo $errors['cityError']; ?></span>
-                        </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" name="city"
+                               value="<?php echo isset($datta['city']) ? $datta['city'] : null; ?>" class="form-control"
+                               placeholder="City">
+                        <span class="invalidFeedback"> <?php echo $errors['cityError']; ?></span>
+                    </div>
 
-                        <input type="submit" class="btn btn-default main-color-bg btn-lg " value="Submit">
-                    </form>
-                </div>
+                    <input type="submit" class="btn btn-default main-color-bg btn-lg " value="Submit">
+                </form>
+            </div>
 
             </form>
         </div>

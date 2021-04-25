@@ -306,3 +306,14 @@ body {
 .invalidFeedback{
     color: red !important;
 }
+.gridiRi{
+    display: grid;
+    grid-template-columns:repeat(2 ,1fr);
+    grid-gap: 50px;
+    justify-content: center;
+}
+
+p {
+    max-width:500px;
+    word-wrap:break-word;
+}
