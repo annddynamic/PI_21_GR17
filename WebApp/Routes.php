@@ -2,7 +2,6 @@
 
 
 Route::set('index.php', function(){
-
     $rep = new ReportsController();
     $feed = new AdminController();
     $index= new indexController();
@@ -103,6 +102,7 @@ Route::set('signUpPolice', function(){
 
 Route::set('citizenPanel', function(){
     Controller::CreateView('CitizenPanel');
+    Controller::logout();
 });
 
 Route::set('policePanel', function(){

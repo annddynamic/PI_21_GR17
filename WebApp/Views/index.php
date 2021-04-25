@@ -6,13 +6,13 @@ if (isset($data)) {
     $datta = $data['rep']->getData();
 
 
-
     if(count($data['models']["data"])>1){
 
             list($firstArray, $secondArray) = array_chunk($data['models']["data"], ceil(count($data['models']["data"]) / 2));
     }else {
         $firstArray=$data['models']["data"];
     }
+
 
 
 }

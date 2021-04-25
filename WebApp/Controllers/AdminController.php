@@ -179,8 +179,6 @@ class AdminController extends Controller
 
             if (empty ($data['description'])) {
                 $data['descriptionError'] = 'Please enter your description.';
-            } else if (!preg_match($onlyLettersAndNumbers, $data['description'])) {
-                $data['descriptionError'] = 'Description name can only contain letters and numbers.';
             }
 
             //Validimi i fotos

@@ -72,7 +72,7 @@ class UserModel
 
         $row = $this->db->single();
 
-        if(!is_null($row)){
+        if(!is_bool($row)){
 
              $hashedPassword = $row->password;
         }else {
