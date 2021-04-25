@@ -2,6 +2,7 @@
 
 
 class Controller extends Database {
+
     public static function CreateView($viewName, $data=[]){
         if(file_exists("./Views/AdminPanel/$viewName.php")) {
             require_once "./Views/AdminPanel/$viewName.php";

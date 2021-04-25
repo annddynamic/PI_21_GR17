@@ -266,20 +266,20 @@ if (isset($data)) {
             <div class="col-md-6">
 
                 <?php if (!empty($secondArray)): ?>
-                    <?php foreach ($secondArray as $i => $model): ?>
+                    <?php foreach ($secondArray as $i => $content): ?>
 
 
                         <div style="height: 7em"></div>
 
                         <div class="content">
-                            <img width="100%" src="<?php echo $model['foto']; ?>" class="" alt="">
+                            <img width="100%" src="<?php echo $content['foto']; ?>" class="" alt="">
                             <div class="content2">
-                                <h2 class="text-left"><?php echo $model['title']; ?></h2>
+                                <h2 class="text-left"><?php echo $content['title']; ?></h2>
 
-                                <p><?php echo $model['description']; ?></p>
+                                <p><?php echo $content['description']; ?></p>
 
                                 <article class="">
-                                    <h3><?php echo $model['published']; ?></h3>
+                                    <h3><?php echo $content['published']; ?></h3>
                                     <p>CRP NEWS</p>
                                 </article>
 

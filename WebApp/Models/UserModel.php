@@ -65,16 +65,22 @@ class UserModel
     }
 
     public function login($email, $password) {
-         $this->db->query('SELECT * FROM users WHERE email = :email');
+        $this->db->query('SELECT * FROM users WHERE email = :email');
 
          //Binde Value
         $this->db->bind(':email',$email);
 
         $row = $this->db->single();
 
-        $hashedPassword = $row->password;
+        if(!is_null($row)){
 
-        if(password_verify($password, $hashedPassword)){
+             $hashedPassword = $row->password;
+        }else {
+            return false;
+        }
+
+
+        if(password_verify($password, $hashedPassword) ){
             return $row;
         }else{
             return false;

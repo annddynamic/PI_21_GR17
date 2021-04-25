@@ -2,6 +2,7 @@
 
 
 Route::set('index.php', function(){
+
     $rep = new ReportsController();
     $feed = new AdminController();
     $index= new indexController();
