@@ -23,4 +23,19 @@ class Controller extends Database {
         return new $model;
     }
 
+    public static function logout(){
+
+
+        if(isset($_GET['index.php'])) {
+            session_destroy();
+
+            unset($_SESSION['user_id']);
+            unset($_SESSION['name'] );
+            unset($_SESSION['role'] );
+
+            header('location:index.php');
+        }
+
+    }
+
 }

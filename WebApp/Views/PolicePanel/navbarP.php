@@ -22,8 +22,8 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../index.php">Welcome</a></li>
-                <li><a href="../index.php">Logout</a></li>
+                <li><a href="#">Welcome</a></li>
+                <li><a href="index.php">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

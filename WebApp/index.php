@@ -11,7 +11,12 @@ spl_autoload_register(function ($class_name) {
     }
 });
 
+//require_once ('sessionhelper.php');
 require_once('Routes.php');
+
+echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>';
 
 ?>
 

@@ -427,8 +427,13 @@ class UsersController extends Controller
             header('location:policePanel');
         } else if ($_SESSION['role'] == 3) {
             header('location:citizenPanel');
+        }else {
+            header('location:adminPanel');
         }
     }
+
+
+
 
     // Validate phone number
 
