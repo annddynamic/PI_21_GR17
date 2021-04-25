@@ -17,19 +17,20 @@ class AdminController extends Controller
             'users' => $this->adminModel->getUsers(),
             'count' => $this->adminModel->countUsers(),
             'reportCount' => $this->adminModel->countReport(),
-            'countNews'=>$this->adminModel->countNews(),
+            'countNews' => $this->adminModel->countNews(),
             'pendingApproval' => $this->adminModel->pendingApproval(),
             'countPoliceUsers' => $this->adminModel->countPoliceUsers(),
             'policeOfficials' => $this->adminModel->policeOfficials(),
             'citizens' => $this->adminModel->getCitizens(),
             'countCitizens' => $this->adminModel->countCitizens(),
-            'onDuty'=>$this->adminModel->getOnDuty(),
-            'available'=>$this->adminModel->getAvailable(),
-            'emergency'=>$this->adminModel->getEmergencyReports(),
-            'random'=>$this->adminModel->getReports(),
-            'getNews'=>$this->adminModel->getNews(),
-            'getFeedback'=>$this->adminModel->getFeedback(),
+            'onDuty' => $this->adminModel->getOnDuty(),
+            'available' => $this->adminModel->getAvailable(),
+            'emergency' => $this->adminModel->getEmergencyReports(),
+            'random' => $this->adminModel->getReports(),
+            'getNews' => $this->adminModel->getNews(),
+            'getFeedback' => $this->adminModel->getFeedback(),
             'countFeedback' => $this->adminModel->countFeedback(),
+            'news' => $this->addNews(),
 
 
         ];
@@ -133,7 +134,6 @@ class AdminController extends Controller
             ];
 
 
-
         }
 
         return $data;
@@ -146,12 +146,15 @@ class AdminController extends Controller
             'title' => '',
             'published' => '',
             'description' => '',
+            'foto' => '',
             'titleError' => '',
             'publishedError' => '',
             'descriptionError' => '',
+            'fotoError' => '',
+
         ];
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST'&& isset($_POST['addArticle'])) {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['addArticle'])) {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -159,10 +162,11 @@ class AdminController extends Controller
                 'title' => trim($_POST['title']),
                 'published' => date('Y-m-d H:i:s'),
                 'description' => trim($_POST['description']),
+                'foto' => $_FILES['foto'],
                 'titleError' => '',
                 'publishedError' => '',
                 'descriptionError' => '',
-
+                'fotoError' => '',
 
             ];
 
@@ -171,41 +175,48 @@ class AdminController extends Controller
 
             if (empty ($data['title'])) {
                 $data['titleError'] = 'Please enter title.';
-            } else if (!preg_match($onlyLettersAndNumbers, $data['lastName'])) {
-                $data['title'] = 'Title name can only contain letters and numbers.';
-            } else if (strlen($data['title']) > 10 || strlen($data['title']) <= 0) {
-                $data['titleError'] = 'Last name cannot be empty or null';
             }
 
+            //Validimi i description
+
+            if (empty ($data['description'])) {
+                $data['descriptionError'] = 'Please enter your description.';
+            } else if (!preg_match($onlyLettersAndNumbers, $data['description'])) {
+                $data['descriptionError'] = 'Description name can only contain letters and numbers.';
+            }
 
             //Validimi i fotos
 
             if (!is_dir('../Assets/DB-IMGS')) {
                 mkdir('../Assets/DB-IMGS');
             }
+            if ($_FILES['foto']['name'] == "") {
 
-            $image=$_FILES['foto'];
+                $data['fotoError'] = 'Please add a image';
+            } else {
+                $image = $_FILES['foto'];
 
+                if ($image && $image['tmp_name']) {
+                    $imgPath = '../Assets/DB-IMGS/' . $this->obj->randomString(9) . '/' . $image['name'];
+                    mkdir(dirname($imgPath));
+                    move_uploaded_file($image['tmp_name'], $imgPath);
+                }
 
-
-            if ($image && $image['tmp_name']) {
-                $imgPath =  '../Assets/DB-IMGS/' . $this->obj->randomString(9) . '/' . $image['name'];
-                mkdir(dirname($imgPath));
-                move_uploaded_file($image['tmp_name'], $imgPath);
+                $data['foto'] = $imgPath;
             }
 
-            $data['foto']=$imgPath;
+            if (
+                empty($data['titleError']) && empty($data['fotoError']) &&
+                empty($data['descriptionError'])) {
 
-
-
-            if ($this->adminModel->addNews($data)) {
-                header('location:articles');
-            } else {
-                die('Something went wrong !!');
+                if ($this->adminModel->addNews($data)) {
+                    header('location:articles');
+                } else {
+                    die('Something went wrong !!');
+                }
             }
         }
         return $data;
-
 
 
     }
@@ -221,7 +232,7 @@ class AdminController extends Controller
             'mesazhiError' => '',
         ];
 
-        if (isset($_POST['feedback']) && $_SERVER['REQUEST_METHOD']== "POST") {
+        if (isset($_POST['feedback']) && $_SERVER['REQUEST_METHOD'] == "POST") {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -236,17 +247,16 @@ class AdminController extends Controller
             ];
 
 
-
-            if(empty($data['name'])){
-                $data['nameError']="Please enter your name";
+            if (empty($data['name'])) {
+                $data['nameError'] = "Please enter your name";
             }
 
-            if(empty($data['subject'])){
-                $data['subjectError']="Please enter subject";
+            if (empty($data['subject'])) {
+                $data['subjectError'] = "Please enter subject";
             }
 
-            if(empty($data['mesazhi'])){
-                $data['mesazhiError']="Please enter your message";
+            if (empty($data['mesazhi'])) {
+                $data['mesazhiError'] = "Please enter your message";
             }
 
 
@@ -262,7 +272,6 @@ class AdminController extends Controller
             }
 
 
-
         }
         return $data;
 
@@ -274,22 +283,21 @@ class AdminController extends Controller
             'uID' => '',
         ];
 
-            if (isset($_POST['deelete'])) {
+        if (isset($_POST['deelete'])) {
 
-                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-                $data = [
-                    'uID' => $_POST['remove'],
-                ];
+            $data = [
+                'uID' => $_POST['remove'],
+            ];
 
-                if ($this->adminModel->deleteNews($data)) {
-                    header('location:articles');
-                } else {
-                    die('Something went wrong. ');
-                }
-
+            if ($this->adminModel->deleteNews($data)) {
+                header('location:articles');
+            } else {
+                die('Something went wrong. ');
             }
 
+        }
 
 
         return $data;
@@ -318,9 +326,6 @@ class AdminController extends Controller
         }
         return $data;
     }
-
-
-
 
 
 }

@@ -97,11 +97,11 @@ if (isset($data)) {
                 <div class="row">
                     <div class="col-md-3">
                         <div class="list-group">
-                            <a href="adminPanel" class="list-group-item active main-color-bg"><span
+                            <a href="adminPanel" class="list-group-item "><span
                                         class="glyphicon glyphicon-cog" aria-hidden="" true> </span>
                                 Dashboard
                             </a>
-                            <a href="police" class="list-group-item">
+                            <a href="police" class="list-group-item active main-color-bg">
                                 <span class="glyphicon glyphicon-user" aria-hidden="" true></span> Users<span
                                         class="badge"><?php echo $data['count'][0]['COUNT(name)'] ?></span></a>
 

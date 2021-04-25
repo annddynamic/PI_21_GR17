@@ -58,8 +58,6 @@ include "navbar.php";
 if (isset($data)) {
 
 }
-
-
 ?>
     <body>
 
@@ -155,11 +153,13 @@ if (isset($data)) {
                                         <div class="form-group">
                                             <label>Title</label>
                                             <input type="text" class="form-control" name="title" value=""  placeholder="Add Title">
-                                            <span class="invalidFeedback"></span>
+                                            <span class="invalidFeedback"><?php echo $data['news']['titleError'] ?></span>
                                         </div>
                                         <div class="form-group">
                                             <label>Content</label>
-                                            <textarea class="form-control textarea" name="description"  placeholder="Add Message"> </textarea>
+                                            <textarea class="form-control textarea" placeholder="Add Description" name="description"> </textarea>
+                                            <span class="invalidFeedback"><?php echo $data['news']['descriptionError'] ?></span>
+
                                         </div>
                                     </div>
 
@@ -167,7 +167,7 @@ if (isset($data)) {
                                         <div class="form-group">
                                             <label>Insert Photo</label>
                                             <input name="foto" type="file">
-                                            <span class="invalidFeedback"><?php echo $data['errors'] ?></span>
+                                            <span class="invalidFeedback"><?php echo $data['news']['fotoError'] ?></span>
                                         </div>
                                     <div>
                                         <input style="margin-top:2em; margin-left: 1em;" type="submit" name="addArticle" class="btn btn-lg main-color-bg" value="Add">

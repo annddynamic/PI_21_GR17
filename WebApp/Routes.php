@@ -26,7 +26,7 @@ Route::set('adminPanel', function(){
 Route::set('articles', function(){
     $obj=new AdminController();
     $data=$obj->getData();
-    $obj->addNews();
+//    $obj->addNews();
     $obj->deleteNews();
     Controller::CreateView('articles',$data);
     Controller::logout();
