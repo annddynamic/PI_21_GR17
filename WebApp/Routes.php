@@ -30,13 +30,16 @@ Route::set('articles', function(){
 });
 
 Route::set('citizen', function(){
-    Citizen::CreateView('citizen');
+    $obj=new AdminController();
+    $obj->deletePoliceUser();
+    $data=$obj->getData();
+    Citizen::CreateView('citizen', $data);
 });
 
 Route::set('feedback', function(){
     $obj=new AdminController();
     $data=$obj->getData();
-    Feedback::CreateView('feedback',$data);
+    Controller::CreateView('feedback',$data);
 });
 
 Route::set('reports', function(){

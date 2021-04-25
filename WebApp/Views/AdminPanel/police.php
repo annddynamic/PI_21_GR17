@@ -134,7 +134,6 @@ if (isset($data)) {
                     <div class="panel-body myPanel">
                         <table class="table  table-hover tbl">
                             <tr>
-                                <th class="main-color-bg" scope="col">ID</th>
                                 <th class="main-color-bg" scope="col">Name</th>
                                 <th class="main-color-bg" scope="col">Last Name</th>
                                 <th class="main-color-bg" scope="col">Address</th>
@@ -144,7 +143,6 @@ if (isset($data)) {
                             <?php foreach ($data['policeOfficials'] as $i => $police): ?>
 
                                 <tr>
-                                    <td><?php echo $police['uID']?></td>
                                     <td><?php echo $police['name']?></td>
                                     <td><?php echo $police['surname']?></td>
                                     <td><?php echo $police['rruga']?></td>

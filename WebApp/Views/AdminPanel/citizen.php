@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -56,6 +55,13 @@
 
 <?php
 include "navbar.php";
+
+if (isset($data)) {
+
+
+}
+
+
 ?>
     <body>
 
@@ -91,13 +97,26 @@ include "navbar.php";
                 <div class="row">
                     <div class="col-md-3">
                         <div class="list-group">
-                            <a href="adminPanel" class="list-group-item" ><span class ="glyphicon glyphicon-cog" aria-hidden="" true> </span>
+                            <a href="adminPanel" class="list-group-item active main-color-bg"><span
+                                        class="glyphicon glyphicon-cog" aria-hidden="" true> </span>
                                 Dashboard
                             </a>
-                            <a href="police" class="list-group-item main-color-bg active"><span class ="glyphicon glyphicon-user" aria-hidden="" true> </span>   Users<span class="badge">12</span></a>
-                            <a href="reports" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>   Reports<span class="badge">12</span></a>
-                            <a href="articles" class="list-group-item"><span class ="glyphicon glyphicon-book" aria-hidden="" true> </span>   Articles<span class="badge">12</span></a>
-                            <a href="feedback" class="list-group-item"><span class ="glyphicon glyphicon-pencil" aria-hidden="" true> </span>   Feedback<span class="badge">12</span></a>
+                            <a href="police" class="list-group-item">
+                                <span class="glyphicon glyphicon-user" aria-hidden="" true></span> Users<span
+                                        class="badge"><?php echo $data['count'][0]['COUNT(name)'] ?></span></a>
+
+                            <a href="reports" class="list-group-item">
+                                <span class="glyphicon glyphicon-list-alt" aria-hidden="" true></span> Reports<span
+                                        class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
+
+                            <a href="articles" class="list-group-item">
+                                <span class="glyphicon glyphicon-book" aria-hidden="" true> </span> Articles<span
+                                        class="badge"><?php echo $data['countNews'][0]['COUNT(nID)'] ?></span></a>
+
+                            <a href="feedback" class="list-group-item">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> Feedback<span
+                                        class="badge">12</span></a>
+
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -105,7 +124,7 @@ include "navbar.php";
                             </div>
                             <div class="panel-body">
                                 <div class="well dash-box">
-                                    <h2><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span> 12</h2>
+                                    <h2><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span> <?php echo $data['countCitizens'][0]['COUNT(name)'] ?></h2>
                                     <h4>Citizens</h4>
                                 </div>
                                 <button class="btn btn-default  main-color-bg" type="button">Edit</button>
@@ -129,149 +148,29 @@ include "navbar.php";
                                         <th class="main-color-bg">Telephone</th>
                                         <th class="main-color-bg"></th>
                                     </tr>
-                                    <tr>
-                                        <td>Jill Smith</td>
-                                        <td>Jill Smith</td>
-                                        <td>Jill Smith</td>
-                                        <td>Jill Smith</td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jill Smith</td>
-                                        <td>Jill Smith</td>
-                                        <td>Jill Smith</td>
-                                        <td>Jill Smith</td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Andi Dika</td>
-                                        <td>Andi Dika</td>
-                                        <td>Jill Smith</td>
-                                        <td>Andi Dika</td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Andi Dika</td>
-                                        <td>Andi Dika</td>
-                                        <td>
-                                            Jill Smith
-                                        </td>
-                                        <td>
-                                            Andi Dika
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Adnit King kobra </td>
-                                        <td>Adnit King kobra </td>
-                                        <td>
-                                            Jill Smith
-                                        </td>
-                                        <td>
-                                            Adnit King kobra
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Adnit King kobra </td>
-                                        <td>Adnit King kobra </td>
-                                        <td>
-                                            Jill Smith
-                                        </td>
-                                        <td>
-                                            Adnit King kobra
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Adnit King kobra </td>
-                                        <td>Adnit King kobra </td>
-                                        <td>
-                                            Jill Smith
-                                        </td>
-                                        <td>
-                                            Adnit King kobra
-                                        </td>
-                                        <td>
-                                            <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                            <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
-                                        </td>
-                                    </tr>
+                                    <?php foreach ($data['citizens'] as $i => $citizen): ?>
+
+                                        <tr>
+                                            <td><?php echo $citizen['name']?></td>
+                                            <td><?php echo $citizen['surname']?></td>
+                                            <td><?php echo $citizen['rruga']?></td>
+                                            <td><?php echo $citizen['nr_telefonit']?></td>
+                                            <td>
+                                                <button class="btn main-color-bg" type="button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                                <form method="post" action="police" style="display:inline">
+                                                    <input type="hidden" name="remove"  value="<?php echo $data['citizens'][$i]['uID'] ?>">
+                                                    <button type="submit" name="delete" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
+
+                                                </form>
+
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </table>
                             </div>
                         </div>
 
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><b>Message</b></h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="col-md-6">
-                                    <form>
-                                        <h4 style="padding-bottom:10px;">
-                                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                                            Send a message to
-                                            <select name="person">
-                                                <option value="admin">Adnit (alfa)</option>
-                                                <option value="police">Arben Dedaj</option>
-                                                <option value="citizen">Andi </option>
-                                            </select>
-                                        </h4>
-                                            <div class="form-group">
-                                                <textarea id="textarea"  class="form-control" placeholder="Add Message"> </textarea>
-                                            </div>
-                                        <button type="submit" class="btn btn-primary main-color-bg">Send</button>
-                                    </form>
-                                </div>
-                                    <ul class="col-md-6 list-group myPanel ">
-                                        <h4 class="specialh4">Sent messaages</h4>
-                                        <li class="list-group-item">
-                                            Dapibus ac facilisis in
-                                            <button type="button" class="btn btn-danger" style="margin-left: 11em">
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                            </button>
-                                        </li>
-                                        <li class="list-group-item">
-                                            Dapibus ac facilisis in
-                                            <button type="button" class="btn btn-danger" style="margin-left: 11em">
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                            </button>
-                                        </li>
-                                        <li class="list-group-item">
-                                            Dapibus ac facilisis in
-                                            <button type="button" class="btn btn-danger" style="margin-left: 11em">
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                            </button>
-                                        </li>
-                                        <li class="list-group-item">
-                                            Dapibus ac facilisis in
-                                            <button type="button" class="btn btn-danger" style="margin-left: 11em">
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

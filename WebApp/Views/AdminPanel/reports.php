@@ -97,15 +97,27 @@ if (isset($data)) {
                 <div class="row">
                     <div class="col-md-3">
                         <div class="list-group">
-                            <a href="adminPanel" class="list-group-item " ><span class ="glyphicon glyphicon-cog" aria-hidden="" true> </span>
+                            <a href="adminPanel" class="list-group-item active main-color-bg"><span
+                                        class="glyphicon glyphicon-cog" aria-hidden="" true> </span>
                                 Dashboard
                             </a>
-                            <a href="police" class="list-group-item"><span class ="glyphicon glyphicon-user" aria-hidden="" true> </span>Users<span class="badge"><?php echo $data['count'][0]['COUNT(name)'] ?></span></a>
-                            <a href="reports" class="list-group-item main-color-bg active"><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span> Reports<span class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
-                            <a href="articles" class="list-group-item"><span class ="glyphicon glyphicon-book" aria-hidden="" true> </span>Articles<span class="badge"><?php echo $data['countNews'][0]['COUNT(nID)'] ?></span></a>
-                            <a href="feedback" class="list-group-item"><span class ="glyphicon glyphicon-pencil" aria-hidden="" true> </span>Feedback<span class="badge">12</span></a>
-                        </div>
+                            <a href="police" class="list-group-item">
+                                <span class="glyphicon glyphicon-user" aria-hidden="" true></span> Users<span
+                                        class="badge"><?php echo $data['count'][0]['COUNT(name)'] ?></span></a>
 
+                            <a href="reports" class="list-group-item">
+                                <span class="glyphicon glyphicon-list-alt" aria-hidden="" true></span> Reports<span
+                                        class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
+
+                            <a href="articles" class="list-group-item">
+                                <span class="glyphicon glyphicon-book" aria-hidden="" true> </span> Articles<span
+                                        class="badge"><?php echo $data['countNews'][0]['COUNT(nID)'] ?></span></a>
+
+                            <a href="feedback" class="list-group-item">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> Feedback<span
+                                        class="badge">12</span></a>
+
+                        </div>
 
 
                         <div class="well">

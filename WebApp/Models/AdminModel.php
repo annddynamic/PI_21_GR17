@@ -237,4 +237,24 @@ class AdminModel
         }
     }
 
+
+    public function getCitizens()
+    {
+        $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit FROM users WHERE role_ID=3');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+    public function countCitizens()
+    {
+        $this->db->query('SELECT COUNT(name) FROM users WHERE role_ID=3');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+
 }

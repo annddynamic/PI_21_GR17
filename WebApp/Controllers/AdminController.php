@@ -21,6 +21,8 @@ class AdminController extends Controller
             'pendingApproval' => $this->adminModel->pendingApproval(),
             'countPoliceUsers' => $this->adminModel->countPoliceUsers(),
             'policeOfficials' => $this->adminModel->policeOfficials(),
+            'citizens' => $this->adminModel->getCitizens(),
+            'countCitizens' => $this->adminModel->countCitizens(),
             'onDuty'=>$this->adminModel->getOnDuty(),
             'available'=>$this->adminModel->getAvailable(),
             'emergency'=>$this->adminModel->getEmergencyReports(),
@@ -92,7 +94,8 @@ class AdminController extends Controller
 
                 if ($this->adminModel->deletePoliceUser($data)) {
 
-                    header('location:police');
+                    echo '<script>alert("Success")</script>';
+
                 } else {
                     die('Something went wrong. ');
                 }
@@ -126,9 +129,6 @@ class AdminController extends Controller
                 'telephone' => trim($_POST['telephone'])
             ];
 
-            echo '<pre>';
-            var_dump($data);
-            echo '</pre>';
 
 
         }
@@ -279,5 +279,15 @@ class AdminController extends Controller
 
 
     }
+
+//
+//    public function deleteUser(){
+//
+//    }
+
+
+
+
+
 
 }
