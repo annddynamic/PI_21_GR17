@@ -215,7 +215,7 @@ class AdminModel
 
         $this->db->query('SELECT emri, dt_raportimit, gjendja, name, foto
                               FROM status s INNER JOIN report r on s.sID=r.sID
-                              INNER JOIN users u on r.uID=u.uID
+                              LEFT JOIN users u on r.uID=u.uID
                               WHERE Emergency =1');
 
         $result = $this->db->resultSet();
@@ -228,7 +228,7 @@ class AdminModel
 
         $this->db->query('SELECT emri, dt_raportimit, gjendja, name, foto
                               FROM status s INNER JOIN report r on s.sID=r.sID
-                              INNER JOIN users u on r.uID=u.uID
+                              LEFT JOIN users u on r.uID=u.uID
                               WHERE Emergency =0');
 
         $result = $this->db->resultSet();
