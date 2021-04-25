@@ -22,12 +22,13 @@ class AdminController extends Controller
             'countPoliceUsers' => $this->adminModel->countPoliceUsers(),
             'policeOfficials' => $this->adminModel->policeOfficials(),
             'citizens' => $this->adminModel->getCitizens(),
+            'countCitizens' => $this->adminModel->countCitizens(),
             'onDuty'=>$this->adminModel->getOnDuty(),
             'available'=>$this->adminModel->getAvailable(),
             'emergency'=>$this->adminModel->getEmergencyReports(),
             'random'=>$this->adminModel->getReports(),
             'getNews'=>$this->adminModel->getNews(),
-            'errors'=> $this->addNews()
+//            'errors'=> $this->addNews()
 
         ];
         return $data;
@@ -95,6 +96,7 @@ class AdminController extends Controller
                 if ($this->adminModel->deletePoliceUser($data)) {
 
                     echo '<script>alert("Success")</script>';
+
                 } else {
                     die('Something went wrong. ');
                 }
@@ -147,7 +149,7 @@ class AdminController extends Controller
             'descriptionError' => '',
         ];
 
-        if (isset($_POST['addArticle'])&&$_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'&& isset($_POST['addArticle'])) {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -185,7 +187,7 @@ class AdminController extends Controller
 
 
             if ($image && $image['tmp_name']) {
-               $imgPath =  '../Assets/DB-IMGS/' . $this->obj->randomString(9) . '/' . $image['name'];
+                $imgPath =  '../Assets/DB-IMGS/' . $this->obj->randomString(9) . '/' . $image['name'];
                 mkdir(dirname($imgPath));
                 move_uploaded_file($image['tmp_name'], $imgPath);
             }
@@ -205,6 +207,7 @@ class AdminController extends Controller
 
 
     }
+
     public function addFeedack()
     {
         $data = [
@@ -279,23 +282,16 @@ class AdminController extends Controller
 
     }
 
-//
-//
-
     public function deleteNews()
     {
-
-
         $data = [
             'uID' => '',
         ];
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-
             if (isset($_POST['deelete'])) {
+
+                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
                 $data = [
                     'uID' => $_POST['remove'],
                 ];
@@ -309,7 +305,7 @@ class AdminController extends Controller
             }
 
 
-        }
+
         return $data;
     }
 

@@ -167,7 +167,7 @@ if (isset($data)) {
                                         <div class="form-group">
                                             <label>Insert Photo</label>
                                             <input name="foto" type="file" required>
-                                            <span class="invalidFeedback"><?php $data['errors']["publishedError"] ?></span>
+<!--                                            <span class="invalidFeedback">--><?php //$data['errors']["publishedError"] ?><!--</span>-->
                                         </div>
                                     <div>
                                         <input style="margin-top:2em; margin-left: 1em;" type="submit" name="addArticle" class="btn btn-lg main-color-bg" value="Add">
