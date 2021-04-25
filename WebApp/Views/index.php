@@ -5,9 +5,11 @@ if (isset($data)) {
     $errors = $data['rep']->getErrors();
     $datta = $data['rep']->getData();
 
-    if(isset($data['models']["data"])){
+    if(count($data['models']["data"])>1){
 
             list($firstArray, $secondArray) = array_chunk($data['models']["data"], ceil(count($data['models']["data"]) / 2));
+    }else {
+        $firstArray=$data['models']["data"];
     }
 
 
@@ -230,62 +232,65 @@ if (isset($data)) {
             <h1>News Section</h1>
             <div class="col-md-6">
 
-                <?php foreach ($firstArray as $i => $content): ?>
+                <?php if (!empty($firstArray)): ?>
+                    <?php foreach ($firstArray as $i => $content): ?>
 
-                    <div style="height: 7em"></div>
+                        <div style="height: 7em"></div>
 
-                    <div class="content">
-                        <img width="100%" src="<?php echo $content['foto']; ?>" class="" alt="">
-                        <div class="content2">
-                            <h2 class="text-left"><?php echo $content['title']; ?></h2>
+                        <div class="content">
+                            <img width="100%" src="<?php echo $content['foto']; ?>" class="" alt="">
+                            <div class="content2">
+                                <h2 class="text-left"><?php echo $content['title']; ?></h2>
 
-                            <p><?php echo $content['description']; ?></p>
+                                <p><?php echo $content['description']; ?></p>
 
-                            <article class="">
-                                <h3><?php echo $content['published']; ?></h3>
-                                <p>CRP NEWS</p>
-                            </article>
+                                <article class="">
+                                    <h3><?php echo $content['published']; ?></h3>
+                                    <p>CRP NEWS</p>
+                                </article>
 
-                            <div class="icons">
-                                <a href="http://twitter.com" class="fa fa-twitter"></a>
-                                <a href="http://facebook.com" class="fa fa-facebook"></a>
-                                <a href="http://instagram.com" class="fa fa-instagram"></a>
-                                <a href="http://twitter.com" class="fa fa-whatsapp"></a>
+                                <div class="icons">
+                                    <a href="http://twitter.com" class="fa fa-twitter"></a>
+                                    <a href="http://facebook.com" class="fa fa-facebook"></a>
+                                    <a href="http://instagram.com" class="fa fa-instagram"></a>
+                                    <a href="http://twitter.com" class="fa fa-whatsapp"></a>
+                                </div>
                             </div>
+
                         </div>
-
-                    </div>
-
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
             <div class="col-md-6">
 
-                <?php foreach ($secondArray as $i => $model): ?>
+                <?php if (!empty($secondArray)): ?>
+                    <?php foreach ($secondArray as $i => $model): ?>
 
 
-                    <div style="height: 7em"></div>
+                        <div style="height: 7em"></div>
 
-                    <div class="content">
-                        <img width="100%" src="<?php echo $model['foto']; ?>" class="" alt="">
-                        <div class="content2">
-                            <h2 class="text-left"><?php echo $model['title']; ?></h2>
+                        <div class="content">
+                            <img width="100%" src="<?php echo $model['foto']; ?>" class="" alt="">
+                            <div class="content2">
+                                <h2 class="text-left"><?php echo $model['title']; ?></h2>
 
-                            <p><?php echo $model['description']; ?></p>
+                                <p><?php echo $model['description']; ?></p>
 
-                            <article class="">
-                                <h3><?php echo $model['published']; ?></h3>
-                                <p>CRP NEWS</p>
-                            </article>
+                                <article class="">
+                                    <h3><?php echo $model['published']; ?></h3>
+                                    <p>CRP NEWS</p>
+                                </article>
 
-                            <div class="icons">
-                                <a href="http://twitter.com" class="fa fa-twitter"></a>
-                                <a href="http://facebook.com" class="fa fa-facebook"></a>
-                                <a href="http://instagram.com" class="fa fa-instagram"></a>
-                                <a href="http://twitter.com" class="fa fa-whatsapp"></a>
+                                <div class="icons">
+                                    <a href="http://twitter.com" class="fa fa-twitter"></a>
+                                    <a href="http://facebook.com" class="fa fa-facebook"></a>
+                                    <a href="http://instagram.com" class="fa fa-instagram"></a>
+                                    <a href="http://twitter.com" class="fa fa-whatsapp"></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
 
         </div>
