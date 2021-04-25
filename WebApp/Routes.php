@@ -52,6 +52,7 @@ Route::set('feedback', function(){
 Route::set('reports', function(){
     $obj=new AdminController();
     $data=$obj->getData();
+    $obj->deleteReport();
     ReportsController::CreateView('reports',$data);
     Controller::logout();
 });

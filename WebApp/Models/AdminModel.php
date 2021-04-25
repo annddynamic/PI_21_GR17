@@ -213,7 +213,7 @@ class AdminModel
 
     public function getEmergencyReports(){
 
-        $this->db->query('SELECT emri, dt_raportimit, gjendja, name, foto
+        $this->db->query('SELECT reID, emri, dt_raportimit, gjendja, name, foto
                               FROM status s INNER JOIN report r on s.sID=r.sID
                               LEFT JOIN users u on r.uID=u.uID
                               WHERE Emergency =1');
@@ -226,7 +226,7 @@ class AdminModel
 
     public function getReports(){
 
-        $this->db->query('SELECT emri, dt_raportimit, gjendja, name, foto
+        $this->db->query('SELECT reID,emri, dt_raportimit, gjendja, name, foto
                               FROM status s INNER JOIN report r on s.sID=r.sID
                               LEFT JOIN users u on r.uID=u.uID
                               WHERE Emergency =0');
@@ -280,6 +280,21 @@ class AdminModel
 
         $this->db->bind(':id', $data['fID']);
 
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public function deleteReport($data){
+
+
+        $this->db->query('DELETE FROM report WHERE reID=:id');
+
+        $this->db->bind(':id', $data['uID']);
 
         if ($this->db->execute()) {
             return true;

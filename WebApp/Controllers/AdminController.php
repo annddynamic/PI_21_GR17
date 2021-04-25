@@ -80,8 +80,6 @@ class AdminController extends Controller
 
     public function deletePoliceUser()
     {
-
-
         $data = [
             'uID' => '',
         ];
@@ -323,6 +321,32 @@ class AdminController extends Controller
                 die('Something went wrong. ');
             }
 
+        }
+        return $data;
+    }
+
+    public function deleteReport()
+    {
+        $data = [
+            'uID' => '',
+        ];
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['emergency'])) {
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+
+            $data = [
+                'uID' => $_POST['remove'],
+            ];
+
+            if ($this->adminModel->deleteReport($data)) {
+
+                header('location:reports');
+
+            } else {
+                die('Something went wrong. ');
+            }
         }
         return $data;
     }

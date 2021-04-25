@@ -89,6 +89,8 @@ if (isset($data)) {
                 </div>
             </div>
         </header>
+
+
         <section id="main">
             <div class ="container">
                 <div class="row">
@@ -155,10 +157,14 @@ if (isset($data)) {
                                             <td><?php echo $emergency['dt_raportimit']?></td>
                                             <td><?php echo $emergency['gjendja']?></td>
                                             <td><?php echo $emergency['name']?></td>
-                                            <td><img width="120" src="<?php echo $emergency['foto']?>"</td>
+                                            <td><img width="120"  src="<?php echo $emergency['foto']?>"</td>
                                             <td>
-                                                <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                                <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                                <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="editUser">Edit</button>
+                                                <form method="post" action="reports" style="display:inline">
+
+                                                    <input type="hidden" name="remove"  value="<?php echo $data['emergency'][$i]['reID'] ?>">
+                                                    <button type="submit" name="emergency" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
+                                                </form>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -194,8 +200,12 @@ if (isset($data)) {
                                             <td><?php echo $random['name']?></td>
                                             <td><img width="120" src="<?php echo $random['foto']?>"</td>
                                             <td>
-                                                <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                                <button class="btn btn-danger" type = "button" data-toggle="modal" data-target="#deleteUser">Delete</button>
+                                                <button class="btn main-color-bg" type = "button" data-toggle="modal" >Edit</button>
+                                                <form method="post" action="reports" style="display:inline">
+
+                                                    <input type="hidden" name="remove"  value="<?php echo $data['random'][$i]['reID'] ?>">
+                                                    <button type="submit" name="emergency" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
+                                                </form>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
