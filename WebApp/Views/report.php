@@ -1,9 +1,10 @@
 <?php
 
 if (isset($data)) {
-    $errors = $data->getErrors();
 
-    $data=$data->getData();
+    $errors = $data['rep']->getErrors();
+    $datta = $data['rep']->getData();
+
 }
 ?>
 
@@ -77,12 +78,12 @@ if (isset($data)) {
                     <form action="report" enctype="multipart/form-data" method="POST">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" value="<?php echo isset($data['name']) ? $data['name'] : null; ?>" class="form-control" placeholder="Name" name="name">
+                            <input type="text" value="<?php echo isset($datta['name']) ? $datta['name'] : null; ?>" class="form-control" placeholder="Name" name="name">
                             <span class="invalidFeedback"><?php echo isset($errors['nameError']) ? $errors['nameError'] : null; ?></span>
                         </div>
                         <div class="form-group">
                             <label>Last Name</label>
-                            <input type="text" value="<?php echo $data['lastName']; ?>" class="form-control" name="lastName" placeholder="Last Name">
+                            <input type="text" value="<?php echo $datta['lastName']; ?>" class="form-control" name="lastName" placeholder="Last Name">
                             <span class="invalidFeedback"> <?php echo $errors['lastNameError']; ?></span>
                         </div>
                         <div class="form-group">
@@ -105,24 +106,24 @@ if (isset($data)) {
                             <span class="invalidFeedback"> <?php echo $errors['textfieldError']; ?></span>
 
                             <div class="pull-right ">
-                                <input type="file" value="<?php echo $data['file']; ?>" id="myfile" name="file">
+                                <input type="file" value="<?php echo $datta['file']; ?>" id="myfile" name="file">
                                 <span class="invalidFeedback"> <?php echo $errors['fileError']; ?></span>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label>Address</label>
-                            <input type="text" name="address" value="<?php echo $data['address']; ?> " class="form-control" placeholder="Address">
+                            <input type="text" name="address" value="<?php echo $datta['address']; ?> " class="form-control" placeholder="Address">
                             <span class="invalidFeedback"> <?php echo $errors['addressError']; ?></span>
                         </div>
 
                         <div class="form-group">
                             <label>City</label>
-                            <input type="text" name="city" value="<?php echo $data['city']; ?>"class="form-control" placeholder="City">
+                            <input type="text" name="city" value="<?php echo $datta['city']; ?>"class="form-control" placeholder="City">
                             <span class="invalidFeedback"> <?php echo $errors['cityError']; ?></span>
                         </div>
 
-                        <input type="submit" class="btn btn-default main-color-bg btn-lg " value="Submit">
+                        <input type="submit" name="addReport" class="btn btn-default main-color-bg btn-lg " value="Submit">
                     </form>
                 </div>
             </div>

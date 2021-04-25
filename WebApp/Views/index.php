@@ -5,6 +5,8 @@ if (isset($data)) {
     $errors = $data['rep']->getErrors();
     $datta = $data['rep']->getData();
 
+
+
     if(count($data['models']["data"])>1){
 
             list($firstArray, $secondArray) = array_chunk($data['models']["data"], ceil(count($data['models']["data"]) / 2));
@@ -318,7 +320,7 @@ if (isset($data)) {
                 <form action="index.php" enctype="multipart/form-data" method="POST">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" value="<?php echo isset($datta['name']) ? $datta['name'] : null; ?>"
+                        <input type="text" value="<?php echo $datta['name']; ?>"
                                class="form-control" placeholder="Name" name="name">
                         <span class="invalidFeedback"><?php echo isset($errors['nameError']) ? $errors['nameError'] : null; ?></span>
                     </div>
@@ -388,7 +390,7 @@ if (isset($data)) {
                         <span class="invalidFeedback"> <?php echo $errors['cityError']; ?></span>
                     </div>
 
-                    <input type="submit" class="btn btn-default main-color-bg btn-lg " value="Submit">
+                    <input type="submit" name="addReport" class="btn btn-default main-color-bg btn-lg " value="Submit">
                 </form>
             </div>
 

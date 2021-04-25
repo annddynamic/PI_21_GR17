@@ -203,11 +203,6 @@ class AdminModel
                               INNER JOIN users u on r.uID=u.uID
                               WHERE Emergency =1');
 
-
-//        SELECT emri, dt_raportimit, foto, gjendja, uID FROM report r
-//                              INNER JOIN status s on r.sID= s.sID
-//                              WHERE Emergency =0
-
         $result = $this->db->resultSet();
 
         return $result;

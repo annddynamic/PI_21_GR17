@@ -22,7 +22,7 @@ class ReportsController extends Reports
 
         $this->setErrors($errors);
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'&& isset($_POST['addReport']) ) {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 

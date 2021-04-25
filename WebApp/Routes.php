@@ -67,8 +67,15 @@ Route::set('police', function(){
 });
 
 Route::set('report', function(){
-    $data = new ReportsController();
-    $data->createReport();
+    $rep = new ReportsController();
+    $feed = new AdminController();
+    $rep->createReport();
+    $feeed=$feed->addFeedack();
+
+    $data=[
+        'rep'=>$rep,
+        'feed'=>$feeed,
+    ];
     Controller::CreateView('report',$data);
 });
 

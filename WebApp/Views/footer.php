@@ -176,15 +176,15 @@ if (isset($data)) {
 
             <form action="index.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input style="color: black" type="text" name="name" required placeholder="Name" value="">
+                    <input style="color: black" type="text" name="name"  placeholder="Name" value="">
                     <span class="invalidFeedback"> <?php echo isset($datta['nameError']) ? $datta['nameError'] : null;?></span>
-                    <input style="color: black" type="text" name="subject" required placeholder="Subject">
+                    <input style="color: black" type="text" name="subject"  placeholder="Subject">
                     <span class="invalidFeedback"> <?php echo $datta['subjectError'];?></span>
                 </div>
                 <label>Your Feedback</label>
                 <div class="form-group" >
-                    <textarea name="mesazhi" required placeholder="Add Feedback" style="width:25em; color: black"></textarea>
-                    <span class="invalidFeedback"> <?php echo $datta['mesazhiError'];?></span>
+                    <textarea name="mesazhi"  placeholder="Add Feedback" style="width:25em; color: black"></textarea>
+                    <span class="invalidFeedback"><?php echo $datta['mesazhiError'];?></span>
                 </div>
                 <button type="submit" name="feedback" class="btn btn-primary">Send</button>
         </div>
