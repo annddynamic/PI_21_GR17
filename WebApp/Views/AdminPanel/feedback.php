@@ -146,7 +146,9 @@ if (isset($data)) {
                                     <tr>
                                         <td><?php echo $feedback['name'] ?></td>
                                         <td><?php echo $feedback['subject'] ?></td>
-                                        <td><?php echo $feedback['mesazhi'] ?></td>
+                                        <td style="max-width:490px;
+                                                   word-wrap:break-word;">
+                                            <?php echo $feedback['mesazhi'] ?></td>
                                         <td><?php echo $feedback['dt_feedback'] ?></td>
                                         <td>
                                             <form method="post" action="feedback" style="display:inline">

@@ -242,7 +242,7 @@ class AdminController extends Controller
             }
 
             if(empty($data['subject'])){
-                $data['subjectError']="Please enter title";
+                $data['subjectError']="Please enter subject";
             }
 
             if(empty($data['mesazhi'])){
