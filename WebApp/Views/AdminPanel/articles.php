@@ -93,7 +93,7 @@ if (isset($data)) {
         <section id="main">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="list-group">
                             <a href="adminPanel" class="list-group-item active main-color-bg"><span
                                         class="glyphicon glyphicon-cog" aria-hidden="" true> </span>
@@ -143,7 +143,7 @@ if (isset($data)) {
                     </div>
 
 
-                    <div class="col-md-8 col-md-offset-1">
+                    <div class=" col-md-8 ">
                         <div class="panel panel-default">
                             <div class="main-color-bg panel-heading">
                                 <h3 class="panel-title">Add content to Landing Page</h3>
@@ -151,7 +151,7 @@ if (isset($data)) {
                             <div class="panel-body">
 
                                 <form action="articles" method="post" enctype="multipart/form-data">
-                                    <div class="col-md-6" >
+                                    <div class="col-md-7" >
                                         <div class="form-group">
                                             <label>Title</label>
                                             <input type="text" class="form-control" name="title" value=""  placeholder="Add Title">
@@ -163,7 +163,7 @@ if (isset($data)) {
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-5">
                                         <div class="form-group">
                                             <label>Insert Photo</label>
                                             <input name="foto" type="file" required>
