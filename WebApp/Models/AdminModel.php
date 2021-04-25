@@ -10,6 +10,62 @@ class AdminModel
         $this->db = new Database();
     }
 
+    public function addPolice($data)
+    {
+
+
+        $this->db->query('INSERT INTO users(name, surname, gender, data_lindjes, rruga, qyteti, shteti, ZIP, nr_telefonit, email, password, inDuty, role_ID) 
+                                        SELECT name, surname, gender, data_lindjes, rruga, qyteti, shteti, ZIP, nr_telefonit, email, password, inDuty, role_ID 
+                                        FROM pending_users  
+                                        WHERE uID=:id');
+        //Bind values
+
+        $this->db->bind(':id', $data['uID']);
+
+
+        if ($this->db->execute()) {
+            $this->deletePolice($data);
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public function deletePolice($data){
+
+
+        $this->db->query('DELETE FROM pending_users WHERE uID=:id');
+        //Bind values
+
+        $this->db->bind(':id', $data['uID']);
+
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public function deletePoliceUser($data){
+
+
+        $this->db->query('DELETE FROM users WHERE uID=:id');
+        //Bind values
+
+        $this->db->bind(':id', $data['uID']);
+
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
     public function getUsers()
     {
         $this->db->query('SELECT name,surname,gender,data_lindjes,rruga,email,role_name 
@@ -32,6 +88,24 @@ class AdminModel
     public function countPoliceUsers()
     {
         $this->db->query('SELECT COUNT(name) FROM users WHERE role_ID=2');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+    public function getCitizens()
+    {
+        $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit FROM users WHERE role_ID=3');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+    public function countCitizens()
+    {
+        $this->db->query('SELECT COUNT(name) FROM users WHERE role_ID=3');
 
         $result = $this->db->resultSet();
 
@@ -82,62 +156,6 @@ class AdminModel
         return $result;
     }
 
-    public function deletePolice($data){
-
-
-        $this->db->query('DELETE FROM pending_users WHERE uID=:id');
-        //Bind values
-
-        $this->db->bind(':id', $data['uID']);
-
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
-    public function deletePoliceUser($data){
-
-
-        $this->db->query('DELETE FROM users WHERE uID=:id');
-        //Bind values
-
-        $this->db->bind(':id', $data['uID']);
-
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
-    public function addPolice($data)
-    {
-
-
-        $this->db->query('INSERT INTO users(name, surname, gender, data_lindjes, rruga, qyteti, shteti, ZIP, nr_telefonit, email, password, inDuty, role_ID) 
-                                        SELECT name, surname, gender, data_lindjes, rruga, qyteti, shteti, ZIP, nr_telefonit, email, password, inDuty, role_ID 
-                                        FROM pending_users  
-                                        WHERE uID=:id');
-        //Bind values
-
-        $this->db->bind(':id', $data['uID']);
-
-
-        if ($this->db->execute()) {
-            $this->deletePolice($data);
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
     public function policeOfficials()
     {
         $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit FROM users WHERE role_ID=2');
@@ -146,15 +164,6 @@ class AdminModel
 
         return $result;
     }
-
-    public function getNews(){
-        $this->db->query('SELECT nID, foto,title,published,description FROM news');
-
-        $result = $this->db->resultSet();
-
-        return $result;
-    }
-
 
     public function addNews($data)
     {
@@ -176,7 +185,13 @@ class AdminModel
         }
     }
 
+    public function getNews(){
+        $this->db->query('SELECT nID, foto,title,published,description FROM news');
 
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
 
     public function getOnDuty(){
         $this->db->query('SELECT name, surname FROM users u WHERE inDuty=1');
@@ -222,10 +237,19 @@ class AdminModel
 
     }
 
+
     public function getFeedback(){
 
-        $this->db->query('SELECT title, Mesazhi, data, uID FROM feedback f 
-                              INNER JOIN users u ON f.uID=u.uID');
+        $this->db->query('SELECT fID, name, subject, mesazhi, dt_feedback FROM feedback');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+    public function countFeedback()
+    {
+        $this->db->query('SELECT COUNT(name) FROM feedback ');
 
         $result = $this->db->resultSet();
 
@@ -234,7 +258,7 @@ class AdminModel
 
     public function addFeedback($data){
 
-        $this->db->query('INSERT INTO feedback (name , subject,mesazhi, dt_feedback) 
+        $this->db->query('INSERT INTO feedback (name,subject,mesazhi,dt_feedback) 
                               VALUES(:name,:subject,:mesazhi,NOW())');
 
         $this->db->bind(':name', $data['name']);
@@ -249,23 +273,20 @@ class AdminModel
         }
     }
 
+    public function deleteFeedback($data){
 
-    public function getCitizens()
-    {
-        $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit FROM users WHERE role_ID=3');
 
-        $result = $this->db->resultSet();
+        $this->db->query('DELETE FROM feedback WHERE fID=:id');
 
-        return $result;
-    }
+        $this->db->bind(':id', $data['fID']);
 
-    public function countCitizens()
-    {
-        $this->db->query('SELECT COUNT(name) FROM users WHERE role_ID=3');
 
-        $result = $this->db->resultSet();
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
 
-        return $result;
     }
 
 

@@ -94,7 +94,7 @@ if (isset($data)) {
                 <div class="row">
                     <div class="col-md-3">
                         <div class="list-group">
-                            <a href="adminPanel" class="list-group-item active main-color-bg"><span
+                            <a href="adminPanel" class="list-group-item "><span
                                         class="glyphicon glyphicon-cog" aria-hidden="" true> </span>
                                 Dashboard
                             </a>
@@ -102,7 +102,7 @@ if (isset($data)) {
                                 <span class="glyphicon glyphicon-user" aria-hidden="" true></span> Users<span
                                         class="badge"><?php echo $data['count'][0]['COUNT(name)'] ?></span></a>
 
-                            <a href="reports" class="list-group-item">
+                            <a href="reports" class="list-group-item active main-color-bg">
                                 <span class="glyphicon glyphicon-list-alt" aria-hidden="" true></span> Reports<span
                                         class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
 
@@ -112,7 +112,7 @@ if (isset($data)) {
 
                             <a href="feedback" class="list-group-item">
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> Feedback<span
-                                        class="badge">12</span></a>
+                                        class="badge"><?php echo $data['countFeedback'][0]['COUNT(name)'] ?></span></a>
 
                         </div>
 

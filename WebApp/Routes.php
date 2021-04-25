@@ -42,6 +42,7 @@ Route::set('citizen', function(){
 
 Route::set('feedback', function(){
     $obj=new AdminController();
+    $obj->deleteFeedback();
     $data=$obj->getData();
     Controller::CreateView('feedback',$data);
     Controller::logout();

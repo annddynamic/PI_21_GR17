@@ -105,9 +105,8 @@ if (isset($data)) {
                 <div class="row">
                     <div class="col-md-3">
                         <div class="list-group">
-                            <a href="adminPanel" class="list-group-item active main-color-bg"><span
-                                        class="glyphicon glyphicon-cog" aria-hidden="" true> </span>
-                                Dashboard
+                            <a href="adminPanel" class="list-group-item "><span
+                                        class="glyphicon glyphicon-cog" aria-hidden="" true></span>Dashboard
                             </a>
                             <a href="police" class="list-group-item">
                                 <span class="glyphicon glyphicon-user" aria-hidden="" true></span> Users<span
@@ -121,9 +120,10 @@ if (isset($data)) {
                                 <span class="glyphicon glyphicon-book" aria-hidden="" true> </span> Articles<span
                                         class="badge"><?php echo $data['countNews'][0]['COUNT(nID)'] ?></span></a>
 
-                            <a href="feedback" class="list-group-item">
+                            <a href="feedback" class="list-group-item active main-color-bg">
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> Feedback<span
-                                        class="badge">12</span></a>
+                                        class="badge"><?php echo $data['countFeedback'][0]['COUNT(name)'] ?></span></a>
+                            <div style="height: 17em"></div>
 
                         </div>
                     </div>
@@ -137,19 +137,29 @@ if (isset($data)) {
                                 <table class="table table-striped table-hover">
                                     <tr>
                                         <th>From</th>
-                                        <th>Title</th>
+                                        <th>Subject</th>
                                         <th>Content</th>
                                         <th>Received</th>
                                         <th></th>
                                     </tr>
-
+                                    <?php foreach ($data['getFeedback'] as $i => $feedback): ?>
                                     <tr>
-                                        <td>Andi</td>
-                                        <td>eeee</td>
-                                        <td>lorem10Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, reprehenderit!</td>
-                                        <td>Dec 12, 2016</td>
-                                        <td><a class="btn btn-primary center-block" href="#">Delete</a> </td>
+                                        <td><?php echo $feedback['name'] ?></td>
+                                        <td><?php echo $feedback['subject'] ?></td>
+                                        <td><?php echo $feedback['mesazhi'] ?></td>
+                                        <td><?php echo $feedback['dt_feedback'] ?></td>
+                                        <td>
+                                            <form method="post" action="feedback" style="display:inline">
+                                                <input type="hidden" name="remove"
+                                                       value="<?php echo $data['getFeedback'][$i]['fID'] ?>">
+                                                <button type="submit" name="delete" value="" style="margin-left: 10px"
+                                                        class="pull-right btn btn-danger">Delete
+                                                </button>
+
+                                            </form>
+                                        </td>
                                     </tr>
+                                    <?php endforeach; ?>
 
 
                                 </table>
@@ -160,7 +170,6 @@ if (isset($data)) {
                 </div>
             </div>
         </section>
-
 
         <!-- FOOOTER-->
 

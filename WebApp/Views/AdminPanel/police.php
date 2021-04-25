@@ -96,7 +96,7 @@ if (isset($data)) {
             <div class="col-md-3">
                 <div class="list-group">
                     <a href="adminPanel" class="list-group-item  ">
-                        <span class="glyphicon glyphicon-cog" aria-hidden=""true></span>Dashboard</a>
+                        <span class="glyphicon glyphicon-cog" aria-hidden="" true></span>Dashboard</a>
                     <a href="police" class="list-group-item main-color-bg active"><span class="glyphicon glyphicon-user"
                                                                                         aria-hidden="" true> </span>
                         Users<span class="badge"><?php echo $data['count'][0]['COUNT(name)'] ?></span></a>
@@ -107,7 +107,8 @@ if (isset($data)) {
                         <span class="glyphicon glyphicon-book" aria-hidden="" true> </span> Articles<span
                                 class="badge"><?php echo $data['countNews'][0]['COUNT(nID)'] ?></span></a>
                     <a href="feedback" class="list-group-item">
-                        <span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> Feedback<span class="badge">12</span></a>
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> Feedback<span
+                                class="badge"><?php echo $data['countFeedback'][0]['COUNT(name)'] ?></span></a>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -143,15 +144,20 @@ if (isset($data)) {
                             <?php foreach ($data['policeOfficials'] as $i => $police): ?>
 
                                 <tr>
-                                    <td><?php echo $police['name']?></td>
-                                    <td><?php echo $police['surname']?></td>
-                                    <td><?php echo $police['rruga']?></td>
-                                    <td><?php echo $police['nr_telefonit']?></td>
+                                    <td><?php echo $police['name'] ?></td>
+                                    <td><?php echo $police['surname'] ?></td>
+                                    <td><?php echo $police['rruga'] ?></td>
+                                    <td><?php echo $police['nr_telefonit'] ?></td>
                                     <td>
-                                        <button class="btn main-color-bg" type="button" data-toggle="modal" data-target="#editUser">Edit</button>
+                                        <button class="btn main-color-bg" type="button" data-toggle="modal"
+                                                data-target="#editUser">Edit
+                                        </button>
                                         <form method="post" action="police" style="display:inline">
-                                            <input type="hidden" name="remove"  value="<?php echo $data['policeOfficials'][$i]['uID'] ?>">
-                                            <button type="submit" name="delete" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
+                                            <input type="hidden" name="remove"
+                                                   value="<?php echo $data['policeOfficials'][$i]['uID'] ?>">
+                                            <button type="submit" name="delete" value="" style="margin-left: 10px"
+                                                    class="pull-right btn btn-danger">Delete
+                                            </button>
 
                                         </form>
 
@@ -163,27 +169,27 @@ if (isset($data)) {
                     </div>
                 </div>
                 <div class="col-md-6 myPanel">
-                        <table class="table  table-hover tbl" id="costum">
+                    <table class="table  table-hover tbl" id="costum">
+                        <tr>
+                            <th class="main-color-bg">Available</th>
+                        </tr>
+                        <?php foreach ($data['available'] as $i => $free): ?>
                             <tr>
-                                <th class="main-color-bg">Available</th>
+                                <td><?php echo $data['available'][$i]['name'] . ' ' . $data['available'][$i]['surname'] ?></td>
                             </tr>
-                            <?php foreach ($data['available'] as $i => $free): ?>
-                                <tr>
-                                    <td><?php echo $data['available'][$i]['name'].' '.$data['available'][$i]['surname']  ?></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </table>
+                        <?php endforeach; ?>
+                    </table>
 
-                        <table class="table  table-hover tbl" id="costum">
+                    <table class="table  table-hover tbl" id="costum">
+                        <tr>
+                            <th class="main-color-bg">On Duty</th>
+                        </tr>
+                        <?php foreach ($data['onDuty'] as $i => $duty): ?>
                             <tr>
-                                <th class="main-color-bg">On Duty</th>
+                                <td><?php echo $data['onDuty'][$i]['name'] . ' ' . $data['onDuty'][$i]['surname'] ?></td>
                             </tr>
-                            <?php foreach ($data['onDuty'] as $i => $duty): ?>
-                                <tr>
-                                    <td><?php echo $data['onDuty'][$i]['name'].' '.$data['onDuty'][$i]['surname']  ?></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </table>
+                        <?php endforeach; ?>
+                    </table>
                 </div>
 
 
@@ -201,7 +207,8 @@ if (isset($data)) {
 
                                 <input type="hidden" name="remove"
                                        value="<?php echo $data['pendingApproval'][$i]['uID'] ?>">
-                                <button type="submit" name="delete" value="" style="margin-left: 10px" class="pull-right btn btn-danger">
+                                <button type="submit" name="delete" value="" style="margin-left: 10px"
+                                        class="pull-right btn btn-danger">
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
 

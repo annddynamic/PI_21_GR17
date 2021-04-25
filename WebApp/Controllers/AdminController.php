@@ -28,6 +28,9 @@ class AdminController extends Controller
             'emergency'=>$this->adminModel->getEmergencyReports(),
             'random'=>$this->adminModel->getReports(),
             'getNews'=>$this->adminModel->getNews(),
+            'getFeedback'=>$this->adminModel->getFeedback(),
+            'countFeedback' => $this->adminModel->countFeedback(),
+
 
         ];
         return $data;
@@ -289,6 +292,30 @@ class AdminController extends Controller
 
 
 
+        return $data;
+    }
+
+    public function deleteFeedback()
+    {
+        $data = [
+            'fID' => '',
+        ];
+
+        if (isset($_POST['delete'])) {
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'fID' => $_POST['remove'],
+            ];
+
+            if ($this->adminModel->deleteFeedback($data)) {
+                header('location:feedback');
+            } else {
+                die('Something went wrong. ');
+            }
+
+        }
         return $data;
     }
 

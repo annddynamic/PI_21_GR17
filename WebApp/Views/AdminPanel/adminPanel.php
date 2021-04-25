@@ -114,7 +114,7 @@ if (isset($data)) {
 
                     <a href="feedback" class="list-group-item">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> Feedback<span
-                                class="badge">12</span></a>
+                                class="badge"><?php echo $data['countFeedback'][0]['COUNT(name)'] ?></span></a>
 
                 </div>
 
@@ -164,7 +164,8 @@ if (isset($data)) {
                         </div>
                         <div class="col-md-3 dash-box">
                             <div class="well">
-                                <h2><span class="glyphicon glyphicon-pencil" aria-hidden="" true> </span> 12</h2>
+                                <h2><span class="glyphicon glyphicon-pencil" aria-hidden=""
+                                          true> </span> <?php echo $data['countFeedback'][0]['COUNT(name)'] ?></h2>
                                 <h4>Feedback</h4>
                             </div>
                         </div>
