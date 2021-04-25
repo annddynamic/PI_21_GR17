@@ -129,9 +129,9 @@ if (isset($data)) {
                                         <td><?php echo $data['getNews'][$i]['title']?></td>
                                         <td><?php echo $data['getNews'][$i]['published']?></td>
                                         <td>
-                                            <form method="post" action="police" style="display:inline">
-                                                <input type="hidden" name="remove"  value="<?php echo $data['citizens'][$i]['uID'] ?>">
-                                                <button type="submit" name="delete" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
+                                            <form method="post" action="articles" style="display:inline">
+                                                <input type="hidden" name="remove"  value="<?php echo $data['getNews'][$i]['nID'] ?>">
+                                                <button type="submit" name="deelete" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -167,10 +167,10 @@ if (isset($data)) {
                                         <div class="form-group">
                                             <label>Insert Photo</label>
                                             <input name="foto" type="file" required>
-
+                                            <span class="invalidFeedback"><?php $data['errors']["publishedError"] ?></span>
                                         </div>
                                     <div>
-                                        <input style="margin-top:2em; margin-left: 1em;" type="submit" class="btn btn-lg main-color-bg" value="Add">
+                                        <input style="margin-top:2em; margin-left: 1em;" type="submit" name="addArticle" class="btn btn-lg main-color-bg" value="Add">
                                     </div>
                                 </form>
 

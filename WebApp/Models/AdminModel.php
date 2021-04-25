@@ -56,6 +56,23 @@ class AdminModel
         return $result;
     }
 
+    public function deleteNews($data){
+
+
+        $this->db->query('DELETE FROM news WHERE nID=:id');
+        //Bind values
+
+        $this->db->bind(':id', $data['uID']);
+
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
     public function pendingApproval()
     {
         $this->db->query('SELECT uID,name,surname FROM pending_users WHERE role_ID=2');
@@ -131,7 +148,7 @@ class AdminModel
     }
 
     public function getNews(){
-        $this->db->query('SELECT foto,title,published,description FROM news');
+        $this->db->query('SELECT nID, foto,title,published,description FROM news');
 
         $result = $this->db->resultSet();
 

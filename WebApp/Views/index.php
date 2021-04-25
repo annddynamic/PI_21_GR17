@@ -5,7 +5,11 @@ if (isset($data)) {
     $errors = $data['rep']->getErrors();
     $datta = $data['rep']->getData();
 
-    list($firstArray, $secondArray) = array_chunk($data['models']["data"], ceil(count($data['models']["data"]) / 2));
+    if(isset($data['models']["data"])){
+
+            list($firstArray, $secondArray) = array_chunk($data['models']["data"], ceil(count($data['models']["data"]) / 2));
+    }
+
 
 }
 ?>

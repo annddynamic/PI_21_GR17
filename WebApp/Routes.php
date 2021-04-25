@@ -27,6 +27,7 @@ Route::set('articles', function(){
     $obj=new AdminController();
     $data=$obj->getData();
     $obj->addNews();
+    $obj->deleteNews();
     Controller::CreateView('articles',$data);
     Controller::logout();
 });
@@ -35,7 +36,7 @@ Route::set('citizen', function(){
     $obj=new AdminController();
     $obj->deletePoliceUser();
     $data=$obj->getData();
-    Citizen::CreateView('citizen', $data);
+    Controller::CreateView('citizen', $data);
     Controller::logout();
 });
 

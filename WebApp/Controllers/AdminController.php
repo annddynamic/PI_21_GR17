@@ -22,12 +22,12 @@ class AdminController extends Controller
             'countPoliceUsers' => $this->adminModel->countPoliceUsers(),
             'policeOfficials' => $this->adminModel->policeOfficials(),
             'citizens' => $this->adminModel->getCitizens(),
-            'countCitizens' => $this->adminModel->countCitizens(),
             'onDuty'=>$this->adminModel->getOnDuty(),
             'available'=>$this->adminModel->getAvailable(),
             'emergency'=>$this->adminModel->getEmergencyReports(),
             'random'=>$this->adminModel->getReports(),
             'getNews'=>$this->adminModel->getNews(),
+            'errors'=> $this->addNews()
 
         ];
         return $data;
@@ -95,7 +95,6 @@ class AdminController extends Controller
                 if ($this->adminModel->deletePoliceUser($data)) {
 
                     echo '<script>alert("Success")</script>';
-
                 } else {
                     die('Something went wrong. ');
                 }
@@ -148,7 +147,7 @@ class AdminController extends Controller
             'descriptionError' => '',
         ];
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_POST['addArticle'])&&$_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -281,10 +280,38 @@ class AdminController extends Controller
     }
 
 //
-//    public function deleteUser(){
 //
-//    }
 
+    public function deleteNews()
+    {
+
+
+        $data = [
+            'uID' => '',
+        ];
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+
+            if (isset($_POST['deelete'])) {
+                $data = [
+                    'uID' => $_POST['remove'],
+                ];
+
+                if ($this->adminModel->deleteNews($data)) {
+                    header('location:articles');
+                } else {
+                    die('Something went wrong. ');
+                }
+
+            }
+
+
+        }
+        return $data;
+    }
 
 
 

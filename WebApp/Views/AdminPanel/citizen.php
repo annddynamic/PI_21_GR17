@@ -157,7 +157,7 @@ if (isset($data)) {
                                             <td><?php echo $citizen['nr_telefonit']?></td>
                                             <td>
                                                 <button class="btn main-color-bg" type="button" data-toggle="modal" data-target="#editUser">Edit</button>
-                                                <form method="post" action="police" style="display:inline">
+                                                <form method="post" action="citizen" style="display:inline">
                                                     <input type="hidden" name="remove"  value="<?php echo $data['citizens'][$i]['uID'] ?>">
                                                     <button type="submit" name="delete" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
 
