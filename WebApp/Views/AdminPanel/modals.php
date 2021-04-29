@@ -151,7 +151,8 @@ if (isset($data)) {
                             aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Edit Users</h4>
             </div>
-            <form action="police" id="search_form" method="POST">
+
+            <form action="citizen" id="search_form" method="POST">
                    <div class="modal-body">
                     <input type="hidden" name="idUpdata" id="idUpdata">
 
@@ -175,12 +176,16 @@ if (isset($data)) {
                         <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Telephone">
                     </div>
                     <div class="modal-footer">
-                        <button onclick="form_submit()" class="btn btn-default main-color-bg"">Submit</button>
+                        <button type="submit" name="editCitizen" class="btn btn-primary">Send</button>
                     </div>
             </form>
         </div>
     </div>
 </div>
+
+
+
+
 
 
 
@@ -277,6 +282,7 @@ if (isset($data)) {
 </div>
 
 <script src="../Assets/js/articles.js"></script>
+
 
 
 

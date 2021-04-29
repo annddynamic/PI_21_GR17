@@ -35,9 +35,22 @@ Route::set('articles', function(){
 Route::set('citizen', function(){
     $obj=new AdminController();
     $obj->deletePoliceUser();
+    $obj->editUser();
     $data=$obj->getData();
     Controller::CreateView('citizen', $data);
     Controller::logout();
+});
+
+Route::set('police', function(){
+    $obj=new AdminController();
+    $obj->deletePoliceUser();
+    $obj->managePolice();
+    $obj->editPolice();
+    $data=$obj->getData();
+
+    Controller::CreateView('police',$data);
+    Controller::logout();
+
 });
 
 Route::set('feedback', function(){
@@ -57,16 +70,6 @@ Route::set('reports', function(){
     Controller::logout();
 });
 
-Route::set('police', function(){
-    $obj=new AdminController();
-    $data=$obj->getData();
-    $obj->managePolice();
-    $obj->deletePoliceUser();
-    $obj->editPoliceUser();
-    Controller::CreateView('police',$data);
-    Controller::logout();
-
-});
 
 Route::set('report', function(){
     $rep = new ReportsController();

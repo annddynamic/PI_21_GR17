@@ -149,9 +149,7 @@ if (isset($data)) {
                                     <td><?php echo $police['rruga'] ?></td>
                                     <td><?php echo $police['nr_telefonit'] ?></td>
                                     <td>
-                                        <button class="btn main-color-bg" type="button" data-toggle="modal"
-                                                data-target="#editUser">Edit
-                                        </button>
+                                        <button class="btn main-color-bg" type="button" data-toggle="modal" data-target="#editmodal">Edit</button>
                                         <form method="post" action="police" style="display:inline">
                                             <input type="hidden" name="remove"
                                                    value="<?php echo $data['policeOfficials'][$i]['uID'] ?>">
@@ -231,9 +229,45 @@ if (isset($data)) {
     <pr>Copyright Adminstrap, &copy; 2021</pr>
 </footer>
 
-<?php
-include "modals.php";
-?>
+<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edit Users</h4>
+            </div>
+
+            <form method="post" action="police" id="search_form" >
+                <div class="modal-body">
+                    <input type="hidden" name="idUpdata" id="idUpdata">
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="First Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" name="address" id="address" class="form-control" placeholder="Address">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telephone</label>
+                        <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Telephone">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" name="editCitizen" class="btn btn-primary">Send</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

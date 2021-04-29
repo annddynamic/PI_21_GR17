@@ -43,36 +43,34 @@ class AdminController extends Controller
             'uID' => '',
         ];
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'&& (isset($_POST['delete']) || isset($_POST['add'])) ) {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
+                if(isset($_POST['delete'])){
+                    $data = [
+                        'uID' => $_POST['remove'],
+                    ];
 
-            if (isset($_POST['delete'])) {
-                $data = [
-                    'uID' => $_POST['remove'],
-                ];
+                    if ($this->adminModel->deletePolice($data)) {
 
-                if ($this->adminModel->deletePolice($data)) {
+                        header('location:police');
+                    } else {
+                        die('Something went wrong. ');
+                    }
 
-                    header('location:police');
                 } else {
-                    die('Something went wrong. ');
+                    $data = [
+                        'uID' => $_POST['insert'],
+                    ];
+
+                    if ($this->adminModel->addPolice($data)) {
+
+                        header('location:police');
+                    } else {
+                        die('Something went wrong. ');
+                    }
                 }
-
-            } else {
-                $data = [
-                    'uID' => $_POST['insert'],
-                ];
-
-                if ($this->adminModel->addPolice($data)) {
-
-                    header('location:police');
-                } else {
-                    die('Something went wrong. ');
-                }
-
-            }
 
         }
         return $data;
@@ -84,12 +82,11 @@ class AdminController extends Controller
             'uID' => '',
         ];
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete']) ) {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
 
-            if (isset($_POST['delete'])) {
                 $data = [
                     'uID' => $_POST['remove'],
                 ];
@@ -102,41 +99,13 @@ class AdminController extends Controller
                     die('Something went wrong. ');
                 }
 
-            }
+
 
 
         }
         return $data;
     }
 
-    public function editPoliceUser()
-    {
-
-        $data = [
-            'uID' => '',
-            'lastName' => '',
-            'address' => '',
-            'telephone'
-        ];
-
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-
-            $data = [
-                'uID' => trim($_POST['idUpdata']),
-                'lastName' => trim($_POST['lastName']),
-                'address' => trim($_POST['address']),
-                'telephone' => trim($_POST['telephone'])
-            ];
-
-
-        }
-
-        return $data;
-
-    }
 
     public function addNews()
     {
@@ -349,5 +318,68 @@ class AdminController extends Controller
         return $data;
     }
 
+    public function editUser(){
 
+        $data = [
+            'uID' => '',
+            'name' => '',
+            'address' => '',
+            'telephone'
+        ];
+
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['editCitizen'])) {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+
+            $data = [
+                'uID' => trim($_POST['idUpdata']),
+                'name' => trim($_POST['name']),
+                'lastName' => trim($_POST['lastName']),
+                'telephone' => trim($_POST['telephone']),
+                'address' => trim($_POST['address'])
+            ];
+
+            echo '<pre>';
+            var_dump($data);
+            echo '</pre>';
+
+
+        }
+
+        return $data;
+
+
+    }
+
+    public function editPolice(){
+        $data1 = [
+            'uID' => '',
+            'name' => '',
+            'address' => '',
+            'telephone'
+        ];
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['editCitizen'])) {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            echo '<pre>';
+            var_dump($data1);
+            echo '</pre>';
+
+            $data1 = [
+                'uID' => trim($_POST['idUpdata']),
+                'name' => trim($_POST['name']),
+                'lastName' => trim($_POST['lastName']),
+                'telephone' => trim($_POST['telephone']),
+                'address' => trim($_POST['address'])
+            ];
+
+
+
+        }
+
+
+
+    }
 }
