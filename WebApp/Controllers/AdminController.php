@@ -37,44 +37,53 @@ class AdminController extends Controller
         return $data;
     }
 
-    public function managePolice()
-    {
+
+    public function deleteFromPendingUers(){
+
         $data = [
             'uID' => '',
         ];
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST'&& (isset($_POST['delete']) || isset($_POST['add'])) ) {
+        if(isset($_POST['delete'])) {
 
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $data = [
+                'uID' => $_POST['remove'],
+            ];
 
-                if(isset($_POST['delete'])){
-                    $data = [
-                        'uID' => $_POST['remove'],
-                    ];
+            if ($this->adminModel->deletePolice($data)) {
 
-                    if ($this->adminModel->deletePolice($data)) {
-
-                        header('location:police');
-                    } else {
-                        die('Something went wrong. ');
-                    }
-
-                } else {
-                    $data = [
-                        'uID' => $_POST['insert'],
-                    ];
-
-                    if ($this->adminModel->addPolice($data)) {
-
-                        header('location:police');
-                    } else {
-                        die('Something went wrong. ');
-                    }
-                }
+                header('location:police');
+            } else {
+                die('Something went wrong. ');
+            }
 
         }
-        return $data;
+
     }
+
+
+    public function addFromPendingUsers(){
+
+        $data = [
+            'uID' => '',
+        ];
+
+        if(isset($_POST['add'])){
+            $data = [
+                'uID' => $_POST['insert'],
+            ];
+
+            if ($this->adminModel->addPolice($data)) {
+
+                header('location:police');
+            } else {
+                die('Something went wrong. ');
+            }
+        }
+
+    }
+
+
 
     public function deletePoliceUser()
     {
@@ -98,8 +107,6 @@ class AdminController extends Controller
                 } else {
                     die('Something went wrong. ');
                 }
-
-
 
 
         }
@@ -353,7 +360,7 @@ class AdminController extends Controller
     }
 
     public function editPolice(){
-        $data1 = [
+        $data = [
             'uID' => '',
             'name' => '',
             'address' => '',
@@ -364,10 +371,10 @@ class AdminController extends Controller
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             echo '<pre>';
-            var_dump($data1);
+            var_dump($data);
             echo '</pre>';
 
-            $data1 = [
+            $data = [
                 'uID' => trim($_POST['idUpdata']),
                 'name' => trim($_POST['name']),
                 'lastName' => trim($_POST['lastName']),

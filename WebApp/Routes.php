@@ -26,7 +26,7 @@ Route::set('adminPanel', function(){
 Route::set('articles', function(){
     $obj=new AdminController();
     $data=$obj->getData();
-//    $obj->addNews();
+    $obj->addNews();
     $obj->deleteNews();
     Controller::CreateView('articles',$data);
     Controller::logout();
@@ -44,7 +44,8 @@ Route::set('citizen', function(){
 Route::set('police', function(){
     $obj=new AdminController();
     $obj->deletePoliceUser();
-    $obj->managePolice();
+    $obj->addFromPendingUsers();
+    $obj->deleteFromPendingUers();
     $obj->editPolice();
     $data=$obj->getData();
 
