@@ -325,26 +325,58 @@ class AdminController extends Controller
         return $data;
     }
 
-    public function editUser(){
+//    public function editUser(){
+//
+//        $data = [
+//            'uID' => '',
+//            'name' => '',
+//            'address' => '',
+//            'telephone'
+//        ];
+//
+//
+//        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['editCitizen'])) {
+//            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+//
+//
+//            $data = [
+//                'uID' => trim($_POST['idUpdata']),
+//                'name' => trim($_POST['name']),
+//                'lastName' => trim($_POST['lastName']),
+//                'telephone' => trim($_POST['telephone']),
+//                'address' => trim($_POST['address'])
+//            ];
+//
+//            echo '<pre>';
+//            var_dump($data);
+//            echo '</pre>';
+//
+//
+//        }
+//
+//        return $data;
+//
+//
+//    }
 
+    public function editPolice(){
         $data = [
             'uID' => '',
             'name' => '',
+            'lastName'=>'',
             'address' => '',
-            'telephone'
+            'telephone'=>'',
         ];
-
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['editCitizen'])) {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-
             $data = [
                 'uID' => trim($_POST['idUpdata']),
-                'name' => trim($_POST['name']),
+                'name'=> trim($_POST['name']),
                 'lastName' => trim($_POST['lastName']),
-                'telephone' => trim($_POST['telephone']),
-                'address' => trim($_POST['address'])
+                'address' => trim($_POST['address']),
+                'telephone' => trim($_POST['telephone'])
             ];
 
             echo '<pre>';
@@ -355,38 +387,6 @@ class AdminController extends Controller
         }
 
         return $data;
-
-
-    }
-
-    public function editPolice(){
-        $data = [
-            'uID' => '',
-            'name' => '',
-            'address' => '',
-            'telephone'
-        ];
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['editCitizen'])) {
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-            echo '<pre>';
-            var_dump($data);
-            echo '</pre>';
-
-            $data = [
-                'uID' => trim($_POST['idUpdata']),
-                'name' => trim($_POST['name']),
-                'lastName' => trim($_POST['lastName']),
-                'telephone' => trim($_POST['telephone']),
-                'address' => trim($_POST['address'])
-            ];
-
-
-
-        }
-
-
 
     }
 }

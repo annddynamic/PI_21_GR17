@@ -58,7 +58,6 @@ include "navbar.php";
 
 if (isset($data)) {
 
-
 }
 ?>
 <body>
@@ -144,12 +143,13 @@ if (isset($data)) {
                             <?php foreach ($data['policeOfficials'] as $i => $police): ?>
 
                                 <tr>
+                                    <td style="display:none"><?php echo $data['policeOfficials'][$i]['uID'] ?></td>
                                     <td><?php echo $police['name'] ?></td>
                                     <td><?php echo $police['surname'] ?></td>
                                     <td><?php echo $police['rruga'] ?></td>
                                     <td><?php echo $police['nr_telefonit'] ?></td>
                                     <td>
-                                        <button class="btn main-color-bg" type="button" data-toggle="modal" data-target="#editmodal">Edit</button>
+                                        <button class="btn main-color-bg editbtn" type="button">Edit</button>
                                         <form method="post" action="police" style="display:inline">
                                             <input type="hidden" name="remove"
                                                    value="<?php echo $data['policeOfficials'][$i]['uID'] ?>">
@@ -235,11 +235,12 @@ if (isset($data)) {
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Edit Users</h4>
+                <h4 class="modal-title" id="myModalLabel">Edit Police</h4>
             </div>
 
             <form method="post" action="police" id="search_form" >
                 <div class="modal-body">
+
                     <input type="hidden" name="idUpdata" id="idUpdata">
 
                     <div class="form-group">
@@ -262,12 +263,17 @@ if (isset($data)) {
                         <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Telephone">
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" name="editCitizen" class="btn btn-primary">Send</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
+                        <button type="submit" name="editCitizen" class="btn btn-primary">Edit</button>
                     </div>
             </form>
         </div>
     </div>
 </div>
+
+
+<script src="../Assets/js/editUsers.js"></script>
+
 
 </body>
 </html>

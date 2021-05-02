@@ -143,7 +143,7 @@ if (isset($data)) {
 </div>
 
 
-<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="edittmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
