@@ -238,7 +238,7 @@ if (isset($data)) {
                 <h4 class="modal-title" id="myModalLabel">Edit Police</h4>
             </div>
 
-            <form method="post" action="police" id="search_form" >
+            <form id="editPolice">
                 <div class="modal-body">
 
                     <input type="hidden" name="idUpdata" id="idUpdata">
@@ -271,6 +271,42 @@ if (isset($data)) {
     </div>
 </div>
 
+
+<script>
+
+    document.getElementById('editPolice').addEventListener('click', editData);
+
+    function editData(e){
+        e.preventDefault();
+
+        var id = document.getElementById('idUpdata').value;
+        var name = document.getElementById('name').value;
+        var lastName = document.getElementById('lastName').value;
+        var address = document.getElementById('address').value;
+        var telephone = document.getElementById('telephone').value;
+
+        var formData = new FormData();
+        formData.append("name", name)
+        formData.append("lastName", latName)
+        formData.append("lastName", latName)
+        formData.append("lastName", latName)
+        formData.append("lastName", latName)
+        var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function()
+        {
+            if(xhr.readyState === 4 && xhr.status === 200)
+            {
+                alert(xhr.responseText);
+            }
+        }
+        xhr.open('POST', './Controllers/AdminController.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www.form.urlencoded')
+
+    }
+
+
+</script>
 
 <script src="../Assets/js/editUsers.js"></script>
 
