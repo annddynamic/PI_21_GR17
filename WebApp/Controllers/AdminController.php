@@ -1,5 +1,4 @@
 <?php
-
 class AdminController extends Controller
 {
     private $obj;
@@ -69,6 +68,7 @@ class AdminController extends Controller
         ];
 
         if(isset($_POST['add'])){
+
             $data = [
                 'uID' => $_POST['insert'],
             ];
@@ -359,34 +359,35 @@ class AdminController extends Controller
 //
 //    }
 
-    public function editPolice(){
-        $data = [
-            'uID' => '',
-            'name' => '',
-            'lastName'=>'',
-            'address' => '',
-            'telephone'=>'',
-        ];
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['editCitizen'])) {
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-            $data = [
-                'uID' => trim($_POST['idUpdata']),
-                'name'=> trim($_POST['name']),
-                'lastName' => trim($_POST['lastName']),
-                'address' => trim($_POST['address']),
-                'telephone' => trim($_POST['telephone'])
-            ];
-
-            echo '<pre>';
-            var_dump($data);
-            echo '</pre>';
-
-
-        }
-
-        return $data;
-
-    }
+//    public function editPolice(){
+//
+//        $data = [
+//            'uID' => '',
+//            'name' => '',
+//            'lastName'=>'',
+//            'address' => '',
+//            'telephone'=>'',
+//        ];
+//
+//        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+//
+//            $data = [
+//                'uID' => trim($_POST['idUpdata']),
+//                'name'=> trim($_POST['name']),
+//                'lastName' => trim($_POST['lastName']),
+//                'address' => trim($_POST['address']),
+//                'telephone' => trim($_POST['telephone'])
+//            ];
+//
+//            echo '<pre>';
+//            var_dump($data);
+//            echo '</pre>';
+//
+//
+//        }
+//
+//        return $data;
+//
+//    }
 }

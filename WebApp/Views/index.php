@@ -317,7 +317,7 @@ if (isset($data)) {
                 <h4 class="modal-title" id="myModalLabel">Emergency Report</h4>
             </div>
             <div class="modal-body">
-                <form action="index.php" enctype="multipart/form-data" method="POST">
+                <form action="index" enctype="multipart/form-data" method="POST">
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" value="<?php echo $datta['name']; ?>"

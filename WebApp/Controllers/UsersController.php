@@ -142,7 +142,7 @@ class UsersController extends Controller
 
                     // Redirect to the login page
 
-                    header('location:index.php');
+                    header('location:index');
                 } else {
                     die('Something went wrong. ');
                 }
@@ -356,7 +356,7 @@ class UsersController extends Controller
 
                     // Redirect to the login page
 
-                    header('location:index.php');
+                    header('location:index');
                 } else {
                     die('Something went wrong. ');
                 }

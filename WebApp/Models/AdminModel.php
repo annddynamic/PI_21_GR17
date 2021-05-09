@@ -1,6 +1,5 @@
 <?php
 
-
 class AdminModel
 {
     private $db;
@@ -12,7 +11,6 @@ class AdminModel
 
     public function addPolice($data)
     {
-
 
         $this->db->query('INSERT INTO users(name, surname, gender, data_lindjes, rruga, qyteti, shteti, ZIP, nr_telefonit, email, password, inDuty, role_ID) 
                                         SELECT name, surname, gender, data_lindjes, rruga, qyteti, shteti, ZIP, nr_telefonit, email, password, inDuty, role_ID 
@@ -64,6 +62,26 @@ class AdminModel
             return false;
         }
 
+    }
+
+    public function editUser($data){
+
+        $this->db->query('UPDATE users
+                              SET name=:name, surname=:lastName, rruga=:address, nr_telefonit=:telephone 
+                              WHERE uID=:uID');
+
+        $this->db->bind(':name', $data['name']);
+        $this->db->bind(':lastName', $data['lastName']);
+        $this->db->bind(':address', $data['address']);
+        $this->db->bind(':telephone', $data['telephone']);
+        $this->db->bind(':uID', $data['uID']);
+
+
+        if($this->db->execute()){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     public function getUsers()
@@ -236,7 +254,6 @@ class AdminModel
         return $result;
 
     }
-
 
     public function getFeedback(){
 

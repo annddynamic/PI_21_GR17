@@ -264,7 +264,7 @@ if (isset($data)) {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
-                        <button type="submit" name="editCitizen" class="btn btn-primary">Edit</button>
+                        <button type="submit" name="editCitizen"  class="btn btn-primary">Edit</button>
                     </div>
             </form>
         </div>
@@ -274,7 +274,7 @@ if (isset($data)) {
 
 <script>
 
-    document.getElementById('editPolice').addEventListener('click', editData);
+    document.getElementById('editPolice').addEventListener('submit', editData);
 
     function editData(e){
         e.preventDefault();
@@ -285,23 +285,22 @@ if (isset($data)) {
         var address = document.getElementById('address').value;
         var telephone = document.getElementById('telephone').value;
 
-        var formData = new FormData();
-        formData.append("name", name)
-        formData.append("lastName", latName)
-        formData.append("lastName", latName)
-        formData.append("lastName", latName)
-        formData.append("lastName", latName)
+        "fname=Henry&lname=Ford"
+
+        var params = `idUpdata=${id}&name=${name}&lastName=${lastName}&address=${address}&telephone=${telephone}`
         var xhr = new XMLHttpRequest();
 
+        xhr.open('POST', './AJAX/ajaxPOST.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function()
         {
             if(xhr.readyState === 4 && xhr.status === 200)
             {
-                alert(xhr.responseText);
+                alert(this.responseText);
             }
         }
-        xhr.open('POST', './Controllers/AdminController.php', true);
-        xhr.setRequestHeader('Content-type', 'application/x-www.form.urlencoded')
+
+        xhr.send(params);
 
     }
 

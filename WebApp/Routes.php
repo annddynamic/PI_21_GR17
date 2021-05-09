@@ -1,7 +1,7 @@
 <?php
 
 
-Route::set('index.php', function(){
+Route::set('index', function(){
     $rep = new ReportsController();
     $feed = new AdminController();
     $index= new indexController();
@@ -26,7 +26,6 @@ Route::set('adminPanel', function(){
 Route::set('articles', function(){
     $obj=new AdminController();
     $data=$obj->getData();
-    $obj->addNews();
     $obj->deleteNews();
     Controller::CreateView('articles',$data);
     Controller::logout();
@@ -35,7 +34,7 @@ Route::set('articles', function(){
 Route::set('citizen', function(){
     $obj=new AdminController();
     $obj->deletePoliceUser();
-    $obj->editUser();
+//    $obj->editUser();
     $data=$obj->getData();
     Controller::CreateView('citizen', $data);
     Controller::logout();
@@ -46,8 +45,10 @@ Route::set('police', function(){
     $obj->deletePoliceUser();
     $obj->addFromPendingUsers();
     $obj->deleteFromPendingUers();
-    $obj->editPolice();
+
     $data=$obj->getData();
+
+
 
     Controller::CreateView('police',$data);
     Controller::logout();

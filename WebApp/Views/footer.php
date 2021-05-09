@@ -174,7 +174,7 @@ if (isset($data)) {
             <p>You can type your fucking opinion here</p>
 
 
-            <form  action="index.php" method="post" enctype="multipart/form-data">
+            <form  action="index" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <input style="color: black" type="text" name="name"  placeholder="Name" >
