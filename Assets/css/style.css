@@ -204,6 +204,34 @@ body{
     padding-bottom: 10px;
 }
 
+.fa {
+    padding: 30px;
+    font-size: 80px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-newspaper-o {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
 #textarea {
     width: 330px !important;
     height: 150px !important;
@@ -213,8 +241,8 @@ body{
 }
 
 .textarea{
-    width: 380px !important;
-    height: 241px !important;
+    width: 390px !important;
+    height: 140px !important;
 }
 .textareaa {
     width: 255px !important;

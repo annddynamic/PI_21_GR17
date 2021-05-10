@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/jpg" href="../Assets/img/fav.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <title>Articles</title>
@@ -137,6 +138,16 @@ if (isset($data)) {
 
                                 </table>
                         </div>
+                        <div class="">
+                            <div class="well" style="background-color: white">
+                                <h4>Need Some Inspiration?</h4>
+                                <h5>Feel free to check some content from NEWS API!</h5>
+                                <a id="news"   class="fa fa-newspaper-o"></a>
+                                <div>
+                                    <span style="font-size: 12px">News api</span>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -162,7 +173,6 @@ if (isset($data)) {
 
                                         </div>
                                     </div>
-
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label>Insert Photo</label>
@@ -178,16 +188,78 @@ if (isset($data)) {
                             </div>
                         </div>
                     </div>
+                        <div class="">
+                            <div  class="panel panel-default myPanel">
+                                <div class="panel-heading main-color-bg">
+                                    <h3 class="panel-title">News</h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <table class="table table-striped table-hover">
+                                        <tr>
+                                            <th>Author</th>
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                            <th>Date</th>
+                                            <th>Content</th>
+                                        </tr>
+                                        <tbody id ="tbody">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
                 </div>
+
+
             </div>
         </section>
+
+
+        <script>
+            document.getElementById('news').addEventListener('click', loadNews);
+
+            function loadNews(){
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET','https://newsapi.org/v2/everything?q=tesla&from=2021-04-10&sortBy=publishedAt&apiKey=e236142d9aea4154b52b0fcbc4e60556' ,true);
+
+                xhr.onload = function (){
+                    if(this.status == 200){
+                        var news = JSON.parse(this.responseText);
+
+                        console.log(news.articles);
+
+                        var output ='';
+
+                        for (var i in news.articles){
+                            output +='<tr>' +
+                                '<td>'+news.articles[i].author+'</td>'+
+                                '<td>'+news.articles[i].title+'</td>'+
+                                '<td>'+news.articles[i].description+'</td>'+
+                                '<td>'+news.articles[i].publishedAt+'</td>'+
+                                '<td>'+news.articles[i].content+'</td>'+
+                                '</tr>'
+                        }
+
+                        var tbody=document.querySelector('#tbody');
+                        tbody.innerHTML=output;
+
+
+                    }
+                }
+
+                xhr.send();
+            }
+
+        </script>
 
         <div style="height: 250px"></div>
         <footer id="footer">
             <p>Copyright Adminstrap, &copy; 2021</p>
         </footer>
 
-        <script src="../Assets/js/articles.js"></script>
 
 
     <?php include "modals.php" ?>
