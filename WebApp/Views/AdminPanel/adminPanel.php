@@ -73,14 +73,16 @@ if (isset($data)) {
                     <h1><span class="glyphicon glyphicon-cog" aria-hidden="" true> </span>Dashboard </h1>
                 </div>
                 <div class="col-md-8 ">
-
-                    <div class="search-box">
-
-                        <input class="search-text" type="text" name="" placeholder="Type to search">
-                        <a class="search-btn" href="#">
-                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-
-                        </a>
+                    <form>
+                        <div class="search-box">
+                            <input class="search-text" type="text" name="" onkeyup="showHint(this.value)" placeholder="Type to search">
+                            <a class="search-btn" href="#">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </form>
+                    <div style="margin-top:60px;" class="suggestion">
+                        <p><span id="txtHint"></span></p>
                     </div>
                 </div>
 
@@ -89,6 +91,26 @@ if (isset($data)) {
         </div>
     </div>
 </header>
+
+
+<script>
+    function showHint(str) {
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        } else {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "./AJAX/ajaxFETCH.php?q=" + str, true);
+            xmlhttp.send();
+        }
+    }
+</script>
+
 
 
 <section id="main">

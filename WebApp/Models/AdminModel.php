@@ -241,7 +241,13 @@ class AdminModel
         return $result;
 
     }
+    public function getUserByName(){
+        $this->db->query('SELECT name from users');
 
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
     public function getReports(){
 
         $this->db->query('SELECT reID,emri, dt_raportimit, gjendja, name, foto
