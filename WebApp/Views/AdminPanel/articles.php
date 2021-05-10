@@ -235,11 +235,11 @@ if (isset($data)) {
 
                         for (var i in news.articles){
                             output +='<tr>' +
-                                '<td>'+news.articles[i].author+'</td>'+
-                                '<td>'+news.articles[i].title+'</td>'+
-                                '<td>'+news.articles[i].description+'</td>'+
-                                '<td>'+news.articles[i].publishedAt+'</td>'+
-                                '<td>'+news.articles[i].content+'</td>'+
+                                '<td style="font-size: 13px">'+news.articles[i].author+'</td>'+
+                                '<td style="font-size: 13px">'+news.articles[i].title+'</td>'+
+                                '<td style="font-size: 13px">'+news.articles[i].description+'</td>'+
+                                '<td style="font-size: 13px">'+news.articles[i].publishedAt+'</td>'+
+                                '<td style="font-size: 13px">'+news.articles[i].content+'</td>'+
                                 '</tr>'
                         }
 
