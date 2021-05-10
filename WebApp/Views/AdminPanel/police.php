@@ -158,7 +158,6 @@ if (isset($data)) {
                                             </button>
 
                                         </form>
-
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -166,18 +165,16 @@ if (isset($data)) {
                         </table>
                     </div>
                 </div>
+
                 <div class="col-md-6 myPanel">
                     <table class="table  table-hover tbl" id="costum">
                         <tr>
                             <th class="main-color-bg">Available</th>
                         </tr>
-                        <?php foreach ($data['available'] as $i => $free): ?>
-                            <tr>
-                                <td><?php echo $data['available'][$i]['name'] . ' ' . $data['available'][$i]['surname'] ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </table>
+                        <tbody id="police">
 
+                        </tbody>
+                    </table>
                     <table class="table  table-hover tbl" id="costum">
                         <tr>
                             <th class="main-color-bg">On Duty</th>
@@ -303,6 +300,35 @@ if (isset($data)) {
         xhr.send(params);
 
     }
+
+
+    function loadPoliceOfficials(){
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', './AJAX/ajaxFETCHdb.php', true);
+
+        xhr.onload=function (){
+            if(xhr.readyState === 4 && xhr.status === 200)
+            {
+                var users = JSON.parse(this.responseText);
+                var output ='';
+
+                for (var i in users){
+                    output +='<tr>' +
+                        '<td>'+users[i].name+' '+users[i].surname+'</td>'+
+                    '</tr>'
+                }
+
+                var tbody=document.querySelector('#police');
+                tbody.innerHTML=output;
+            }
+        }
+
+        xhr.send();
+    }
+
+
+    document.addEventListener("DOMContentLoaded",  ()=> { loadPoliceOfficials()})
 
 
 </script>
