@@ -70,7 +70,7 @@ class Controller extends Database {
         return $str;
     }
 
-    public function emptyErrors(...){
+    public function emptyErrors(...$errors){
         foreach ($errors as $error){
             if (!is_null($error)) return false;
         }
