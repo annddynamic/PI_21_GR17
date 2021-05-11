@@ -23,7 +23,59 @@ class Controller extends Database {
 
         return new $model;
     }
+    public function isEmpty($data, $error, $string){
+        if(empty($data)){
+            $error = "Please enter ".$string;
+            return $error;
+        }
+    }
 
+    public function getImgPath(){
+
+        $image = $_FILES['foto'];
+
+        if ($image && $image['tmp_name']) {
+            $imgPath = '../Assets/DB-IMGS/' . $this->randomString(9) . '/' . $image['name'];
+            mkdir(dirname($imgPath));
+            move_uploaded_file($image['tmp_name'], $imgPath);
+        }
+
+        return $imgPath;
+
+    }
+
+    public  function mkdir($path){
+        if (!is_dir("$path")) {
+            mkdir("$path");
+        }
+    }
+
+    public function foto($error){
+
+        if ($_FILES['foto']['name'] == "") {
+            $error = 'Please add an image';
+            return $error;
+        }
+    }
+
+
+    public function randomString($n)
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $str = '';
+        for ($i = 0; $i < $n; $i++) {
+            $index = rand(0, strlen($characters) - 1);
+            $str .= $characters[$index];
+        }
+        return $str;
+    }
+
+    public function emptyErrors(...){
+        foreach ($errors as $error){
+            if (!is_null($error)) return false;
+        }
+        return  true;
+    }
     public static function logout(){
 
 

@@ -146,41 +146,25 @@ class AdminController extends Controller
 
             //Validimi i title
             $onlyLettersAndNumbers = "/^[a-zA-Z0-9]*$/";
+            $data['titleError']=$this->isEmpty($data['title'],$data['titleError'], "title");
 
-            if (empty ($data['title'])) {
-                $data['titleError'] = 'Please enter title.';
-            }
 
             //Validimi i description
 
-            if (empty ($data['description'])) {
-                $data['descriptionError'] = 'Please enter your description.';
-            }
+            $data['descriptionError']=$this->isEmpty($data['description'], $data['descriptionError'], "description");
 
             //Validimi i fotos
 
-            if (!is_dir('../Assets/DB-IMGS')) {
-                mkdir('../Assets/DB-IMGS');
-            }
-            if ($_FILES['foto']['name'] == "") {
+            $this->mkdir('../Assets/DB-IMGS');
 
-                $data['fotoError'] = 'Please add a image';
-            } else {
-                $image = $_FILES['foto'];
 
-                if ($image && $image['tmp_name']) {
-                    $imgPath = '../Assets/DB-IMGS/' . $this->obj->randomString(9) . '/' . $image['name'];
-                    mkdir(dirname($imgPath));
-                    move_uploaded_file($image['tmp_name'], $imgPath);
-                }
+            $data['fotoError'] = $this->foto($data['fotoError']);
 
-                $data['foto'] = $imgPath;
+            if(!isset($data['fotoError'])){
+                $data['foto']=$this->getImgPath();
             }
 
-            if (
-                empty($data['titleError']) && empty($data['fotoError']) &&
-                empty($data['descriptionError'])) {
-
+            if($this->emptyErrors($data['titleError'],$data['fotoError'],$data['descriptionError'])){
                 if ($this->adminModel->addNews($data)) {
                     header('location:articles');
                 } else {
