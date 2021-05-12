@@ -57,7 +57,9 @@
 include "navbar.php";
 
 if (isset($data)) {
-
+//    echo '<pre>';
+//    var_dump($data);
+//    echo '</pre>';
 }
 ?>
 <body>
@@ -73,18 +75,12 @@ if (isset($data)) {
                 <div class="col-md-8 ">
                     <form>
                         <div class="search-box">
-                            <input class="search-text" type="text" name="" onkeyup="showHint(this.value)" placeholder="Type to search">
-                            <a class="search-btn" href="#">
-                                <span class="glyphicon glyphicon-search" aria-hidden="true" ></span>
+                            <input class="search-text" type="text" name="search" placeholder="Type to search" value="<?php echo $data['search'] ?>">
+                            <a class="search-btn" type="submit">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                             </a>
                         </div>
                     </form>
-                    <div style="margin-top:60px;
-                                margin-left:-60px;
-
-                               " class="suggestion">
-                        <p><span id="txtHint"></span></p>
-                    </div>
                 </div>
 
             </div>

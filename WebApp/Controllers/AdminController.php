@@ -1,4 +1,5 @@
 <?php
+
 class AdminController extends Controller
 {
     private $obj;
@@ -33,17 +34,30 @@ class AdminController extends Controller
 
 
         ];
+
+
+        $search = $_GET['search'] ?? '';
+
+
+        if ($search) {
+            $data['policeOfficials']=$this->adminModel->searchPolice($search);
+        }
+
+        $data['search']=$search;
+
         return $data;
     }
 
 
-    public function deleteFromPendingUers(){
+
+    public function deleteFromPendingUers()
+    {
 
         $data = [
             'uID' => '',
         ];
 
-        if(isset($_POST['delete'])) {
+        if (isset($_POST['delete'])) {
 
             $data = [
                 'uID' => $_POST['remove'],
@@ -60,14 +74,14 @@ class AdminController extends Controller
 
     }
 
-
-    public function addFromPendingUsers(){
+    public function addFromPendingUsers()
+    {
 
         $data = [
             'uID' => '',
         ];
 
-        if(isset($_POST['add'])){
+        if (isset($_POST['add'])) {
 
             $data = [
                 'uID' => $_POST['insert'],
@@ -83,30 +97,28 @@ class AdminController extends Controller
 
     }
 
-
-
     public function deletePoliceUser()
     {
         $data = [
             'uID' => '',
         ];
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete']) ) {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete'])) {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
 
-                $data = [
-                    'uID' => $_POST['remove'],
-                ];
+            $data = [
+                'uID' => $_POST['remove'],
+            ];
 
-                if ($this->adminModel->deletePoliceUser($data)) {
+            if ($this->adminModel->deletePoliceUser($data)) {
 
-                    echo '<script>alert("Success")</script>';
+                echo '<script>alert("Success")</script>';
 
-                } else {
-                    die('Something went wrong. ');
-                }
+            } else {
+                die('Something went wrong. ');
+            }
 
 
         }
@@ -146,12 +158,12 @@ class AdminController extends Controller
 
             //Validimi i title
             $onlyLettersAndNumbers = "/^[a-zA-Z0-9]*$/";
-            $data['titleError']=$this->isEmpty($data['title'],$data['titleError'], "title");
+            $data['titleError'] = $this->isEmpty($data['title'], $data['titleError'], "title");
 
 
             //Validimi i description
 
-            $data['descriptionError']=$this->isEmpty($data['description'], $data['descriptionError'], "description");
+            $data['descriptionError'] = $this->isEmpty($data['description'], $data['descriptionError'], "description");
 
             //Validimi i fotos
 
@@ -160,11 +172,11 @@ class AdminController extends Controller
 
             $data['fotoError'] = $this->foto($data['fotoError']);
 
-            if(!isset($data['fotoError'])){
-                $data['foto']=$this->getImgPath();
+            if (!isset($data['fotoError'])) {
+                $data['foto'] = $this->getImgPath();
             }
 
-            if($this->emptyErrors($data['titleError'],$data['fotoError'],$data['descriptionError'])){
+            if ($this->emptyErrors($data['titleError'], $data['fotoError'], $data['descriptionError'])) {
                 if ($this->adminModel->addNews($data)) {
                     header('location:articles');
                 } else {

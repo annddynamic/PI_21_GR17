@@ -34,7 +34,6 @@ Route::set('articles', function(){
 Route::set('citizen', function(){
     $obj=new AdminController();
     $obj->deletePoliceUser();
-//    $obj->editUser();
     $data=$obj->getData();
     Controller::CreateView('citizen', $data);
     Controller::logout();
@@ -45,6 +44,7 @@ Route::set('police', function(){
     $obj->deletePoliceUser();
     $obj->addFromPendingUsers();
     $obj->deleteFromPendingUers();
+
 
     $data=$obj->getData();
 

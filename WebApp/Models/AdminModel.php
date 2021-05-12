@@ -241,6 +241,7 @@ class AdminModel
         return $result;
 
     }
+
     public function getUserByName(){
         $this->db->query('SELECT name from users');
 
@@ -248,6 +249,7 @@ class AdminModel
 
         return $result;
     }
+
     public function getReports(){
 
         $this->db->query('SELECT reID,emri, dt_raportimit, gjendja, name, foto
@@ -327,5 +329,15 @@ class AdminModel
 
     }
 
+
+    public function searchPolice($data)
+    {
+        $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit FROM users WHERE name LIKE :name and role_ID=2');
+        $this->db->bind(':name', "$data%");
+        $result = $this->db->resultSet();
+
+        return $result;
+
+    }
 
 }
