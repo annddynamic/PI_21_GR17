@@ -39,13 +39,18 @@ class AdminController extends Controller
         $search = $_GET['search'] ?? '';
 
 
-        if ($search) {
+        if ($search && $_GET['url']=='police') {
             $data['policeOfficials']=$this->adminModel->searchPolice($search);
+        }else if($search && $_GET['url']=='adminPanel'){
+            $data['users']=$this->adminModel->searchUser($search);
         }
 
         $data['search']=$search;
 
         return $data;
+
+
+
     }
 
 

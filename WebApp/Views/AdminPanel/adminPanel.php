@@ -75,11 +75,13 @@ if (isset($data)) {
                 <div class="col-md-8 ">
                     <form>
                         <div class="search-box">
-                            <input class="search-text" type="text" name="" onkeyup="showHint(this.value)" placeholder="Type to search">
+                            <input class="search-text" type="text" name="search" onkeyup="showHint(this.value)" placeholder="Type to search" value="<?php echo $data['search'] ?>">
                             <a class="search-btn" href="#">
                                 <span class="glyphicon glyphicon-search" aria-hidden="true" ></span>
                             </a>
                         </div>
+
+
                     </form>
                     <div style="margin-top:60px;
                                 margin-left:-60px;
