@@ -118,8 +118,8 @@ class AdminController extends Controller
             ];
 
             if ($this->adminModel->deletePoliceUser($data)) {
-
-                echo '<script>alert("Success")</script>';
+//                console.log("SD");
+                echo '<script>console.log("bravoo")</script>';
 
             } else {
                 die('Something went wrong. ');
