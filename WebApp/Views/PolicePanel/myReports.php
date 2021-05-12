@@ -94,9 +94,9 @@ include "navbarP.php";
                     <a href="policePanel" class="list-group-item  " ><span class ="glyphicon glyphicon-cog" aria-hidden="" true> </span>
                         Dashboard
                     </a>
-                    <a href="ReportsP.php" class="list-group-item  "><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
+                    <a href="policeReports" class="list-group-item  "><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
                      Reports<span class="badge">12</span></a>
-                    <a href="" class="list-group-item main-color-bg "><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
+                    <a href="myReports" class="list-group-item main-color-bg "><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
                      My Reports<span class="badge">12</span></a>
                 </div>
 

@@ -121,6 +121,10 @@ Route::set('myReports', function(){
     Controller::CreateView('myReports');
 });
 
+Route::set('policeReports', function(){
+    Controller::CreateView('reportsP');
+});
+
 
 
 

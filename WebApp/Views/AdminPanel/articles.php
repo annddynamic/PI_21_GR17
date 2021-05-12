@@ -223,7 +223,7 @@ if (isset($data)) {
 
             function loadNews(){
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET','https://newsapi.org/v2/everything?q=tesla&from=2021-04-10&sortBy=publishedAt&apiKey=e236142d9aea4154b52b0fcbc4e60556' ,true);
+                xhr.open('GET','https://newsapi.org/v2/everything?q=tesla&from=2021-04-12&sortBy=publishedAt&apiKey=e236142d9aea4154b52b0fcbc4e60556' ,true);
 
                 xhr.onload = function (){
                     if(this.status == 200){
@@ -235,11 +235,11 @@ if (isset($data)) {
 
                         for (var i in news.articles){
                             output +='<tr>' +
-                                '<td style="font-size: 13px">'+news.articles[i].author+'</td>'+
-                                '<td style="font-size: 13px">'+news.articles[i].title+'</td>'+
-                                '<td style="font-size: 13px">'+news.articles[i].description+'</td>'+
-                                '<td style="font-size: 13px">'+news.articles[i].publishedAt+'</td>'+
-                                '<td style="font-size: 13px">'+news.articles[i].content+'</td>'+
+                                '<td style="font-size: 10px">'+news.articles[i].author+'</td>'+
+                                '<td style="font-size: 10px">'+news.articles[i].title+'</td>'+
+                                '<td style="font-size: 10px">'+news.articles[i].description+'</td>'+
+                                '<td style="font-size: 10px">'+news.articles[i].publishedAt+'</td>'+
+                                '<td style="font-size: 10px">'+news.articles[i].content+'</td>'+
                                 '</tr>'
                         }
 

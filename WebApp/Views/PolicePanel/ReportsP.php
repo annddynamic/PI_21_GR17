@@ -11,8 +11,8 @@
     <title>Reports</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../Assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../Assets/css/StylesP.css">
+    <link href="../Assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Assets/css/StylesP.css">
 
 
 </head>
@@ -37,12 +37,12 @@ include "navbarP.php";
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="MainP.php" class="list-group-item  " ><span class ="glyphicon glyphicon-cog" aria-hidden="" true> </span>
+                    <a href="policePanel" class="list-group-item  " ><span class ="glyphicon glyphicon-cog" aria-hidden="" true> </span>
                         Dashboard
                     </a>
                     <a href="#" class="list-group-item main-color-bg active"><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span>  
                       Reports<span class="badge">12</span></a>
-                    <a href="myReports.php" class="list-group-item "><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
+                    <a href="myReports" class="list-group-item "><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
                      My Reports<span class="badge">12</span></a>
                 </div>
 
