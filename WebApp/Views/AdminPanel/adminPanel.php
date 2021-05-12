@@ -70,18 +70,21 @@ if (isset($data)) {
         <div class="row">
             <div class="col-md-10">
                 <div class="col-md-4">
-                    <h1><span class="glyphicon glyphicon-cog" aria-hidden="" true> </span>Dashboard </h1>
+                    <h1><span class="glyphicon glyphicon-cog" aria-hidden="" true> </span> Dashboard </h1>
                 </div>
                 <div class="col-md-8 ">
                     <form>
                         <div class="search-box">
                             <input class="search-text" type="text" name="" onkeyup="showHint(this.value)" placeholder="Type to search">
                             <a class="search-btn" href="#">
-                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-search" aria-hidden="true" ></span>
                             </a>
                         </div>
                     </form>
-                    <div style="margin-top:60px;" class="suggestion">
+                    <div style="margin-top:60px;
+                                margin-left:-60px;
+
+                               " class="suggestion">
                         <p><span id="txtHint"></span></p>
                     </div>
                 </div>

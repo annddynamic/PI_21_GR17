@@ -71,14 +71,19 @@ if (isset($data)) {
 
                 </div>
                 <div class="col-md-8 ">
+                    <form>
+                        <div class="search-box">
+                            <input class="search-text" type="text" name="" onkeyup="showHint(this.value)" placeholder="Type to search">
+                            <a class="search-btn" href="#">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true" ></span>
+                            </a>
+                        </div>
+                    </form>
+                    <div style="margin-top:60px;
+                                margin-left:-60px;
 
-                    <div class="search-box">
-
-                        <input class="search-text" type="text" name="" placeholder="Type to search">
-                        <a class="search-btn" href="#">
-                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-
-                        </a>
+                               " class="suggestion">
+                        <p><span id="txtHint"></span></p>
                     </div>
                 </div>
 
@@ -149,11 +154,11 @@ if (isset($data)) {
                                     <td><?php echo $police['rruga'] ?></td>
                                     <td><?php echo $police['nr_telefonit'] ?></td>
                                     <td>
-                                        <button class="btn main-color-bg editbtn" type="button">Edit</button>
+                                        <button class="btn main-color-bg editbtn"  type="button"> Edit </button>
                                         <form method="post" action="police" style="display:inline">
                                             <input type="hidden" name="remove"
                                                    value="<?php echo $data['policeOfficials'][$i]['uID'] ?>">
-                                            <button type="submit" name="delete" value="" style="margin-left: 10px"
+                                            <button type="submit" name="delete" value="" style="margin-left: -65px"
                                                     class="pull-right btn btn-danger">Delete
                                             </button>
 
@@ -268,6 +273,23 @@ if (isset($data)) {
     </div>
 </div>
 
+<script>
+    function showHint(str) {
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        } else {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "./AJAX/ajaxFETCH.php?q=" + str, true);
+            xmlhttp.send();
+        }
+    }
+</script>
 
 <script>
 
