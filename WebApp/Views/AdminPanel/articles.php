@@ -71,15 +71,14 @@ if (isset($data)) {
 
                         </div>
                         <div class="col-md-8 ">
-
-                            <div class="search-box">
-
-                                <input class="search-text" type="text" name="" placeholder="Type to search">
-                                <a class="search-btn" href="#">
-                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-
-                                </a>
-                            </div>
+                            <form>
+                                <div class="search-box">
+                                    <input class="search-text" type="text" name="search" placeholder="Type to search" value="<?php echo $data['search'] ?>">
+                                    <a class="search-btn" type="submit">
+                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </form>
                         </div>
 
                     </div>
@@ -130,7 +129,8 @@ if (isset($data)) {
                                         <td>
                                             <form method="post" action="articles" style="display:inline">
                                                 <input type="hidden" name="remove"  value="<?php echo $data['getNews'][$i]['nID'] ?>">
-                                                <button type="submit" name="deelete" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
+                                                <button type="submit" name="deelete" value="" style="margin-left:-40px;
+                                                                                                     margin-right:15px" class="pull-right btn btn-danger">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

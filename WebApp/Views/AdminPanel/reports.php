@@ -73,14 +73,14 @@ if (isset($data)) {
                         </div>
                         <div class="col-md-8 ">
 
-                            <div class="search-box">
-
-                                <input class="search-text" type="text" name="" placeholder="Type to search">
-                                <a class="search-btn" href="#">
-                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-
-                                </a>
-                            </div>
+                            <form>
+                                <div class="search-box">
+                                    <input class="search-text" type="text" name="search" placeholder="Type to search" value="<?php echo $data['search'] ?>">
+                                    <a class="search-btn" type="submit">
+                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </form>
                         </div>
 
                     </div>
@@ -157,13 +157,16 @@ if (isset($data)) {
                                             <td><?php echo $emergency['dt_raportimit']?></td>
                                             <td><?php echo $emergency['gjendja']?></td>
                                             <td><?php echo $emergency['name']?></td>
-                                            <td><img width="120"  src="<?php echo $emergency['foto']?>"</td>
                                             <td>
-                                                <button class="btn main-color-bg" type = "button" data-toggle="modal" data-target="editUser">Edit</button>
-                                                <form method="post" action="reports" style="display:inline">
+                                                <img height="120" style="display:block;
+                                                                        text-align:center;
+                                                                        margin-left: auto;
+                                                                        margin-right: auto;
+                                                                       " src="<?php echo $emergency['foto']?>"</td>
+                                            <td>
 
                                                     <input type="hidden" name="remove"  value="<?php echo $data['emergency'][$i]['reID'] ?>">
-                                                    <button type="submit" name="emergency" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
+                                                    <button type="submit" name="emergency" value="" style="margin-left:-30px" class="pull-right btn btn-danger">Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -198,13 +201,16 @@ if (isset($data)) {
                                             <td><?php echo $random['dt_raportimit']?></td>
                                             <td><?php echo $random['gjendja']?></td>
                                             <td><?php echo $random['name']?></td>
-                                            <td><img width="120" src="<?php echo $random['foto']?>"</td>
                                             <td>
-                                                <button class="btn main-color-bg" type = "button" data-toggle="modal" >Edit</button>
-                                                <form method="post" action="reports" style="display:inline">
+                                                <img width="120" style="display:block;
+                                                                        text-align:center;
+                                                                        margin-left: auto;
+                                                                        margin-right: auto;
+                                                                       " src="<?php echo $random['foto']?>"</td>
+                                            <td>
 
                                                     <input type="hidden" name="remove"  value="<?php echo $data['random'][$i]['reID'] ?>">
-                                                    <button type="submit" name="emergency" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
+                                                    <button type="submit" name="emergency" value="" style="margin-left:-30px" class="pull-right btn btn-danger">Delete</button>
                                                 </form>
                                             </td>
                                         </tr>

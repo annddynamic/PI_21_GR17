@@ -57,9 +57,6 @@
 include "navbar.php";
 
 if (isset($data)) {
-//    echo '<pre>';
-//    var_dump($data);
-//    echo '</pre>';
 }
 ?>
 <body>

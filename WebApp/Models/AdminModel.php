@@ -242,15 +242,7 @@ class AdminModel
 
     }
 
-    public function getUserByName(){
-        $this->db->query('SELECT name from users');
-
-        $result = $this->db->resultSet();
-
-        return $result;
-    }
-
-    public function getReports(){
+    public function getRandomeReports(){
 
         $this->db->query('SELECT reID,emri, dt_raportimit, gjendja, name, foto
                               FROM status s INNER JOIN report r on s.sID=r.sID
@@ -261,6 +253,14 @@ class AdminModel
 
         return $result;
 
+    }
+
+    public function getUserByName(){
+        $this->db->query('SELECT name from users');
+
+        $result = $this->db->resultSet();
+
+        return $result;
     }
 
     public function getFeedback(){
@@ -332,7 +332,8 @@ class AdminModel
 
     public function searchPolice($data)
     {
-        $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit FROM users WHERE name LIKE :name and role_ID=2');
+        $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit FROM users 
+                              WHERE name LIKE :name and role_ID=2');
         $this->db->bind(':name', "$data%");
         $result = $this->db->resultSet();
 
@@ -351,5 +352,55 @@ class AdminModel
         return $result;
 
     }
+
+    public function searchFeedback($data)
+    {
+        $this->db->query('SELECT fID, name, subject, mesazhi, dt_feedback 
+                              FROM feedback 
+                              WHERE name LIKE :name');
+        $this->db->bind(':name', "$data%");
+        $result = $this->db->resultSet();
+
+        return $result;
+
+    }
+
+    public function searchReport($data)
+    {
+        $this->db->query('SELECT reID,emri, dt_raportimit, gjendja, name, foto
+                              FROM status s INNER JOIN report r on s.sID=r.sID
+                              LEFT JOIN users u on r.uID=u.uID 
+                              WHERE emri LIKE :emri ');
+        $this->db->bind(':emri', "$data%");
+        $result = $this->db->resultSet();
+
+        return $result;
+
+    }
+
+    public function searchNews($data)
+    {
+        $this->db->query('SELECT nID, foto,title,published,description 
+                              FROM news
+                              WHERE title LIKE :title');
+        $this->db->bind(':title', "$data%");
+        $result = $this->db->resultSet();
+
+        return $result;
+
+    }
+
+//    public function searchReport($data)
+//    {
+//        $this->db->query('SELECT reID, emri, dt_raportimit, gjendja, name, foto
+//                              FROM status s INNER JOIN report r on s.sID=r.sID
+//                              LEFT JOIN users u on r.uID=u.uID
+//                              WHERE name LIKE :name');
+//        $this->db->bind(':name', "$data%");
+//        $result = $this->db->resultSet();
+//
+//        return $result;
+
+
 
 }

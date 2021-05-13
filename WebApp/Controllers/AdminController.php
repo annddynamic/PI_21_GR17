@@ -26,7 +26,7 @@ class AdminController extends Controller
             'onDuty' => $this->adminModel->getOnDuty(),
             'available' => $this->adminModel->getAvailable(),
             'emergency' => $this->adminModel->getEmergencyReports(),
-            'random' => $this->adminModel->getReports(),
+            'random' => $this->adminModel->getRandomeReports(),
             'getNews' => $this->adminModel->getNews(),
             'getFeedback' => $this->adminModel->getFeedback(),
             'countFeedback' => $this->adminModel->countFeedback(),
@@ -39,20 +39,27 @@ class AdminController extends Controller
         $search = $_GET['search'] ?? '';
 
 
-        if ($search && $_GET['url']=='police') {
-            $data['policeOfficials']=$this->adminModel->searchPolice($search);
-        }else if($search && $_GET['url']=='adminPanel'){
-            $data['users']=$this->adminModel->searchUser($search);
+        if ($search && $_GET['url'] == 'police') {
+            $data['policeOfficials'] = $this->adminModel->searchPolice($search);
+
+        } else if ($search && $_GET['url'] == 'adminPanel') {
+            $data['users'] = $this->adminModel->searchUser($search);
+
+        } else if ($search && $_GET['url'] == 'feedback') {
+            $data['getFeedback'] = $this->adminModel->searchFeedback($search);
+
+        } else if ($search && $_GET['url'] == 'reports') {
+            $data['emergency'] = $this->adminModel->searchReport($search);
+            $data['random'] = '';
+        } else if ($search && $_GET['url'] == 'articles') {
+            $data['getNews'] = $this->adminModel->searchNews($search);
         }
 
-        $data['search']=$search;
+        $data['search'] = $search;
 
         return $data;
 
-
-
     }
-
 
 
     public function deleteFromPendingUers()
