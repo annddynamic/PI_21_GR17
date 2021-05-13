@@ -390,6 +390,18 @@ class AdminModel
 
     }
 
+    public function searchCitizen($data)
+    {
+        $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit 
+                              FROM users
+                              WHERE role_ID=3 and name LIKE :name');
+        $this->db->bind(':name', "$data%");
+        $result = $this->db->resultSet();
+
+        return $result;
+
+    }
+
 //    public function searchReport($data)
 //    {
 //        $this->db->query('SELECT reID, emri, dt_raportimit, gjendja, name, foto

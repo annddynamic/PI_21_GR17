@@ -74,15 +74,14 @@ if (isset($data)) {
 
                         </div>
                         <div class="col-md-8 ">
-
-                            <div class="search-box">
-
-                                <input class="search-text" type="text" name="" placeholder="Type to search">
-                                <a class="search-btn" href="#">
-                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-
-                                </a>
-                            </div>
+                            <form>
+                                <div class="search-box">
+                                    <input class="search-text" type="text" name="search" placeholder="Type to search" value="<?php echo $data['search'] ?>">
+                                    <a class="search-btn" type="submit">
+                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </form>
                         </div>
 
                     </div>
