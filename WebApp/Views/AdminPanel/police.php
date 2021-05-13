@@ -151,7 +151,7 @@ if (isset($data)) {
                                         <form method="post" action="police" style="display:inline">
                                             <input type="hidden" name="remove"
                                                    value="<?php echo $data['policeOfficials'][$i]['uID'] ?>">
-                                            <button type="submit" name="delete" value="" style="margin-left: -65px"
+                                            <button type="submit" name="delete" value="" style="margin-left: -50px"
                                                     class="pull-right btn btn-danger">Delete
                                             </button>
 

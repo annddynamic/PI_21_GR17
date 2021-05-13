@@ -30,6 +30,44 @@ class AdminModel
 
     }
 
+    public function addFeedback($data){
+
+        $this->db->query('INSERT INTO feedback (name,subject,mesazhi,dt_feedback) 
+                              VALUES(:name,:subject,:mesazhi,NOW())');
+
+        $this->db->bind(':name', $data['name']);
+        $this->db->bind(':subject', $data['subject']);
+        $this->db->bind(':mesazhi', $data['mesazhi']);
+
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function addNews($data)
+    {
+        $this->db->query('INSERT INTO news (foto,title,published,description) 
+                              VALUES (:foto,:title,:published,:description )');
+        //Binde values
+
+        $this->db->bind(':foto', $data['foto']);
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':published', $data['published']);
+        $this->db->bind(':description', $data['description']);
+
+        //Exetute function
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     public function deletePolice($data){
 
 
@@ -64,6 +102,55 @@ class AdminModel
 
     }
 
+    public function deleteFeedback($data){
+
+
+        $this->db->query('DELETE FROM feedback WHERE fID=:id');
+
+        $this->db->bind(':id', $data['fID']);
+
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public function deleteReport($data){
+
+
+        $this->db->query('DELETE FROM report WHERE reID=:id');
+
+        $this->db->bind(':id', $data['uID']);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public function deleteNews($data){
+
+
+        $this->db->query('DELETE FROM news WHERE nID=:id');
+        //Bind values
+
+        $this->db->bind(':id', $data['uID']);
+
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+
     public function editUser($data){
 
         $this->db->query('UPDATE users
@@ -84,28 +171,11 @@ class AdminModel
         }
     }
 
+
     public function getUsers()
     {
         $this->db->query('SELECT name,surname,gender,data_lindjes,rruga,email,role_name 
                               FROM users u INNER JOIN roles r ON u.role_ID = r.role_ID');
-
-        $result = $this->db->resultSet();
-
-        return $result;
-    }
-
-    public function countUsers()
-    {
-        $this->db->query('SELECT COUNT(name) FROM users');
-
-        $result = $this->db->resultSet();
-
-        return $result;
-    }
-
-    public function countPoliceUsers()
-    {
-        $this->db->query('SELECT COUNT(name) FROM users WHERE role_ID=2');
 
         $result = $this->db->resultSet();
 
@@ -119,88 +189,6 @@ class AdminModel
         $result = $this->db->resultSet();
 
         return $result;
-    }
-
-    public function countCitizens()
-    {
-        $this->db->query('SELECT COUNT(name) FROM users WHERE role_ID=3');
-
-        $result = $this->db->resultSet();
-
-        return $result;
-    }
-
-    public function countReport()
-    {
-        $this->db->query('SELECT COUNT(emri) FROM report');
-
-        $result = $this->db->resultSet();
-
-        return $result;
-    }
-
-    public function countNews()
-    {
-        $this->db->query('SELECT COUNT(nID) FROM news');
-
-        $result = $this->db->resultSet();
-
-        return $result;
-    }
-
-    public function deleteNews($data){
-
-
-        $this->db->query('DELETE FROM news WHERE nID=:id');
-        //Bind values
-
-        $this->db->bind(':id', $data['uID']);
-
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
-    public function pendingApproval()
-    {
-        $this->db->query('SELECT uID,name,surname FROM pending_users WHERE role_ID=2');
-
-        $result = $this->db->resultSet();
-
-        return $result;
-    }
-
-    public function policeOfficials()
-    {
-        $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit FROM users WHERE role_ID=2');
-
-        $result = $this->db->resultSet();
-
-        return $result;
-    }
-
-    public function addNews($data)
-    {
-        $this->db->query('INSERT INTO news (foto,title,published,description) 
-                              VALUES (:foto,:title,:published,:description )');
-        //Binde values
-
-        $this->db->bind(':foto', $data['foto']);
-        $this->db->bind(':title', $data['title']);
-        $this->db->bind(':published', $data['published']);
-        $this->db->bind(':description', $data['description']);
-
-        //Exetute function
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     public function getNews(){
@@ -272,6 +260,52 @@ class AdminModel
         return $result;
     }
 
+
+    public function countUsers()
+    {
+        $this->db->query('SELECT COUNT(name) FROM users');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+    public function countPoliceUsers()
+    {
+        $this->db->query('SELECT COUNT(name) FROM users WHERE role_ID=2');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+    public function countCitizens()
+    {
+        $this->db->query('SELECT COUNT(name) FROM users WHERE role_ID=3');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+    public function countReport()
+    {
+        $this->db->query('SELECT COUNT(emri) FROM report');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+    public function countNews()
+    {
+        $this->db->query('SELECT COUNT(nID) FROM news');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
     public function countFeedback()
     {
         $this->db->query('SELECT COUNT(name) FROM feedback ');
@@ -281,52 +315,23 @@ class AdminModel
         return $result;
     }
 
-    public function addFeedback($data){
 
-        $this->db->query('INSERT INTO feedback (name,subject,mesazhi,dt_feedback) 
-                              VALUES(:name,:subject,:mesazhi,NOW())');
+    public function pendingApproval()
+    {
+        $this->db->query('SELECT uID,name,surname FROM pending_users WHERE role_ID=2');
 
-        $this->db->bind(':name', $data['name']);
-        $this->db->bind(':subject', $data['subject']);
-        $this->db->bind(':mesazhi', $data['mesazhi']);
+        $result = $this->db->resultSet();
 
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return $result;
     }
 
-    public function deleteFeedback($data){
+    public function policeOfficials()
+    {
+        $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit FROM users WHERE role_ID=2');
 
+        $result = $this->db->resultSet();
 
-        $this->db->query('DELETE FROM feedback WHERE fID=:id');
-
-        $this->db->bind(':id', $data['fID']);
-
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
-    public function deleteReport($data){
-
-
-        $this->db->query('DELETE FROM report WHERE reID=:id');
-
-        $this->db->bind(':id', $data['uID']);
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
-
+        return $result;
     }
 
 

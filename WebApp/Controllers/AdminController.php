@@ -50,7 +50,7 @@ class AdminController extends Controller
 
         } else if ($search && $_GET['url'] == 'reports') {
             $data['emergency'] = $this->adminModel->searchReport($search);
-            $data['random'] = '';
+            $data['random'] = null;
         } else if ($search && $_GET['url'] == 'articles') {
             $data['getNews'] = $this->adminModel->searchNews($search);
 
