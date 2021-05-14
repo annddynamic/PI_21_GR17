@@ -3,10 +3,12 @@
 
 Class PoliceModel extends Database {
     private $db;
+    private $db1;
 
     public function __construct()
     {
         $this->db = new Database();
+        $this->db1 = new Database();
     }
 
     
@@ -40,8 +42,6 @@ Class PoliceModel extends Database {
 
     public function takeReport($data){
 
-
-        
         $this->db->query('UPDATE report
         SET sID=2, uID =:sessionID
         WHERE reID=:reID');
@@ -50,8 +50,14 @@ Class PoliceModel extends Database {
         $this->db->bind(':reID', $data['uID']);
         $this->db->bind(':sessionID', $_SESSION['user_id']);
 
+        $this->db1->query('UPDATE users
+        SET inDuty=1
+        WHERE uID=:uID');
 
-        if($this->db->execute()){
+        $this->db1->bind(':uID', $_SESSION['user_id']);
+
+
+        if($this->db->execute() && $this->db1->execute()){
             return true;
         }else {
             return false;
