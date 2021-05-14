@@ -217,6 +217,7 @@ if (isset($data)) {
                             <tbody>
 
                             <?php foreach ($data['users'] as $i => $user): ?>
+
                                 <tr>
                                     <td><?php echo $user['name'] ?></td>
                                     <td><?php echo $user['surname'] ?></td>

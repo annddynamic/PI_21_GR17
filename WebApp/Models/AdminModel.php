@@ -179,6 +179,8 @@ class AdminModel
 
         $result = $this->db->resultSet();
 
+        sort($result);
+
         return $result;
     }
 
@@ -256,6 +258,8 @@ class AdminModel
         $this->db->query('SELECT fID, name, subject, mesazhi, dt_feedback FROM feedback');
 
         $result = $this->db->resultSet();
+
+        rsort($result);
 
         return $result;
     }
