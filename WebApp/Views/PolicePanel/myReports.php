@@ -144,7 +144,11 @@ include "navbarP.php";
                                     <td><?php echo $report['dt_raportimit'] ?>  </td>
                                     <td><?php echo $report['address'] ?>  </td>
                                     <td><?php echo $report['description'] ?>  </td>
-                                    <td><img width="120"  src="<?php echo $report['foto']?>" ></td>   
+                                    <td><img height="120" style="display:block;
+                                                                        text-align:center;
+                                                                        margin-left: auto;
+                                                                        margin-right: auto;
+                                                                       "  src="<?php echo $report['foto']?>" ></td>
                                 </tr>
                                 <?php endforeach; ?>
                             </tr>

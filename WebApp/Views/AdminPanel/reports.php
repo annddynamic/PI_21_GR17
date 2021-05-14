@@ -166,7 +166,7 @@ if (isset($data)) {
                                                                         margin-right: auto;
                                                                        " src="<?php echo $emergency['foto'] ?>"></td>
                                     <td>
-                                        <form action="reports" method ="post">    
+                                        <form action="reports" method ="post">
                                             <input type="hidden" name="remove"
                                                 value="<?php echo $data['emergency'][$i]['reID'] ?>">
                                             <button type="submit" name="emergency" value="" style="margin-left:-30px"
@@ -205,11 +205,11 @@ if (isset($data)) {
                                         <td><?php echo $random['gjendja'] ?></td>
                                         <td><?php echo $random['name'] ?></td>
                                         <td>
-                                            <img width="120" style="display:block;
+                                            <img height= "120" style="display:block;
                                                                         text-align:center;
                                                                         margin-left: auto;
                                                                         margin-right: auto;
-                                                                       " src="<?php echo $random['foto'] ?>"</td>
+                                                                       " src="<?php echo $random['foto'] ?>"></td>
                                         <td>
                                             <form action="reports" method ="post">    
                                                 <input type="hidden" name="remove"
