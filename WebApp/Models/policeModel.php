@@ -1,6 +1,5 @@
 <?php 
 
-session_start();
 
 Class PoliceModel extends Database {
     private $db;

@@ -39,7 +39,6 @@ class policePanelController extends Controller
 
                 $data = [
                     'uID' => $_POST['remove'],
-                    'session' => $_POST['session']
                 ];
 
             // echo '<pre>';

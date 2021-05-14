@@ -262,9 +262,7 @@ class AdminController extends Controller
 
     public function deleteNews()
     {
-        $data = [
-            'uID' => '',
-        ];
+
 
         if (isset($_POST['deelete'])) {
 
@@ -283,7 +281,6 @@ class AdminController extends Controller
         }
 
 
-        return $data;
     }
 
     public function deleteFeedback()
@@ -307,7 +304,6 @@ class AdminController extends Controller
             }
 
         }
-        return $data;
     }
 
     public function deleteReport()
@@ -333,7 +329,6 @@ class AdminController extends Controller
                 die('Something went wrong. ');
             }
         }
-        return $data;
     }
 
 //    public function editUser(){

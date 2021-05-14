@@ -1,8 +1,9 @@
 <?php
 
-session_start();
+echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>';
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -68,11 +69,6 @@ session_start();
     </style>
 
 
-<?php
-
-
-
-?>
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
@@ -94,8 +90,8 @@ session_start();
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../index.php">Welcome <?php echo $_SESSION['name'];?></a></li>
-                <li><a href="../index.php">Logout</a></li>
+                <li><a href="citizenPanel">Welcome <?php echo $_SESSION['name'];?></a></li>
+                <li><a href="index">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
