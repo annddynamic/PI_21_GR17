@@ -78,7 +78,9 @@ if (isset($data)) {
                 ?>
             </p>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
+                <?php $imp = array('This','can','help','to','reduce','the','number','of','cases ');
+                echo implode(" ",$imp)
+                ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
                 consectetur adipisicing elit. Doloremque ex expedita itaque iure nemo odio pariatur provident quos
                 tempora
                 velit.

@@ -411,16 +411,6 @@ class AdminModel
 
     }
 
-//    public function searchReport($data)
-//    {
-//        $this->db->query('SELECT reID, emri, dt_raportimit, gjendja, name, foto
-//                              FROM status s INNER JOIN report r on s.sID=r.sID
-//                              LEFT JOIN users u on r.uID=u.uID
-//                              WHERE name LIKE :name');
-//        $this->db->bind(':name', "$data%");
-//        $result = $this->db->resultSet();
-//
-//        return $result;
 
 
 
