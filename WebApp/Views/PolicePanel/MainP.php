@@ -104,7 +104,7 @@ echo '</pre>';
                         Dashboard
                     </a>
                     <a href="policeReports" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
-                      Reports<span class="badge">12</span></a>
+                      Reports<span class="badge"><?php echo $data['count'][0]['COUNT(name)']   ?></span></a>
                     <a href="myReports" class="list-group-item "><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
                      My Reports<span class="badge">12</span></a>
                 </div>
@@ -135,13 +135,13 @@ echo '</pre>';
                     <div class="panel-body">
                         <div class="col-md-6">
                             <div class="well dash-box">
-                                <h2><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span> 12</h2>
+                                <h2><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span> <?php echo $data['count'][0]['COUNT(name)']   ?>  </h2>
                                 <h4>Users</h4>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class=" well dash-box">
-                                <h2><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span> 12</h2>
+                                <h2><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span> <?php echo $data['reportCount'][0]['COUNT(emri)'] ?>  </h2>
                                 <h4>Reports</h4>
                             </div>
                         </div>
@@ -166,50 +166,20 @@ echo '</pre>';
                                 <th class="main-color-bg">Role
                                 </th>
                             </tr>
-                            <tr>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                            </tr>                            <tr>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                            </tr>
-                            <tr>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                            </tr>
-                            <tr>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                            </tr>
-                            <tr>
-                                <td>Adnit King kobra </td>
-                                <td>Adnit King kobra </td>
-                                <td>Adnit King kobra </td>
-                                <td>Adnit King kobra </td>
-                                <td>Adnit King kobra </td>
-                                <td>Adnit King kobra </td>
-                                <td>Adnit King kobra </td>
-                            </tr>
+                            <tbody>
+                            <?php foreach ($data['user'] as $i => $user): ?>
+                                <tr>
+                                    <td><?php echo $user['name'] ?></td>
+                                    <td><?php echo $user['surname'] ?></td>
+                                    <td><?php echo $user['gender'] ?></td>
+                                    <td><?php echo $user['data_lindjes'] ?></td>
+                                    <td><?php echo $user['rruga'] ?></td>
+                                    <td><?php echo $user['email'] ?></td>
+                                    <td><?php echo $user['role_name'] ?></td>
+                                </tr>
+                            <?php endforeach; ?>  
+                            </tbody>
+                            
                         </table>
                     </div>
                 </div>

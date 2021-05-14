@@ -95,7 +95,7 @@ include "navbarP.php";
                         Dashboard
                     </a>
                     <a href="policeReports" class="list-group-item  "><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
-                     Reports<span class="badge">12</span></a>
+                     Reports<span class="badge"><?php echo $data['count'][0]['COUNT(name)']   ?>    </span></a>
                     <a href="myReports" class="list-group-item main-color-bg "><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
                      My Reports<span class="badge">12</span></a>
                 </div>
@@ -402,5 +402,5 @@ include "navbarP.php";
 
   <footer id="footer">
     <pr>Copyright Adminstrap, &copy; 2021</pr>
-  </footer>>
+  </footer>
 </body>

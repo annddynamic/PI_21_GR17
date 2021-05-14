@@ -14,10 +14,10 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class=""><a href="MainP.php">Dashboard</a></li>
+                <li class=""><a href="policePanel">Dashboard</a></li>
                
                 
-                <li><a href="../AdminPanel/articles.php">Articles</a></li>
+                
                 
             </ul>
 

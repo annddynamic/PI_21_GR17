@@ -448,7 +448,7 @@ session_start();
                     <form>
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text"  placeholder="Name">
                         </div>
                         <div class="form-group">
                             <label>Last Name</label>

@@ -106,25 +106,34 @@ Route::set('signUpPolice', function(){
 
 
 Route::set('citizenPanel', function(){
-    Controller::CreateView('CitizenPanel');
+    $report = new ReportsController();
+    $data = $report->createReport();
+    
+    Controller::CreateView('CitizenPanel', $data);
     Controller::logout();
 });
 
 Route::set('policePanel', function(){
-    $obje = new policePanelController();
-    $data=$obje->getAssoc();
+    $obj = new policePanelController();
+    // $data=$obje->getAssoc();
+    
+    $data=$obj->getData();
     Controller::CreateView('MainP', $data);
     Controller::logout();
 });
 
 Route::set('myReports', function(){
-    Controller::CreateView('myReports');
+    $obj = new policePanelController();
+    $data = $obj->getData();
+    $admCont = new AdminController();
+    Controller::CreateView('myReports', $data);
 });
 
 Route::set('policeReports', function(){
-    Controller::CreateView('reportsP');
+    $obj = new policePanelController();
+    $data = $obj->getData();
+    $admCont = new AdminController();
+    $admCont->deleteReport();
+    // $obj->deleteReportt();
+    Controller::CreateView('ReportsP', $data);
 });
-
-
-
-
