@@ -23,7 +23,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Welcome</a></li>
-                <li><a href="index.php">Logout</a></li>
+                <li><a href="index">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

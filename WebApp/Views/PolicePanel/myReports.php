@@ -129,127 +129,24 @@ include "navbarP.php";
                     <div class="panel-body myPanel">
                         <table class="table  table-hover tbl" id="emergency">
                             <tr>
-                                <th class="main-color-bg">Name</th>
-                                <th class="main-color-bg">Date</th>
-                                <th class="main-color-bg">Status</th>
-                                <th class="main-color-bg">In Charge</th>
-                                <th class="main-color-bg">Delete</th>
+                            <th class="main-color-bg">Name</th>
+                                <th class="main-color-bg">Data</th>
+                                <th class="main-color-bg">Address</th>
+                                <th class="main-color-bg">Description</th>
+                                <th class="main-color-bg">Foto</th>
+                              
                             </tr>
                             <tr>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>
-                                    Not Resolved
-                                    <div class="dropdown create pull-right">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Manage
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not Resolved</a></li>
-                                            <li><a href="#">In process</a></li>
-                                            <li><a href="#">Resolved</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                                <td>
-                                    Jill Smith 
-                                    <button class="btn btn-info pull-right">  Edit</button>
-                                </td>
-                                <td><button class="btn btn-danger "><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#deleteUser" style="float: right;"  >  Request Delete</a></button></td>
-                            </tr>
-                            <tr>
-                                <td>Jill Smith</td>
-                                <td>Jill Smith</td>
-                                <td>
-                                    Jill Smith
-                                    <div class="dropdown create pull-right">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Manage
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not Resolved</a></li>
-                                            <li><a href="#">In process</a></li>
-                                            <li><a href="#">Resolved</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                                <td>
-                                    Jill Smith
-                                    <button class="btn btn-info pull-right">  Edit</button>
-                                </td>
-                                <td><button class="btn btn-danger "><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#deleteUser" style="float: right;">  Request Delete</a></button></td>
-                            </tr>
-                            <tr>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>
-                                    Jill Smith
-                                    <div class="dropdown create pull-right">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Manage
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not Resolved</a></li>
-                                            <li><a href="#">In process</a></li>
-                                            <li><a href="#">Resolved</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                                <td>
-                                    Andi Dika
-                                    <button class="btn btn-info pull-right">  Edit</button>
+                            <?php foreach ($data['myReports'] as $i => $report): ?>
 
-                                </td>
-                                <td><button class="btn btn-danger "><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#deleteUser" style="float: right;">  Request Delete</a></button></td>
-                            </tr>
-                            <tr>
-                                <td>Andi Dika</td>
-                                <td>Andi Dika</td>
-                                <td>
-                                    Jill Smith
-                                    <div class="dropdown create pull-right">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Manage
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not Resolved</a></li>
-                                            <li><a href="#">In process</a></li>
-                                            <li><a href="#">Resolved</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                                <td>
-                                    Andi Dika
-                                    <button class="btn btn-info pull-right">  Edit</button>
-                                </td>
-                                <td><button class="btn btn-danger "><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#deleteUser" style="float: right;">  Request Delete</a></button></td>
-                            </tr>
-                            <tr>
-                                <td>Adnit King kobra </td>
-                                <td>Adnit King kobra </td>
-                                <td>
-                                    Jill Smith
-                                    <div class="dropdown create pull-right">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Manage
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Not Resolved</a></li>
-                                            <li><a href="#">In process</a></li>
-                                            <li><a href="#">Resolved</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                                <td>
-                                    Adnit King kobra
-                                    <button class="btn btn-info pull-right">  Edit</button>
-                                </td>
-                                <td><button class="btn btn-danger "><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#deleteUser" style="float: right;">  Request Delete</a></button></td>
+                                <tr>
+                                <td><?php echo $report['emri'] ?>  </td>
+                                    <td><?php echo $report['dt_raportimit'] ?>  </td>
+                                    <td><?php echo $report['address'] ?>  </td>
+                                    <td><?php echo $report['description'] ?>  </td>
+                                    <td><img width="120"  src="<?php echo $report['foto']?>" ></td>   
+                                </tr>
+                                <?php endforeach; ?>
                             </tr>
                         </table>
                     </div>

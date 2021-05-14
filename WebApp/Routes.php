@@ -132,8 +132,9 @@ Route::set('myReports', function(){
 Route::set('policeReports', function(){
     $obj = new policePanelController();
     $data = $obj->getData();
+    $obj->takeReport();
     $admCont = new AdminController();
-    $admCont->deleteReport();
+    // $admCont->deleteReport();
     // $obj->deleteReportt();
     Controller::CreateView('ReportsP', $data);
 });

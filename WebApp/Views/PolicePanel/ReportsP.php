@@ -19,10 +19,10 @@
 
 <?php
 include "navbarP.php";
-
+// session_start();
 if(isset($data)){
     // echo '<pre>';
-    // var_dump($data);
+    // var_dump($_SESSION);
     // echo '</pre>';
 }
 
@@ -84,23 +84,24 @@ if(isset($data)){
                             <tr>
                                 <th class="main-color-bg">Name</th>
                                 <th class="main-color-bg">Data</th>
+                                <th class="main-color-bg">Address</th>
+                                <th class="main-color-bg">Description</th>
                                 <th class="main-color-bg">Foto</th>
-                                <th class="main-color-bg">Status</th>
-                                <th class="main-color-bg">In Charge</th>
-                                <th class="main-color-bg">Delete</th>
+                                <th class="main-color-bg">Take</th>
 
                             </tr>
                           <?php foreach($data['reports'] as $i => $report): ?>      
                             <tr>
                                 <td><?php echo $report['emri'] ?>  </td>
                                 <td><?php echo $report['dt_raportimit'] ?>  </td>
-                                <td><img width="120"  src="<?php echo $report['foto']?>"</td>
-                                <td><?php echo $report['gjendja'] ?>  </td>
-                                <td><?php echo $report['name'] ?>  </td>
+                                <td><?php echo $report['address'] ?>  </td>
+                                <td><?php echo $report['description'] ?>  </td>
+                                <td><img width="120"  src="<?php echo $report['foto']?>" ></td>
                                 <td>
                                     <form method="post" action="policeReports" style="display:inline">
                                         <input type="hidden" name="remove"  value="<?php echo $data['reports'][$i]['reID'] ?>">
-                                        <button type="submit" name="emergency" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
+                                        <input type="hidden" name="session"  value="<?php echo $_SESSION['user_id']?>">
+                                        <button type="submit" name="take" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Take</button>
                                     </form> 
                                  </td>
                             </tr>
@@ -117,29 +118,28 @@ if(isset($data)){
                     <div class="panel-body myPanel">
                         <table class="table  table-hover tbl" id="random">
                             <tr>
-                                <th class="main-color-bg">Name</th>
-                                <th class="main-color-bg">Date</th>
-                                <th class="main-color-bg">Status</th>
-                                <th class="main-color-bg">In Charge</th>
-                                <th class="main-color-bg ">Request Delete</th>
+                            <th class="main-color-bg">Name</th>
+                                <th class="main-color-bg">Data</th>
+                                <th class="main-color-bg">Address</th>
+                                <th class="main-color-bg">Description</th>
+                                <th class="main-color-bg">Foto</th>
+                                <th class="main-color-bg">Take</th>
                             </tr>
                             <tr>
                             <?php foreach ($data['randomReports'] as $i => $report): ?>
 
                             <tr>
-                                <td><?php echo $report['emri']?></td>
-                                <td><?php echo $report['dt_raportimit']?></td>
-                                <td><?php echo $report['gjendja']?></td>
-                                <td><?php echo $report['name']?></td>
-                                <td><img width="120" src="<?php echo $random['foto']?>"</td>
-                                <td>
-                                    <button class="btn main-color-bg" type = "button" data-toggle="modal" >Edit</button>
-                                    <form method="post" action="reports" style="display:inline">
-
-                                        <input type="hidden" name="remove"  value="<?php echo $data['random'][$i]['reID'] ?>">
-                                        <button type="submit" name="emergency" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Delete</button>
-                                    </form>
-                                </td>
+                                <td><?php echo $report['emri'] ?>  </td>
+                                    <td><?php echo $report['dt_raportimit'] ?>  </td>
+                                    <td><?php echo $report['address'] ?>  </td>
+                                    <td><?php echo $report['description'] ?>  </td>
+                                    <td><img width="120"  src="<?php echo $report['foto']?>" ></td>
+                                    <td>
+                                        <form method="post" action="policeReports" style="display:inline">
+                                            <input type="hidden" name="remove"  value="<?php echo $data['reports'][$i]['reID'] ?>">
+                                            <button type="submit" name="take" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Take</button>
+                                        </form> 
+                                    </td>
                             </tr>
                             <?php endforeach; ?>  
                             <?php echo '<pre>'; 

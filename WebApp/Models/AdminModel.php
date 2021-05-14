@@ -224,7 +224,7 @@ class AdminModel
         $this->db->query('SELECT reID, emri, dt_raportimit, gjendja, name, foto
                               FROM status s INNER JOIN report r on s.sID=r.sID
                               LEFT JOIN users u on r.uID=u.uID
-                              WHERE Emergency =1');
+                              WHERE Emergency =1 and r.sID = 1');
 
         $result = $this->db->resultSet();
 
@@ -237,7 +237,7 @@ class AdminModel
         $this->db->query('SELECT reID,emri, dt_raportimit, gjendja, name, foto
                               FROM status s INNER JOIN report r on s.sID=r.sID
                               LEFT JOIN users u on r.uID=u.uID
-                              WHERE Emergency =0');
+                              WHERE  r.sID =2 or  r.sID =3');
 
         $result = $this->db->resultSet();
 

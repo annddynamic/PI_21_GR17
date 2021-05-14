@@ -7,9 +7,9 @@ class policePanelController extends Controller
 
     public function __construct()
     {
-        // $this->adminModel = $this->Model('AdminModel');
+        $this->adminModel = $this->Model('AdminModel');
 
-        $this->adminModel=new AdminModel();
+        $this->policeModel = new PoliceModel();
 
     }
 
@@ -17,40 +17,48 @@ class policePanelController extends Controller
 
         $data=[
 
-            'reports'=> $this->adminModel->getEmergencyReports(),
+            'reports'=> $this->policeModel->getEmergencyReports(),
             'user' => $this->adminModel->getUsers(),
             'count' => $this->adminModel->countUsers(),
             'reportCount' => $this->adminModel->countReport(),
-            'randomReports' => $this->adminModel->getReports()
+            'randomReports' => $this->policeModel->getRandomeReports(),
+            'myReports' => $this->policeModel->myReports()
         ];
         
         return $data;
     }
 
-    // public function deleteReportt(){
+    public function takeReport(){
 
-    //     $data = [
-    //         'uID' => '',
-    //     ];
+        $data = [
+            'uID' => '',
+        ];
 
-    //     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['emergency'])) {
-
-    //         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['take'])) {
 
 
-    //         $data = [
-    //             'uID' => $_POST['remove'],
-    //         ];
+                $data = [
+                    'uID' => $_POST['remove'],
+                    'session' => $_POST['session']
+                ];
 
-    //         if ($this->adminModel->deleteReport($data)) {
+            // echo '<pre>';
+            // var_dump($data);
+            // echo '</pre>';
 
-    //             header('location:reports');
+            // echo '<pre>';
+            // var_dump($_SESSION);
+            // echo '</pre>';
 
-    //         } else {
-    //             die('Something went wrong. ');
-    //         }
-    //     }
-    //     return $data;
-    // }
+            if ($this->policeModel->takeReport($data)) {
+
+                header('location:policeReports');
+
+            } else {
+                die('Something went wrong. ');
+            }
+        }
+        
+    }
 
 }

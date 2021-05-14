@@ -164,14 +164,14 @@ if (isset($data)) {
                                                                         text-align:center;
                                                                         margin-left: auto;
                                                                         margin-right: auto;
-                                                                       " src="<?php echo $emergency['foto'] ?>"</td>
+                                                                       " src="<?php echo $emergency['foto'] ?>"></td>
                                     <td>
-
-                                        <input type="hidden" name="remove"
-                                               value="<?php echo $data['emergency'][$i]['reID'] ?>">
-                                        <button type="submit" name="emergency" value="" style="margin-left:-30px"
-                                                class="pull-right btn btn-danger">Delete
-                                        </button>
+                                        <form action="reports" method ="post">    
+                                            <input type="hidden" name="remove"
+                                                value="<?php echo $data['emergency'][$i]['reID'] ?>">
+                                            <button type="submit" name="emergency" value="" style="margin-left:-30px"
+                                                    class="pull-right btn btn-danger">Delete
+                                            </button>
                                         </form>
                                     </td>
                                 </tr>
@@ -211,12 +211,12 @@ if (isset($data)) {
                                                                         margin-right: auto;
                                                                        " src="<?php echo $random['foto'] ?>"</td>
                                         <td>
-
-                                            <input type="hidden" name="remove"
-                                                   value="<?php echo $data['random'][$i]['reID'] ?>">
-                                            <button type="submit" name="emergency" value="" style="margin-left:-30px"
-                                                    class="pull-right btn btn-danger">Delete
-                                            </button>
+                                            <form action="reports" method ="post">    
+                                                <input type="hidden" name="remove"
+                                                    value="<?php echo $data['random'][$i]['reID'] ?>">
+                                                <button type="submit" name="emergency" value="" style="margin-left:-30px"
+                                                        class="pull-right btn btn-danger">Delete
+                                                </button>
                                             </form>
                                         </td>
                                     </tr>

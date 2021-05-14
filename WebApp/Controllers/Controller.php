@@ -86,7 +86,7 @@ class Controller extends Database {
             unset($_SESSION['name'] );
             unset($_SESSION['role'] );
 
-            header('location:index.php');
+            header('location:index');
         }
 
     }
