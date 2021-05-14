@@ -74,10 +74,8 @@ if (isset($data)) {
                 $number = 100;
                 $str = "Kosovo";
                 printf("There are %u criminal cases everyday in %s.", $number, $str);
-                ?> adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Doloremque ex expedita itaque iure nemo odio pariatur provident quos
-                tempora
-                velit.
+                echo  $data['models']['paragraph'];
+                ?>
             </p>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
