@@ -22,7 +22,8 @@ class policePanelController extends Controller
             'count' => $this->adminModel->countUsers(),
             'reportCount' => $this->adminModel->countReport(),
             'randomReports' => $this->policeModel->getRandomeReports(),
-            'myReports' => $this->policeModel->myReports()
+            'myReports' => $this->policeModel->myReports(),
+            'sendEmail' => $this->sendEmail()
         ];
         
         return $data;
@@ -41,13 +42,7 @@ class policePanelController extends Controller
                     'uID' => $_POST['remove'],
                 ];
 
-            // echo '<pre>';
-            // var_dump($data);
-            // echo '</pre>';
-
-            // echo '<pre>';
-            // var_dump($_SESSION);
-            // echo '</pre>';
+    
 
             if ($this->policeModel->takeReport($data)) {
 
@@ -58,6 +53,44 @@ class policePanelController extends Controller
             }
         }
         
+    }
+
+    public function sendEmail(){
+
+        $data = [
+            'to' => '',
+            'subject' => '',
+            'message' => '',
+            'emailError' => '',
+            'subjectError' => '',
+            'messageError' => ''
+                
+        ];
+
+        if(isset($_POST['submitF'])){
+
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'to' => trim($_POST['emailF']),
+                'subject' => trim($_POST['subjectF']),
+                'message' => trim($_POST['messageF']),
+                'subjectError' => '',
+                'emailError' => '',
+                'messageError' => '',
+            ];
+
+            echo '<pre>';
+            var_dump($data);
+            echo '</pre>';
+            $data['emailError'] = $this->isEmpty($data['to'],$data['emailError'], 'for receiver');
+            $data['subjectError'] = $this->isEmpty($data['subject'],$data['subjectError'], 'subject');
+            $data['messageError'] = $this->isEmpty($data['message'],$data['messageError'], 'message');
+            
+        }   
+        
+        return $data;
     }
 
 }

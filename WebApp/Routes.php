@@ -106,8 +106,11 @@ Route::set('signUpPolice', function(){
 
 
 Route::set('citizenPanel', function(){
-    $report = new ReportsController();
-    $data = $report->createReport();
+    // $report = new ReportsController();
+    // $data = $report->createReport();
+    $obj = new citizenPanelController();
+    $data = $obj->getData();
+    $obj->sendEmail();
     
     Controller::CreateView('CitizenPanel', $data);
 //    Controller::logout();

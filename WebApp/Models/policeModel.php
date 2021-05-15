@@ -85,6 +85,13 @@ Class PoliceModel extends Database {
 
     }
 
+    public function allMyReports(){
+        $this->db->query('SELECT reID,emri, dt_raportimit, description, address, foto
+        FROM status s INNER JOIN report r on s.sID=r.sID
+        LEFT JOIN users u on r.uID=u.uID
+        where r.uID=:sessionID and  ');
+    }
+
 }
 
 ?>  
