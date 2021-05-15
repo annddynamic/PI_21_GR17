@@ -110,8 +110,7 @@ Route::set('citizenPanel', function(){
     // $data = $report->createReport();
     $obj = new citizenPanelController();
     $data = $obj->getData();
-    $obj->sendEmail();
-    
+
     Controller::CreateView('CitizenPanel', $data);
 //    Controller::logout();
 });
