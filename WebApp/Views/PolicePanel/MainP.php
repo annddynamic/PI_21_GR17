@@ -58,10 +58,9 @@
 <?php
 
 include "navbarP.php";
+if (isset($data)) {
 
-echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>';
+}
 
 
 ?>
@@ -103,27 +102,9 @@ echo '</pre>';
                         Dashboard
                     </a>
                     <a href="policeReports" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
-                      Reports<span class="badge"><?php echo $data['count'][0]['COUNT(name)']   ?></span></a>
+                      Reports<span class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
                     <a href="myReports" class="list-group-item "><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
                      My Reports<span class="badge">12</span></a>
-                </div>
-
-                <div class="well">
-                    <h4>Reports resolved</h4>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            60%
-                        </div>
-                    </div>
-                    <h4>Reports this week</h4>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                            40%
-                        </div>
-                    </div>
-                   
-
-
                 </div>
             </div>
             <div class="col-md-9">
@@ -328,6 +309,12 @@ echo '</pre>';
 </div>
 
 </body>
+
+<?php
+echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>';
+?>
 <!--Review Request-->
 
 <!--Add Article-->

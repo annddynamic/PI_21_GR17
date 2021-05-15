@@ -1,9 +1,7 @@
 <?php
 if (isset($data)) {
 
-    echo '<pre>';
-    var_dump($_SESSION);
-    echo '</pre>';
+
     $errors = $data['rep']->getErrors();
     $datta = $data['rep']->getData();
 

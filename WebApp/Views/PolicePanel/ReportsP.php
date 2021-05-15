@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,7 +18,7 @@
 <?php
 include "navbarP.php";
 // session_start();
-if(isset($data)){
+if (isset($data)) {
     // echo '<pre>';
     // var_dump($_SESSION);
     // echo '</pre>';
@@ -28,49 +26,32 @@ if(isset($data)){
 
 ?>
 
-<header id ="header">
+<header id="header">
     <div class="container">
         <div class="row">
             <div class="col-md-10">
-                <h1><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span> Reports </h1>
+                <h1><span class="glyphicon glyphicon-list-alt" aria-hidden="" true> </span> Reports </h1>
             </div>
-            
+
         </div>
     </div>
 </header>
 
 <section id="main">
-    <div class ="container">
+    <div class="container">
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="policePanel" class="list-group-item  " ><span class ="glyphicon glyphicon-cog" aria-hidden="" true> </span>
+                    <a href="policePanel" class="list-group-item  "><span class="glyphicon glyphicon-cog" aria-hidden=""
+                                                                          true> </span>
                         Dashboard
                     </a>
-                    <a href="#" class="list-group-item main-color-bg active"><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span>  
-                      Reports<span class="badge"><?php echo $data['count'][0]['COUNT(name)']   ?></span></a>
-                    <a href="myReports" class="list-group-item "><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
-                     My Reports<span class="badge">12</span></a>
-                </div>
-
-                <div class="well">
-                    <h4>Number of reports resolved</h4>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            60%
-                        </div>
-                    </div>
-                    <h4>lorem lorem</h4>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                            40%
-                        </div>
-                    
-                    </div>
-                    <div>
-                    
-                    </div>
-                   
+                    <a href="#" class="list-group-item main-color-bg active"><span class="glyphicon glyphicon-list-alt"
+                                                                                   aria-hidden="" true> </span>
+                        Reports<span class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
+                    <a href="myReports" class="list-group-item "><span class="glyphicon glyphicon-list-alt"
+                                                                       aria-hidden="" true> </span>
+                        My Reports<span class="badge">12</span></a>
                 </div>
             </div>
             <div class="col-md-9">
@@ -90,49 +71,9 @@ if(isset($data)){
                                 <th class="main-color-bg">Take</th>
 
                             </tr>
-                          <?php foreach($data['reports'] as $i => $report): ?>      
-                            <tr>
-                                <td><?php echo $report['emri'] ?>  </td>
-                                <td><?php echo $report['dt_raportimit'] ?>  </td>
-                                <td><?php echo $report['address'] ?>  </td>
-                                <td><?php echo $report['description'] ?>  </td>
-                                <td><img height="120" style="display:block;
-                                                                        text-align:center;
-                                                                        margin-left: auto;
-                                                                        margin-right: auto;
-                                                                       "  src="<?php echo $report['foto']?>" ></td>
-                                <td>
-                                    <form method="post" action="policeReports" style="display:inline">
-                                        <input type="hidden" name="remove"  value="<?php echo $data['reports'][$i]['reID'] ?>">
-                                        <button type="submit" name="take" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Take</button>
-                                    </form> 
-                                 </td>
-                            </tr>
-                            <?php endforeach; ?>  
-                        </table>
-                    </div>
-
-                </div>
-                                
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><b>RANDOM REPORTS</b></h3>
-                    </div>
-                    <div class="panel-body myPanel">
-                        <table class="table  table-hover tbl" id="random">
-                            <tr>
-                            <th class="main-color-bg">Name</th>
-                                <th class="main-color-bg">Data</th>
-                                <th class="main-color-bg">Address</th>
-                                <th class="main-color-bg">Description</th>
-                                <th class="main-color-bg">Foto</th>
-                                <th class="main-color-bg">Take</th>
-                            </tr>
-                            <tr>
-                            <?php foreach ($data['randomReports'] as $i => $report): ?>
-
-                            <tr>
-                                <td><?php echo $report['emri'] ?>  </td>
+                            <?php foreach ($data['reports'] as $i => $report): ?>
+                                <tr>
+                                    <td><?php echo $report['emri'] ?>  </td>
                                     <td><?php echo $report['dt_raportimit'] ?>  </td>
                                     <td><?php echo $report['address'] ?>  </td>
                                     <td><?php echo $report['description'] ?>  </td>
@@ -140,22 +81,25 @@ if(isset($data)){
                                                                         text-align:center;
                                                                         margin-left: auto;
                                                                         margin-right: auto;
-                                                                       "  src="<?php echo $report['foto']?>"></td>
+                                                                       " src="<?php echo $report['foto'] ?>"></td>
                                     <td>
                                         <form method="post" action="policeReports" style="display:inline">
-                                            <input type="hidden" name="remove"  value="<?php echo $data['reports'][$i]['reID'] ?>">
-                                            <button type="submit" name="take" value="" style="margin-left: 10px" class="pull-right btn btn-danger">Take</button>
-                                        </form> 
+                                            <input type="hidden" name="remove"
+                                                   value="<?php echo $data['reports'][$i]['reID'] ?>">
+                                            <button type="submit" name="take" value="" style="margin-left: 10px"
+                                                    class="pull-right btn btn-danger">Take
+                                            </button>
+                                        </form>
                                     </td>
-                            </tr>
-                            <?php endforeach; ?>  
-                            <?php echo '<pre>'; 
-                            var_dump($data['randomReports']);
-                            echo '</pre>'; ?>   
+                                </tr>
+                            <?php endforeach; ?>
                         </table>
                     </div>
+
+                </div>
             </div>
         </div>
+        <div style="height: 110px"></div>
     </div>
 </section>
 <footer id="footer">
@@ -169,7 +113,8 @@ if(isset($data)){
         <div class="modal-content">
             <form>
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Add User</h4>
                 </div>
                 <div class="modal-body">
@@ -240,12 +185,12 @@ if(isset($data)){
                 </div>
                 <div class="modal-body" style="background: #f4f4f4">
 
-                    <h2  >Are you sure?</h2>
+                    <h2>Are you sure?</h2>
                     <hr>
 
                     <div class="text-center">
-                        <a href="signUpPolice.php"class="btn btn-default btn-lg main-color-bg" role="button">NO</a>
-                        <a href="signUpCitizen.php"class="btn btn-default  btn-lg main-color-bg" role="button">YES</a>
+                        <a href="signUpPolice.php" class="btn btn-default btn-lg main-color-bg" role="button">NO</a>
+                        <a href="signUpCitizen.php" class="btn btn-default  btn-lg main-color-bg" role="button">YES</a>
 
                     </div>
 

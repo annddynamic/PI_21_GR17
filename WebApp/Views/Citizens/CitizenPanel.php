@@ -1,14 +1,8 @@
 <?php
 
-echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>';
 
 if (isset($data)) {
-//    echo '<pre>';
-//    var_dump($data);
-//    echo '</pre>';
-    // echo $data['sendEmail']['emailError'];
+
     $sendEmail=$data['sendEmail'];
 }
 
@@ -103,16 +97,10 @@ if (isset($data)) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">PolicePanel</a>
+            <a class="navbar-brand" href="#">Citizen Panel</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class=""><a href="..WebApp/PolicePanel/MainP.php">Dashboard</a></li>
 
-
-                <li><a href="../AdminPanel/articles.php">Articles</a></li>
-
-            </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="citizenPanel">Welcome <?php echo isset($_SESSION['name']) ? $_SESSION['name'] : null;  ?></a></li>
@@ -130,20 +118,7 @@ if (isset($data)) {
                 <div class="col-md-4">
                     <h1><span class="glyphicon glyphicon-cog" aria-hidden="" true> </span>Dashboard </h1>
                 </div>
-                <div class="col-md-8 ">
-
-                    <div class="search-box">
-
-                        <input class="search-text" type="text" name="" placeholder="Type to search">
-                        <a class="search-btn" href="#">
-                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-
-                        </a>
-                    </div>
-                </div>
-
             </div>
-
         </div>
     </div>
 </header>
@@ -544,7 +519,10 @@ if (isset($data)) {
     <footer id="footer">
         <pr>Copyright Adminstrap, &copy; 2021</pr>
     </footer>
-
+    <?php echo '<pre>';
+    var_dump($_SESSION);
+    echo '</pre>';
+    ?>
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="../Assets/js/bootstrap.min.js"></script>

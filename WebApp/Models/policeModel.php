@@ -66,15 +66,52 @@ Class PoliceModel extends Database {
 
     }
 
-
     public function myReports(){
         
 
         $this->db->query('SELECT reID,emri, dt_raportimit, description, address, foto
                               FROM status s INNER JOIN report r on s.sID=r.sID
                               LEFT JOIN users u on r.uID=u.uID
-                              where r.uID=:sessionID');
+                              WHERE r.uID=:sessionID and s.sID=2');
 
+
+        $this->db->bind(':sessionID', $_SESSION['user_id']);
+
+        $result = $this->db->resultSet();
+
+        return $result;
+
+
+    }
+
+    public function finishReport($data){
+
+
+        $this->db->query('UPDATE report
+                              SET sID=3
+                              WHERE reID=:reID');
+
+        $this->db->bind(':reID', $data['uID']);
+
+        $this->db1->query('UPDATE users
+                               SET inDuty=0
+                               WHERE uID=:uID');
+
+        $this->db1->bind(':uID', $_SESSION['user_id']);
+
+        if($this->db->execute() && $this->db1->execute()){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public function finishedReports(){
+
+        $this->db->query('SELECT reID,emri, dt_raportimit, description, address, foto
+                              FROM status s INNER JOIN report r on s.sID=r.sID
+                              LEFT JOIN users u on r.uID=u.uID
+                              WHERE r.uID=:sessionID and s.sID=3');
 
         $this->db->bind(':sessionID', $_SESSION['user_id']);
 
@@ -92,6 +129,18 @@ Class PoliceModel extends Database {
         where r.uID=:sessionID and  ');
     }
 
+    public function getCitizens()
+    {
+        $this->db->query('SELECT name,surname,gender,data_lindjes,rruga,email,role_name 
+                              FROM users u INNER JOIN roles r ON u.role_ID = r.role_ID 
+                              WHERE u.role_ID=3');
+
+        $result = $this->db->resultSet();
+
+        sort($result);
+
+        return $result;
+    }
 }
 
 ?>  

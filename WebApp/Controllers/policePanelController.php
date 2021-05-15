@@ -18,7 +18,7 @@ class policePanelController extends Controller
         $data=[
 
             'reports'=> $this->policeModel->getEmergencyReports(),
-            'user' => $this->adminModel->getUsers(),
+            'user' => $this->policeModel->getCitizens(),
             'count' => $this->adminModel->countUsers(),
             'reportCount' => $this->adminModel->countReport(),
             'randomReports' => $this->policeModel->getRandomeReports(),
