@@ -5,9 +5,9 @@ var_dump($_SESSION);
 echo '</pre>';
 
 if (isset($data)) {
-    echo '<pre>';
-    var_dump($data);
-    echo '</pre>';
+//    echo '<pre>';
+//    var_dump($data);
+//    echo '</pre>';
     // echo $data['sendEmail']['emailError'];
     $sendEmail=$data['sendEmail'];
 }
@@ -115,7 +115,7 @@ if (isset($data)) {
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="citizenPanel">Welcome <?php echo $_SESSION['name']; ?></a></li>
+                <li><a href="citizenPanel">Welcome <?php echo isset($_SESSION['name']) ? $_SESSION['name'] : null;  ?></a></li>
                 <li><a href="index">Logout</a></li>
             </ul>
         </div>

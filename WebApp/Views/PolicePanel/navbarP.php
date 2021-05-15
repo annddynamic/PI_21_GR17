@@ -22,7 +22,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Welcome</a></li>
+                <li><a href="#">Welcome <?php echo isset($_SESSION['name']) ? $_SESSION['name'] : null;?></a></li>
                 <li><a href="index">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
