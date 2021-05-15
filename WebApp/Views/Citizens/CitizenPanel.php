@@ -410,8 +410,6 @@ if (isset($data)) {
 
 
 
-    </div>
-
         <div class="modal fade" tabindex="-1" role="dialog" id="feedback">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -437,13 +435,14 @@ if (isset($data)) {
                                     <div class="form-group">
                                         <label for="subject">
                                             Subject</label>
-                                        <input type="text" class="form-control" placeholder="Enter subject" name="subjectF">
+                                        <input type="text" class="form-control" placeholder="Enter subject" name="subjectF" />
                                         <span class="invalidFeedback"><?php echo isset($sendEmail['subjectError']) ? $sendEmail['subjectError'] : null; ?></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Message</label>
+                                        <!-- <textarea name="textfield"placeholder="Add Message" value=""><?php if(isset($_POST['textfield'])) { echo $_POST['textfield']; } ?>  </textarea> -->
                                         <textarea name="messageF" class="form-control" rows="9" cols="25" placeholder="Message"></textarea>
                                         <span class="invalidFeedback"><?php echo isset($sendEmail['messageError']) ? $sendEmail['messageError'] : null; ?></span>
                                     </div>
@@ -456,10 +455,12 @@ if (isset($data)) {
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" name="submitF" class="btn btn-primary">Submit</button>
                         </div>
-                    </form>
                 </div>
+                </form>
             </div>
         </div>
+    </div>
+
     <!-- <script>
         document.getElementById('sendEmail').addEventListener('click', function(e){
             e.preventDefault();
