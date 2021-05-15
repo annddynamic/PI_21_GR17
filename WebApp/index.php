@@ -11,6 +11,7 @@ spl_autoload_register(function ($class_name) {
     }
 });
 
+require_once('PHPMailerAutoload.php');
 require_once ('sessionhelper.php');
 require_once('Routes.php');
 
