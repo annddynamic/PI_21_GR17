@@ -140,7 +140,7 @@ if (isset($data)) {
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><b>EMERGENCY REPORTS</b></h3>
+                        <h3 class="panel-title"><b>REPORTS NOT TAKEN</b></h3>
                     </div>
                     <div class="panel-body myPanel">
                         <table class="table  table-hover tbl" id="emergency">
@@ -184,7 +184,7 @@ if (isset($data)) {
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><b>RANDOM REPORTS</b></h3>
+                        <h3 class="panel-title"><b>REPORTS IN PROCCESS / FINISHED</b></h3>
                     </div>
                     <div class="panel-body myPanel">
                         <table class="table  table-hover tbl" id="random">
@@ -212,8 +212,8 @@ if (isset($data)) {
                                                                        " src="<?php echo $random['foto'] ?>"></td>
                                         <td>
                                             <form action="reports" method ="post">    
-                                                <input type="hidden" name="remove"
-                                                    value="<?php echo $data['random'][$i]['reID'] ?>">
+                                                <input type="hidden" name="remove" value="<?php echo $data['random'][$i]['reID'] ?>">
+                                                <input type="hidden" name="userID" value="<?php echo $data['random'][$i]['uID'] ?>">
                                                 <button type="submit" name="emergency" value="" style="margin-left:-30px"
                                                         class="pull-right btn btn-danger">Delete
                                                 </button>

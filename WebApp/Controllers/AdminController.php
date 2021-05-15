@@ -309,7 +309,8 @@ class AdminController extends Controller
     public function deleteReport()
     {
         $data = [
-            'uID' => '',
+            'reID' => '',
+            'user_ID'=>''
         ];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['emergency'])) {
@@ -318,7 +319,8 @@ class AdminController extends Controller
 
 
             $data = [
-                'uID' => $_POST['remove'],
+                'reID' => $_POST['remove'],
+                'user_ID'=>$_POST['userID']
             ];
 
             if ($this->adminModel->deleteReport($data)) {

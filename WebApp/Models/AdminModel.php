@@ -7,6 +7,7 @@ class AdminModel
     public function __construct()
     {
         $this->db = new Database();
+        $this->db1 = new Database();
     }
 
     public function addPolice($data)
@@ -121,11 +122,18 @@ class AdminModel
     public function deleteReport($data){
 
 
-        $this->db->query('DELETE FROM report WHERE reID=:id');
+        $this->db->query('DELETE FROM report WHERE reID=:reID');
 
-        $this->db->bind(':id', $data['uID']);
+        $this->db->bind(':reID', $data['reID']);
 
-        if ($this->db->execute()) {
+        $this->db1->query('UPDATE users
+        SET inDuty=0
+        WHERE uID=:uID');
+
+        $this->db1->bind(':uID', $data['user_ID']);
+
+
+        if ($this->db->execute() && $this->db1->execute()) {
             return true;
         } else {
             return false;
@@ -221,7 +229,7 @@ class AdminModel
 
     public function getEmergencyReports(){
 
-        $this->db->query('SELECT reID, emri, dt_raportimit, gjendja, name, foto
+        $this->db->query('SELECT reID, emri, dt_raportimit, gjendja, name, foto, r.uID
                               FROM status s INNER JOIN report r on s.sID=r.sID
                               LEFT JOIN users u on r.uID=u.uID
                               WHERE Emergency =1 and r.sID = 1');
@@ -234,7 +242,7 @@ class AdminModel
 
     public function getRandomeReports(){
 
-        $this->db->query('SELECT reID,emri, dt_raportimit, gjendja, name, foto
+        $this->db->query('SELECT reID,emri, dt_raportimit, gjendja, name, foto, r.uID
                               FROM status s INNER JOIN report r on s.sID=r.sID
                               LEFT JOIN users u on r.uID=u.uID
                               WHERE  r.sID =2 or  r.sID =3');
