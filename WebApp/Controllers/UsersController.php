@@ -423,6 +423,7 @@ class UsersController extends Controller
         $_SESSION['email'] = $user->email;
         $_SESSION['name'] = $user->name;
         $_SESSION['role'] = $user->role_ID;
+        $_SESSION['password'] = $user->password;
 
         if ($_SESSION['role'] == 2) {
             header('location:policePanel');

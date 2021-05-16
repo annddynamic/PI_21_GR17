@@ -114,6 +114,11 @@ Route::set('citizenPanel', function(){
     Controller::CreateView('CitizenPanel', $data);
 //    Controller::logout();
 });
+Route::set('manageAccount', function (){
+    $obj = new citizenPanelController();
+    $obj->changePassword();
+    Controller::CreateView('manageAccount');
+});
 
 Route::set('policePanel', function(){
     $obj = new policePanelController();
@@ -140,3 +145,4 @@ Route::set('policeReports', function(){
     // $obj->deleteReportt();
     Controller::CreateView('ReportsP', $data);
 });
+

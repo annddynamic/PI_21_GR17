@@ -4,6 +4,8 @@
 if (isset($data)) {
 
     $sendEmail=$data['sendEmail'];
+
+
 }
 
 ?>
@@ -100,8 +102,9 @@ if (isset($data)) {
             <a class="navbar-brand" href="#">Citizen Panel</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-
-
+            <ul class="nav navbar-nav">
+                <li class=""><a href="manageAccount">Manage Account</a></li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="citizenPanel">Welcome <?php echo isset($_SESSION['name']) ? $_SESSION['name'] : null;  ?></a></li>
                 <li><a href="index">Logout</a></li>
@@ -519,10 +522,10 @@ if (isset($data)) {
     <footer id="footer">
         <pr>Copyright Adminstrap, &copy; 2021</pr>
     </footer>
-    <?php echo '<pre>';
-    var_dump($_SESSION);
-    echo '</pre>';
-    ?>
+<!--    --><?php //echo '<pre>';
+//    var_dump($_SESSION);
+//    echo '</pre>';
+//    ?>
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="../Assets/js/bootstrap.min.js"></script>

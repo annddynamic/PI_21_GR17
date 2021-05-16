@@ -120,6 +120,69 @@ class citizenPanelController extends Controller
         return $data;
     }
 
+    public function changePassword(){
+
+        $data=[
+            'currentPassword'=>'',
+            'currentPasswordError'=>'',
+            'newPassword'=>'',
+            'newPasswordError'=>'',
+            'confirmPassword'=>'',
+            'confirmPasswordError'=>'',
+        ];
+
+        if(isset($_POST['change'])){
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data=[
+                'currentPassword'=>trim($_POST['Cpassword']),
+                'newPassword'=>trim($_POST['Npassword']),
+                'confirmPassword'=>trim($_POST['password']),
+                'currentPasswordError'=>'',
+                'newPasswordError'=>'',
+                'confirmPasswordError'=>'',
+
+            ];
+
+            if(empty($data['currentPassword'])){
+                $data['currentPasswordError']='Please enter current password!';
+            }else if(!password_verify($data['currentPassword'], $_SESSION['password'])){
+                $data['currentPasswordError']='Your password is incorrect!';
+            }
+
+            $passwordValidation = "/^(.{0,15}|{^a-z]*|{^\d}*)$/i";
+
+            if (empty($data['newPassword'])) {
+                $data['newPasswordError'] = 'Please enter password.';
+            } else if (strlen($data['newPassword'] < 6)) {
+                $data['newPasswordError'] = 'Password must be at least 8 characters.';
+            } else if (!preg_match($passwordValidation, $data['newPassword'])) {
+                $data['newPasswordError'] = 'Password must have at least one numeric value.';
+            }
+
+            //Validate password on length and numeric value
+            if (empty($data['confirmPassword'])) {
+                $data['confirmPasswordError'] = 'Please enter password.';
+            } else {
+                if ($data['newPassword'] != $data['confirmPassword']) {
+                    $data['confirmPasswordError'] = 'Password do not match, please try again.';
+                }
+            }
+
+            echo '<pre>';
+            var_dump($data);
+            echo '</pre>';
+
+
+
+        }else{
+            return $data;
+        }
+
+        return $data;
+    }
+
 }
 
 
