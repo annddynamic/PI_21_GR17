@@ -118,7 +118,6 @@ Route::set('citizenPanel', function(){
 Route::set('policePanel', function(){
     $obj = new policePanelController();
     // $data=$obje->getAssoc();
-    
     $data=$obj->getData();
     Controller::CreateView('MainP', $data);
 //    Controller::logout();
@@ -127,6 +126,7 @@ Route::set('policePanel', function(){
 Route::set('myReports', function(){
     $obj = new policePanelController();
     $data = $obj->getData();
+    $obj->finishReport();
     $admCont = new AdminController();
     Controller::CreateView('myReports', $data);
 });

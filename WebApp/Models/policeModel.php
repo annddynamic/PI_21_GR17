@@ -27,6 +27,27 @@ Class PoliceModel extends Database {
 
     }
 
+    public function countReports()
+    {
+        $this->db->query('SELECT COUNT(emri) FROM report WHERE sID=1');
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+    public function countActiveReports()
+    {
+        $this->db->query('SELECT COUNT(emri) FROM report WHERE sID=2 and uID =:sessionID');
+
+        $this->db->bind(':sessionID', $_SESSION['user_id']);
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+
+
     public function getRandomeReports(){
 
         $this->db->query('SELECT reID,emri, dt_raportimit, description, address, foto
@@ -91,7 +112,7 @@ Class PoliceModel extends Database {
                               SET sID=3
                               WHERE reID=:reID');
 
-        $this->db->bind(':reID', $data['uID']);
+        $this->db->bind(':reID', $data['reID']);
 
         $this->db1->query('UPDATE users
                                SET inDuty=0

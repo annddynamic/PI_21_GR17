@@ -102,9 +102,9 @@ if (isset($data)) {
                         Dashboard
                     </a>
                     <a href="policeReports" class="list-group-item"><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
-                      Reports<span class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
+                      Reports<span class="badge"><?php echo $data['countReports'][0]['COUNT(emri)'] ?></span></a>
                     <a href="myReports" class="list-group-item "><span class ="glyphicon glyphicon-list-alt" aria-hidden="" true> </span>
-                     My Reports<span class="badge">12</span></a>
+                     My Reports<span class="badge"><?php echo $data['countActiveReports'][0]['COUNT(emri)'] ?></span></a>
                 </div>
             </div>
             <div class="col-md-9">
@@ -115,13 +115,13 @@ if (isset($data)) {
                     <div class="panel-body">
                         <div class="col-md-6">
                             <div class="well dash-box">
-                                <h2><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span> <?php echo $data['count'][0]['COUNT(name)']   ?>  </h2>
+                                <h2><span class ="glyphicon glyphicon-user" aria-hidden=""true> </span> <?php echo $data['countCitizens'][0]['COUNT(name)'] ?></h2>
                                 <h4>Users</h4>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class=" well dash-box">
-                                <h2><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span> <?php echo $data['reportCount'][0]['COUNT(emri)'] ?>  </h2>
+                                <h2><span class ="glyphicon glyphicon-list-alt" aria-hidden=""true> </span><?php echo $data['countReports'][0]['COUNT(emri)'] ?></h2>
                                 <h4>Reports</h4>
                             </div>
                         </div>
@@ -143,8 +143,7 @@ if (isset($data)) {
                                 <th class="main-color-bg">Dob</th>
                                 <th class="main-color-bg">Address</th>
                                 <th class="main-color-bg">Email</th>
-                                <th class="main-color-bg">Role
-                                </th>
+
                             </tr>
                             <tbody>
                             <?php foreach ($data['user'] as $i => $user): ?>
@@ -155,7 +154,6 @@ if (isset($data)) {
                                     <td><?php echo $user['data_lindjes'] ?></td>
                                     <td><?php echo $user['rruga'] ?></td>
                                     <td><?php echo $user['email'] ?></td>
-                                    <td><?php echo $user['role_name'] ?></td>
                                 </tr>
                             <?php endforeach; ?>  
                             </tbody>

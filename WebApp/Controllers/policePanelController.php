@@ -23,6 +23,12 @@ class policePanelController extends Controller
             'reportCount' => $this->adminModel->countReport(),
             'randomReports' => $this->policeModel->getRandomeReports(),
             'myReports' => $this->policeModel->myReports(),
+            'countReports'=>$this->policeModel->countReports(),
+            'finishedReports'=>$this->policeModel->finishedReports(),
+            'countCitizens' => $this->adminModel->countCitizens(),
+            'countActiveReports' => $this->policeModel->countActiveReports(),
+
+
         ];
         
         return $data;
@@ -52,6 +58,34 @@ class policePanelController extends Controller
             }
         }
         
+    }
+
+    public function finishReport(){
+        $data = [
+            'reID' => '',
+        ];
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['finish'])) {
+
+            $data = [
+                'reID' => $_POST['reID'],
+            ];
+
+
+            if ($this->policeModel->finishReport($data)) {
+
+                header('location:myReports');
+
+            } else {
+                die('Something went wrong. ');
+            }
+
+            echo '<pre>';
+            var_dump($data);
+            echo '</pre>';
+        }
+
+
     }
 
 //    public function sendEmail(){

@@ -43,15 +43,15 @@ if (isset($data)) {
             <div class="col-md-3">
                 <div class="list-group">
                     <a href="policePanel" class="list-group-item  "><span class="glyphicon glyphicon-cog" aria-hidden=""
-                                                                          true> </span>
+                                                                          true></span>
                         Dashboard
                     </a>
                     <a href="#" class="list-group-item main-color-bg active"><span class="glyphicon glyphicon-list-alt"
                                                                                    aria-hidden="" true> </span>
-                        Reports<span class="badge"><?php echo $data['reportCount'][0]['COUNT(emri)'] ?></span></a>
+                        Reports<span class="badge"><?php echo $data['countReports'][0]['COUNT(emri)'] ?></span></a>
                     <a href="myReports" class="list-group-item "><span class="glyphicon glyphicon-list-alt"
                                                                        aria-hidden="" true> </span>
-                        My Reports<span class="badge">12</span></a>
+                        My Reports<span class="badge"><?php echo $data['countActiveReports'][0]['COUNT(emri)'] ?></span></a>
                 </div>
             </div>
             <div class="col-md-9">
@@ -68,7 +68,7 @@ if (isset($data)) {
                                 <th class="main-color-bg">Address</th>
                                 <th class="main-color-bg">Description</th>
                                 <th class="main-color-bg">Foto</th>
-                                <th class="main-color-bg">Take</th>
+                                <th class="main-color-bg"></th>
 
                             </tr>
                             <?php foreach ($data['reports'] as $i => $report): ?>
@@ -86,8 +86,8 @@ if (isset($data)) {
                                         <form method="post" action="policeReports" style="display:inline">
                                             <input type="hidden" name="remove"
                                                    value="<?php echo $data['reports'][$i]['reID'] ?>">
-                                            <button type="submit" name="take" value="" style="margin-left: 10px"
-                                                    class="pull-right btn btn-danger">Take
+                                            <button type="submit" name="take" value="" style="margin-left: -27px"
+                                                    class="pull-right btn btn-primary">Take
                                             </button>
                                         </form>
                                     </td>
