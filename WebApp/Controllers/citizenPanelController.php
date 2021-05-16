@@ -9,7 +9,8 @@ class citizenPanelController extends Controller
     public function __construct()
     {
 
-        // $this->policeModel = new PoliceModel();
+         $this->citizenModel = new CitizenModel();
+         $this->userModel=new UserModel();
 
     }
 
@@ -17,7 +18,8 @@ class citizenPanelController extends Controller
 
         $data=[
 
-            'sendEmail' => $this->sendEmail()
+            'sendEmail' => $this->sendEmail(),
+            'editUser' => $this->changeData()
         ];
         
         return $data;
@@ -120,9 +122,11 @@ class citizenPanelController extends Controller
         return $data;
     }
 
-    public function changePassword(){
+    public function changeData(){
 
         $data=[
+            'newEmail'=>'',
+            'newEmailError'=>'',
             'currentPassword'=>'',
             'currentPasswordError'=>'',
             'newPassword'=>'',
@@ -139,11 +143,22 @@ class citizenPanelController extends Controller
                 'currentPassword'=>trim($_POST['Cpassword']),
                 'newPassword'=>trim($_POST['Npassword']),
                 'confirmPassword'=>trim($_POST['password']),
+                'newEmail'=>trim($_POST['nEmail']),
                 'currentPasswordError'=>'',
                 'newPasswordError'=>'',
                 'confirmPasswordError'=>'',
+                'newEmailError'=>'',
 
             ];
+
+            if(empty($data['newEmail'])){
+                $data['newEmailError']='Please enter email!';
+            }else if(filter_var($data['newEmail'], FILTER_VALIDATE_EMAIL) === FALSE ){
+                $data['newEmailError'] = 'Please enter valid email';
+            }else if($this->userModel->findUserByEmailUsers($data['newEmail'])) {
+                $data['newEmailError'] = 'Email is already taken!';
+            }
+
 
             if(empty($data['currentPassword'])){
                 $data['currentPasswordError']='Please enter current password!';
@@ -151,14 +166,15 @@ class citizenPanelController extends Controller
                 $data['currentPasswordError']='Your password is incorrect!';
             }
 
-            $passwordValidation = "/^(.{0,15}|{^a-z]*|{^\d}*)$/i";
+            $passwordValidation = "/^(.{0,7}|{^a-z]*|{^\d}*)$/i";
+
 
             if (empty($data['newPassword'])) {
-                $data['newPasswordError'] = 'Please enter password.';
-            } else if (strlen($data['newPassword'] < 6)) {
-                $data['newPasswordError'] = 'Password must be at least 8 characters.';
+                $data['newPasswordError'] = 'Please enter password!';
+            } else if (strlen($data['newPassword']) < 6) {
+                $data['newPasswordError'] = 'Password must be at least 8 characters!';
             } else if (!preg_match($passwordValidation, $data['newPassword'])) {
-                $data['newPasswordError'] = 'Password must have at least one numeric value.';
+                $data['newPasswordError'] = 'Password must have at least one numeric value!';
             }
 
             //Validate password on length and numeric value
@@ -166,14 +182,29 @@ class citizenPanelController extends Controller
                 $data['confirmPasswordError'] = 'Please enter password.';
             } else {
                 if ($data['newPassword'] != $data['confirmPassword']) {
-                    $data['confirmPasswordError'] = 'Password do not match, please try again.';
+                        $data['confirmPasswordError'] = 'Password do not match, please try again!';
                 }
             }
 
-            echo '<pre>';
-            var_dump($data);
-            echo '</pre>';
 
+            if (
+                empty($data['newEmailError']) && empty($data['currentPasswordError']) &&
+                empty($data['newPasswordError']) && empty($data['confirmPasswordError'])){
+
+
+                $data['newPassword'] = password_hash($data['newPassword'], PASSWORD_DEFAULT);
+
+                //Register user from modal function
+
+                if($this->citizenModel->ChangeData($data)){
+                    $_SESSION['email']=$data['newEmail'];
+                    $_SESSION['password']=$data['newPassword'];
+
+                    header('location:citizenPanel');
+                }else{
+                    die('Something went wrong. ');
+                }
+            }
 
 
         }else{

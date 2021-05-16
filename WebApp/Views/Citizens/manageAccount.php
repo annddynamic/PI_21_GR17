@@ -4,6 +4,11 @@ echo '<pre>';
 var_dump($_SESSION);
 echo '</pre>';
 
+if(isset($data)){
+    $editUser=$data['editUser'];
+}
+
+
 ?>
 
 <!doctype html>
@@ -20,7 +25,7 @@ echo '</pre>';
     <link rel="shortcut icon" type="image/jpg" href="../Assets/img/fav.png"/>
     <link rel="stylesheet" href="../Assets/css/index.css">
 
-    <title>Sign Up</title>
+    <title>Manage Account</title>
 
     <style>
 
@@ -98,28 +103,33 @@ echo '</pre>';
         </div>
 
         <div class="form-group">
+            <label>New Email</label>
+            <input type="text" value="<?php echo isset($_POST['nEmail']) ? $_POST['nEmail'] : null;?>" name="nEmail"  placeholder="Enter New Email" class="form-control" >
+            <span style="color:red"><?php echo isset($editUser['newEmailError']) ? $editUser['newEmailError'] : null;?></span>
+        </div>
+
+        <div class="form-group">
             <label>Current password</label>
             <input type="password" class="form-control"  placeholder="Enter Current Password" name="Cpassword">
-            <span class="invalidFeedback"></span>
+            <span style="color:red"><?php echo isset($editUser['currentPasswordError']) ? $editUser['currentPasswordError'] : null;?></span>
 
         </div>
 
         <div class="form-group">
             <label>New password</label>
             <input type="password" class="form-control"  placeholder="Enter New Password" name="Npassword">
-            <span class="invalidFeedback"></span>
+            <span style="color:red"><?php echo isset($editUser['newPasswordError']) ? $editUser['newPasswordError'] : null;?></span>
         </div>
 
         <div class="form-group">
             <label>Confirm new password</label>
             <input type="password" class="form-control"  placeholder="Confirm Password"
                    name="password">
-            <span class="invalidFeedback"></span>
-
+            <span style="color:red"><?php echo isset($editUser['confirmPasswordError']) ? $editUser['confirmPasswordError'] : null;?></span>
         </div>
 
         <div class="form-group">
-            <button type="submit" name="change" class="btn btn-primary btn-block">Sign up</button>
+            <button type="submit" name="change" class="btn btn-primary btn-block">Submit Changes</button>
         </div>
 
 

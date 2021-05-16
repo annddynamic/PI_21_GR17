@@ -116,8 +116,8 @@ Route::set('citizenPanel', function(){
 });
 Route::set('manageAccount', function (){
     $obj = new citizenPanelController();
-    $obj->changePassword();
-    Controller::CreateView('manageAccount');
+    $data = $obj->getData();
+    Controller::CreateView('manageAccount', $data);
 });
 
 Route::set('policePanel', function(){
