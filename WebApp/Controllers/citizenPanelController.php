@@ -175,11 +175,13 @@ class citizenPanelController extends Controller
                 $data['newPasswordError'] = 'Password must be at least 8 characters!';
             } else if (!preg_match($passwordValidation, $data['newPassword'])) {
                 $data['newPasswordError'] = 'Password must have at least one numeric value!';
+            }else if(password_verify($data['newPassword'], $_SESSION['password'])){
+                $data['newPasswordError'] = 'Password can not be the same as the old one!';
             }
 
             //Validate password on length and numeric value
             if (empty($data['confirmPassword'])) {
-                $data['confirmPasswordError'] = 'Please enter password.';
+                $data['confirmPasswordError'] = 'Please enter password!';
             } else {
                 if ($data['newPassword'] != $data['confirmPassword']) {
                         $data['confirmPasswordError'] = 'Password do not match, please try again!';
