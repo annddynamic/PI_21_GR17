@@ -6,13 +6,12 @@ if (isset($data)) {
     $datta = $data['rep']->getData();
 
 
-    if(count($data['models']["data"])>1){
+    if (count($data['models']["data"]) > 1) {
 
-            list($firstArray, $secondArray) = array_chunk($data['models']["data"], ceil(count($data['models']["data"]) / 2));
-    }else {
-        $firstArray=$data['models']["data"];
+        list($firstArray, $secondArray) = array_chunk($data['models']["data"], ceil(count($data['models']["data"]) / 2));
+    } else {
+        $firstArray = $data['models']["data"];
     }
-
 
 
 }
@@ -74,18 +73,17 @@ if (isset($data)) {
                 $number = 100;
                 $str = "Kosovo";
                 printf("There are %u criminal cases everyday in %s.", $number, $str);
-                echo  $data['models']['paragraph'];
+                echo $data['models']['paragraph'];
                 ?>
             </p>
             <p>
-                <?php $imp = array('This','can','help','to','reduce','the','number','of','cases ');
-                echo implode(" ",$imp)
-                ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Doloremque ex expedita itaque iure nemo odio pariatur provident quos
-                tempora
-                velit.
+                <?php $imp = array('This', 'can', 'help', 'to', 'reduce', 'the', 'number', 'of', 'cases ');
+                echo implode(" ", $imp)
+                ?>It will bring the police and the victims closer and hence increasing the security. This makes the FIR
+                registration simple and easy hence making it time-efficient. The system will help the crime department
+                to take action as quickly as possible and maintain the database efficiently.
             </p>
-            <p class="report">Lorem ipsum dolor sit amet, consectetur adipisicing?
+            <p class="report">Do you have somethint to report?
                 <a class="emergenciesButton" style="color: red; font-weight: bold" type="button" data-toggle="modal"
                    data-target="#report">Report now!</a>
         </div>
@@ -116,19 +114,13 @@ if (isset($data)) {
                         <img style="height:30em" src="../Assets/img/report.png" alt="Diqka">
                     </div>
                     <div class="tekst">
-                        <h2> lorem</h2>
+                        <h2>Report anything you see</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
-                            minima
-                            quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                            provident, qui quod veniam!
+                            Is it an emergency? Remember, if someone is in danger and you need immediate support please
+                            call 112 now. If no service is requested but anything suspicious is heard throughout the
+                            process, BT operators will connect you to a police call handler.
                         </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
-                            minima
-                            quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                            provident, qui quod veniam!
-                        </p>
+
                     </div>
 
                 </div>
@@ -142,7 +134,7 @@ if (isset($data)) {
                         <img style="height:30em" src="../Assets/img/robbery.png" alt="diqka">
                     </div>
                     <div class="tekst">
-                        <h2> lorem</h2>
+                        <h2>Robbery</h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
                             minima
