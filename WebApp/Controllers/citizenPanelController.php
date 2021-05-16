@@ -166,15 +166,16 @@ class citizenPanelController extends Controller
                 $data['currentPasswordError']='Your password is incorrect!';
             }
 
-            $passwordValidation = "/^(.{0,7}|{^a-z]*|{^\d}*)$/i";
 
+            $passwordValidation = "/^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{8,})\S$/";
+            // Checks that a password has a minimum of 8 characters,
+            // at least 1 uppercase letter, 1 lowercase letter,
+            // and 1 number with no spaces.
 
             if (empty($data['newPassword'])) {
                 $data['newPasswordError'] = 'Please enter password!';
-            } else if (strlen($data['newPassword']) < 6) {
-                $data['newPasswordError'] = 'Password must be at least 8 characters!';
             } else if (!preg_match($passwordValidation, $data['newPassword'])) {
-                $data['newPasswordError'] = 'Password must have at least one numeric value!';
+                $data['newPasswordError'] = 'Password did not meet the criteria. Try again!';
             }else if(password_verify($data['newPassword'], $_SESSION['password'])){
                 $data['newPasswordError'] = 'Password can not be the same as the old one!';
             }

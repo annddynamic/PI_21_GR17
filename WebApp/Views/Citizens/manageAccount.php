@@ -97,7 +97,7 @@ if(isset($data)){
 
         <div class="form-group">
             <label>Email</label>
-            <input disabled type="text" value="<?php echo $_SESSION['email']; ?>" class="form-control" >
+            <input disabled type="text" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : null; ?>" class="form-control" >
             <span class="invalidFeedback"></span>
 
         </div>
@@ -117,6 +117,7 @@ if(isset($data)){
 
         <div class="form-group">
             <label>New password</label>
+            <p style="font-size: 10px;">Use 8 or more characters, no empty spaces and at least 1 uppercase & 1 lowercase & 1 digit</p>
             <input type="password" class="form-control"  placeholder="Enter New Password" name="Npassword">
             <span style="color:red"><?php echo isset($editUser['newPasswordError']) ? $editUser['newPasswordError'] : null;?></span>
         </div>
