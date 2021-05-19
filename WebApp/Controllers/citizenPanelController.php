@@ -10,7 +10,7 @@ class citizenPanelController extends Controller
     {
 
          $this->citizenModel = new CitizenModel();
-         $this->userModel=new UserModel();
+         $this->userModel= new UserModel();
 
     }
 

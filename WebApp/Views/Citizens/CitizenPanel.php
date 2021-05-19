@@ -3,9 +3,11 @@
 
 if (isset($data)) {
 
-    $sendEmail=$data['sendEmail'];
-
-
+    $sendEmail = $data['obj']->sendEmail();
+    $datta = $data['report']->getData();
+    $errors = $data['report']->getErrors();
+    
+    
 }
 
 ?>
@@ -248,61 +250,9 @@ if (isset($data)) {
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title">Check proggres made on other reports</h4>
                     </div>
-                    <table class="table  table-hover tbl ">
-                        <tr>
-                            <th class="main-color-bg">Report type</th>
-                            <th class="main-color-bg">Report Date</th>
-                            <th class="main-color-bg">Report Status</th>
-                            <th class="main-color-bg">Want to give additional information?</th>
-
-
-                        </tr>
-                        <tr>
-                            <td>Jill Smith</td>
-                            <td>Jill Smith</td>
-                            <td>Jill Smith</td>
-                            <td><a class="thumbnail" data-toggle="modal" data-target="#contact">
-                                    <h6>Click here to let us know</h6>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jill Smith</td>
-                            <td>Jill Smith</td>
-                            <td>Jill Smith</td>
-                            <td><a class="thumbnail" data-toggle="modal" data-target="#contact">
-                                    <h6>Click here to let us know</h6>
-                                </a></td>
-
-                        </tr>
-                        <tr>
-                            <td>Andi Dika</td>
-                            <td>Andi Dika</td>
-                            <td>Andi Dika</td>
-                            <td><a class="thumbnail" data-toggle="modal" data-target="#contact">
-                                    <h6>Click here to let us know</h6>
-                                </a></td>
-
-                        </tr>
-                        <tr>
-                            <td>Andi Dika</td>
-                            <td>Andi Dika</td>
-                            <td>Andi Dika</td>
-                            <td><a class="thumbnail" data-toggle="modal" data-target="#contact">
-                                    <h6>Click here to let us know</h6>
-                                </a></td>
-
-                        </tr>
-                        <tr>
-                            <td>Adnit King kobra </td>
-                            <td>Adnit King kobra </td>
-                            <td>Adnit King kobra </td>
-                            <td><a class="thumbnail" data-toggle="modal" data-target="#contact">
-                                    <h6>Click here to let us know</h6>
-                                </a> </td>
-
-                        </tr>
-                    </table>
+                    <table class="table  table-hover tbl">
+                    
+                    </table> 
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -451,68 +401,81 @@ if (isset($data)) {
     <div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Emergency Report</h4>
+            <form action="citizenPanel" enctype="multipart/form-data" method="POST">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" value="<?php echo $datta['name']; ?>"
+                               class="form-control" placeholder="Name" name="name">
+                        <span class="invalidFeedback"><?php echo isset($errors['nameError']) ? $errors['nameError'] : null; ?></span>
                     </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name</label>
-                                <input type="text" class="form-control" placeholder="Last Name">
-                            </div>
-                            <div class="form-group">
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" value="<?php echo isset($datta['lastName']) ? $datta['lastName'] : null; ?>"
+                               class="form-control" name="lastName" placeholder="Last Name">
+                        <span class="invalidFeedback"> <?php echo $errors['lastNameError']; ?></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Reports">What do you want to report?</label>
+                        <select class="form-control" name="report">
+                            <option value aria-disabled="true">Select report type..</option>
+                            <option value="abuse" <?php echo (isset($_POST['report']) && $_POST['report'] === 'abuse') ? 'selected' : ''; ?>>
+                                Abuse
+                            </option>
+                            <option value="suicide"<?php echo (isset($_POST['report']) && $_POST['report'] === 'suicide') ? 'selected' : ''; ?>>
+                                Suicide
+                            </option>
+                            <option value="murder"<?php echo (isset($_POST['report']) && $_POST['report'] === 'murder') ? 'selected' : ''; ?>>
+                                Murder
+                            </option>
+                            <option value="robbery"<?php echo (isset($_POST['report']) && $_POST['report'] === 'robbery') ? 'selected' : ''; ?>>
+                                Robbery
+                            </option>
+                            <option value="arson"<?php echo (isset($_POST['report']) && $_POST['report'] === 'arson') ? 'selected' : ''; ?>>
+                                Arson
+                            </option>
+                            <option value="breakIn"<?php echo (isset($_POST['report']) && $_POST['report'] === 'breakIn') ? 'selected' : ''; ?>>
+                                Break In
+                            </option>
+                            <option value="corruption"<?php echo (isset($_POST['report']) && $_POST['report'] === 'corruption') ? 'selected' : ''; ?>>
+                                Corruption
+                            </option>
+                            <option value="other"<?php echo (isset($_POST['report']) && $_POST['report'] === 'other') ? 'selected' : ''; ?>>
+                                Other
+                            </option>
+                        </select>
+                        <span class="invalidFeedback"> <?php echo $errors['reportError']; ?></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="textarea" name="textfield" placeholder="Add Message"
+                                  value=""><?php if (isset($_POST['textfield'])) {
+                                echo $_POST['textfield'];
+                            } ?>  </textarea>
+                        <span class="invalidFeedback"> <?php echo $errors['textfieldError']; ?></span>
+                        <div class="pull-right ">
+                            <input type="file" value="<?php echo isset($datta['file']) ? $datta['file'] : null; ?>"
+                                   id="myfile" name="file">
+                            <span class="invalidFeedback"> <?php echo $errors['fileError']; ?></span>
+                        </div>
+                    </div>
 
-                                <label for="Gender">What do you want to report?</label>
-                                <select class="form-control" name="gender">
-                                    <option value="abuse">Abuse</option>
-                                    <option value="suicide">Suicide</option>
-                                    <option value="murder">Murder</option>
-                                    <option value="robbery">Robbery</option>
-                                    <option value="robbery">Arson</option>
-                                    <option value="breakIn">Break In</option>
-                                    <option value="corruption">Corruption</option>
-                                    <option value="other">Other</option>
-                                </select>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" name="address"
+                               value="<?php echo isset($datta['address']) ? $datta['address'] : null; ?> "
+                               class="form-control" placeholder="Address">
+                        <span class="invalidFeedback"> <?php echo $errors['addressError']; ?></span>
+                    </div>
 
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" name="city"
+                               value="<?php echo isset($datta['city']) ? $datta['city'] : null; ?>" class="form-control"
+                               placeholder="City">
+                        <span class="invalidFeedback"> <?php echo $errors['cityError']; ?></span>
+                    </div>
 
-                            </div>
-                            <div class="form-group">
-                                <textarea id="textarea" placeholder="Add Message"> </textarea>
-                                <div class="pull-right ">
-
-                                    <input type="file" id="myfile" name="myfile">
-                                </div>
-                            </div>
-
-
-
-
-                            <div class="form-group">
-                                <label for="Date">Date</label>
-                                <input type="date" class="form-control" name="date">
-                            </div>
-
-                            <div class="form-group">
-                                <label>City</label>
-                                <input type="text" class="form-control" placeholder="City">
-                            </div>
-                            <div class="form-group">
-                                <label>Country</label>
-                                <input type="text" class="form-control" placeholder="Country">
-                            </div>
-
-
-
-                            <input type="submit" class="btn btn-default main-color-bg btn-lg " value="Submit">
-
-
-                        </form>
+                    <input type="submit" name="addReport" class="btn btn-default main-color-bg btn-lg " value="Submit">
+               </form>
                     </div>
             </div>
         </div>
@@ -522,11 +485,8 @@ if (isset($data)) {
     <footer id="footer">
         <pr>Copyright Adminstrap, &copy; 2021</pr>
     </footer>
-<!--    --><?php //echo '<pre>';
-//    var_dump($_SESSION);
-//    echo '</pre>';
-//    ?>
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="../Assets/js/bootstrap.min.js"></script>
+
 </body>

@@ -106,10 +106,21 @@ Route::set('signUpPolice', function(){
 
 
 Route::set('citizenPanel', function(){
-    // $report = new ReportsController();
+    $report = new ReportsController();
     // $data = $report->createReport();
     $obj = new citizenPanelController();
-    $data = $obj->getData();
+    // $data = $obj->getData();
+    $reps = new policePanelController();
+    $report->createReport();
+    $obj->getData();
+    $reps->getData();
+    $data = [
+        'report'=> $report,
+        'obj'=> $obj,
+        'reports'=>$reps 
+    ];
+
+
 
     Controller::CreateView('CitizenPanel', $data);
 //    Controller::logout();
@@ -122,8 +133,10 @@ Route::set('manageAccount', function (){
 
 Route::set('policePanel', function(){
     $obj = new policePanelController();
+
     // $data=$obje->getAssoc();
     $data=$obj->getData();
+
     Controller::CreateView('MainP', $data);
 //    Controller::logout();
 });
