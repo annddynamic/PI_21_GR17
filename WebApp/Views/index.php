@@ -114,11 +114,16 @@ if (isset($data)) {
                         <img style="height:30em" src="../Assets/img/report.png" alt="Diqka">
                     </div>
                     <div class="tekst">
-                        <h2>Report anything you see</h2>
+                        <h2>Quick overviw of how our website works!</h2>
                         <p>
-                            Is it an emergency? Remember, if someone is in danger and you need immediate support please
-                            call 112 now. If no service is requested but anything suspicious is heard throughout the
-                            process, BT operators will connect you to a police call handler.
+                            The aim of our application, as mentioned above is to establish a better, connetction between the victims and the police forces.
+                        </p>
+                        <p>
+                            In order to acheive that, our site contains a three role hierarchy. Therefore  your experience on the site can be as an admin, police officer or a user (citizen).
+                        </p>
+                        <p>
+                            With the admin on top each of the roles has its own set of tasks and privileges it is allowed to perform.
+
                         </p>
 
                     </div>
@@ -134,7 +139,7 @@ if (isset($data)) {
                         <img style="height:30em" src="../Assets/img/robbery.png" alt="diqka">
                     </div>
                     <div class="tekst">
-                        <h2>Robbery</h2>
+                        <h2>Admin</h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
                             minima
@@ -279,7 +284,6 @@ if (isset($data)) {
                                     <a href="http://twitter.com" class="fa fa-twitter"></a>
                                     <a href="http://facebook.com" class="fa fa-facebook"></a>
                                     <a href="http://instagram.com" class="fa fa-instagram"></a>
-                                    <a href="http://twitter.com" class="fa fa-whatsapp"></a>
                                 </div>
                             </div>
                         </div>

@@ -26,7 +26,7 @@
 
         .fa-facebook {
             background: white;
-            color: #005b96;
+            color: #005b96 !important;
 
         }
 
