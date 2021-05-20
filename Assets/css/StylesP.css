@@ -216,6 +216,12 @@ body{
     cursor: pointer !important;
 }
 
+
+
+.textareaFooter{
+    width: 290px !important;
+    height: 120px !important;
+}
 .textarea{
     width: 380px !important;
     height: 241px !important;
@@ -227,4 +233,5 @@ body{
 .delete{
     padding: 20px;
 }
+
 

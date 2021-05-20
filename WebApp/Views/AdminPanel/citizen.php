@@ -141,8 +141,8 @@ if (isset($data)) {
                                     <tr>
                                         <th class="main-color-bg">Name</th>
                                         <th class="main-color-bg">Last Name</th>
-                                        <th class="main-color-bg">Address</th>
-                                        <th class="main-color-bg">Telephone</th>
+                                        <th class="main-color-bg">Email</th>
+                                        <th class="main-color-bg">DOB</th>
                                         <th class="main-color-bg"></th>
                                     </tr>
                                     <?php foreach ($data['citizens'] as $i => $citizen): ?>
@@ -150,8 +150,8 @@ if (isset($data)) {
                                         <tr>
                                             <td><?php echo $citizen['name']?></td>
                                             <td><?php echo $citizen['surname']?></td>
-                                            <td><?php echo $citizen['rruga']?></td>
-                                            <td><?php echo $citizen['nr_telefonit']?></td>
+                                            <td><?php echo $citizen['email']?></td>
+                                            <td><?php echo $citizen['data_lindjes']?></td>
                                             <td>
                                                 <form method="post" action="citizen" style="display:inline">
                                                     <input type="hidden" name="remove"  value="<?php echo $data['citizens'][$i]['uID'] ?>">

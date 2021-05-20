@@ -194,7 +194,7 @@ class AdminModel
 
     public function getCitizens()
     {
-        $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit FROM users WHERE role_ID=3');
+        $this->db->query('SELECT uID, name,surname,email,data_lindjes FROM users WHERE role_ID=3');
 
         $result = $this->db->resultSet();
 

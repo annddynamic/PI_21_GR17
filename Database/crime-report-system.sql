@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2021 at 01:09 AM
+-- Generation Time: May 20, 2021 at 11:45 PM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,6 +50,34 @@ INSERT INTO `category` (`cID`, `emri`, `emergency`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `fID` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `mesazhi` longtext NOT NULL,
+  `dt_feedback` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `nID` int(11) NOT NULL,
+  `foto` varchar(255) NOT NULL,
+  `title` text NOT NULL,
+  `published` date NOT NULL,
+  `description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pending_users`
 --
 
@@ -82,21 +110,15 @@ CREATE TABLE `report` (
   `mbiemri` varchar(255) NOT NULL,
   `dt_raportimit` date NOT NULL,
   `description` longtext NOT NULL,
-  `foto` varchar(255) NOT NULL,
+  `foto` varchar(255) DEFAULT NULL,
   `city` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `sID` int(11) NOT NULL,
   `categoryID` int(11) NOT NULL,
-  `uID` int(11) DEFAULT NULL
+  `Emergency` tinyint(1) NOT NULL,
+  `uID` int(11) DEFAULT NULL,
+  `citizenID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `report`
---
-
-INSERT INTO `report` (`reID`, `emri`, `mbiemri`, `dt_raportimit`, `description`, `foto`, `city`, `address`, `sID`, `categoryID`, `uID`) VALUES
-(1, 'Arben', 'Dedaj', '2021-04-15', 'Na nuk flejm ktu se ka vompira', '', 'Prishtin', 'Mati1', 1, 8, 1),
-(2, 'Andi', 'Dika', '2021-04-04', 'Sen skom pa sen skom ni ', '', 'Prishtin', 'Bregu i diellit', 2, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -162,22 +184,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`uID`, `name`, `surname`, `gender`, `data_lindjes`, `rruga`, `qyteti`, `shteti`, `ZIP`, `nr_telefonit`, `email`, `password`, `inDuty`, `role_ID`) VALUES
-(1, 'Arben', 'Dedaj', 'male', '2020-10-10', NULL, NULL, NULL, NULL, NULL, 'arbenndedaj@gmail.com', '$2y$10$gGPpp3G9BCHt9RzCpXoWfOz7t5//rrVcUtB35/HZpsAmT0yEAg2tu', NULL, 3),
-(2, 'Arben', 'Dedaj', 'male', '2021-04-20', NULL, NULL, NULL, NULL, NULL, 'arbenndedaj@yahoo.com', '$2y$10$LFO/y3NqBR7uYn4l0E6UzeyGhYyofH8i65avxxx2Wf1xZbk70qLbO', NULL, 3),
-(3, 'Andi', 'Dika', 'male', '2021-04-08', 'Dikun', NULL, NULL, NULL, NULL, 'andidika@gmail.com', 'asdasdasd', NULL, 2),
-(4, 'Arben', 'Dedaj', 'male', '2021-04-15', NULL, NULL, NULL, NULL, NULL, 'arbenndedaj@gasdmail.com', '$2y$10$wL9ESLyaGLh1Ir7s4fTMvOpYKqlIW3GcYqW2wiKZT9jnKHy6GWdxe', NULL, 3),
-(5, 'Blerta', 'Hasani', 'female', '2021-04-01', 'Dikun', 'Dikun', 'Kosov', 1000, '123123', 'asd@asd.com', '1234567890', NULL, 2),
-(18, 'Arben', 'Dedaj', 'male', '2021-04-22', 'sad', 'asd', 'Kosovo', 30000, '44672155', 'arbenndedaasdasdj@gmail.com', '$2y$10$p.h79JbUrVRVyZdjcWd1p.uG/l8g5zH6DYjpOPmTBIiQd4FIWhFNa', 0, 2),
-(19, 'Albiona', 'Vukaj', 'female', '2021-04-07', 'Ulqin city', 'Ulqin', 'Kosovo', 1000, '44123456', 'albionavukaj@gmail.com', '$2y$10$go3zN71mBPMIg8fWbDV3aeLTBD632DdHhccrrl86CxywBJKMdI8I2', 0, 2),
-(20, 'Arben', 'Dedaj', 'male', '2021-04-21', 'sad', 'asd', 'Kosovo', 30000, '44672155', 'arbenndedaj@gamail.com', '$2y$10$mDmVWX11AMkSNNSNBBGC4O.fR5sI5yN.mlV77fTXdS6TO80xvX1Om', 0, 2),
-(21, 'Arben', 'Dedaj', 'male', '2021-04-22', 'sad', 'asd', 'Kosovo', 30000, '44672155', 'arbenndedaj@yahooo.com', '$2y$10$6QfPZG0yfI1B/5sxjkSltOCzVbk0n6JlB/y9PavyP0.zM0WJoqBpy', 0, 2),
-(22, 'Andi', 'Dika', 'male', '2021-04-15', 'asd', 'asd', 'asd', 123, '123123123', 'asdasd@asd.com', 'asdasd', 0, 2);
-
---
 -- Indexes for dumped tables
 --
 
@@ -187,6 +193,18 @@ INSERT INTO `users` (`uID`, `name`, `surname`, `gender`, `data_lindjes`, `rruga`
 ALTER TABLE `category`
   ADD PRIMARY KEY (`cID`),
   ADD KEY `emergency` (`emergency`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`fID`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`nID`);
 
 --
 -- Indexes for table `pending_users`
@@ -202,7 +220,8 @@ ALTER TABLE `report`
   ADD PRIMARY KEY (`reID`),
   ADD KEY `sID` (`sID`),
   ADD KEY `categoryID` (`categoryID`),
-  ADD KEY `uID` (`uID`);
+  ADD KEY `uID` (`uID`),
+  ADD KEY `report_ibfk_1` (`citizenID`);
 
 --
 -- Indexes for table `roles`
@@ -234,16 +253,28 @@ ALTER TABLE `category`
   MODIFY `cID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `fID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `nID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `pending_users`
 --
 ALTER TABLE `pending_users`
-  MODIFY `uID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `uID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `reID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `reID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -261,7 +292,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `uID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -277,9 +308,7 @@ ALTER TABLE `pending_users`
 -- Constraints for table `report`
 --
 ALTER TABLE `report`
-  ADD CONSTRAINT `report_ibfk_1` FOREIGN KEY (`sID`) REFERENCES `status` (`sID`),
-  ADD CONSTRAINT `report_ibfk_2` FOREIGN KEY (`categoryID`) REFERENCES `category` (`cID`),
-  ADD CONSTRAINT `report_ibfk_3` FOREIGN KEY (`uID`) REFERENCES `users` (`uID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `report_ibfk_1` FOREIGN KEY (`citizenID`) REFERENCES `users` (`uID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `users`
