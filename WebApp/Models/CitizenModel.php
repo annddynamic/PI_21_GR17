@@ -37,4 +37,16 @@ class CitizenModel
 
     }
 
+    public function SeeReportsIMade(){
+        $this->db->query('SELECT  emri, dt_raportimit, description,gjendja
+                              FROM report r INNER JOIN status s ON r.sID=s.sID
+                              WHERE citizenID=:sessionID ');
+
+        $this->db->bind(':sessionID', $_SESSION['user_id']);
+
+        $result = $this->db->resultSet();
+        return $result;
+        
+    }
+
 }

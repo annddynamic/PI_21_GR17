@@ -81,26 +81,46 @@
     </nav>
 </header>
 
-
+<!-- <?php
+echo '<pre>';
+var_dump($_COOKIE);
+echo '</pre>';
+?> -->
 <body>
 <div class="login-form">
     <form action="signIn" method="POST">
         <h2 class="text-center">Sign in</h2>
         <div class="form-group">
-            <input type="text" class="form-control" name="email" placeholder="Username" >
+            <input type="text" id="EmailC" class="form-control" name="email" placeholder="Username"  value="<?php if(isset($_COOKIE['email'])){echo 
+                $_COOKIE['email']; } ?>"  >
             <span class="invalidFeedback"> <?php echo isset($data['emailError']) ? $data['emailError'] : null;?></span>
         </div>
+        
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" name="password">
+            <input type="password" id="PasswordC" class="form-control" placeholder="Password" name="password" value="<?php if(isset($_COOKIE['password'])){echo 
+                 $_COOKIE['password']; } ?>" >
             <span class="invalidFeedback"><?php echo $data['passwordError'];?></span>
         </div>
         <div class="form-group">
             <button value="submit" id="submit" type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>
+        <div class="form-group">
+           <input type="checkbox" name="rememberMe">Remember Me
+        </div>
+        <!-- <?php  if(isset($_COOKIE['email'])){
+                echo '   <div class="form-group">
+                <input type="checkbox" name="rememberMe" name="forgetMe" >Forget Me
+             </div>   ';
+        } ?>   -->
 
     </form>
     <p class="text-center"><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#signUp" > Create an Account</a></p>
 </div>
+
+<?php 
+
+
+?>  
 
 
 

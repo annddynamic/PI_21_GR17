@@ -371,7 +371,8 @@ class UsersController extends Controller
             'email' => '',
             'password' => '',
             'emailError' => '',
-            'passwordError' => ''
+            'passwordError' => '',
+            
         ];
 
         //Check for post
@@ -393,10 +394,12 @@ class UsersController extends Controller
             if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter your Password';
             }
+
+            
 //
             if (empty($data['emailError']) && empty($data['passwordError'])) {
+               
                 $loggedInUser = $this->userModel->login($data['email'], $data['password']);
-
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
                 } else {
@@ -424,6 +427,18 @@ class UsersController extends Controller
         $_SESSION['name'] = $user->name;
         $_SESSION['role'] = $user->role_ID;
         $_SESSION['password'] = $user->password;
+
+        if(isset($_POST["rememberMe"])){
+            setcookie('email', $_POST['email'], time()+60);
+            setcookie('password', $_SESSION['password'], time()+60);
+
+        }
+
+        // if(isset($_POST["forgetMe"])){
+        //     setcookie('email', $_COOKIE['email'], time()-760);
+        //     setcookie('password', $_COOKIE['password'], time()-760);
+
+        // }
 
         if ($_SESSION['role'] == 2) {
             header('location:policePanel');

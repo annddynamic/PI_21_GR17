@@ -15,7 +15,11 @@
 
 </head>
 
-
+<?php 
+echo '<pre>';
+var_dump($_COOKIE);
+echo '</pre>';
+?>  
 <style>
 
         .search-box {

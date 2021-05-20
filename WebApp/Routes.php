@@ -108,15 +108,15 @@ Route::set('signUpPolice', function(){
 Route::set('citizenPanel', function(){
     $report = new ReportsController();
     // $data = $report->createReport();
-    $obj = new citizenPanelController();
+    $CitizenC = new citizenPanelController();
     // $data = $obj->getData();
     $reps = new policePanelController();
-    $report->createReport();
-    $obj->getData();
+    $report->createReportByUser();
+    $CitizenC->getReportsIMade();
     $reps->getData();
     $data = [
         'report'=> $report,
-        'obj'=> $obj,
+        'CitizenC'=> $CitizenC,
         'reports'=>$reps 
     ];
 

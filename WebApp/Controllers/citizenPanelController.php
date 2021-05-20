@@ -217,6 +217,15 @@ class citizenPanelController extends Controller
         return $data;
     }
 
+    public function getReportsIMade(){
+
+       $data = $this->citizenModel->SeeReportsIMade();
+        
+        
+        return $data;
+         
+    }
+
 }
 
 

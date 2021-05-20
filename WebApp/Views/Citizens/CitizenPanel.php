@@ -3,10 +3,16 @@
 
 if (isset($data)) {
 
-    $sendEmail = $data['obj']->sendEmail();
+    $sendEmail = $data['CitizenC']->sendEmail();
     $datta = $data['report']->getData();
     $errors = $data['report']->getErrors();
+    $reportsIMade = $data['CitizenC']->getReportsIMade();
     
+    // echo '<pre>';
+    // var_dump($data['CitizenC']->getReportsIMade());
+    // echo '</pre>';
+    
+echo $_SESSION['user_id'];
     
 }
 
@@ -25,6 +31,7 @@ if (isset($data)) {
     <!-- Bootstrap core CSS -->
     <link href="../Assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../Assets/css/StylesP.css">
+
 
 
 
@@ -136,7 +143,7 @@ if (isset($data)) {
 
     <div class="jumbotron">
         <div class="container">
-            <h1 style="color: red;">IF THIS IS A CRIME IN PROGRESS PLEASE CALL 1-1-2 !!!</h1>
+            <h1 style="color: red;">IF THIS IS A CRIME IN PROGRESS PLEASE CALL 9-1-1 !!!</h1>
         </div>
     </div>
 
@@ -250,9 +257,24 @@ if (isset($data)) {
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title">Check proggres made on other reports</h4>
                     </div>
-                    <table class="table  table-hover tbl">
-                    
-                    </table> 
+                    <div class="panel-body myPanel">
+                        <table class="table  table-hover tbl" id="emergency"  >
+                            <tr>
+                            <th>Emri</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>State</th>
+                            </tr>
+                            <?php foreach ($reportsIMade as $i => $MyReports    ): ?>  
+                                <tr>
+                                    <td><?php echo $MyReports['emri'] ;?></td>
+                                    <td><?php echo $MyReports['dt_raportimit']; ?></td>
+                                    <td><?php echo $MyReports['description']; ?></td>
+                                    <td><?php echo $MyReports['gjendja']; ?></td>
+                                </tr>   
+                            <?php endforeach; ?>   
+                        </table> 
+                    </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
