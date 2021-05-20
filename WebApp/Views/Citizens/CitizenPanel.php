@@ -136,7 +136,7 @@ if (isset($data)) {
 
     <div class="jumbotron">
         <div class="container">
-            <h1 style="color: red;">IF THIS IS A CRIME IN PROGRESS PLEASE CALL 9-1-1 !!!</h1>
+            <h1 style="color: red;">IF THIS IS A CRIME IN PROGRESS PLEASE CALL 1-1-2 !!!</h1>
         </div>
     </div>
 

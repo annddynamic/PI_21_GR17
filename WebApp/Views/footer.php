@@ -163,7 +163,6 @@ if (isset($data)) {
             <a href="http://instagram.com" class="fa fa-instagram"></a>
         </div>
         <div class="contactUs-section">
-            <h3>Lorem</h3>
             <ul>
                 <li>©2021 Internet Watch Foundation All rights reserved.</li>
             </ul>

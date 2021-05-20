@@ -42,9 +42,8 @@ if (isset($data)) {
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="policePanel" class="list-group-item  "><span class="glyphicon glyphicon-cog" aria-hidden=""
-                                                                          true></span>
-                        Dashboard
+                    <a href="policePanel" class="list-group-item  ">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="" true></span>Dashboard
                     </a>
                     <a href="#" class="list-group-item main-color-bg active"><span class="glyphicon glyphicon-list-alt"
                                                                                    aria-hidden="" true> </span>
@@ -68,7 +67,7 @@ if (isset($data)) {
                                 <th class="main-color-bg">Address</th>
                                 <th class="main-color-bg">Description</th>
                                 <th class="main-color-bg">Foto</th>
-                                <th class="main-color-bg"></th>
+                                <th class="main-color-bg">Take Report</th>
 
                             </tr>
                             <?php foreach ($data['reports'] as $i => $report): ?>
@@ -78,15 +77,15 @@ if (isset($data)) {
                                     <td><?php echo $report['address'] ?>  </td>
                                     <td><?php echo $report['description'] ?>  </td>
                                     <td><img height="120" style="display:block;
-                                                                        text-align:center;
-                                                                        margin-left: auto;
-                                                                        margin-right: auto;
-                                                                       " src="<?php echo $report['foto'] ?>"></td>
+                                                                 text-align:center;
+                                                                 margin-left: auto;
+                                                                 margin-right: auto;
+                                                                " src="<?php echo $report['foto'] ?>"></td>
                                     <td>
                                         <form method="post" action="policeReports" style="display:inline">
                                             <input type="hidden" name="remove"
                                                    value="<?php echo $data['reports'][$i]['reID'] ?>">
-                                            <button type="submit" name="take" value="" style="margin-left: -27px"
+                                            <button type="submit" name="take" value="" style="margin-right:27px"
                                                     class="pull-right btn btn-primary">Take
                                             </button>
                                         </form>

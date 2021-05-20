@@ -116,13 +116,16 @@ if (isset($data)) {
                     <div class="tekst">
                         <h2>Quick overviw of how our website works!</h2>
                         <p>
-                            The aim of our application, as mentioned above is to establish a better, connetction between the victims and the police forces.
+                            The aim of our application, as mentioned above is to establish a better, connetction between
+                            the victims and the police forces.
                         </p>
                         <p>
-                            In order to acheive that, our site contains a three role hierarchy. Therefore  your experience on the site can be as an admin, police officer or a user (citizen).
+                            In order to acheive that, our site contains a three role hierarchy. Therefore your
+                            experience on the site can be as an admin, police officer or a user (citizen).
                         </p>
                         <p>
-                            With the admin on top each of the roles has its own set of tasks and privileges it is allowed to perform.
+                            With the admin on top each of the roles has its own set of tasks and privileges it is
+                            allowed to perform.
 
                         </p>
 
@@ -136,46 +139,21 @@ if (isset($data)) {
                 <div class="sliderGrid">
 
                     <div class="foto">
-                        <img style="height:30em" src="../Assets/img/robbery.png" alt="diqka">
+                        <img style="height:30em; margin-left: 45px" src="../Assets/img/admin.png" alt="diqka">
                     </div>
                     <div class="tekst">
                         <h2>Admin</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
-                            minima
-                            quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                            provident, qui quod veniam!
+                            The Admins have the control of the police officials and the citizens, he has the ability to
+                            approve and deny police officials if there is a reason to.
                         </p>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
-                            minima
-                            quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                            provident, qui quod veniam!
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="sliderGrid">
-
-                    <div class="foto">
-                        <img style="height:30em" src="../Assets/img/robbery.png" alt="Diqka">
-                    </div>
-                    <div class="tekst">
-                        <h2> lorem</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
-                            minima
-                            quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                            provident, qui quod veniam!
+                            They receive feedback from the users to know how they can improve and to make the page even
+                            more user friendly.
                         </p>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
-                            minima
-                            quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                            provident, qui quod veniam!
+                            Also the admin has the ability to add the news in the web-page. They let the users know what
+                            is new in the precinct or if someone is wanted etc.
                         </p>
                     </div>
 
@@ -186,21 +164,39 @@ if (isset($data)) {
                 <div class="sliderGrid">
 
                     <div class="foto">
-                        <img style="height:30em" src="../Assets/img/corruption.png" alt="diqka">
+                        <img style="height:30em; margin-left: 45px" src="../Assets/img/policeman.png" alt="Diqka">
                     </div>
                     <div class="tekst">
-                        <h2> lorem</h2>
+                        <h2>Police Official</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
-                            minima
-                            quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                            provident, qui quod veniam!
+                            Police Officials have to take care of the cases, if they are available they have the ability
+                            to chose the case they want.
                         </p>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere in
-                            minima
-                            quos veniam! Cupiditate ducimus eius impedit inventore, laboriosam magnam modi
-                            provident, qui quod veniam!
+                            They also can see the citizen ,and the active cases that they are working on. If the case
+                            that they are working on is finished they mark it as finished and that report will go to the
+                            admin, than he can delete it.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="sliderGrid">
+
+                    <div class="foto">
+                        <img style="width: 100%;margin-top:60px" src="../Assets/img/citizens.png" alt="diqka">
+                    </div>
+                    <div class="tekst">
+                        <h2>Citizens</h2>
+                        <p>
+                            As a citizen you have the possibility to make a report directly from the home page, or you
+                            can sign up and add a report from your personal account.
+                        </p>
+                        <p>
+                            If you have an account you can also see all your reports that you made, and you can email us
+                            if you have any ideas on how to improve our webpage.
                         </p>
                     </div>
 
