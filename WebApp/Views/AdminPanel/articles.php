@@ -142,10 +142,13 @@ if (isset($data)) {
                             <div class="well" style="background-color: white">
                                 <h4>Need Some Inspiration?</h4>
                                 <h5>Feel free to check some content from NEWS API!</h5>
-                                <a id="news"   class="fa fa-newspaper-o"></a>
-                                <div>
-                                    <span style="font-size: 12px">News api</span>
-                                </div>
+                                <form id="searchNews">
+                                    <div class="form-group">
+                                        <label>News</label>
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Search">
+                                    </div>
+                                    <button type="submit" name=""  class="btn btn-primary">Search</button>
+                                </form>
                             </div>
                         </div>
 
@@ -200,8 +203,9 @@ if (isset($data)) {
                                             <th>Author</th>
                                             <th>Title</th>
                                             <th>Description</th>
+                                            <th>Media</th>
                                             <th>Date</th>
-                                            <th>Content</th>
+                                            <th>Link</th>
                                         </tr>
                                         <tbody id ="tbody">
 
@@ -219,27 +223,31 @@ if (isset($data)) {
 
 
         <script>
-            document.getElementById('news').addEventListener('click', loadNews);
+            document.getElementById('searchNews').addEventListener('submit', loadNews);
 
-            function loadNews(){
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET','https://newsapi.org/v2/everything?q=tesla&from=2021-04-12&sortBy=publishedAt&apiKey=e236142d9aea4154b52b0fcbc4e60556' ,true);
+            function loadNews(e){
+                e.preventDefault();
+                var name = document.getElementById('name').value;
+                var search = name.replace(" ", "%20");
+                const data = null;
+                const xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
 
-                xhr.onload = function (){
-                    if(this.status == 200){
+                xhr.addEventListener("readystatechange", function () {
+                    if (this.readyState === this.DONE) {
                         var news = JSON.parse(this.responseText);
-
-                        console.log(news.articles);
+                        console.log(news.articles[0].title, news.articles[0].author, news.articles[0].published_date, news.articles[0].summary,news.articles[0].media, news.articles[0].link );
 
                         var output ='';
 
-                        for (var i in news.articles){
+                        for (var i =0; i<8; i++){
                             output +='<tr>' +
                                 '<td style="font-size: 11px">'+news.articles[i].author+'</td>'+
                                 '<td style="font-size: 11px">'+news.articles[i].title+'</td>'+
-                                '<td style="font-size: 11px">'+news.articles[i].description+'</td>'+
-                                '<td style="font-size: 11px">'+news.articles[i].publishedAt+'</td>'+
-                                '<td style="font-size: 11px">'+news.articles[i].content+'</td>'+
+                                '<td style="font-size: 11px">'+news.articles[i].summary+'</td>'+
+                                '<td>'+'<img src = "'+news.articles[i].media+'" style="width: 100%" '+'</td>'+
+                                '<td style="font-size: 11px">'+news.articles[i].published_date+'</td>'+
+                                '<td style="font-size: 11px">'+'<a target="_blank" href = "'+news.articles[i].link+'">Read more!'+'</a>'+'</td>'+
                                 '</tr>'
                         }
 
@@ -248,9 +256,13 @@ if (isset($data)) {
 
 
                     }
-                }
+                });
 
-                xhr.send();
+                xhr.open("GET", "https://free-news.p.rapidapi.com/v1/search?q="+search+"&page_size=8");
+                xhr.setRequestHeader("x-rapidapi-key", "df03cbc84dmsh93a5aced899e6f3p10314ajsn31d6528265f8");
+                xhr.setRequestHeader("x-rapidapi-host", "free-news.p.rapidapi.com");
+
+                xhr.send(data);
             }
 
         </script>
