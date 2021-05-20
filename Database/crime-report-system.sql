@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2021 at 11:45 PM
+-- Generation Time: May 20, 2021 at 09:50 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -60,6 +60,15 @@ CREATE TABLE `feedback` (
   `mesazhi` longtext NOT NULL,
   `dt_feedback` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`fID`, `name`, `subject`, `mesazhi`, `dt_feedback`) VALUES
+(54, 'sad', 'asdasd', 'das', '2021-05-19'),
+(55, 'sad', 'asdasd', 'das', '2021-05-19'),
+(56, 'asd', 'asd', 'asdasd', '2021-05-19');
 
 -- --------------------------------------------------------
 
@@ -184,6 +193,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`uID`, `name`, `surname`, `gender`, `data_lindjes`, `rruga`, `qyteti`, `shteti`, `ZIP`, `nr_telefonit`, `email`, `password`, `inDuty`, `role_ID`) VALUES
+(1, '', 'asd', 'male', '1999-11-01', 'Nana jote', 'Prishtine', 'Kosovo', 10000, '', 'andi.dika@student.uni-pr.edu', '$2y$10$.8wB2IAakzcSnUW/vM1TouGDu2Wj9ZUUNzOdzUg5I7bWog5BIm2zy', 0, 2);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -256,7 +272,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `fID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `fID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -268,13 +284,13 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `pending_users`
 --
 ALTER TABLE `pending_users`
-  MODIFY `uID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `uID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `reID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `reID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -292,7 +308,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `uID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

@@ -113,7 +113,7 @@ class UsersController extends Controller
             } elseif (strlen($data['password']) < 6) {
                 $data['passwordError'] = 'Password must be at least 8 characters';
             } else if (!preg_match($passwordValidation, $data['password'])) {
-                $data['passwordError'] = 'Password must have at least one numeric value ';
+                $data['passwordError'] = 'Password does not meet one of the criteria above!';
             }
 
             //Validate password on length and numeric value
@@ -326,7 +326,7 @@ class UsersController extends Controller
             } elseif (strlen($data['password']) < 6) {
                 $data['passwordError'] = 'Password must be at least 8 characters.';
             } else if (!preg_match($passwordValidation, $data['password'])) {
-                $data['passwordError'] = 'Password must have at least one numeric value.';
+                $data['passwordError'] = 'Password does not meet one of the criteria above!';
             }
 
             //Validate password on length and numeric value

@@ -123,6 +123,7 @@
 
         <div class="form-group">
             <label>Password</label>
+            <p style="font-size: 10px;">Use 8 or more characters, no empty spaces and at least 1 uppercase & 1 lowercase & 1 digit</p>
             <input name="password" type="password" class="form-control" id="password" placeholder="Password">
             <span class="invalidFeedback"><?php echo $data['passwordError']; ?></span>
         </div>

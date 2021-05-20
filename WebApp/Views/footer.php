@@ -138,6 +138,11 @@
             margin-right: 1em;
         }
 
+        .feedback_text{
+            width: 250px !important;
+            height: 70px !important;
+        }
+
     </style>
 
 
@@ -164,7 +169,7 @@ if (isset($data)) {
         </div>
         <div class="contactUs-section">
             <ul>
-                <li>©2021 Internet Watch Foundation All rights reserved.</li>
+                <li>©2021 Crime-Report-System. All rights reserved.</li>
             </ul>
         </div>
 
@@ -188,7 +193,7 @@ if (isset($data)) {
 
                 <label>Your Feedback</label>
                 <div class="form-group" >
-                    <textarea name="mesazhi"  placeholder="Add Feedback" style="width:25em; color: black"></textarea><br>
+                    <textarea class="feedback_text" name="mesazhi"  placeholder="Add Feedback" style="width:25em; color: black"></textarea><br>
                     <span class="invalidFeedback"><?php echo $datta['mesazhiError'];?></span>
                 </div>
 
