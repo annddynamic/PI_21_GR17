@@ -170,7 +170,7 @@ if (isset($data)) {
 
         <div class="email-section">
             <h3>Give Feedback</h3>
-            <p>You can type your fucking opinion here</p>
+            <p>You can type your opinion here</p>
 
 
             <form  action="index" method="post" enctype="multipart/form-data">
