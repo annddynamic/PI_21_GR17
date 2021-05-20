@@ -106,7 +106,7 @@ class UsersController extends Controller
             }
 
             //Validate password on length and numeric value
-            $passwordValidation = "/^(.{0,15}|{^a-z]*|{^\d}*)$/i";
+            $passwordValidation = "/^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{8,})\S$/";
 
             if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter password';
@@ -316,8 +316,10 @@ class UsersController extends Controller
             }
 
 
-            //Validate password on length and numeric value
-            $passwordValidation = "/^(.{0,15}|{^a-z]*|{^\d}*)$/i";
+            // Checks that a password has a minimum of 8 characters,
+            // at least 1 uppercase letter, 1 lowercase letter,
+            // and 1 number with no spaces.
+            $passwordValidation = "/^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{8,})\S$/";
 
             if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter password.';
