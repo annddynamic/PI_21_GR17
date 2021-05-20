@@ -110,7 +110,7 @@ class UsersController extends Controller
 
             if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter password';
-            } elseif (strlen($data['password'] < 6)) {
+            } elseif (strlen($data['password']) < 6) {
                 $data['passwordError'] = 'Password must be at least 8 characters';
             } else if (!preg_match($passwordValidation, $data['password'])) {
                 $data['passwordError'] = 'Password must have at least one numeric value ';
@@ -321,7 +321,7 @@ class UsersController extends Controller
 
             if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter password.';
-            } elseif (strlen($data['password'] < 6)) {
+            } elseif (strlen($data['password']) < 6) {
                 $data['passwordError'] = 'Password must be at least 8 characters.';
             } else if (!preg_match($passwordValidation, $data['password'])) {
                 $data['passwordError'] = 'Password must have at least one numeric value.';
