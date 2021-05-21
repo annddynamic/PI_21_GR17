@@ -58,17 +58,20 @@ if (isset($data)) {
                         <h1 style="font-size: 3em;">Make your report now!</h1>
 
                         <p>
+                           Since the early 1980s, departments have been utilizing differential police response (DPR), 
+                           which allows calls that don’t require immediate attention of a police response unit to be
+                           addressed through a variety of means, such as using civilian personnel to take reports or 
+                           having officers take reports over the phone. A benefit of using DPR methods is that they free up officers  
+                           to deal with more urgent and life-threatening situations. A recent innovation in DPR is the use of 
+                           Online Reporting Systems (ORS) that allow citizens to submit reports online via a police 
+                           department’s website.
+                        </p>
+                        <!-- <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
                             consectetur adipisicing elit. Doloremque ex expedita itaque iure nemo odio pariatur provident quos
                             tempora
                             velit.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
-                            consectetur adipisicing elit. Doloremque ex expedita itaque iure nemo odio pariatur provident quos
-                            tempora
-                            velit.
-                        </p>
+                        </p> -->
 
                         <h3>Your report is anonymous, we provide 100% confidentiality!</h3>
                     </div>

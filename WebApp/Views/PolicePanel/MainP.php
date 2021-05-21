@@ -15,11 +15,11 @@
 
 </head>
 
-<?php 
+<!-- <?php 
 echo '<pre>';
 var_dump($_COOKIE);
 echo '</pre>';
-?>  
+?>   -->
 <style>
 
         .search-box {
@@ -312,11 +312,11 @@ if (isset($data)) {
 
 </body>
 
-<?php
+<!-- <?php
 echo '<pre>';
 var_dump($_SESSION);
 echo '</pre>';
-?>
+?> -->
 <!--Review Request-->
 
 <!--Add Article-->

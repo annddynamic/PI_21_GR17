@@ -1,8 +1,8 @@
 <?php
 
-echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($_SESSION);
+// echo '</pre>';
 
 if(isset($data)){
     $editUser=$data['editUser'];
@@ -90,53 +90,54 @@ if(isset($data)){
 
 
 <body>
-<div class="login-form">
-    <form action="manageAccount" method="post">
-        <h2 class="text-center">Manage your Account!</h2>
-        <br>
+    <div class="login-form">
+        <form action="manageAccount" method="post">
+            <h2 class="text-center">Manage your Account!</h2>
+            <br>
+    
+            <div class="form-group">
+                <label>Email</label>
+                <input disabled type="text" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : null; ?>" class="form-control" >
+                <span class="invalidFeedback"></span>
+    
+            </div>
+    
+            <div class="form-group">
+                <label>New Email</label>
+                <input type="text" value="<?php echo isset($_POST['nEmail']) ? $_POST['nEmail'] : null;?>" name="nEmail"  placeholder="Enter New Email" class="form-control" >
+                <span style="color:red"><?php echo isset($editUser['newEmailError']) ? $editUser['newEmailError'] : null;?></span>
+            </div>
+    
+            <div class="form-group">
+                <label>Current password</label>
+                <input type="password" class="form-control"  placeholder="Enter Current Password" name="Cpassword">
+                <span style="color:red"><?php echo isset($editUser['currentPasswordError']) ? $editUser['currentPasswordError'] : null;?></span>
+    
+            </div>
+    
+            <div class="form-group">
+                <label>New password</label>
+                <p style="font-size: 10px;">Use 8 or more characters, no empty spaces and at least 1 uppercase & 1 lowercase & 1 digit</p>
+                <input type="password" class="form-control"  placeholder="Enter New Password" name="Npassword">
+                <span style="color:red"><?php echo isset($editUser['newPasswordError']) ? $editUser['newPasswordError'] : null;?></span>
+            </div>
+    
+            <div class="form-group">
+                <label>Confirm new password</label>
+                <input type="password" class="form-control"  placeholder="Confirm Password"
+                       name="password">
+                <span style="color:red"><?php echo isset($editUser['confirmPasswordError']) ? $editUser['confirmPasswordError'] : null;?></span>
+            </div>
+    
+            <div class="form-group">
+                <button type="submit" name="change" class="btn btn-primary btn-block">Submit Changes</button>
+            </div>
+        </form>
+    </div>
+    <!--  -->
+    
 
-        <div class="form-group">
-            <label>Email</label>
-            <input disabled type="text" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : null; ?>" class="form-control" >
-            <span class="invalidFeedback"></span>
-
-        </div>
-
-        <div class="form-group">
-            <label>New Email</label>
-            <input type="text" value="<?php echo isset($_POST['nEmail']) ? $_POST['nEmail'] : null;?>" name="nEmail"  placeholder="Enter New Email" class="form-control" >
-            <span style="color:red"><?php echo isset($editUser['newEmailError']) ? $editUser['newEmailError'] : null;?></span>
-        </div>
-
-        <div class="form-group">
-            <label>Current password</label>
-            <input type="password" class="form-control"  placeholder="Enter Current Password" name="Cpassword">
-            <span style="color:red"><?php echo isset($editUser['currentPasswordError']) ? $editUser['currentPasswordError'] : null;?></span>
-
-        </div>
-
-        <div class="form-group">
-            <label>New password</label>
-            <p style="font-size: 10px;">Use 8 or more characters, no empty spaces and at least 1 uppercase & 1 lowercase & 1 digit</p>
-            <input type="password" class="form-control"  placeholder="Enter New Password" name="Npassword">
-            <span style="color:red"><?php echo isset($editUser['newPasswordError']) ? $editUser['newPasswordError'] : null;?></span>
-        </div>
-
-        <div class="form-group">
-            <label>Confirm new password</label>
-            <input type="password" class="form-control"  placeholder="Confirm Password"
-                   name="password">
-            <span style="color:red"><?php echo isset($editUser['confirmPasswordError']) ? $editUser['confirmPasswordError'] : null;?></span>
-        </div>
-
-        <div class="form-group">
-            <button type="submit" name="change" class="btn btn-primary btn-block">Submit Changes</button>
-        </div>
-
-
-    </form>
-</div>
-
+    
 </body>
 
 </html>

@@ -12,7 +12,7 @@ if (isset($data)) {
     // var_dump($data['CitizenC']->getReportsIMade());
     // echo '</pre>';
     
-echo $_SESSION['user_id'];
+// echo $_SESSION['user_id'];
     
 }
 

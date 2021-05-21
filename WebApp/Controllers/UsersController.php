@@ -405,7 +405,7 @@ class UsersController extends Controller
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
                 } else {
-                    $data['passwordError'] = 'Password or email is incorrect. Pleas try again';
+                    $data['passwordError'] = 'Password or email is incorrect. Please try again';
                     return $data;
                 }
             }
