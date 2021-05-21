@@ -8,10 +8,7 @@ if (isset($data)) {
     $errors = $data['report']->getErrors();
     $reportsIMade = $data['CitizenC']->getReportsIMade();
   
-    // var_dump($data['CitizenC']->getReportsIMade());
-    // echo '</pre>';
     
-// echo $_SESSION['user_id'];
     
 }
 
