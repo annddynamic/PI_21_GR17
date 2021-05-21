@@ -66,12 +66,6 @@ if (isset($data)) {
                            Online Reporting Systems (ORS) that allow citizens to submit reports online via a police 
                            department’s website.
                         </p>
-                        <!-- <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nam Lorem ipsum dolor sit amet,
-                            consectetur adipisicing elit. Doloremque ex expedita itaque iure nemo odio pariatur provident quos
-                            tempora
-                            velit.
-                        </p> -->
 
                         <h3>Your report is anonymous, we provide 100% confidentiality!</h3>
                     </div>

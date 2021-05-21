@@ -1,17 +1,11 @@
 <?php
-
-
 if (isset($data)) {
 
     $sendEmail = $data['CitizenC']->sendEmail();
     $datta = $data['report']->getData();
     $errors = $data['report']->getErrors();
     $reportsIMade = $data['CitizenC']->getReportsIMade();
-  
-    
-    
 }
-
 ?>
 <!doctype html>
 <html lang="en">

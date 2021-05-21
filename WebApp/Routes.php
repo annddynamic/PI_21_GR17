@@ -20,7 +20,6 @@ Route::set('adminPanel', function(){
     $obj=new AdminController();
     $data=$obj->getData();
     Controller::CreateView('adminPanel',$data);
-//    Controller::logout();
 });
 
 Route::set('articles', function(){
@@ -28,7 +27,6 @@ Route::set('articles', function(){
     $data=$obj->getData();
     $obj->deleteNews();
     Controller::CreateView('articles',$data);
-//    Controller::logout();
 });
 
 Route::set('citizen', function(){
@@ -36,7 +34,6 @@ Route::set('citizen', function(){
     $obj->deletePoliceUser();
     $data=$obj->getData();
     Controller::CreateView('citizen', $data);
-//    Controller::logout();
 });
 
 Route::set('police', function(){
@@ -44,15 +41,8 @@ Route::set('police', function(){
     $obj->deletePoliceUser();
     $obj->addFromPendingUsers();
     $obj->deleteFromPendingUers();
-
-
     $data=$obj->getData();
-
-
-
     Controller::CreateView('police',$data);
-//    Controller::logout();
-
 });
 
 Route::set('feedback', function(){
@@ -60,8 +50,6 @@ Route::set('feedback', function(){
     $obj->deleteFeedback();
     $data=$obj->getData();
     Controller::CreateView('feedback',$data);
-//    Controller::logout();
-
 });
 
 Route::set('reports', function(){
@@ -69,7 +57,6 @@ Route::set('reports', function(){
     $data=$obj->getData();
     $obj->deleteReport();
     ReportsController::CreateView('reports',$data);
-//    Controller::logout();
 });
 
 
@@ -107,9 +94,7 @@ Route::set('signUpPolice', function(){
 
 Route::set('citizenPanel', function(){
     $report = new ReportsController();
-    // $data = $report->createReport();
     $CitizenC = new citizenPanelController();
-    // $data = $obj->getData();
     $reps = new policePanelController();
     $report->createReport();
     $CitizenC->getReportsIMade();
@@ -119,11 +104,8 @@ Route::set('citizenPanel', function(){
         'CitizenC'=> $CitizenC,
         'reports'=>$reps 
     ];
-
-
-
     Controller::CreateView('CitizenPanel', $data);
-//    Controller::logout();
+
 });
 Route::set('manageAccount', function (){
     $obj = new citizenPanelController();
@@ -133,12 +115,9 @@ Route::set('manageAccount', function (){
 
 Route::set('policePanel', function(){
     $obj = new policePanelController();
-
-    // $data=$obje->getAssoc();
     $data=$obj->getData();
 
     Controller::CreateView('MainP', $data);
-//    Controller::logout();
 });
 
 Route::set('myReports', function(){
@@ -154,8 +133,6 @@ Route::set('policeReports', function(){
     $data = $obj->getData();
     $obj->takeReport();
     $admCont = new AdminController();
-    // $admCont->deleteReport();
-    // $obj->deleteReportt();
     Controller::CreateView('ReportsP', $data);
 });
 

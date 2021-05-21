@@ -174,10 +174,6 @@ if (isset($data)) {
         <footer id="footer">
             <p>Copyright Adminstrap, &copy; 2021</p>
         </footer>
-
-        <!--Modals-->
-
-        <!--Add User-->
         <?php include 'modals.php'?>
 
 </body>

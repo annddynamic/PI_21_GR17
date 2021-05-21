@@ -144,7 +144,7 @@ if (isset($data)) {
                                     <td><?php echo $emergency['gjendja'] ?></td>
                                     <td><?php echo $emergency['name'] ?></td>
                                     <td>
-                                        <img height="120" style="display:block;
+                                        <img width="150" style="display:block;
                                                                         text-align:center;
                                                                         margin-left: auto;
                                                                         margin-right: auto;
@@ -153,7 +153,7 @@ if (isset($data)) {
                                         <form action="reports" method ="post">
                                             <input type="hidden" name="remove"
                                                 value="<?php echo $data['emergency'][$i]['reID'] ?>">
-                                            <button type="submit" name="emergency" value="" style="margin-left:-30px"
+                                            <button type="submit" name="emergency" value="" style="margin-left:-20px"
                                                     class="pull-right btn btn-danger">Delete
                                             </button>
                                         </form>

@@ -1,9 +1,3 @@
-<?php
-
-
-
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -81,11 +75,7 @@
     </nav>
 </header>
 
-<!-- <?php
-echo '<pre>';
-var_dump($_COOKIE);
-echo '</pre>';
-?> -->
+
 <body>
 <div class="login-form">
     <form action="signIn" method="POST">
@@ -124,14 +114,6 @@ echo '</pre>';
 
     <p class="text-center"><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#signUp" > Create an Account</a></p>
 </div>
-
-<?php 
-
-
-?>  
-
-
-
 
 
 <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

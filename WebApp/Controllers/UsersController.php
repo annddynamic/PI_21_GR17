@@ -388,7 +388,6 @@ class UsersController extends Controller
                 'passwordError' => ''
             ];
 
-//
             if (empty($data['email'])) {
                 $data['emailError'] = 'Please enter your email';
             }
@@ -398,7 +397,6 @@ class UsersController extends Controller
             }
 
             
-//
             if (empty($data['emailError']) && empty($data['passwordError'])) {
                
                 $loggedInUser = $this->userModel->login($data['email'], $data['password']);
@@ -469,7 +467,7 @@ class UsersController extends Controller
         // Remove "-" from number
         $phone_to_check = str_replace("-", "", $filtered_phone_number);
 
-        // Check the lenght of number
+        // Check the length of number
         // This can be customized if you want phone number from a specific country
         if (strlen($phone_to_check) < 9 || strlen($phone_to_check) > 14) {
             return false;

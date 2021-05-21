@@ -3,7 +3,6 @@ if (isset($data)) {
 }?>
 
 
-<!--Modals-->
 
 <!--Add User-->
 <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

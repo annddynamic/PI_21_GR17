@@ -266,7 +266,6 @@ if (isset($data)) {
 
         </script>
 
-<!--        <div style="height: 250px"></div>-->
         <footer id="footer">
             <p>Copyright Adminstrap, &copy; 2021</p>
         </footer>

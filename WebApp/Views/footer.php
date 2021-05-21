@@ -154,7 +154,6 @@ if (isset($data)) {
 
     $datta=$data['feed'];
 
-
 }
 ?>
 
