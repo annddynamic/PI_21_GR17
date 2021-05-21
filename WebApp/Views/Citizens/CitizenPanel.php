@@ -7,8 +7,7 @@ if (isset($data)) {
     $datta = $data['report']->getData();
     $errors = $data['report']->getErrors();
     $reportsIMade = $data['CitizenC']->getReportsIMade();
-    
-    // echo '<pre>';
+  
     // var_dump($data['CitizenC']->getReportsIMade());
     // echo '</pre>';
     
@@ -190,7 +189,7 @@ if (isset($data)) {
                 <a href="#" class="thumbnail" data-toggle="modal" data-target="#feedback">
                     <span class="glyphicon glyphicon-pencil"></span>
                     <div class="caption">
-                        <h3> Send an email to anyone</h3>
+                        <h3> How can we improve?</h3>
 
                     </div>
 

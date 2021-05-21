@@ -104,16 +104,24 @@ echo '</pre>';
         <div class="form-group">
             <button value="submit" id="submit" type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>
-        <div class="form-group">
-           <input type="checkbox" name="rememberMe">Remember Me
-        </div>
-        <!-- <?php  if(isset($_COOKIE['email'])){
+
+
+
+       
+        <?php  if(isset($_COOKIE['email'])){
                 echo '   <div class="form-group">
-                <input type="checkbox" name="rememberMe" name="forgetMe" >Forget Me
-             </div>   ';
-        } ?>   -->
+                <input type="checkbox"   name="forgetMe" >Forget Me
+                </div>';
+        }else {
+            echo '<div class="form-group">
+            <input type="checkbox" name="rememberMe">Remember Me
+         </div>';
+        } 
+
+        ?>   
 
     </form>
+
     <p class="text-center"><a class="emergenciesButton" type = "button" data-toggle="modal" data-target="#signUp" > Create an Account</a></p>
 </div>
 

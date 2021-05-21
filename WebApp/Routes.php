@@ -111,7 +111,7 @@ Route::set('citizenPanel', function(){
     $CitizenC = new citizenPanelController();
     // $data = $obj->getData();
     $reps = new policePanelController();
-    $report->createReportByUser();
+    $report->createReport();
     $CitizenC->getReportsIMade();
     $reps->getData();
     $data = [

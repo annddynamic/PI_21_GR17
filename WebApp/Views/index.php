@@ -197,7 +197,7 @@ if (isset($data)) {
                         <h2>Citizens</h2>
                         <p>
                             As a citizen you have the possibility to make a report directly from the home page, or you
-                            can sign up and add a report from your personal account.
+                            can sign up and add a report from your personal account. 
                         </p>
                         <p>
                             If you have an account you can also see all your reports that you made, and you can email us

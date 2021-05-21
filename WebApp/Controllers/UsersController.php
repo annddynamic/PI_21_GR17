@@ -431,16 +431,22 @@ class UsersController extends Controller
         $_SESSION['password'] = $user->password;
 
         if(isset($_POST["rememberMe"])){
-            setcookie('email', $_POST['email'], time()+60);
-            setcookie('password', $_SESSION['password'], time()+60);
+             
+            setcookie('email', $_POST['email'], time()+60*60);
+            setcookie('password', $_POST['password'], time()+60*60);
+            
 
+        }else if(isset($_POST["forgetMe"])){
+            unset($_COOKIE['email']);
+            unset($_COOKIE['password']);
+            setcookie('email', $_COOKIE['email'],null, time()-760);
+            setcookie('password', $_COOKIE['password'],null, time()-760);
+            echo '<pre>';
+            var_dump("NANA JOTEEEE");
+            echo '</pre>';
         }
 
-        // if(isset($_POST["forgetMe"])){
-        //     setcookie('email', $_COOKIE['email'], time()-760);
-        //     setcookie('password', $_COOKIE['password'], time()-760);
-
-        // }
+        
 
         if ($_SESSION['role'] == 2) {
             header('location:policePanel');

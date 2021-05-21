@@ -80,7 +80,7 @@ class UserModel
         }
 
 
-        if(password_verify($password, $hashedPassword)||$password==$hashedPassword ){
+        if(password_verify($password, $hashedPassword)){
             return $row;
         }else{
             return false;

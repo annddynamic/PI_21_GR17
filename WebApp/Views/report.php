@@ -115,8 +115,9 @@ if (isset($data)) {
                         </div>
 
                         <div class="form-group">
+                            
                             <label>Address</label>
-                            <input type="text" name="address" value="<?php echo $datta['address']; ?> " class="form-control" placeholder="Address">
+                            <input type="text" name="address" value="<?php echo $datta['address']; ?>"class="form-control" placeholder="Address">
                             <span class="invalidFeedback"> <?php echo $errors['addressError']; ?></span>
                         </div>
 
