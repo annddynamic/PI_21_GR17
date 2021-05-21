@@ -189,7 +189,7 @@ if (isset($data)) {
                                         <td><?php echo $random['gjendja'] ?></td>
                                         <td><?php echo $random['name'] ?></td>
                                         <td>
-                                            <img height= "120" style="display:block;
+                                            <img width="150" style="display:block;
                                                                         text-align:center;
                                                                         margin-left: auto;
                                                                         margin-right: auto;

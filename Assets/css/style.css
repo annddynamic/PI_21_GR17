@@ -254,6 +254,15 @@ body{
 .invalidFeedback {
     color: red;
 }
+.butoni{
+    margin: 0;
+    transform: translate(-25%, 0%);
+}
+
+.butoni1{
+    margin: 0;
+    transform: translate(-20%, 0%);
+}
 /*.center{*/
 /*    display: block;*/
 /*    margin-left: auto;*/

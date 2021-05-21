@@ -18,11 +18,7 @@
 
 <?php
 include "navbarP.php";
-// session_start();
 if (isset($data)) {
-    // echo '<pre>';
-    // var_dump($_SESSION);
-    // echo '</pre>';
 }
 
 ?>
@@ -77,7 +73,7 @@ if (isset($data)) {
                                     <td><?php echo $report['dt_raportimit'] ?>  </td>
                                     <td><?php echo $report['address'] ?>  </td>
                                     <td><?php echo $report['description'] ?>  </td>
-                                    <td><img height="120" style="display:block;
+                                    <td><img hwidth="150" style="display:block;
                                                                  text-align:center;
                                                                  margin-left: auto;
                                                                  margin-right: auto;

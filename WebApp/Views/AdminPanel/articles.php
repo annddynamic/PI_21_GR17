@@ -129,7 +129,7 @@ if (isset($data)) {
                                         <td>
                                             <form method="post" action="articles" style="display:inline">
                                                 <input type="hidden" name="remove"  value="<?php echo $data['getNews'][$i]['nID'] ?>">
-                                                <button type="submit" name="deelete" value="" class="pull-right btn btn-danger">Delete</button>
+                                                <button type="submit" name="deelete" value="" class="pull-right btn btn-danger butoni1">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

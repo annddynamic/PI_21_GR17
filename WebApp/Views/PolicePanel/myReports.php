@@ -133,7 +133,7 @@ if (isset($data)) {
                                 <td><?php echo $report['dt_raportimit'] ?>  </td>
                                 <td><?php echo $report['address'] ?>  </td>
                                 <td><?php echo $report['description'] ?>  </td>
-                                <td><img height="120" style="display:block;
+                                <td><img width="150" style="display:block;
                                                                         text-align:center;
                                                                         margin-left: auto;
                                                                         margin-right: auto;
@@ -141,8 +141,8 @@ if (isset($data)) {
                                 <td>
                                     <form action="myReports" method ="post">
                                         <input type="hidden" name="reID" value="<?php echo $data['myReports'][$i]['reID'] ?>">
-                                        <button type="submit" name="finish" value="" style="margin-left:-30px"
-                                                class="pull-right btn btn-danger">Finish
+                                        <button type="submit" name="finish" value="" style="margin-left:-25px"
+                                                class="pull-right btn btn-success">Finish
                                         </button>
                                     </form>
                                 </td>
@@ -173,7 +173,7 @@ if (isset($data)) {
                                     <td><?php echo $report['dt_raportimit'] ?>  </td>
                                     <td><?php echo $report['address'] ?>  </td>
                                     <td><?php echo $report['description'] ?>  </td>
-                                    <td><img height="120" style="display:block;
+                                    <td><img width="150" style="display:block;
                                                                         text-align:center;
                                                                         margin-left: auto;
                                                                         margin-right: auto;
