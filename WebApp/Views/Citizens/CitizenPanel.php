@@ -31,6 +31,7 @@ if (isset($data)) {
     <!-- Bootstrap core CSS -->
     <link href="../Assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../Assets/css/StylesP.css">
+    <link rel="shortcut icon" type="image/jpg" href="../Assets/img/fav.png"/>
 
 
 
