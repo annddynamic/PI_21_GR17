@@ -233,5 +233,9 @@ body{
 .delete{
     padding: 20px;
 }
+.textarea12{
+    height: 100px !important;
+    width: 290px !important;
+}
 
 
