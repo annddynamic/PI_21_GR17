@@ -409,7 +409,7 @@ class AdminModel
 
     public function searchCitizen($data)
     {
-        $this->db->query('SELECT uID, name,surname,rruga,nr_telefonit 
+        $this->db->query('SELECT uID, name,surname,email,data_lindjes 
                               FROM users
                               WHERE role_ID=3 and name LIKE :name');
         $this->db->bind(':name', "$data%");
