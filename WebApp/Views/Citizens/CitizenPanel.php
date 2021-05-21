@@ -190,7 +190,7 @@ if (isset($data)) {
                 <a href="#" class="thumbnail" data-toggle="modal" data-target="#feedback">
                     <span class="glyphicon glyphicon-pencil"></span>
                     <div class="caption">
-                        <h3> How can we improve?</h3>
+                        <h3> Send an email to anyone</h3>
 
                     </div>
 
@@ -367,7 +367,7 @@ if (isset($data)) {
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">How would you rate our page?</h4>
+                        <h4 class="modal-title">Send an email to anyone</h4>
                     </div>
                     <form method="post" action="citizenPanel" id="sendEmail">
                         <div class="modal-body">
