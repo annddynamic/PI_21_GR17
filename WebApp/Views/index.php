@@ -5,14 +5,12 @@ if (isset($data)) {
     $errors = $data['rep']->getErrors();
     $datta = $data['rep']->getData();
 
-
     if (count($data['models']["data"]) > 1) {
 
         list($firstArray, $secondArray) = array_chunk($data['models']["data"], ceil(count($data['models']["data"]) / 2));
     } else {
         $firstArray = $data['models']["data"];
     }
-
 
 }
 ?>
@@ -77,7 +75,7 @@ if (isset($data)) {
                 ?>
             </p>
             <p>
-                <?php $imp = array('This', 'can', 'help', 'to', 'reduce', 'the', 'number', 'of', 'cases ');
+                <?php $imp = array('Crime-Report-System', 'can', 'help', 'to', 'reduce', 'the', 'number', 'of', 'cases ');
                 echo implode(" ", $imp)
                 ?>It will bring the police and the victims closer and hence increasing the security. This makes the FIR
                 registration simple and easy hence making it time-efficient. The system will help the crime department
@@ -116,16 +114,16 @@ if (isset($data)) {
                     <div class="tekst">
                         <h2>Quick overviw of how our website works!</h2>
                         <p>
-                            The aim of our application, as mentioned above is to establish a better, connetction between
+                            The aim of our application, as mentioned above is to establish a better connetction between
                             the victims and the police forces.
                         </p>
                         <p>
-                            In order to acheive that, our site contains a three role hierarchy. Therefore your
+                            In order to achieve that, our site contains a three role hierarchy. Therefore your
                             experience on the site can be as an admin, police officer or a user (citizen).
                         </p>
                         <p>
-                            With the admin on top each of the roles has its own set of tasks and privileges it is
-                            allowed to perform.
+                            With the admin on top, each of the roles has its own set of tasks to complete and privileges it is
+                            allowed to perform!
 
                         </p>
 
@@ -144,16 +142,19 @@ if (isset($data)) {
                     <div class="tekst">
                         <h2>Admin</h2>
                         <p>
-                            The Admins have the control of the police officials and the citizens, he has the ability to
-                            approve and deny police officials if there is a reason to.
+                            An admin is usually someone of the high ranks. Could be head of police station himself.
+                            He has to be capable of running the site and handling the responsibilities that come with it,
+                            pretty much in charge of how things go down here!
                         </p>
                         <p>
-                            They receive feedback from the users to know how they can improve and to make the page even
-                            more user friendly.
+                            The Admin has control over the police officials and the citizens. Police officers that want to join
+                            the forces, have to be manually approved by the admin in order to proceed...
+                            He also manages and keeps track of reports submitted by the citizens and following officers working on their cases.
                         </p>
                         <p>
-                            Also the admin has the ability to add the news in the web-page. They let the users know what
+                            Last, but not least the admin handles all the technicalities! Constantly updates the news section in the web-page so the users know what
                             is new in the precinct or if someone is wanted etc.
+                            Also they can receive direct communication from the users through the form on the landing page.
                         </p>
                     </div>
 
@@ -173,9 +174,13 @@ if (isset($data)) {
                             to chose the case they want.
                         </p>
                         <p>
-                            They also can see the citizen ,and the active cases that they are working on. If the case
-                            that they are working on is finished they mark it as finished and that report will go to the
-                            admin, than he can delete it.
+                            They can view the citizen accounts and keep track of the reports they make. If they are done
+                            working on a case, they can mark it as finished and that report will go to the
+                            admin, so he can see the the progress in details.
+                        </p>
+                        <p>
+                            If the job is not done properly, or the officer does not obey the orders and does not follow protocol,
+                            he can be instantly removed by the admin!
                         </p>
                     </div>
 
