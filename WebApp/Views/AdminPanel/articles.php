@@ -124,7 +124,8 @@ if (isset($data)) {
                                     </tr>
                                     <?php foreach ($data['getNews'] as $i => $someNews): ?>
                                     <tr>
-                                        <td><?php echo $data['getNews'][$i]['title']?></td>
+                                        <td style="max-width:120px;
+                                                   word-wrap:break-word;"><?php echo $data['getNews'][$i]['title']?></td>
                                         <td><?php echo $data['getNews'][$i]['published']?></td>
                                         <td>
                                             <form method="post" action="articles" style="display:inline">

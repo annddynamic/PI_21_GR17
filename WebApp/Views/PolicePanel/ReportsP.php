@@ -72,7 +72,8 @@ if (isset($data)) {
                                     <td><?php echo $report['emri'] ?>  </td>
                                     <td><?php echo $report['dt_raportimit'] ?>  </td>
                                     <td><?php echo $report['address'] ?>  </td>
-                                    <td><?php echo $report['description'] ?>  </td>
+                                    <td style="max-width:300px;
+                                                   word-wrap:break-word;"><?php echo $report['description'] ?>  </td>
                                     <td><img width="200" style="display:block;
                                                                  text-align:center;
                                                                  margin-left: auto;
