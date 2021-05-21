@@ -486,3 +486,4 @@ class UsersController extends Controller
         return preg_match('/^([0-9]*)$/', $zipCode);
     }  
 }
+

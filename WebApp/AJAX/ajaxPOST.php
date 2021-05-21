@@ -23,7 +23,7 @@ $model = new AdminModel();
         ];
 
         if($model->editUser($data)){
-            echo 'SUCCESS!';
+            echo "SUCCES!";
         }else {
             die("Something went wrong");
         }
