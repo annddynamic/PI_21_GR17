@@ -73,7 +73,7 @@ if (isset($data)) {
                                     <td><?php echo $report['dt_raportimit'] ?>  </td>
                                     <td><?php echo $report['address'] ?>  </td>
                                     <td><?php echo $report['description'] ?>  </td>
-                                    <td><img hwidth="150" style="display:block;
+                                    <td><img width="200" style="display:block;
                                                                  text-align:center;
                                                                  margin-left: auto;
                                                                  margin-right: auto;
@@ -82,7 +82,7 @@ if (isset($data)) {
                                         <form method="post" action="policeReports" style="display:inline">
                                             <input type="hidden" name="remove"
                                                    value="<?php echo $data['reports'][$i]['reID'] ?>">
-                                            <button type="submit" name="take" value="" style="margin-right:27px"
+                                            <button type="submit" name="take" value="" style="margin-right:"
                                                     class="pull-right btn btn-primary">Take
                                             </button>
                                         </form>

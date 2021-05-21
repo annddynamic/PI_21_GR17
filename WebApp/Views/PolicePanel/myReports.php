@@ -70,17 +70,7 @@ if (isset($data)) {
                 <div class="col-md-4">
                     <h1><span class="glyphicon glyphicon-cog" aria-hidden="" true> </span>Dashboard </h1>
                 </div>
-                <div class="col-md-8 ">
 
-                    <div class="search-box">
-
-                        <input class="search-text" type="text" name="" placeholder="Type to search">
-                        <a class="search-btn" href="#">
-                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-
-                        </a>
-                    </div>
-                </div>
 
             </div>
 
@@ -141,7 +131,7 @@ if (isset($data)) {
                                 <td>
                                     <form action="myReports" method ="post">
                                         <input type="hidden" name="reID" value="<?php echo $data['myReports'][$i]['reID'] ?>">
-                                        <button type="submit" name="finish" value="" style="margin-left:-25px"
+                                        <button type="submit" name="finish" value=""
                                                 class="pull-right btn btn-success">Finish
                                         </button>
                                     </form>

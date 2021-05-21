@@ -76,18 +76,6 @@ if (isset($data)) {
                 <div class="col-md-4">
                     <h1><span class="glyphicon glyphicon-cog" aria-hidden="" true> </span>Dashboard </h1>
                 </div>
-                <div class="col-md-8 ">
-
-                    <div class="search-box">
-
-                        <input class="search-text" type="text" name="" placeholder="Type to search">
-                        <a class="search-btn" href="#">
-                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-
-                        </a>
-                    </div>
-                </div>
-
             </div>
            
         </div>
