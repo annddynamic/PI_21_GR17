@@ -227,7 +227,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uID`, `name`, `surname`, `gender`, `data_lindjes`, `rruga`, `qyteti`, `shteti`, `ZIP`, `nr_telefonit`, `email`, `password`, `inDuty`, `role_ID`) VALUES
-(1, 'Andi', 'Dika', 'male', '2001-08-11', 'Bregu i diellit', 'Prishtine', 'Kosov', 10000, '044810106', 'andi.dika@student.uni-pr.edu', '$2y$10$oop2igkcSglsvF377lzvxOsHNAniVJiQns3RFElRXbWWJv4LifyTm', 1, 1),
+(1, 'Andi', 'Dika', 'male', '2001-08-11', 'Bregu i diellit', 'Prishtine', 'Kosov', 10000, '044810106', 'admin@gmail.com', '$2y$10$DZGKR1ld35BG2bnD4ULVieYMmdjOG7N0U2yvFE2vmVu1xj/7l8aAG', 1, 1),
 (2, 'Arben', 'Dedaj', 'male', '2001-06-15', 'Adem Deda', 'Peje', 'Kosov', 30000, '044672155', 'arben.dedaj1@student.uni-pr.edu', '$2y$10$n3UiKr7uvGukU.uNARd0uecO75gm9Y2KYSc3af1bIxn6f.4Rus82m', 1, 1),
 (3, 'Adnit', 'Gashi', 'male', '2001-08-21', 'Matiqan', 'Prishtine', 'Kosov', 10000, '044340907', 'adnit.gashi@student.uni-pr.edu', '$2y$10$cM9kyu1fQYEzQByVuFop5u82llFSTKgXunn9FLicFf9fZHnnM4Acm', 1, 1),
 (4, 'Albiona', 'Vukaj', 'female', '2000-10-24', 'Ulqin City', 'Ulqin', 'Mali i zi', 30000, '044510970', 'albiona.vukaj@student.uni-pr.edu', '$2y$10$spMCfkIkSAIEQVpv4JtEFeIL50r3I8iilygM1SI9BLUUc6qPR5qXy', 1, 1),
