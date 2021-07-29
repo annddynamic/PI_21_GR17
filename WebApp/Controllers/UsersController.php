@@ -58,11 +58,11 @@ class UsersController extends Controller
 
             $nameValidation = "/^[a-zA-Z0-9]*$/";
             if (empty ($data['name'])) {
-                $data['nameError'] = 'Please enter name.';
+                $data['nameError'] = 'Please enter name!';
             } else if (!preg_match($nameValidation, $data['name'])) {
-                $data['nameError'] = 'Name can only contain letters and numbers.';
-            } else if (strlen($data['name']) > 10 || strlen($data['name']) <= 0) {
-                $data['nameError'] = 'Name cannot be empty or null';
+                $data['nameError'] = 'Name is not in correct format!';
+            } else if (strlen($data['name']) > 10) {
+                $data['nameError'] = 'Name cant be longer than 10 characters!';
             }
 
             // validimi i lastname
@@ -70,21 +70,21 @@ class UsersController extends Controller
             if (empty ($data['lastName'])) {
                 $data['lastNameError'] = 'Please enter last name.';
             } else if (!preg_match($nameValidation, $data['lastName'])) {
-                $data['lastName'] = 'Last name can only contain letters and numbers.';
-            } else if (strlen($data['lastName']) > 10 || strlen($data['lastName']) <= 0) {
-                $data['lastNameError'] = 'Last name cannot be empty or null';
+                $data['lastNameError'] = 'Last name is not in correct format!';
+            } else if (strlen($data['lastName']) > 10) {
+                $data['lastNameError'] = 'Surname cant be longer than 10 characters!';
             }
 
             //Validimi i emailit
 
             if (empty ($data['email'])) {
-                $data['emailError'] = 'Please enter email.';
+                $data['emailError'] = 'Please enter email!';
             } else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-                $data['emailError'] = 'Please enter the correct format.';
+                $data['emailError'] = 'Please enter the correct format!';
             } else {
                 //Check if the email exists.
                 if ($this->userModel->findUserByEmailUsers($data['email']) || $this->userModel->findUserByEmailPending($data['email'])) {
-                    $data['emailError'] = 'Email is already taken.';
+                    $data['emailError'] = 'Email is already taken!';
                 }
             }
 
@@ -94,7 +94,7 @@ class UsersController extends Controller
             if (preg_match($dateValidation, $data['birthday'])) {
                 $data['birthdayError'] = "";
             } else {
-                $data['birthdayError'] = "Your birthday is not in valid format";
+                $data['birthdayError'] = "Your birthday is not in valid format!";
             }
 
 
@@ -110,7 +110,7 @@ class UsersController extends Controller
 
             if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter password';
-            } elseif (strlen($data['password']) < 6) {
+            } elseif (strlen($data['password']) < 8) {
                 $data['passwordError'] = 'Password must be at least 8 characters';
             } else if (!preg_match($passwordValidation, $data['password'])) {
                 $data['passwordError'] = 'Password does not meet one of the criteria above!';
@@ -144,7 +144,7 @@ class UsersController extends Controller
 
                     header('location:index');
                 } else {
-                    die('Something went wrong. ');
+                    die('Something went wrong.');
                 }
             }
         }
@@ -216,25 +216,23 @@ class UsersController extends Controller
             //Validimi i name
 
             $nameValidation = "/^[a-zA-Z0-9]*$/";
-            $text = "Please enter your name.";
-            $words = preg_split($nameValidation, $text);
+//            $text = "Please enter your name.";
+//            $words = preg_split($nameValidation, $text);
 
             if (empty ($data['name'])) {
-                foreach ($words as $word) {
-                    $data['nameError'] = $data['nameError'] . $word;
-                }
+                $data['nameError'] ="Please enter name!";
             } else if (!preg_match($nameValidation, $data['name'])) {
-                $data['nameError'] = 'Name can only contain letters and numbers.';
-            } else if (strlen($data['name']) > 15) {
-                $data['nameError'] = 'Name cannot be longer than 10 characters.';
+                $data['nameError'] = 'Name is not in correct format!';
+            } else if (strlen($data['name']) > 10) {
+                $data['nameError'] = 'Name cannot be longer than 10 characters!';
             }
 
             // validimi i lastname
             if (empty ($data['lastName'])) {
                 $data['lastNameError'] = 'Please enter last name.';
             } else if (!preg_match($nameValidation, $data['lastName'])) {
-                $data['lastNameError'] = 'Last name can only contain letters and numbers.';
-            } else if (strlen($data['lastName']) > 15) {
+                $data['lastNameError'] = 'Surname is not in correct format!';
+            } else if (strlen($data['lastName']) > 10) {
                 $data['lastNameError'] = 'Surname cannot be longer than 10 characters.';
             }
 
@@ -323,7 +321,7 @@ class UsersController extends Controller
 
             if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter password.';
-            } elseif (strlen($data['password']) < 6) {
+            } elseif (strlen($data['password']) < 8) {
                 $data['passwordError'] = 'Password must be at least 8 characters.';
             } else if (!preg_match($passwordValidation, $data['password'])) {
                 $data['passwordError'] = 'Password does not meet one of the criteria above!';
@@ -439,9 +437,7 @@ class UsersController extends Controller
             unset($_COOKIE['password']);
             setcookie('email', $_COOKIE['email'],null, time()-760);
             setcookie('password', $_COOKIE['password'],null, time()-760);
-            echo '<pre>';
-            var_dump("NANA JOTEEEE");
-            echo '</pre>';
+
         }
 
         

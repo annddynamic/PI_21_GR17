@@ -235,6 +235,10 @@ if (isset($data)) {
 
                 xhr.addEventListener("readystatechange", function () {
                     if (this.readyState === this.DONE) {
+                        // 0: Req not initialised
+                        // 1: Server connection established
+                        // 2: processing request
+                        // 3: req finished and response is ready
                         var news = JSON.parse(this.responseText);
                         console.log(news.articles[0].title, news.articles[0].author, news.articles[0].published_date, news.articles[0].summary,news.articles[0].media, news.articles[0].link );
 

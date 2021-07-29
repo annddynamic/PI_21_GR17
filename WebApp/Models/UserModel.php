@@ -182,8 +182,13 @@ class UserModel
             return true;
         } else {
             return false;
-        }
+           }
     }
+
+
+//    function __destruct() {
+//        echo  ;
+//    }
 
 
 

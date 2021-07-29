@@ -41,23 +41,20 @@ class ReportsController extends Reports
 
             // $nameValidation = "/^[a-zA-Z0-9]*$/";
             $nameValidation = "/^[a-z ,.'-]+$/i";
-            
-            
-            
-            
+
             
             if (empty($this->getName())) {
-                $errors['nameError'] = "Please enter your nameeeee";
+                $errors['nameError'] = "Please enter your name!";
             } else if (!preg_match($nameValidation, $this->getName())) {
                 $errors['nameError'] = 'Name format is incorrect!';
-            } else if (strlen($this->getName()) > 15) {
+            } else if (strlen($this->getName()) > 10) {
                 $errors['nameError'] = 'Name cannot be longer than 10 characters';
             }
             
             
             // validimi i lastname
             if (empty ($this->getLastName())) {
-                $errors['lastNameError'] = 'Please enter last name.';
+                $errors['lastNameError'] = 'Please enter last name!';
             } else if (!preg_match($nameValidation, $this->getLastName())) {
                 $errors['lastNameError'] = 'Last name format is incorrect!';
             } else if (strlen($this->getLastName()) > 10) {
@@ -85,9 +82,9 @@ class ReportsController extends Reports
             } else {
 
                 $words = preg_split("/ /", $this->getAddress());
-                echo '<pre>';
-                var_dump($words);
-                echo '</pre>';
+//                echo '<pre>';
+//                var_dump($words);
+//                echo '</pre>';
                 foreach ( $words as $word){
                     if(!preg_match("^[A-Za-z0-9_-]*$^" , $word)){
                         $errors['addressError'] = 'Address contains ilegal characters!';
@@ -95,9 +92,7 @@ class ReportsController extends Reports
                 }
             }
             
-           
-            
-            
+
             
             // City validation
 

@@ -73,15 +73,13 @@ if (isset($data)) {
                     <h1><span class="glyphicon glyphicon-cog" aria-hidden="" true> </span> Dashboard </h1>
                 </div>
                 <div class="col-md-8 ">
-                    <form>
+                    <form action="adminPanel" method="GET">
                         <div class="search-box">
                             <input class="search-text" type="text" name="search" onkeyup="showHint(this.value)" placeholder="Type to search" value="<?php echo $data['search'] ?>">
                             <a class="search-btn" href="#">
                                 <span class="glyphicon glyphicon-search" aria-hidden="true" ></span>
                             </a>
                         </div>
-
-
                     </form>
                     <div style="margin-top:60px;
                                 margin-left:-60px;
@@ -106,6 +104,10 @@ if (isset($data)) {
         } else {
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
+                // 0: Req not initialised
+                // 1: Server connection established
+                // 2: processing request
+                // 3: req finished and response is ready
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("txtHint").innerHTML = this.responseText;
                 }

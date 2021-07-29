@@ -68,7 +68,6 @@ class AdminModel
         }
     }
 
-
     public function deletePolice($data){
 
 
@@ -158,7 +157,6 @@ class AdminModel
 
     }
 
-
     public function editUser($data){
 
         $this->db->query('UPDATE users
@@ -178,7 +176,6 @@ class AdminModel
             return false;
         }
     }
-
 
     public function getUsers()
     {

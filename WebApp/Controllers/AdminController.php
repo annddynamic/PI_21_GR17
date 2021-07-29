@@ -64,7 +64,6 @@ class AdminController extends Controller
 
     }
 
-
     public function deleteFromPendingUers()
     {
 
@@ -139,7 +138,6 @@ class AdminController extends Controller
         }
         return $data;
     }
-
 
     public function addNews()
     {

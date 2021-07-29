@@ -315,7 +315,7 @@ if (isset($data)) {
                 for (var i in users){
                     output +='<tr>' +
                         '<td>'+users[i].name+' '+users[i].surname+'</td>'+
-                    '</tr>'
+                        '</tr>'
                 }
 
                 var tbody=document.querySelector('#police');
